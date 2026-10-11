@@ -7,5 +7,5 @@ export async function loginWithGoogle(locale: string): Promise<void> {
 }
 
 export async function logout(locale: string): Promise<void> {
-  await signOut({ redirectTo: `/${locale}/login` });
+  await signOut({ redirectTo: `/${locale}` });
 }

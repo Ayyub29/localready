@@ -1,10 +1,8 @@
-import { redirect } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
-import { auth } from "@/auth";
 import { DestinationPicker } from "@/components/DestinationPicker";
 import { HomeHeader } from "@/components/HomeHeader";
 import { LessonListView } from "@/components/LessonListView";
-import { getUserLastCorridor } from "@/lib/user-destination";
+import { getLastCorridor } from "@/lib/last-corridor";
 import type { Locale } from "@/lib/types";
 
 type HomeProps = {
@@ -16,13 +14,7 @@ export default async function HomePage({ params }: HomeProps) {
   setRequestLocale(locale);
   const loc = locale as Locale;
 
-  const session = await auth();
-  if (!session?.user) {
-    redirect(`/${locale}/login`);
-  }
-
-  const userId = session.user.id;
-  const lastCorridor = await getUserLastCorridor(userId);
+  const lastCorridor = await getLastCorridor();
 
   return (
     <>

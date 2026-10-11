@@ -19,6 +19,10 @@
   },
   "profile": {
     "title": "Profil",
+    "guestSubtitle": "Jelajahi sebagai tamu, atau masuk untuk menyimpan perjalanan ke akun.",
+    "guestTripHint": "Tersimpan di perangkat ini sampai kamu masuk.",
+    "signInGoogle": "Lanjut dengan Google",
+    "guestHint": "Google OAuth · akun disimpan di Neon saat masuk.",
     "noName": "Pelancong",
     "trip": "Perjalanan saat ini",
     "noDestination": "Belum ada destinasi dipilih.",

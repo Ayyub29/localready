@@ -4,11 +4,13 @@ Travel language preparator (scaffold).
 
 ## Flow
 
-1. **Login** — Google OAuth (`/{locale}/login`)
-2. **Home** — `/{locale}`
-   - No destination saved yet → pick a destination
-   - After a pick → lesson list for your last destination (stored in Neon on `user.lastCorridorId`)
-3. **Change destination** — `/{locale}/destinations` (picker again)
+**Guests** (no sign-in required):
+
+1. **Home** — `/{locale}` — pick destination → lesson list (last pick stored in a cookie on this device)
+2. **Destinations** — `/{locale}/destinations`
+3. **Profile** — `/{locale}/profile` — **Continue with Google** to sign in
+
+**Signed in:** same navigation; last destination is stored in Neon (`user.lastCorridorId`). Guest cookie is migrated on first load after login.
 
 ## Stack
 

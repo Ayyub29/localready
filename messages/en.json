@@ -19,6 +19,10 @@
   },
   "profile": {
     "title": "Profile",
+    "guestSubtitle": "Browse lessons as a guest, or sign in to save your trip to your account.",
+    "guestTripHint": "Saved on this device until you sign in.",
+    "signInGoogle": "Continue with Google",
+    "guestHint": "Google OAuth · account stored in Neon when signed in.",
     "noName": "Traveler",
     "trip": "Current trip",
     "noDestination": "No destination selected yet.",

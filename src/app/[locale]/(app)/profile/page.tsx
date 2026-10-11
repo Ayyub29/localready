@@ -1,11 +1,10 @@
 import Image from "next/image";
-import { redirect } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { auth } from "@/auth";
+import { loginWithGoogle, logout } from "@/app/[locale]/login/actions";
 import { getDestination } from "@/data/catalog";
-import { logout } from "@/app/[locale]/login/actions";
 import { pickLocalized } from "@/lib/locale";
-import { getUserLastCorridor } from "@/lib/user-destination";
+import { getLastCorridor } from "@/lib/last-corridor";
 import { Button } from "@/components/Button";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/lib/types";
@@ -18,15 +17,42 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
   const loc = locale as Locale;
+  const t = await getTranslations("profile");
 
   const session = await auth();
-  if (!session?.user) {
-    redirect(`/${locale}/login`);
-  }
-
-  const t = await getTranslations("profile");
-  const lastCorridor = await getUserLastCorridor(session.user.id);
+  const lastCorridor = await getLastCorridor();
   const destination = lastCorridor ? getDestination(lastCorridor) : null;
+
+  if (!session?.user) {
+    return (
+      <div className="space-y-6">
+        <header>
+          <h1 className="text-2xl font-bold">{t("title")}</h1>
+          <p className="mt-2 text-sm text-slate-600">{t("guestSubtitle")}</p>
+        </header>
+
+        {destination && (
+          <section className="rounded-2xl border border-border bg-card p-4">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+              {t("trip")}
+            </h2>
+            <p className="mt-2 font-medium">
+              {pickLocalized(destination.name, loc)} ·{" "}
+              {pickLocalized(destination.targetLanguage, loc)}
+            </p>
+            <p className="mt-2 text-xs text-slate-500">{t("guestTripHint")}</p>
+          </section>
+        )}
+
+        <form action={loginWithGoogle.bind(null, locale)}>
+          <Button type="submit" className="w-full">
+            {t("signInGoogle")}
+          </Button>
+        </form>
+        <p className="text-center text-xs text-slate-500">{t("guestHint")}</p>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
