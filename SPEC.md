@@ -93,16 +93,27 @@ On first visit to a corridor (or `/destinations`):
 
 ## 4. Lesson kit structure
 
-Each **lesson** is one **situation** (e.g. restaurant, train). Linear steps:
+Each **lesson** maps to one **situation key** on the curriculum (e.g. `basics`, `restaurant`). Inside a lesson, **one or more vignettes** (micro-scenarios) hold their own scenario text, phrases, and quiz.
 
-1. **Scenario** — short narrative (`LocalizedString`).
-2. **Phrases** — target text, romanization (where applicable), meanings (id + en), optional usage note, **audio** (TTS file or URL).
-3. **Culture** — 1–2 cards: title, body, optional Do / Avoid lists.
-4. **Exercises** (required to complete lesson):
-   - **Flashcards** (subset of lesson phrases).
-   - **Quiz** (MCQ + pick-phrase).
-   - **Pronunciation** — play model → user records → playback; **self-check** in v1 (no cloud scoring).
-5. **Complete** — link to cheatsheet for that situation.
+### 4.0 Default unit order (configurable per lesson)
+
+`culture` → `scenario` → `phrases` → `quiz` (optional later: `flashcards`, `pronunciation`, `complete`).
+
+- **Culture** — shown **once** at the start of the lesson (etiquette / context).
+- **Per vignette** — repeat `scenario` → `phrases` → `quiz` for each micro-situation (e.g. at the airport: luggage, taxi, train to city).
+
+Types: `src/lib/lesson-content-types.ts`. Example pack: `src/content/examples/ja-jp-basics.airport.ts`.
+
+### 4.0.1 Vignette (micro-scenario)
+
+| Field | Purpose |
+|-------|---------|
+| `title` | Short label (id + en) |
+| `scenario` | What is happening |
+| `phrases` | Phrase list for this vignette only |
+| `quiz` | 1+ questions tied to those phrases |
+
+Cheatsheet still indexes **all phrases** in the lesson’s situation for travel mode.
 
 ### Standard curriculum (8 lessons per corridor)
 
