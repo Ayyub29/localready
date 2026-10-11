@@ -1,8 +1,9 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { auth } from "@/auth";
 import { destinations } from "@/data/catalog";
 import { pickLocalized } from "@/lib/locale";
-import { signOut } from "../login/actions";
+import { logout } from "../login/actions";
 import type { Locale } from "@/lib/types";
 
 type DestinationsPageProps = {
@@ -14,6 +15,7 @@ export default async function DestinationsPage({ params }: DestinationsPageProps
   setRequestLocale(locale);
   const t = await getTranslations("destinations");
   const loc = locale as Locale;
+  const session = await auth();
 
   return (
     <div className="space-y-6">
@@ -21,8 +23,11 @@ export default async function DestinationsPage({ params }: DestinationsPageProps
         <div>
           <h1 className="text-2xl font-bold">{t("title")}</h1>
           <p className="mt-1 text-sm text-slate-600">{t("subtitle")}</p>
+          {session?.user?.email && (
+            <p className="mt-2 text-xs text-slate-500">{session.user.email}</p>
+          )}
         </div>
-        <form action={signOut.bind(null, locale)}>
+        <form action={logout.bind(null, locale)}>
           <button
             type="submit"
             className="text-sm font-medium text-slate-500 underline"

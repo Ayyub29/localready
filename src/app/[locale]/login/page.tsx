@@ -1,5 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { signIn } from "./actions";
+import { loginWithGoogle } from "./actions";
 import { Button } from "@/components/Button";
 
 type LoginPageProps = {
@@ -20,12 +20,12 @@ export default async function LoginPage({ params }: LoginPageProps) {
         <h1 className="mt-2 text-2xl font-bold">{t("title")}</h1>
         <p className="mt-2 text-sm text-slate-600">{t("subtitle")}</p>
       </header>
-      <form action={signIn.bind(null, locale)}>
+      <form action={loginWithGoogle.bind(null, locale)}>
         <Button type="submit" className="w-full">
-          {t("continue")}
+          {t("google")}
         </Button>
       </form>
-      <p className="text-center text-xs text-slate-500">{t("stub")}</p>
+      <p className="text-center text-xs text-slate-500">{t("hint")}</p>
     </div>
   );
 }

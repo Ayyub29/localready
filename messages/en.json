@@ -2,8 +2,8 @@
   "login": {
     "title": "Sign in to continue",
     "subtitle": "Prepare for your trip with situational lessons.",
-    "continue": "Continue",
-    "stub": "Scaffold: real Google sign-in ships in M5."
+    "google": "Continue with Google",
+    "hint": "Uses Google OAuth. Your account is stored in Neon (PostgreSQL)."
   },
   "destinations": {
     "title": "Choose your destination",

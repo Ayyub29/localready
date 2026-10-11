@@ -2,8 +2,8 @@
   "login": {
     "title": "Masuk untuk melanjutkan",
     "subtitle": "Persiapkan perjalanan dengan pelajaran situasi.",
-    "continue": "Lanjut",
-    "stub": "Scaffold: Google sign-in asli di M5."
+    "google": "Lanjut dengan Google",
+    "hint": "Pakai Google OAuth. Akun disimpan di Neon (PostgreSQL)."
   },
   "destinations": {
     "title": "Pilih destinasi",
