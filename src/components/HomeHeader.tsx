@@ -1,30 +1,14 @@
-import { getTranslations } from "next-intl/server";
-import { logout } from "@/app/[locale]/login/actions";
-
 type HomeHeaderProps = {
-  locale: string;
-  email?: string | null;
+  title?: string;
 };
 
-export async function HomeHeader({ locale, email }: HomeHeaderProps) {
-  const t = await getTranslations("destinations");
-
+export function HomeHeader({ title }: HomeHeaderProps) {
   return (
-    <header className="mb-6 flex items-center justify-between gap-4 border-b border-border pb-4">
-      <div>
-        <p className="text-sm font-semibold uppercase tracking-wide text-teal-700">
-          LocalReady
-        </p>
-        {email && <p className="text-xs text-slate-500">{email}</p>}
-      </div>
-      <form action={logout.bind(null, locale)}>
-        <button
-          type="submit"
-          className="text-sm font-medium text-slate-500 underline"
-        >
-          {t("signOut")}
-        </button>
-      </form>
+    <header className="mb-6 border-b border-border pb-4">
+      <p className="text-sm font-semibold uppercase tracking-wide text-teal-700">
+        LocalReady
+      </p>
+      {title && <h1 className="mt-1 text-xl font-bold">{title}</h1>}
     </header>
   );
 }

@@ -1,5 +1,4 @@
 import { getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
 import { getDestination, getLessons } from "@/data/catalog";
 import { pickLocalized } from "@/lib/locale";
 import type { CorridorId, Locale } from "@/lib/types";
@@ -23,21 +22,13 @@ export async function LessonListView({
 
   return (
     <div className="space-y-6">
-      <header className="flex items-start justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-bold">
-            {pickLocalized(destination.name, locale)}
-          </h1>
-          <p className="text-sm text-slate-600">
-            {pickLocalized(destination.targetLanguage, locale)}
-          </p>
-        </div>
-        <Link
-          href="/destinations"
-          className="shrink-0 text-sm font-medium text-teal-700 underline"
-        >
-          {t("changeDestination")}
-        </Link>
+      <header>
+        <h1 className="text-2xl font-bold">
+          {pickLocalized(destination.name, locale)}
+        </h1>
+        <p className="text-sm text-slate-600">
+          {pickLocalized(destination.targetLanguage, locale)}
+        </p>
       </header>
       <ol className="space-y-2">
         {lessons.map((lesson) => (

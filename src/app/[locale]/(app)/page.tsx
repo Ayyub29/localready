@@ -26,7 +26,7 @@ export default async function HomePage({ params }: HomeProps) {
 
   return (
     <>
-      <HomeHeader locale={locale} email={session.user.email} />
+      <HomeHeader />
       {lastCorridor ? (
         <LessonListView locale={loc} corridorId={lastCorridor} />
       ) : (

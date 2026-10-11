@@ -20,7 +20,7 @@ export default async function DestinationsPage({ params }: DestinationsPageProps
 
   return (
     <>
-      <HomeHeader locale={locale} email={session.user.email} />
+      <HomeHeader />
       <DestinationPicker locale={locale as Locale} />
     </>
   );

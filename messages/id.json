@@ -1,4 +1,9 @@
 {
+  "nav": {
+    "home": "Beranda",
+    "destinations": "Destinasi",
+    "profile": "Profil"
+  },
   "login": {
     "title": "Masuk untuk melanjutkan",
     "subtitle": "Persiapkan perjalanan dengan pelajaran situasi.",
@@ -7,12 +12,18 @@
   },
   "destinations": {
     "title": "Pilih destinasi",
-    "subtitle": "Pilih koridor untuk melihat daftar pelajaran.",
-    "signOut": "Keluar"
+    "subtitle": "Pilih koridor untuk melihat daftar pelajaran."
   },
   "lessons": {
-    "back": "Destinasi",
-    "changeDestination": "Ganti",
     "comingSoon": "Pemutar pelajaran menyusul — daftar saja untuk sekarang."
+  },
+  "profile": {
+    "title": "Profil",
+    "noName": "Pelancong",
+    "trip": "Perjalanan saat ini",
+    "noDestination": "Belum ada destinasi dipilih.",
+    "changeDestination": "Pilih atau ganti destinasi",
+    "stub": "Pembelian, lisensi, dan bahasa UI menyusul di milestone berikutnya.",
+    "signOut": "Keluar"
   }
 }

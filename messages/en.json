@@ -1,4 +1,9 @@
 {
+  "nav": {
+    "home": "Home",
+    "destinations": "Destinations",
+    "profile": "Profile"
+  },
   "login": {
     "title": "Sign in to continue",
     "subtitle": "Prepare for your trip with situational lessons.",
@@ -7,12 +12,18 @@
   },
   "destinations": {
     "title": "Choose your destination",
-    "subtitle": "Pick a corridor to see lesson kits.",
-    "signOut": "Sign out"
+    "subtitle": "Pick a corridor to see lesson kits."
   },
   "lessons": {
-    "back": "Destinations",
-    "changeDestination": "Change",
     "comingSoon": "Lesson player coming next — list only for now."
+  },
+  "profile": {
+    "title": "Profile",
+    "noName": "Traveler",
+    "trip": "Current trip",
+    "noDestination": "No destination selected yet.",
+    "changeDestination": "Choose or change destination",
+    "stub": "Purchases, licenses, and UI language settings ship in a later milestone.",
+    "signOut": "Sign out"
   }
 }
