@@ -16,6 +16,7 @@ export const users = pgTable("user", {
   emailVerified: timestamp("emailVerified", { mode: "date" }),
   image: text("image"),
   locale: text("locale").default("en"),
+  lastCorridorId: text("lastCorridorId"),
   createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
 });
 

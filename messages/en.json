@@ -12,6 +12,7 @@
   },
   "lessons": {
     "back": "Destinations",
+    "changeDestination": "Change",
     "comingSoon": "Lesson player coming next — list only for now."
   }
 }

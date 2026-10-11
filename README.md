@@ -5,8 +5,10 @@ Travel language preparator (scaffold).
 ## Flow
 
 1. **Login** — Google OAuth (`/{locale}/login`)
-2. **Choose destination** — `/{locale}/destinations`
-3. **Lesson list** — `/{locale}/destinations/{corridorId}`
+2. **Home** — `/{locale}`
+   - No destination saved yet → pick a destination
+   - After a pick → lesson list for your last destination (stored in Neon on `user.lastCorridorId`)
+3. **Change destination** — `/{locale}/destinations` (picker again)
 
 ## Stack
 

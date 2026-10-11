@@ -27,7 +27,7 @@ export default auth((request) => {
 
   if (isLoggedIn && isLogin) {
     const url = request.nextUrl.clone();
-    url.pathname = `/${locale}/destinations`;
+    url.pathname = `/${locale}`;
     return NextResponse.redirect(url);
   }
 
