@@ -35,6 +35,12 @@ npm install
 cp .env.example .env.local
 ```
 
+Put secrets in **`.env.local`** (not only `.env`). Drizzle CLI (`npm run db:push`) loads that file via `drizzle.config.ts`.
+
+**Neon:** Dashboard → your project → **Connect** → copy the connection string. Prefer **pooled** (`-pooler` in the host) for serverless. It must look like:
+
+`postgresql://USER:PASSWORD@ep-xxx.region.aws.neon.tech/neondb?sslmode=require`
+
 Fill in:
 
 | Variable | Purpose |
@@ -50,9 +56,13 @@ Google Cloud Console → OAuth client → **Authorized redirect URI**:
 
 ### 4. Apply schema
 
+From the repo root (with `DATABASE_URL` set in `.env.local`):
+
 ```bash
 npm run db:push
 ```
+
+If you see *"Either connection url or host, database are required"*, `DATABASE_URL` is empty — fix `.env.local` and try again.
 
 Or migrations: `npm run db:generate` then `npm run db:migrate`.
 
