@@ -1,0 +1,17 @@
+{
+  "login": {
+    "title": "Sign in to continue",
+    "subtitle": "Prepare for your trip with situational lessons.",
+    "continue": "Continue",
+    "stub": "Scaffold: real Google sign-in ships in M5."
+  },
+  "destinations": {
+    "title": "Choose your destination",
+    "subtitle": "Pick a corridor to see lesson kits.",
+    "signOut": "Sign out"
+  },
+  "lessons": {
+    "back": "Destinations",
+    "comingSoon": "Lesson player coming next — list only for now."
+  }
+}

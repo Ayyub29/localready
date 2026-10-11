@@ -1,0 +1,17 @@
+{
+  "login": {
+    "title": "Masuk untuk melanjutkan",
+    "subtitle": "Persiapkan perjalanan dengan pelajaran situasi.",
+    "continue": "Lanjut",
+    "stub": "Scaffold: Google sign-in asli di M5."
+  },
+  "destinations": {
+    "title": "Pilih destinasi",
+    "subtitle": "Pilih koridor untuk melihat daftar pelajaran.",
+    "signOut": "Keluar"
+  },
+  "lessons": {
+    "back": "Destinasi",
+    "comingSoon": "Pemutar pelajaran menyusul — daftar saja untuk sekarang."
+  }
+}
