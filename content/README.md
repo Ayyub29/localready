@@ -68,13 +68,37 @@ Set `"approve": false` to insert as `pending`.
 
 **Note:** API writes to the repo `content/` folder. Use on local dev or a trusted host with a persistent disk; serverless deploys are read-only.
 
-## Starter packs (for app dev)
+## Lesson manifests (human assembly)
 
-Build **basics** + **emergency** lessons from the phrase pool (other lessons stubbed empty):
+Pools live under `content/conversations/`, `content/mini-lessons/`, `content/phrase-lists/`.  
+Lessons reference them from `content/lessons/{corridorId}/{lessonId}.json`.
+
+```bash
+# Merge hand-authored basics phrases (stable ids) into id-id pool
+npm run content:seed:basics-phrases
+
+# Compile all manifests for a corridor → runtime pack
+npm run content:compile:pack -- id-id
+
+# Or one lesson
+npm run content:compile:lesson -- id-id id-id-basics
+```
+
+Import phrases from CSV:
+
+```bash
+npm run content:import:phrases -- id-id path/to/phrases.csv
+```
+
+## Starter packs (legacy dev shortcut)
+
+Build **basics** + **emergency** from templates + phrase pool only:
 
 ```bash
 npm run content:build:starter
 ```
+
+Prefer **compile:pack** when lesson manifests exist.
 
 Output: `content/packs/{corridorId}.json` — loaded by the lesson player.
 

@@ -25,10 +25,10 @@
       "free": true,
       "vignettes": [
         {
-          "id": "id-id-basics-sample-v1",
+          "id": "id-id-basics-arrival-day",
           "title": {
             "en": "Arrival day",
-            "id": "Hari pertama tiba"
+            "id": "Hari kedatangan"
           },
           "culture": [
             {
@@ -211,6 +211,138 @@
                   "phraseId": "id-id-basics-terima-kasih"
                 }
               ]
+            }
+          ],
+          "miniLessons": [
+            {
+              "id": "id-id-numbers-pay-001",
+              "topic": "numbers",
+              "title": {
+                "en": "Numbers for paying",
+                "id": "Angka untuk bayar"
+              },
+              "body": {
+                "en": "Shop prices are often short: a number plus ribu (thousand). You are about to hear the price for your water.",
+                "id": "Harga di warung sering pendek: angka plus ribu (ribuan). Kamu akan dengar harga airmu."
+              },
+              "examples": [
+                {
+                  "id": "ex-satu",
+                  "target": "satu",
+                  "meaning": {
+                    "en": "one",
+                    "id": "satu"
+                  },
+                  "phraseId": "id-id-basics-satu"
+                },
+                {
+                  "id": "ex-dua",
+                  "target": "dua",
+                  "meaning": {
+                    "en": "two",
+                    "id": "dua"
+                  },
+                  "phraseId": "id-id-basics-dua"
+                },
+                {
+                  "id": "ex-tiga",
+                  "target": "tiga",
+                  "meaning": {
+                    "en": "three",
+                    "id": "tiga"
+                  },
+                  "phraseId": "id-id-basics-tiga"
+                },
+                {
+                  "id": "ex-lima",
+                  "target": "lima",
+                  "meaning": {
+                    "en": "five",
+                    "id": "lima"
+                  },
+                  "phraseId": "id-id-basics-lima"
+                },
+                {
+                  "id": "ex-lima-ribu",
+                  "target": "lima ribu",
+                  "meaning": {
+                    "en": "five thousand",
+                    "id": "lima ribu"
+                  },
+                  "phraseId": "id-id-basics-lima-ribu",
+                  "usageNote": {
+                    "en": "Often said as lima ribu rupiah at a warung.",
+                    "id": "Sering diucap lima ribu rupiah di warung."
+                  }
+                }
+              ],
+              "anchorConversationId": "id-id-basics-warung-001",
+              "insertAfterTurnId": "id-id-basics-warung-001-t3"
+            }
+          ],
+          "phraseLists": [
+            {
+              "id": "id-id-basics-arrival-drill-001",
+              "title": {
+                "en": "Lines from arrival day",
+                "id": "Frasa hari kedatangan"
+              },
+              "phrases": [
+                {
+                  "id": "id-id-basics-selamat-datang",
+                  "target": "Selamat datang di Jakarta!",
+                  "meaning": {
+                    "en": "Welcome to Jakarta!",
+                    "id": "Selamat datang di Jakarta!"
+                  }
+                },
+                {
+                  "id": "id-id-basics-toilet-di-mana",
+                  "target": "Permisi, toilet di mana?",
+                  "meaning": {
+                    "en": "Excuse me, where is the toilet?",
+                    "id": "Permisi, toilet di mana?"
+                  }
+                },
+                {
+                  "id": "id-id-basics-ada-air-mineral",
+                  "target": "Permisi, ada air mineral?",
+                  "meaning": {
+                    "en": "Excuse me, do you have bottled water?",
+                    "id": "Permisi, ada air mineral?"
+                  }
+                },
+                {
+                  "id": "id-id-basics-lima-ribu",
+                  "target": "Lima ribu rupiah.",
+                  "meaning": {
+                    "en": "Five thousand rupiah.",
+                    "id": "Lima ribu rupiah."
+                  }
+                },
+                {
+                  "id": "id-id-basics-terima-kasih",
+                  "target": "Terima kasih.",
+                  "meaning": {
+                    "en": "Thank you.",
+                    "id": "Terima kasih."
+                  }
+                }
+              ]
+            }
+          ],
+          "playback": [
+            {
+              "kind": "conversation",
+              "conversationId": "id-id-basics-driver-001"
+            },
+            {
+              "kind": "conversation",
+              "conversationId": "id-id-basics-warung-001"
+            },
+            {
+              "kind": "phraseList",
+              "phraseListId": "id-id-basics-arrival-drill-001"
             }
           ]
         }

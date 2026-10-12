@@ -1,7 +1,7 @@
 {
   "version": 1,
   "corridorId": "id-id",
-  "updatedAt": "2026-10-12T16:36:38.923Z",
+  "updatedAt": "2026-10-12T18:19:48.589Z",
   "items": [
     {
       "id": "id-id-pool-ccd1f1e8",
@@ -11129,6 +11129,242 @@
       ],
       "status": "pending",
       "createdAt": "2026-10-12T16:36:38.893Z"
+    },
+    {
+      "id": "id-id-basics-selamat-datang",
+      "corridorId": "id-id",
+      "target": "Selamat datang di Jakarta!",
+      "meaningEn": "Welcome to Jakarta!",
+      "meaningId": "Selamat datang di Jakarta!",
+      "source": "manual",
+      "situationHints": [
+        "basics",
+        "airport"
+      ],
+      "tags": [
+        "greeting"
+      ],
+      "status": "approved",
+      "createdAt": "2026-10-12T18:00:00.000Z"
+    },
+    {
+      "id": "id-id-basics-saya-turis",
+      "corridorId": "id-id",
+      "target": "Terima kasih. Saya turis.",
+      "meaningEn": "Thank you. I'm a tourist.",
+      "meaningId": "Terima kasih. Saya turis.",
+      "source": "manual",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [],
+      "status": "approved",
+      "createdAt": "2026-10-12T18:00:00.000Z"
+    },
+    {
+      "id": "id-id-basics-silakan-masuk",
+      "corridorId": "id-id",
+      "target": "Silakan masuk.",
+      "meaningEn": "Please get in (the car).",
+      "meaningId": "Silakan masuk (mobil).",
+      "source": "manual",
+      "situationHints": [
+        "basics",
+        "airport"
+      ],
+      "tags": [],
+      "status": "approved",
+      "createdAt": "2026-10-12T18:00:00.000Z"
+    },
+    {
+      "id": "id-id-basics-toilet-di-mana",
+      "corridorId": "id-id",
+      "target": "Permisi, toilet di mana?",
+      "meaningEn": "Excuse me, where is the toilet?",
+      "meaningId": "Permisi, toilet di mana?",
+      "source": "manual",
+      "situationHints": [
+        "basics",
+        "airport"
+      ],
+      "tags": [],
+      "status": "approved",
+      "createdAt": "2026-10-12T18:00:00.000Z"
+    },
+    {
+      "id": "id-id-basics-di-sebelah-kiri",
+      "corridorId": "id-id",
+      "target": "Di sebelah kiri, dekat kafe.",
+      "meaningEn": "On the left, near the café.",
+      "meaningId": "Di sebelah kiri, dekat kafe.",
+      "source": "manual",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [],
+      "status": "approved",
+      "createdAt": "2026-10-12T18:00:00.000Z"
+    },
+    {
+      "id": "id-id-basics-ada-air-mineral",
+      "corridorId": "id-id",
+      "target": "Permisi, ada air mineral?",
+      "meaningEn": "Excuse me, do you have bottled water?",
+      "meaningId": "Permisi, ada air mineral?",
+      "source": "manual",
+      "situationHints": [
+        "basics",
+        "restaurant"
+      ],
+      "tags": [
+        "warung"
+      ],
+      "status": "approved",
+      "createdAt": "2026-10-12T18:00:00.000Z"
+    },
+    {
+      "id": "id-id-basics-mau-dingin",
+      "corridorId": "id-id",
+      "target": "Ada. Mau yang dingin?",
+      "meaningEn": "Yes. Do you want it cold?",
+      "meaningId": "Ada. Mau yang dingin?",
+      "source": "manual",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [],
+      "status": "approved",
+      "createdAt": "2026-10-12T18:00:00.000Z"
+    },
+    {
+      "id": "id-id-basics-satu-botol",
+      "corridorId": "id-id",
+      "target": "Yang dingin, satu botol.",
+      "meaningEn": "Cold, one bottle please.",
+      "meaningId": "Yang dingin, satu botol.",
+      "source": "manual",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [],
+      "status": "approved",
+      "createdAt": "2026-10-12T18:00:00.000Z"
+    },
+    {
+      "id": "id-id-basics-lima-ribu",
+      "corridorId": "id-id",
+      "target": "Lima ribu rupiah.",
+      "meaningEn": "Five thousand rupiah.",
+      "meaningId": "Lima ribu rupiah.",
+      "source": "manual",
+      "situationHints": [
+        "basics",
+        "money"
+      ],
+      "tags": [
+        "numbers"
+      ],
+      "status": "approved",
+      "createdAt": "2026-10-12T18:00:00.000Z"
+    },
+    {
+      "id": "id-id-basics-terima-kasih",
+      "corridorId": "id-id",
+      "target": "Terima kasih.",
+      "meaningEn": "Thank you.",
+      "meaningId": "Terima kasih.",
+      "source": "manual",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [],
+      "status": "approved",
+      "createdAt": "2026-10-12T18:00:00.000Z"
+    },
+    {
+      "id": "id-id-basics-satu",
+      "corridorId": "id-id",
+      "target": "satu",
+      "meaningEn": "one",
+      "meaningId": "satu",
+      "source": "manual",
+      "situationHints": [
+        "basics",
+        "money"
+      ],
+      "tags": [
+        "numbers"
+      ],
+      "status": "approved",
+      "createdAt": "2026-10-12T18:00:00.000Z"
+    },
+    {
+      "id": "id-id-basics-dua",
+      "corridorId": "id-id",
+      "target": "dua",
+      "meaningEn": "two",
+      "meaningId": "dua",
+      "source": "manual",
+      "situationHints": [
+        "basics",
+        "money"
+      ],
+      "tags": [
+        "numbers"
+      ],
+      "status": "approved",
+      "createdAt": "2026-10-12T18:00:00.000Z"
+    },
+    {
+      "id": "id-id-basics-tiga",
+      "corridorId": "id-id",
+      "target": "tiga",
+      "meaningEn": "three",
+      "meaningId": "tiga",
+      "source": "manual",
+      "situationHints": [
+        "basics",
+        "money"
+      ],
+      "tags": [
+        "numbers"
+      ],
+      "status": "approved",
+      "createdAt": "2026-10-12T18:00:00.000Z"
+    },
+    {
+      "id": "id-id-basics-empat",
+      "corridorId": "id-id",
+      "target": "empat",
+      "meaningEn": "four",
+      "meaningId": "empat",
+      "source": "manual",
+      "situationHints": [
+        "basics",
+        "money"
+      ],
+      "tags": [
+        "numbers"
+      ],
+      "status": "approved",
+      "createdAt": "2026-10-12T18:00:00.000Z"
+    },
+    {
+      "id": "id-id-basics-lima",
+      "corridorId": "id-id",
+      "target": "lima",
+      "meaningEn": "five",
+      "meaningId": "lima",
+      "source": "manual",
+      "situationHints": [
+        "basics",
+        "money"
+      ],
+      "tags": [
+        "numbers"
+      ],
+      "status": "approved",
+      "createdAt": "2026-10-12T18:00:00.000Z"
     }
   ]
 }

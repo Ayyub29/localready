@@ -6,6 +6,8 @@ import type { CorridorId, LocalizedString, SituationKey } from "./types";
 export type LessonUnitType =
   | "culture"
   | "conversation"
+  | "miniLesson"
+  | "phraseList"
   | "scenario"
   | "phrases"
   | "quiz"
@@ -74,6 +76,40 @@ export type VignetteConversation = {
   turns: ConversationTurn[];
 };
 
+export type MiniLessonExample = {
+  id: string;
+  target: string;
+  romanization?: string;
+  meaning: LocalizedString;
+  phraseId?: string;
+  usageNote?: LocalizedString;
+};
+
+/** Short teachable bite compiled from content/mini-lessons/. */
+export type MiniLesson = {
+  id: string;
+  topic?: string;
+  title: LocalizedString;
+  body: LocalizedString;
+  examples: MiniLessonExample[];
+  /** Play after this turn inside `anchorConversationId`. */
+  anchorConversationId?: string;
+  insertAfterTurnId?: string;
+};
+
+/** Resolved phrase list for the player (from content/phrase-lists/). */
+export type VignettePhraseList = {
+  id: string;
+  title: LocalizedString;
+  phrases: Phrase[];
+};
+
+/** Compiled vignette playback order (from lesson manifest sequence). */
+export type VignettePlaybackItem =
+  | { kind: "conversation"; conversationId: string }
+  | { kind: "miniLesson"; miniLessonId: string }
+  | { kind: "phraseList"; phraseListId: string };
+
 /** Lesson 0 — writing system + essential words (non-Latin corridors). */
 export type ScriptBlock =
   | {
@@ -106,6 +142,10 @@ export type LessonVignette = {
   culture?: CultureCard[];
   /** One or more dialogues in this micro-situation. */
   conversations: VignetteConversation[];
+  miniLessons?: MiniLesson[];
+  phraseLists?: VignettePhraseList[];
+  /** Top-level unit order between conversations and phrase lists. */
+  playback?: VignettePlaybackItem[];
   /** Legacy packs only — prefer `conversations`. */
   scenario?: LocalizedString;
   phrases?: Phrase[];

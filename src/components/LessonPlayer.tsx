@@ -23,6 +23,9 @@ function stepLabel(
     culture: { en: "Culture", id: "Budaya" },
     conversationDescription: { en: "Scene", id: "Adegan" },
     conversationTurn: { en: "Conversation", id: "Percakapan" },
+    miniLessonIntro: { en: "Mini lesson", id: "Pelajaran singkat" },
+    miniLessonExample: { en: "Word", id: "Kata" },
+    phraseListPhrase: { en: "Phrase review", id: "Ulang frasa" },
     scenario: { en: "Scenario", id: "Situasi" },
     phrase: { en: "Phrase", id: "Frasa" },
   };
@@ -139,6 +142,80 @@ export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
             </p>
           </section>
         )}
+
+        {step.type === "miniLessonIntro" &&
+          vignette.miniLessons?.[step.miniLessonIndex] && (
+            <section className="rounded-xl border border-violet-200 bg-violet-50/80 p-5 space-y-3">
+              <h2 className="text-lg font-semibold text-violet-950">
+                {pickLocalized(vignette.miniLessons[step.miniLessonIndex].title, locale)}
+              </h2>
+              <p className="text-sm leading-relaxed text-violet-950/90">
+                {pickLocalized(vignette.miniLessons[step.miniLessonIndex].body, locale)}
+              </p>
+            </section>
+          )}
+
+        {step.type === "miniLessonExample" &&
+          vignette.miniLessons?.[step.miniLessonIndex]?.examples[step.exampleIndex] && (
+            <section className="rounded-xl border border-border bg-card px-5 py-6 text-center">
+              <p className="text-3xl font-semibold leading-snug tracking-tight">
+                {
+                  vignette.miniLessons[step.miniLessonIndex].examples[step.exampleIndex]
+                    .target
+                }
+              </p>
+              {vignette.miniLessons[step.miniLessonIndex].examples[step.exampleIndex]
+                .romanization && (
+                <p className="mt-2 text-lg text-teal-800">
+                  {
+                    vignette.miniLessons[step.miniLessonIndex].examples[step.exampleIndex]
+                      .romanization
+                  }
+                </p>
+              )}
+              <p className="mt-4 text-base text-slate-700">
+                {pickLocalized(
+                  vignette.miniLessons[step.miniLessonIndex].examples[step.exampleIndex]
+                    .meaning,
+                  locale,
+                )}
+              </p>
+            </section>
+          )}
+
+        {step.type === "phraseListPhrase" &&
+          vignette.phraseLists?.[step.phraseListIndex]?.phrases[step.phraseIndex] && (
+            <section className="rounded-xl border border-border bg-card px-5 py-6 text-center space-y-2">
+              <p className="text-xs font-medium uppercase tracking-wide text-slate-500">
+                {pickLocalized(
+                  vignette.phraseLists[step.phraseListIndex].title,
+                  locale,
+                )}
+              </p>
+              <p className="text-3xl font-semibold leading-snug tracking-tight">
+                {
+                  vignette.phraseLists[step.phraseListIndex].phrases[step.phraseIndex]
+                    .target
+                }
+              </p>
+              {vignette.phraseLists[step.phraseListIndex].phrases[step.phraseIndex]
+                .romanization && (
+                <p className="mt-2 text-lg text-teal-800">
+                  {
+                    vignette.phraseLists[step.phraseListIndex].phrases[step.phraseIndex]
+                      .romanization
+                  }
+                </p>
+              )}
+              <p className="mt-4 text-base text-slate-700">
+                {pickLocalized(
+                  vignette.phraseLists[step.phraseListIndex].phrases[step.phraseIndex]
+                    .meaning,
+                  locale,
+                )}
+              </p>
+            </section>
+          )}
 
         {step.type === "phrase" && vignette.phrases?.[step.phraseIndex] && (
           <section className="rounded-xl border border-border bg-card px-5 py-6 text-center">
