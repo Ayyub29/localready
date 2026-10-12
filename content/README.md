@@ -1,8 +1,8 @@
 # LocalReady content pipeline
 
-Phrase pool → human filter → **master dialogue (EN)** → translate per corridor → corridor pack JSON.
+**Conversations first** → store → extract phrases (+ Wikivoyage pool) → compile runtime pack.
 
-Conversational authoring (MultiWOZ-style structure): see **[CONVERSATION.md](./CONVERSATION.md)**.
+See **[PIPELINE.md](./PIPELINE.md)** (four steps + lesson 0). Runtime shape: **[CONVERSATION.md](./CONVERSATION.md)**.
 
 ## Phrase pool file
 

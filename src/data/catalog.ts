@@ -1,4 +1,5 @@
 import type { CorridorId, LocalizedString, SituationKey } from "@/lib/types";
+import { situationOrder } from "@/lib/situations";
 
 export type Destination = {
   id: CorridorId;
@@ -15,6 +16,10 @@ export type LessonListItem = {
 };
 
 const lessonTitles: Record<SituationKey, LocalizedString> = {
+  script: {
+    en: "Letters & first words",
+    id: "Huruf & kata penting",
+  },
   basics: { en: "First hour & greetings", id: "Jam pertama & sapaan" },
   train: { en: "Transit & tickets", id: "Transportasi & tiket" },
   money: { en: "Paying & convenience stores", id: "Bayar & minimarket" },
@@ -24,17 +29,6 @@ const lessonTitles: Record<SituationKey, LocalizedString> = {
   culture: { en: "Etiquette & temples", id: "Etiket & tempat suci" },
   emergency: { en: "Help, health & allergies", id: "Bantuan, kesehatan & alergi" },
 };
-
-const situationOrder: SituationKey[] = [
-  "basics",
-  "train",
-  "money",
-  "restaurant",
-  "hotel",
-  "directions",
-  "culture",
-  "emergency",
-];
 
 export const destinations: Destination[] = [
   {
@@ -73,7 +67,7 @@ export function getLessons(corridorId: CorridorId): LessonListItem[] {
     id: `${corridorId}-${situation}`,
     corridorId,
     situation,
-    order: index + 1,
+    order: situation === "script" ? 0 : index,
     title: lessonTitles[situation],
   }));
 }

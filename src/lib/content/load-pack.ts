@@ -28,6 +28,9 @@ export async function loadLesson(
 }
 
 export function lessonHasContent(lesson: LessonContent): boolean {
+  if (lesson.situation === "script") {
+    return (lesson.scriptBlocks?.length ?? 0) > 0;
+  }
   return lesson.vignettes.some((v) =>
     (v.conversations?.some((c) => c.turns.length > 0) ?? false) ||
     (v.phrases?.length ?? 0) > 0,

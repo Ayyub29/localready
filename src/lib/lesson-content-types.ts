@@ -68,6 +68,32 @@ export type VignetteConversation = {
   turns: ConversationTurn[];
 };
 
+/** Lesson 0 — writing system + essential words (non-Latin corridors). */
+export type ScriptBlock =
+  | {
+      type: "intro";
+      id: string;
+      title: LocalizedString;
+      body: LocalizedString;
+    }
+  | {
+      type: "script_row";
+      id: string;
+      title: LocalizedString;
+      rows: {
+        symbol: string;
+        romanization?: string;
+        meaning: LocalizedString;
+      }[];
+    }
+  | {
+      type: "essential_word";
+      id: string;
+      target: string;
+      romanization?: string;
+      meaning: LocalizedString;
+    };
+
 export type LessonVignette = {
   id: string;
   title: LocalizedString;
@@ -88,6 +114,8 @@ export type LessonContent = {
   title: LocalizedString;
   free: boolean;
   vignettes: LessonVignette[];
+  /** Present when `situation === "script"`. */
+  scriptBlocks?: ScriptBlock[];
   unitOrder?: LessonUnitType[];
 };
 

@@ -2,6 +2,19 @@
   "corridorId": "vi-vn",
   "lessons": [
     {
+      "id": "vi-vn-script",
+      "corridorId": "vi-vn",
+      "situation": "script",
+      "order": 0,
+      "title": {
+        "en": "Letters & first words",
+        "id": "Huruf & kata penting"
+      },
+      "free": true,
+      "vignettes": [],
+      "scriptBlocks": []
+    },
+    {
       "id": "vi-vn-basics",
       "corridorId": "vi-vn",
       "situation": "basics",

@@ -2,6 +2,19 @@
   "corridorId": "th-th",
   "lessons": [
     {
+      "id": "th-th-script",
+      "corridorId": "th-th",
+      "situation": "script",
+      "order": 0,
+      "title": {
+        "en": "Letters & first words",
+        "id": "Huruf & kata penting"
+      },
+      "free": true,
+      "vignettes": [],
+      "scriptBlocks": []
+    },
+    {
       "id": "th-th-basics",
       "corridorId": "th-th",
       "situation": "basics",

@@ -19,6 +19,7 @@ import {
 const CORRIDORS: CorridorId[] = ["ja-jp", "ko-kr", "th-th", "vi-vn", "id-id"];
 
 const LESSON_TITLES: Record<SituationKey, { en: string; id: string }> = {
+  script: { en: "Letters & first words", id: "Huruf & kata penting" },
   basics: { en: "First hour & greetings", id: "Jam pertama & sapaan" },
   train: { en: "Transit & tickets", id: "Transportasi & tiket" },
   money: { en: "Paying & convenience stores", id: "Bayar & minimarket" },
@@ -217,6 +218,20 @@ function buildEmergencyLesson(
   };
 }
 
+function stubScriptLesson(corridorId: CorridorId, order: number): LessonContent {
+  const hasNonLatinScript = corridorId !== "id-id";
+  return {
+    id: `${corridorId}-script`,
+    corridorId,
+    situation: "script",
+    order,
+    title: LESSON_TITLES.script,
+    free: true,
+    vignettes: [],
+    scriptBlocks: hasNonLatinScript ? [] : undefined,
+  };
+}
+
 function stubLesson(
   corridorId: CorridorId,
   situation: SituationKey,
@@ -228,7 +243,7 @@ function stubLesson(
     situation,
     order,
     title: LESSON_TITLES[situation],
-    free: situation === "basics",
+    free: situation === "basics" || situation === "script",
     vignettes: [],
   };
 }
@@ -247,9 +262,12 @@ async function buildPack(corridorId: CorridorId): Promise<CorridorContentPack> {
   );
 
   const lessons: LessonContent[] = situationOrder.map((situation, idx) => {
-    if (situation === "basics") return basics;
-    if (situation === "emergency") return emergency;
-    return stubLesson(corridorId, situation, idx + 1);
+    if (situation === "script") {
+      return stubScriptLesson(corridorId, 0);
+    }
+    if (situation === "basics") return { ...basics, order: idx };
+    if (situation === "emergency") return { ...emergency, order: idx };
+    return stubLesson(corridorId, situation, idx);
   });
 
   const emergencyPhrases = phrasesFromLesson(emergency).slice(0, 12);

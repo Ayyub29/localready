@@ -3,6 +3,7 @@ export type Locale = "en" | "id";
 export type CorridorId = "ja-jp" | "ko-kr" | "th-th" | "vi-vn" | "id-id";
 
 export type SituationKey =
+  | "script"
   | "basics"
   | "train"
   | "money"

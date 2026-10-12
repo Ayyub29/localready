@@ -14,6 +14,7 @@
     "content:seed:wv": "tsx scripts/content/wv-seed.ts",
     "content:seed:ai": "tsx scripts/content/ai-seed-phrases.ts",
     "content:build:starter": "tsx scripts/content/build-starter-packs.ts",
+    "content:extract:phrases": "tsx scripts/content/extract-phrases-from-conversations.ts",
     "content:validate:dialogue": "tsx scripts/content/validate-dialogue-master.ts"
   },
   "dependencies": {

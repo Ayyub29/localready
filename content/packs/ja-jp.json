@@ -2,6 +2,19 @@
   "corridorId": "ja-jp",
   "lessons": [
     {
+      "id": "ja-jp-script",
+      "corridorId": "ja-jp",
+      "situation": "script",
+      "order": 0,
+      "title": {
+        "en": "Letters & first words",
+        "id": "Huruf & kata penting"
+      },
+      "free": true,
+      "vignettes": [],
+      "scriptBlocks": []
+    },
+    {
       "id": "ja-jp-basics",
       "corridorId": "ja-jp",
       "situation": "basics",

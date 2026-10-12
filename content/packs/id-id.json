@@ -2,6 +2,18 @@
   "corridorId": "id-id",
   "lessons": [
     {
+      "id": "id-id-script",
+      "corridorId": "id-id",
+      "situation": "script",
+      "order": 0,
+      "title": {
+        "en": "Letters & first words",
+        "id": "Huruf & kata penting"
+      },
+      "free": true,
+      "vignettes": []
+    },
+    {
       "id": "id-id-basics",
       "corridorId": "id-id",
       "situation": "basics",
