@@ -39,7 +39,7 @@ async function loadStoredConversations(corridorId: CorridorId): Promise<StoredCo
     const files = await readdir(dir);
     const out: StoredConversation[] = [];
     for (const file of files) {
-      if (!file.endsWith(".json")) continue;
+      if (!file.endsWith(".json") || file.startsWith("_")) continue;
       const raw = await readFile(path.join(dir, file), "utf8");
       out.push(JSON.parse(raw) as StoredConversation);
     }

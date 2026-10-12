@@ -25,227 +25,190 @@
       "free": true,
       "vignettes": [
         {
-          "id": "id-id-basics-first-hour",
+          "id": "id-id-basics-sample-v1",
           "title": {
-            "en": "Hotel & shop",
-            "id": "Hotel & toko"
+            "en": "Arrival day",
+            "id": "Hari pertama tiba"
           },
           "culture": [
             {
-              "id": "id-id-basics-culture-polite",
+              "id": "id-id-basics-culture-smile",
               "title": {
-                "en": "Politeness first",
-                "id": "Sopan dulu"
+                "en": "Smile first",
+                "id": "Senyum dulu"
               },
               "body": {
-                "en": "Short polite phrases matter more than perfect grammar when traveling.",
-                "id": "Frasa sopan yang singkat lebih penting daripada grammar sempurna saat jalan-jalan."
+                "en": "A friendly tone and a smile go a long way in shops and with drivers.",
+                "id": "Nada ramah dan senyum sangat membantu di warung dan dengan supir."
               }
             }
           ],
           "conversations": [
             {
-              "id": "id-id-basics-conv-greetings",
+              "id": "id-id-basics-driver-001",
               "situation": "basics",
               "title": {
-                "en": "Say hello at the desk",
-                "id": "Sapaan di meja resepsionis"
+                "en": "Meet your driver",
+                "id": "Bertemu supir"
               },
               "description": {
-                "en": "You walk up to the hotel front desk. The staff member looks up and smiles.",
-                "id": "Kamu mendekati resepsionis hotel. Staf melihatmu dan tersenyum."
+                "en": "You step outside arrivals at Jakarta airport. Your driver holds a sign with your name.",
+                "id": "Kamu keluar dari area kedatangan bandara Jakarta. Supirmu memegang papan nama kamu."
               },
               "turns": [
                 {
-                  "id": "id-id-basics-conv-greetings-t1",
+                  "id": "id-id-basics-driver-001-t1",
                   "role": "local",
                   "label": {
-                    "en": "Staff",
-                    "id": "Staf"
+                    "en": "Driver",
+                    "id": "Supir"
                   },
-                  "target": "Halo.",
-                  "romanization": "HAH-loh",
+                  "target": "Selamat datang di Jakarta!",
                   "line": {
-                    "en": "Hello.",
-                    "id": "Hello."
+                    "en": "Welcome to Jakarta!",
+                    "id": "Selamat datang di Jakarta!"
                   },
-                  "phraseId": "id-id-basics-hello-0"
+                  "phraseId": "id-id-basics-selamat-datang"
                 },
                 {
-                  "id": "id-id-basics-conv-greetings-t2",
+                  "id": "id-id-basics-driver-001-t2",
                   "role": "traveler",
                   "label": {
                     "en": "You",
                     "id": "Kamu"
                   },
-                  "target": "Halo.",
-                  "romanization": "HAH-loh",
+                  "target": "Terima kasih. Saya turis.",
                   "line": {
-                    "en": "Hello.",
-                    "id": "Hello."
+                    "en": "Thank you. I'm a tourist.",
+                    "id": "Terima kasih. Saya turis."
                   },
-                  "phraseId": "id-id-basics-hello-0"
+                  "phraseId": "id-id-basics-saya-turis"
                 },
                 {
-                  "id": "id-id-basics-conv-greetings-t3",
+                  "id": "id-id-basics-driver-001-t3",
                   "role": "local",
                   "label": {
-                    "en": "Staff",
-                    "id": "Staf"
+                    "en": "Driver",
+                    "id": "Supir"
                   },
-                  "target": "Hai.",
-                  "romanization": "high",
+                  "target": "Silakan masuk.",
                   "line": {
-                    "en": "Hello. (informal)",
-                    "id": "Hello. (informal)"
+                    "en": "Please get in (the car).",
+                    "id": "Silakan masuk (mobil)."
                   },
-                  "phraseId": "id-id-basics-hello-informal-1"
+                  "phraseId": "id-id-basics-silakan-masuk"
                 },
                 {
-                  "id": "id-id-basics-conv-greetings-t4",
+                  "id": "id-id-basics-driver-001-t4",
                   "role": "traveler",
                   "label": {
                     "en": "You",
                     "id": "Kamu"
                   },
-                  "target": "Assalamu 'alaikum",
-                  "romanization": "ah-sah-LAH-mu ah-LEH-koom",
+                  "target": "Permisi, toilet di mana?",
                   "line": {
-                    "en": "Hello. (\"Muslim\")",
-                    "id": "Hello. (\"Muslim\")"
+                    "en": "Excuse me, where is the toilet?",
+                    "id": "Permisi, toilet di mana?"
                   },
-                  "phraseId": "id-id-basics-hello-muslim-2"
+                  "phraseId": "id-id-basics-toilet-di-mana"
                 },
                 {
-                  "id": "id-id-basics-conv-greetings-t5",
+                  "id": "id-id-basics-driver-001-t5",
                   "role": "local",
                   "label": {
-                    "en": "Staff",
-                    "id": "Staf"
+                    "en": "Driver",
+                    "id": "Supir"
                   },
-                  "target": "Apa kabar?",
-                  "romanization": "AH-pah KAH-bar?",
+                  "target": "Di sebelah kiri, dekat kafe.",
                   "line": {
-                    "en": "How are you?",
-                    "id": "How are you?"
+                    "en": "On the left, near the café.",
+                    "id": "Di sebelah kiri, dekat kafe."
                   },
-                  "phraseId": "id-id-basics-how-are-you-3"
-                },
-                {
-                  "id": "id-id-basics-conv-greetings-t6",
-                  "role": "traveler",
-                  "label": {
-                    "en": "You",
-                    "id": "Kamu"
-                  },
-                  "target": "Siapa nama?",
-                  "romanization": "see-AH-pah NAH-mah?",
-                  "line": {
-                    "en": "What is your name?",
-                    "id": "What is your name?"
-                  },
-                  "phraseId": "id-id-basics-what-is-your-name-4"
+                  "phraseId": "id-id-basics-di-sebelah-kiri"
                 }
               ]
             },
             {
-              "id": "id-id-basics-conv-polite",
+              "id": "id-id-basics-warung-001",
               "situation": "basics",
               "title": {
-                "en": "Get attention in a shop",
-                "id": "Minta perhatian di toko"
+                "en": "Buy water at a warung",
+                "id": "Beli air di warung"
               },
               "description": {
-                "en": "The shop is crowded. You gently get the clerk's attention.",
-                "id": "Toko sedang ramai. Kamu dengan sopan menarik perhatian pegawai."
+                "en": "You stop at a small roadside warung to buy water before checking in to your hotel.",
+                "id": "Kamu berhenti di warung kecil untuk beli air sebelum check-in hotel."
               },
               "turns": [
                 {
-                  "id": "id-id-basics-conv-polite-t1",
+                  "id": "id-id-basics-warung-001-t1",
                   "role": "traveler",
                   "label": {
                     "en": "You",
                     "id": "Kamu"
                   },
-                  "target": "Silakan.",
-                  "romanization": "SIH-lah-kahn",
+                  "target": "Permisi, ada air mineral?",
                   "line": {
-                    "en": "Please. (inviting someone to do something)",
-                    "id": "Please. (inviting someone to do something)"
+                    "en": "Excuse me, do you have bottled water?",
+                    "id": "Permisi, ada air mineral?"
                   },
-                  "phraseId": "id-id-basics-please-inviting-someone-to-do-something-10"
+                  "phraseId": "id-id-basics-ada-air-mineral"
                 },
                 {
-                  "id": "id-id-basics-conv-polite-t2",
+                  "id": "id-id-basics-warung-001-t2",
                   "role": "local",
                   "label": {
-                    "en": "Staff",
-                    "id": "Staf"
+                    "en": "Shopkeeper",
+                    "id": "Penjual"
                   },
+                  "target": "Ada. Mau yang dingin?",
                   "line": {
-                    "en": "Yes? How can I help?",
-                    "id": "Ya? Ada yang bisa dibantu?"
-                  }
+                    "en": "Yes. Do you want it cold?",
+                    "id": "Ada. Mau yang dingin?"
+                  },
+                  "phraseId": "id-id-basics-mau-dingin"
                 },
                 {
-                  "id": "id-id-basics-conv-polite-t3",
+                  "id": "id-id-basics-warung-001-t3",
                   "role": "traveler",
                   "label": {
                     "en": "You",
                     "id": "Kamu"
                   },
-                  "target": "Tolong",
-                  "romanization": "TO-long",
+                  "target": "Yang dingin, satu botol.",
                   "line": {
-                    "en": "Please. (asking for help with an action or service)",
-                    "id": "Please. (asking for help with an action or service)"
+                    "en": "Cold, one bottle please.",
+                    "id": "Yang dingin, satu botol."
                   },
-                  "phraseId": "id-id-basics-please-asking-for-help-with-an-action-or-11"
+                  "phraseId": "id-id-basics-satu-botol"
                 },
                 {
-                  "id": "id-id-basics-conv-polite-t4",
-                  "role": "traveler",
+                  "id": "id-id-basics-warung-001-t4",
+                  "role": "local",
                   "label": {
-                    "en": "You",
-                    "id": "Kamu"
+                    "en": "Shopkeeper",
+                    "id": "Penjual"
                   },
-                  "target": "Minta",
-                  "romanization": "MIN-tah",
+                  "target": "Lima ribu rupiah.",
                   "line": {
-                    "en": "Please. (asking to be given something)",
-                    "id": "Please. (asking to be given something)"
+                    "en": "Five thousand rupiah.",
+                    "id": "Lima ribu rupiah."
                   },
-                  "phraseId": "id-id-basics-please-asking-to-be-given-something-12"
+                  "phraseId": "id-id-basics-lima-ribu"
                 },
                 {
-                  "id": "id-id-basics-conv-polite-t5",
+                  "id": "id-id-basics-warung-001-t5",
                   "role": "traveler",
                   "label": {
                     "en": "You",
                     "id": "Kamu"
                   },
                   "target": "Terima kasih.",
-                  "romanization": "tuh-REE-mah KAH-see",
                   "line": {
                     "en": "Thank you.",
-                    "id": "Thank you."
+                    "id": "Terima kasih."
                   },
-                  "phraseId": "id-id-basics-thank-you-13"
-                },
-                {
-                  "id": "id-id-basics-conv-polite-t6",
-                  "role": "traveler",
-                  "label": {
-                    "en": "You",
-                    "id": "Kamu"
-                  },
-                  "target": "Ya",
-                  "romanization": "yah",
-                  "line": {
-                    "en": "Yes.",
-                    "id": "Yes."
-                  },
-                  "phraseId": "id-id-basics-yes-14"
+                  "phraseId": "id-id-basics-terima-kasih"
                 }
               ]
             }
