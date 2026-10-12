@@ -97,10 +97,10 @@ Each **lesson** maps to one **situation key** on the curriculum (e.g. `basics`, 
 
 ### 4.0 Default unit order (configurable per lesson)
 
-`culture` → `scenario` → `phrases` → `quiz` (optional later: `flashcards`, `pronunciation`, `complete`).
+Per vignette: `culture` (optional) → `scenario` → `phrases` → `quiz` (optional later: `flashcards`, `pronunciation`, `complete`).
 
-- **Culture** — shown **once** at the start of the lesson (etiquette / context).
-- **Per vignette** — repeat `scenario` → `phrases` → `quiz` for each micro-situation (e.g. at the airport: luggage, taxi, train to city).
+- **Culture** — **per vignette**, not lesson-wide. Omit or set `culture: []` to skip the culture step for that vignette.
+- **Per vignette** — repeat the unit order for each micro-situation (e.g. at the airport: luggage with etiquette, taxi without culture, train to city).
 
 Types: `src/lib/lesson-content-types.ts`. Example pack: `src/content/examples/ja-jp-basics.airport.ts`.
 
@@ -109,6 +109,7 @@ Types: `src/lib/lesson-content-types.ts`. Example pack: `src/content/examples/ja
 | Field | Purpose |
 |-------|---------|
 | `title` | Short label (id + en) |
+| `culture` | Optional etiquette / context cards for this vignette only |
 | `scenario` | What is happening |
 | `phrases` | Phrase list for this vignette only |
 | `quiz` | 1+ questions tied to those phrases |

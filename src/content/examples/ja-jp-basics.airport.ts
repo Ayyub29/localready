@@ -1,6 +1,6 @@
 /**
  * Example lesson: one situation (`basics`), multiple airport vignettes.
- * Flow: culture once → per vignette: scenario → phrases → quiz.
+ * Flow per vignette: optional culture → scenario → phrases → quiz.
  *
  * Learner UI language: Indonesian (`id`) + English (`en`) in meanings.
  */
@@ -20,31 +20,6 @@ export const jaJpBasicsAirportLesson: LessonContent = {
   },
   free: true,
   unitOrder: defaultLessonUnitOrder,
-  culture: [
-    {
-      id: `${corridorId}-basics-culture-1`,
-      title: {
-        id: "Sopan dulu, grammar belakangan",
-        en: "Politeness first, grammar second",
-      },
-      body: {
-        id: "Di bandara Jepang, nada halus dan sedikit membungkuk lebih penting daripada kalimat sempurna. Mulai dengan permisi dan terima kasih.",
-        en: "At Japanese airports, a polite tone and a small bow matter more than perfect grammar. Lead with excuse me and thank you.",
-      },
-      do: [
-        {
-          id: "Ucapkan sumimasen sebelum bertanya",
-          en: "Say sumimasen before asking something",
-        },
-      ],
-      avoid: [
-        {
-          id: "Berbicara terlalu keras di loket",
-          en: "Speaking loudly at counters",
-        },
-      ],
-    },
-  ],
   vignettes: [
     {
       id: `${corridorId}-basics-v-luggage`,
@@ -52,6 +27,31 @@ export const jaJpBasicsAirportLesson: LessonContent = {
         id: "Bagasi hilang / tertinggal",
         en: "Lost or missing luggage",
       },
+      culture: [
+        {
+          id: `${corridorId}-basics-culture-1`,
+          title: {
+            id: "Sopan dulu, grammar belakangan",
+            en: "Politeness first, grammar second",
+          },
+          body: {
+            id: "Di bandara Jepang, nada halus dan sedikit membungkuk lebih penting daripada kalimat sempurna. Mulai dengan permisi dan terima kasih.",
+            en: "At Japanese airports, a polite tone and a small bow matter more than perfect grammar. Lead with excuse me and thank you.",
+          },
+          do: [
+            {
+              id: "Ucapkan sumimasen sebelum bertanya",
+              en: "Say sumimasen before asking something",
+            },
+          ],
+          avoid: [
+            {
+              id: "Berbicara terlalu keras di loket",
+              en: "Speaking loudly at counters",
+            },
+          ],
+        },
+      ],
       scenario: {
         id: "Koper kamu tidak muncul di carousel. Kamu ke meja informasi bagasi.",
         en: "Your bag never shows on the carousel. You go to the baggage service desk.",

@@ -1,6 +1,9 @@
 import type { CorridorId, LocalizedString, SituationKey } from "./types";
 
-/** Configurable player steps. Default product flow: culture → scenario → phrases → quiz. */
+/**
+ * Configurable player steps. Default product flow per vignette:
+ * culture (optional) → scenario → phrases → quiz.
+ */
 export type LessonUnitType =
   | "culture"
   | "scenario"
@@ -46,11 +49,14 @@ export type QuizQuestion =
 
 /**
  * One micro-situation inside a lesson (e.g. luggage, taxi, train to city at the airport).
- * Player runs scenario → phrases → quiz per vignette (after optional lesson-level culture).
+ * Player runs optional culture, then scenario → phrases → quiz for each vignette.
+ * Omit `culture` or use `culture: []` to skip the culture step for that vignette.
  */
 export type LessonVignette = {
   id: string;
   title: LocalizedString;
+  /** Etiquette / context for this vignette only. Optional — empty or omitted skips culture. */
+  culture?: CultureCard[];
   scenario: LocalizedString;
   phrases: Phrase[];
   quiz: QuizQuestion[];
@@ -63,13 +69,11 @@ export type LessonContent = {
   order: number;
   title: LocalizedString;
   free: boolean;
-  /** Top-of-lesson etiquette / context (shown once). */
-  culture: CultureCard[];
   /** Ordered micro-scenarios inside this lesson. */
   vignettes: LessonVignette[];
   /**
-   * High-level step order. For multi-vignette lessons, `scenario` / `phrases` / `quiz`
-   * repeat once per vignette after `culture`.
+   * Step order for each vignette. `culture` is skipped when that vignette has no culture cards.
+   * `scenario` / `phrases` / `quiz` repeat once per vignette.
    */
   unitOrder: LessonUnitType[];
 };
