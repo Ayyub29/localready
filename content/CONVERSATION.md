@@ -15,6 +15,9 @@ CorridorContentPack
         title?            # short label (en + id)
         description       # what is happening in this scene (en + id)
         turns[]           # chat lines (local / traveler / narrator rare)
+      miniLessons?[]      # short bites; may anchor after a turn id
+      phraseLists?[]      # ordered phrase review cards
+      playback?[]         # unit order: conversation | miniLesson | phraseList
       conversations[].turns[]
         role: narrator | local | traveler
         target?, romanization?, line (gloss), phraseId?
@@ -26,7 +29,10 @@ CorridorContentPack
 ## Player order (per vignette)
 
 1. Each **culture** card (if any)  
-2. For each **conversation**: **description** → **turn** → **turn** → …  
+2. Walk **playback** (or legacy: each **conversation** in array order):  
+   - **conversation**: **description** → **turn** → … (insert **mini lesson** after anchored turn)  
+   - **miniLesson** (standalone): intro → examples  
+   - **phraseList**: one step per phrase  
 3. Next vignette  
 
 ## Authoring (Git, not runtime)
