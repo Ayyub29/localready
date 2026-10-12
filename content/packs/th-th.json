@@ -13,8 +13,7 @@
       "free": true,
       "unitOrder": [
         "culture",
-        "scenario",
-        "phrases",
+        "conversation",
         "quiz"
       ],
       "vignettes": [
@@ -24,10 +23,76 @@
             "en": "Greetings",
             "id": "Sapaan"
           },
-          "scenario": {
-            "en": "You meet staff at the hotel or shop for the first time.",
-            "id": "Kamu bertemu staf hotel atau toko untuk pertama kali."
-          },
+          "conversation": [
+            {
+              "id": "th-th-basics-greetings-t0",
+              "role": "narrator",
+              "line": {
+                "en": "You walk up to the hotel front desk. The staff member looks up and smiles.",
+                "id": "Kamu mendekati resepsionis hotel. Staf melihatmu dan tersenyum."
+              }
+            },
+            {
+              "id": "th-th-basics-greetings-t1",
+              "role": "local",
+              "label": {
+                "en": "Staff",
+                "id": "Staf"
+              },
+              "target": "คุณชื่ออะไร",
+              "romanization": "khun chue arai?",
+              "line": {
+                "en": "What is your name?",
+                "id": "What is your name?"
+              },
+              "phraseId": "th-th-basics-what-is-your-name-0"
+            },
+            {
+              "id": "th-th-basics-greetings-t2",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "คุณชื่ออะไร",
+              "romanization": "khun chue arai?",
+              "line": {
+                "en": "What is your name?",
+                "id": "What is your name?"
+              },
+              "phraseId": "th-th-basics-what-is-your-name-0"
+            },
+            {
+              "id": "th-th-basics-greetings-t3",
+              "role": "local",
+              "label": {
+                "en": "Staff",
+                "id": "Staf"
+              },
+              "target": "ผม/ดิฉันชื่อ",
+              "romanization": "phŏm/dì-chăn cheu _____",
+              "line": {
+                "en": "My name is ______ .",
+                "id": "My name is ______ ."
+              },
+              "phraseId": "th-th-basics-my-name-is-1"
+            },
+            {
+              "id": "th-th-basics-greetings-t4",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "ยินดีที่ได้รู้จัก",
+              "romanization": "yin-dii thii dai ruu-jak",
+              "line": {
+                "en": "Nice to meet you.",
+                "id": "Nice to meet you."
+              },
+              "phraseId": "th-th-basics-nice-to-meet-you-2"
+            }
+          ],
           "phrases": [
             {
               "id": "th-th-basics-what-is-your-name-0",
@@ -96,10 +161,103 @@
               }
             }
           ],
-          "scenario": {
-            "en": "You need to get attention or say thanks in a busy place.",
-            "id": "Kamu perlu menarik perhatian atau berterima kasih di tempat ramai."
-          },
+          "conversation": [
+            {
+              "id": "th-th-basics-polite-t0",
+              "role": "narrator",
+              "line": {
+                "en": "The shop is crowded. You gently get the clerk's attention.",
+                "id": "Toko sedang ramai. Kamu dengan sopan menarik perhatian pegawai."
+              }
+            },
+            {
+              "id": "th-th-basics-polite-t1",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "กรุณา",
+              "romanization": "karunaa",
+              "line": {
+                "en": "Please.",
+                "id": "Please."
+              },
+              "phraseId": "th-th-basics-please-10"
+            },
+            {
+              "id": "th-th-basics-polite-t2",
+              "role": "local",
+              "label": {
+                "en": "Staff",
+                "id": "Staf"
+              },
+              "line": {
+                "en": "Yes? How can I help?",
+                "id": "Ya? Ada yang bisa dibantu?"
+              }
+            },
+            {
+              "id": "th-th-basics-polite-t3",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "ขอบคุณ[มาก]",
+              "romanization": "khop khun [mâak]",
+              "line": {
+                "en": "Thank you [very much].",
+                "id": "Thank you [very much]."
+              },
+              "phraseId": "th-th-basics-thank-you-very-much-11"
+            },
+            {
+              "id": "th-th-basics-polite-t4",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "ใช่",
+              "romanization": "chai",
+              "line": {
+                "en": "Yes.",
+                "id": "Yes."
+              },
+              "phraseId": "th-th-basics-yes-12"
+            },
+            {
+              "id": "th-th-basics-polite-t5",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "ไม่ใช่",
+              "romanization": "mai chai",
+              "line": {
+                "en": "No.",
+                "id": "No."
+              },
+              "phraseId": "th-th-basics-no-13"
+            },
+            {
+              "id": "th-th-basics-polite-t6",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "ขอโทษ",
+              "romanization": "kho thot",
+              "line": {
+                "en": "Excuse me. (begging pardon)",
+                "id": "Excuse me. (begging pardon)"
+              },
+              "phraseId": "th-th-basics-excuse-me-begging-pardon-14"
+            }
+          ],
           "phrases": [
             {
               "id": "th-th-basics-please-10",
@@ -185,8 +343,7 @@
       "free": false,
       "unitOrder": [
         "culture",
-        "scenario",
-        "phrases",
+        "conversation",
         "quiz"
       ],
       "vignettes": []
@@ -203,8 +360,7 @@
       "free": false,
       "unitOrder": [
         "culture",
-        "scenario",
-        "phrases",
+        "conversation",
         "quiz"
       ],
       "vignettes": []
@@ -221,8 +377,7 @@
       "free": false,
       "unitOrder": [
         "culture",
-        "scenario",
-        "phrases",
+        "conversation",
         "quiz"
       ],
       "vignettes": []
@@ -239,8 +394,7 @@
       "free": false,
       "unitOrder": [
         "culture",
-        "scenario",
-        "phrases",
+        "conversation",
         "quiz"
       ],
       "vignettes": []
@@ -257,8 +411,7 @@
       "free": false,
       "unitOrder": [
         "culture",
-        "scenario",
-        "phrases",
+        "conversation",
         "quiz"
       ],
       "vignettes": []
@@ -275,8 +428,7 @@
       "free": false,
       "unitOrder": [
         "culture",
-        "scenario",
-        "phrases",
+        "conversation",
         "quiz"
       ],
       "vignettes": []
@@ -293,8 +445,7 @@
       "free": true,
       "unitOrder": [
         "culture",
-        "scenario",
-        "phrases",
+        "conversation",
         "quiz"
       ],
       "vignettes": [
@@ -304,10 +455,103 @@
             "en": "Urgent help",
             "id": "Bantuan darurat"
           },
-          "scenario": {
-            "en": "Something went wrong and you need help quickly.",
-            "id": "Ada masalah dan kamu butuh bantuan cepat."
-          },
+          "conversation": [
+            {
+              "id": "th-th-emergency-core-t0",
+              "role": "narrator",
+              "line": {
+                "en": "You feel stuck and need help from someone on the street.",
+                "id": "Kamu merasa kesulitan dan butuh bantuan orang di jalan."
+              }
+            },
+            {
+              "id": "th-th-emergency-core-t1",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "ผม/ฉัน จะแจ้งตำรวจ",
+              "romanization": "phom/chan ja jaang taamruat",
+              "line": {
+                "en": "I'll call the police.",
+                "id": "I'll call the police."
+              },
+              "phraseId": "th-th-emergency-i-ll-call-the-police-0"
+            },
+            {
+              "id": "th-th-emergency-core-t2",
+              "role": "local",
+              "label": {
+                "en": "Someone nearby",
+                "id": "Orang di sekitar"
+              },
+              "line": {
+                "en": "Are you okay? What's wrong?",
+                "id": "Kamu oke? Ada apa?"
+              }
+            },
+            {
+              "id": "th-th-emergency-core-t3",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "ตำรวจ!",
+              "romanization": "taamruat",
+              "line": {
+                "en": "Police!",
+                "id": "Police!"
+              },
+              "phraseId": "th-th-emergency-police-1"
+            },
+            {
+              "id": "th-th-emergency-core-t4",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "ผม/ฉัน ต้องการความช่วยเหลือ",
+              "romanization": "phom/chan tongkaan khwaam chuai luea",
+              "line": {
+                "en": "I need your help.",
+                "id": "I need your help."
+              },
+              "phraseId": "th-th-emergency-i-need-your-help-2"
+            },
+            {
+              "id": "th-th-emergency-core-t5",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "เรื่องฉุกเฉิน",
+              "romanization": "rueang chuk chern",
+              "line": {
+                "en": "It's an emergency.",
+                "id": "It's an emergency."
+              },
+              "phraseId": "th-th-emergency-it-s-an-emergency-3"
+            },
+            {
+              "id": "th-th-emergency-core-t6",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "ผม/ฉัน หลงทาง",
+              "romanization": "phom/chan long thaang",
+              "line": {
+                "en": "I'm lost.",
+                "id": "I'm lost."
+              },
+              "phraseId": "th-th-emergency-i-m-lost-4"
+            }
+          ],
           "phrases": [
             {
               "id": "th-th-emergency-i-ll-call-the-police-0",

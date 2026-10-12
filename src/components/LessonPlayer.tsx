@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { ConversationThread } from "@/components/ConversationThread";
 import { buildLessonSteps } from "@/lib/content/lesson-player-steps";
 import { pickLocalized } from "@/lib/locale";
 import type { LessonContent } from "@/lib/lesson-content-types";
@@ -19,6 +20,7 @@ function stepLabel(
 ): string {
   const labels = {
     culture: { en: "Culture", id: "Budaya" },
+    conversation: { en: "Conversation", id: "Percakapan" },
     scenario: { en: "Scenario", id: "Situasi" },
     phrase: { en: "Phrase", id: "Frasa" },
     quiz: { en: "Quiz", id: "Kuis" },
@@ -91,7 +93,17 @@ export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
           </section>
         )}
 
-        {step.type === "scenario" && (
+        {step.type === "conversation" && vignette.conversation && (
+          <section className="rounded-xl border border-border bg-card p-4">
+            <ConversationThread
+              locale={locale}
+              turns={vignette.conversation}
+              visibleThrough={step.turnIndex}
+            />
+          </section>
+        )}
+
+        {step.type === "scenario" && vignette.scenario && (
           <section className="rounded-xl border border-border bg-card p-5">
             <p className="text-base leading-relaxed">
               {pickLocalized(vignette.scenario, locale)}

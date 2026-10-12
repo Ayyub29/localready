@@ -5,7 +5,7 @@
  * Learner UI language: Indonesian (`id`) + English (`en`) in meanings.
  */
 import type { LessonContent } from "@/lib/lesson-content-types";
-import { defaultLessonUnitOrder } from "@/lib/lesson-content-types";
+import { legacyLessonUnitOrder } from "@/lib/lesson-content-types";
 
 const corridorId = "ja-jp";
 
@@ -19,7 +19,7 @@ export const jaJpBasicsAirportLesson: LessonContent = {
     en: "First hour at the airport",
   },
   free: true,
-  unitOrder: defaultLessonUnitOrder,
+  unitOrder: legacyLessonUnitOrder,
   vignettes: [
     {
       id: `${corridorId}-basics-v-luggage`,

@@ -10,6 +10,11 @@ import { readPhrasePool } from "../../src/lib/content-pipeline/pool-store";
 import type { PhrasePoolItem } from "../../src/lib/content-pipeline/types";
 import type { CorridorId, SituationKey } from "../../src/lib/types";
 import { situationOrder } from "../../src/lib/situations";
+import {
+  emergencyConversation,
+  greetingsConversation,
+  politeConversation,
+} from "./conversation-templates";
 
 const CORRIDORS: CorridorId[] = ["ja-jp", "ko-kr", "th-th", "vi-vn", "id-id"];
 
@@ -151,13 +156,11 @@ function buildBasicsLesson(
     const phrases = greetings.map((item, idx) =>
       poolPhraseToPhrase(corridorId, "basics", item, idx),
     );
+    const vid = `${corridorId}-basics-greetings`;
     vignettes.push({
-      id: `${corridorId}-basics-greetings`,
+      id: vid,
       title: { en: "Greetings", id: "Sapaan" },
-      scenario: {
-        en: "You meet staff at the hotel or shop for the first time.",
-        id: "Kamu bertemu staf hotel atau toko untuk pertama kali.",
-      },
+      conversation: greetingsConversation(vid, phrases),
       phrases,
       quiz: [makePickPhraseQuiz(corridorId, "basics", "greetings", phrases, 0)],
     });
@@ -167,8 +170,9 @@ function buildBasicsLesson(
     const phrases = polite.map((item, idx) =>
       poolPhraseToPhrase(corridorId, "basics", item, idx + 10),
     );
+    const pid = `${corridorId}-basics-polite`;
     vignettes.push({
-      id: `${corridorId}-basics-polite`,
+      id: pid,
       title: { en: "Thanks & excuse me", id: "Terima kasih & permisi" },
       culture: [
         {
@@ -180,10 +184,7 @@ function buildBasicsLesson(
           },
         },
       ],
-      scenario: {
-        en: "You need to get attention or say thanks in a busy place.",
-        id: "Kamu perlu menarik perhatian atau berterima kasih di tempat ramai.",
-      },
+      conversation: politeConversation(pid, phrases),
       phrases,
       quiz: [makePickPhraseQuiz(corridorId, "basics", "polite", phrases, 0)],
     });
@@ -221,13 +222,11 @@ function buildEmergencyLesson(
 
   const vignettes: LessonVignette[] = [];
   if (phrases.length >= 2) {
+    const eid = `${corridorId}-emergency-core`;
     vignettes.push({
-      id: `${corridorId}-emergency-core`,
+      id: eid,
       title: { en: "Urgent help", id: "Bantuan darurat" },
-      scenario: {
-        en: "Something went wrong and you need help quickly.",
-        id: "Ada masalah dan kamu butuh bantuan cepat.",
-      },
+      conversation: emergencyConversation(eid, phrases),
       phrases,
       quiz: [makePickPhraseQuiz(corridorId, "emergency", "core", phrases, 0)],
     });

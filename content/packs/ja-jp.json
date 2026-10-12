@@ -13,8 +13,7 @@
       "free": true,
       "unitOrder": [
         "culture",
-        "scenario",
-        "phrases",
+        "conversation",
         "quiz"
       ],
       "vignettes": [
@@ -24,10 +23,106 @@
             "en": "Greetings",
             "id": "Sapaan"
           },
-          "scenario": {
-            "en": "You meet staff at the hotel or shop for the first time.",
-            "id": "Kamu bertemu staf hotel atau toko untuk pertama kali."
-          },
+          "conversation": [
+            {
+              "id": "ja-jp-basics-greetings-t0",
+              "role": "narrator",
+              "line": {
+                "en": "You walk up to the hotel front desk. The staff member looks up and smiles.",
+                "id": "Kamu mendekati resepsionis hotel. Staf melihatmu dan tersenyum."
+              }
+            },
+            {
+              "id": "ja-jp-basics-greetings-t1",
+              "role": "local",
+              "label": {
+                "en": "Staff",
+                "id": "Staf"
+              },
+              "target": "こんにちは。",
+              "romanization": "Konnichiwa.",
+              "line": {
+                "en": "Good afternoon.",
+                "id": "Good afternoon."
+              },
+              "phraseId": "ja-jp-basics-good-afternoon-0"
+            },
+            {
+              "id": "ja-jp-basics-greetings-t2",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "こんにちは。",
+              "romanization": "Konnichiwa.",
+              "line": {
+                "en": "Good afternoon.",
+                "id": "Good afternoon."
+              },
+              "phraseId": "ja-jp-basics-good-afternoon-0"
+            },
+            {
+              "id": "ja-jp-basics-greetings-t3",
+              "role": "local",
+              "label": {
+                "en": "Staff",
+                "id": "Staf"
+              },
+              "target": "お元気ですか？",
+              "romanization": "O-genki desu ka?",
+              "line": {
+                "en": "How are you?",
+                "id": "How are you?"
+              },
+              "phraseId": "ja-jp-basics-how-are-you-1"
+            },
+            {
+              "id": "ja-jp-basics-greetings-t4",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "お名前は？",
+              "romanization": "O-namae wa?",
+              "line": {
+                "en": "What's your name? (lit. \"Your name is...\")",
+                "id": "What's your name? (lit. \"Your name is...\")"
+              },
+              "phraseId": "ja-jp-basics-what-s-your-name-lit-your-name-is-2"
+            },
+            {
+              "id": "ja-jp-basics-greetings-t5",
+              "role": "local",
+              "label": {
+                "en": "Staff",
+                "id": "Staf"
+              },
+              "target": "... です。",
+              "romanization": "... desu.",
+              "line": {
+                "en": "My name is ... .",
+                "id": "My name is ... ."
+              },
+              "phraseId": "ja-jp-basics-my-name-is-3"
+            },
+            {
+              "id": "ja-jp-basics-greetings-t6",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "始めまして。どうぞ宜しくお願いします。",
+              "romanization": "Hajimemashite. Dōzo yoroshiku onegaishimasu.",
+              "line": {
+                "en": "Nice to meet you. (formal)",
+                "id": "Nice to meet you. (formal)"
+              },
+              "phraseId": "ja-jp-basics-nice-to-meet-you-formal-4"
+            }
+          ],
           "phrases": [
             {
               "id": "ja-jp-basics-good-afternoon-0",
@@ -118,10 +213,103 @@
               }
             }
           ],
-          "scenario": {
-            "en": "You need to get attention or say thanks in a busy place.",
-            "id": "Kamu perlu menarik perhatian atau berterima kasih di tempat ramai."
-          },
+          "conversation": [
+            {
+              "id": "ja-jp-basics-polite-t0",
+              "role": "narrator",
+              "line": {
+                "en": "The shop is crowded. You gently get the clerk's attention.",
+                "id": "Toko sedang ramai. Kamu dengan sopan menarik perhatian pegawai."
+              }
+            },
+            {
+              "id": "ja-jp-basics-polite-t1",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "こんにちは。",
+              "romanization": "Konnichiwa.",
+              "line": {
+                "en": "Good afternoon.",
+                "id": "Good afternoon."
+              },
+              "phraseId": "ja-jp-basics-good-afternoon-10"
+            },
+            {
+              "id": "ja-jp-basics-polite-t2",
+              "role": "local",
+              "label": {
+                "en": "Staff",
+                "id": "Staf"
+              },
+              "line": {
+                "en": "Yes? How can I help?",
+                "id": "Ya? Ada yang bisa dibantu?"
+              }
+            },
+            {
+              "id": "ja-jp-basics-polite-t3",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "はい、元気です。",
+              "romanization": "Hai, genki desu.",
+              "line": {
+                "en": "Fine, thank you.",
+                "id": "Fine, thank you."
+              },
+              "phraseId": "ja-jp-basics-fine-thank-you-11"
+            },
+            {
+              "id": "ja-jp-basics-polite-t4",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "お願いします。",
+              "romanization": "Onegai shimasu.",
+              "line": {
+                "en": "Please. (request)",
+                "id": "Please. (request)"
+              },
+              "phraseId": "ja-jp-basics-please-request-12"
+            },
+            {
+              "id": "ja-jp-basics-polite-t5",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "どうぞ。",
+              "romanization": "Dōzo.",
+              "line": {
+                "en": "Please. (offer)",
+                "id": "Please. (offer)"
+              },
+              "phraseId": "ja-jp-basics-please-offer-13"
+            },
+            {
+              "id": "ja-jp-basics-polite-t6",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "どうもありがとうございました。",
+              "romanization": "Dōmo arigatō gozaimashita.",
+              "line": {
+                "en": "Thank you very much. (formal)",
+                "id": "Thank you very much. (formal)"
+              },
+              "phraseId": "ja-jp-basics-thank-you-very-much-formal-14"
+            }
+          ],
           "phrases": [
             {
               "id": "ja-jp-basics-good-afternoon-10",
@@ -207,8 +395,7 @@
       "free": false,
       "unitOrder": [
         "culture",
-        "scenario",
-        "phrases",
+        "conversation",
         "quiz"
       ],
       "vignettes": []
@@ -225,8 +412,7 @@
       "free": false,
       "unitOrder": [
         "culture",
-        "scenario",
-        "phrases",
+        "conversation",
         "quiz"
       ],
       "vignettes": []
@@ -243,8 +429,7 @@
       "free": false,
       "unitOrder": [
         "culture",
-        "scenario",
-        "phrases",
+        "conversation",
         "quiz"
       ],
       "vignettes": []
@@ -261,8 +446,7 @@
       "free": false,
       "unitOrder": [
         "culture",
-        "scenario",
-        "phrases",
+        "conversation",
         "quiz"
       ],
       "vignettes": []
@@ -279,8 +463,7 @@
       "free": false,
       "unitOrder": [
         "culture",
-        "scenario",
-        "phrases",
+        "conversation",
         "quiz"
       ],
       "vignettes": []
@@ -297,8 +480,7 @@
       "free": false,
       "unitOrder": [
         "culture",
-        "scenario",
-        "phrases",
+        "conversation",
         "quiz"
       ],
       "vignettes": []
@@ -315,8 +497,7 @@
       "free": true,
       "unitOrder": [
         "culture",
-        "scenario",
-        "phrases",
+        "conversation",
         "quiz"
       ],
       "vignettes": [
@@ -326,10 +507,103 @@
             "en": "Urgent help",
             "id": "Bantuan darurat"
           },
-          "scenario": {
-            "en": "Something went wrong and you need help quickly.",
-            "id": "Ada masalah dan kamu butuh bantuan cepat."
-          },
+          "conversation": [
+            {
+              "id": "ja-jp-emergency-core-t0",
+              "role": "narrator",
+              "line": {
+                "en": "You feel stuck and need help from someone on the street.",
+                "id": "Kamu merasa kesulitan dan butuh bantuan orang di jalan."
+              }
+            },
+            {
+              "id": "ja-jp-emergency-core-t1",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "警察をよぶよ！",
+              "romanization": "Keisatsu o yobu yo!",
+              "line": {
+                "en": "I'll call the police.",
+                "id": "I'll call the police."
+              },
+              "phraseId": "ja-jp-emergency-i-ll-call-the-police-0"
+            },
+            {
+              "id": "ja-jp-emergency-core-t2",
+              "role": "local",
+              "label": {
+                "en": "Someone nearby",
+                "id": "Orang di sekitar"
+              },
+              "line": {
+                "en": "Are you okay? What's wrong?",
+                "id": "Kamu oke? Ada apa?"
+              }
+            },
+            {
+              "id": "ja-jp-emergency-core-t3",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "警察！",
+              "romanization": "Keisatsu!",
+              "line": {
+                "en": "Police!",
+                "id": "Police!"
+              },
+              "phraseId": "ja-jp-emergency-police-1"
+            },
+            {
+              "id": "ja-jp-emergency-core-t4",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "手伝ってください。",
+              "romanization": "Tetsudatte kudasai.",
+              "line": {
+                "en": "I need your help.",
+                "id": "I need your help."
+              },
+              "phraseId": "ja-jp-emergency-i-need-your-help-2"
+            },
+            {
+              "id": "ja-jp-emergency-core-t5",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "緊急です。",
+              "romanization": "Kinkyū desu.",
+              "line": {
+                "en": "It's an emergency.",
+                "id": "It's an emergency."
+              },
+              "phraseId": "ja-jp-emergency-it-s-an-emergency-3"
+            },
+            {
+              "id": "ja-jp-emergency-core-t6",
+              "role": "traveler",
+              "label": {
+                "en": "You",
+                "id": "Kamu"
+              },
+              "target": "道に迷っています。",
+              "romanization": "Michi ni mayotte imasu.",
+              "line": {
+                "en": "I'm lost.",
+                "id": "I'm lost."
+              },
+              "phraseId": "ja-jp-emergency-i-m-lost-4"
+            }
+          ],
           "phrases": [
             {
               "id": "ja-jp-emergency-i-ll-call-the-police-0",
