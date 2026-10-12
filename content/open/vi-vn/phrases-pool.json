@@ -1,0 +1,5972 @@
+{
+  "version": 1,
+  "corridorId": "vi-vn",
+  "updatedAt": "2026-10-12T16:36:38.238Z",
+  "items": [
+    {
+      "id": "vi-vn-pool-05c047f5",
+      "corridorId": "vi-vn",
+      "target": "at the beginning of a syllable, similar to 'ch' in \"tou\", aspirated in the North but unaspirated in the South; at the end, like 'ck' in \"si\" (but it is never enunciated).",
+      "romanization": "ch",
+      "meaningEn": "ch",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Consonants",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Consonants"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-434e0181",
+      "corridorId": "vi-vn",
+      "target": "like 'g' in \"o\". Used only at the beginning of a syllable.",
+      "romanization": "g",
+      "meaningEn": "gh",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Consonants",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Consonants"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-886424f4",
+      "corridorId": "vi-vn",
+      "target": "like 'ch' in Scottish \"lo\", identical to the \"ach-Laut\" sound in German. Used only at the beginning of a syllable.",
+      "romanization": "ch",
+      "meaningEn": "kh",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Consonants",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Consonants"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-13ca4cd0",
+      "corridorId": "vi-vn",
+      "target": "like 'ng' in \"si-along\": a.",
+      "romanization": "ng",
+      "meaningEn": "ng, ngh",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Consonants",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Consonants"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-cb45a784",
+      "corridorId": "vi-vn",
+      "target": "similar to 'ny' in caon, basically the same as Portuguese nh, Spanish ñ or French/Italian gn.",
+      "romanization": "ny",
+      "meaningEn": "nh",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Consonants",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Consonants"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-2ece3162",
+      "corridorId": "vi-vn",
+      "target": "like 'ph' in \"one\".",
+      "romanization": "ph",
+      "meaningEn": "ph",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Consonants",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Consonants"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-83a8fd5c",
+      "corridorId": "vi-vn",
+      "target": "like 't' in \"ime\" (aspirated). Used only at the beginning of a syllable.",
+      "romanization": "t",
+      "meaningEn": "th",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Consonants",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Consonants"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-bd2441d7",
+      "corridorId": "vi-vn",
+      "target": "similar to  'ch' in \"tou\". Used only at the beginning of a syllable.",
+      "romanization": "ch",
+      "meaningEn": "tr",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Consonants",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Consonants"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-18df6d1f",
+      "corridorId": "vi-vn",
+      "target": "in the North, like 'z' in \"ip\"; in the South, like 'y' in \"es\". Used only at the beginning of a syllable.",
+      "romanization": "z",
+      "meaningEn": "gi",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Other_combinations",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Other combinations"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-4c15e8d1",
+      "corridorId": "vi-vn",
+      "target": "like 'qu' in \"est\", in the South, like 'w' in \"n\". Used only at the beginning of a syllable.",
+      "romanization": "qu",
+      "meaningEn": "qu",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Other_combinations",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Other combinations"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-938999c2",
+      "corridorId": "vi-vn",
+      "target": "like 'wi' in \"n\", except faster.",
+      "romanization": "wi",
+      "meaningEn": "uy",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Other_combinations",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Other combinations"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-e8ee8e33",
+      "corridorId": "vi-vn",
+      "target": "Mở cửa (mer-kưə)",
+      "meaningEn": "OPEN",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-018f4e32",
+      "corridorId": "vi-vn",
+      "target": "Đóng cửa (dauung-kưə)",
+      "meaningEn": "CLOSED",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-c2ae50ea",
+      "corridorId": "vi-vn",
+      "target": "Lối vào (loye-vow)",
+      "meaningEn": "ENTRANCE",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-ddba045f",
+      "corridorId": "vi-vn",
+      "target": "Lối ra (loye-rah)",
+      "meaningEn": "EXIT",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-18591963",
+      "corridorId": "vi-vn",
+      "target": "Đẩy (dəy)",
+      "meaningEn": "PUSH",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-ac92e89c",
+      "corridorId": "vi-vn",
+      "target": "Kéo (kehw)",
+      "meaningEn": "PULL",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-424a8695",
+      "corridorId": "vi-vn",
+      "target": "Toilet or WC or Nhà vệ sinh (nyah-vei-shing)",
+      "meaningEn": "TOILET",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-5f6ad7fa",
+      "corridorId": "vi-vn",
+      "target": "Nam or Quý ông (narm) (kwee-ohng/wee-ohng)",
+      "meaningEn": "MEN",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-ae7f2784",
+      "corridorId": "vi-vn",
+      "target": "Nữ or Quý bà (nư) (kwee-bah/wee-bah)",
+      "meaningEn": "WOMEN",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-81b2bcaf",
+      "corridorId": "vi-vn",
+      "target": "Cấm (kəm)}}",
+      "meaningEn": "FORBIDDEN",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-522a154a",
+      "corridorId": "vi-vn",
+      "target": "Chào. ()",
+      "romanization": "jow",
+      "meaningEn": "Hello. (informal)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-fa3e93b8",
+      "corridorId": "vi-vn",
+      "target": "Xin chào. ()",
+      "romanization": "seen jow",
+      "meaningEn": "Hello. (formal)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-2912cc69",
+      "corridorId": "vi-vn",
+      "target": "A-lô. ()",
+      "romanization": "AH-loh",
+      "meaningEn": "Hello. (on the phone)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-b805a3cd",
+      "corridorId": "vi-vn",
+      "target": "Bạn khỏe không? ()",
+      "romanization": "Ban kweah kohng?",
+      "meaningEn": "How are you? (Are you healthy?)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-77e1f349",
+      "corridorId": "vi-vn",
+      "target": "Tôi khoẻ, cảm ơn. ( )",
+      "romanization": "thoy",
+      "meaningEn": "Fine, thank you. (I am healthy, thank you.)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-3ac8f5ba",
+      "corridorId": "vi-vn",
+      "target": "Ông tên là gì? ()",
+      "romanization": "ohng theyn la yi",
+      "meaningEn": "What is your name? (formal, to a man (forties or older, depending on the sensitivity of the person you address))",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-89e4bf9e",
+      "corridorId": "vi-vn",
+      "target": "Bà tên là gì? ()",
+      "romanization": "ba theyn la yi",
+      "meaningEn": "What is your name? (formal, to a woman (forties or older, depending on the sensitivity of the person you address))",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-d3a28f82",
+      "corridorId": "vi-vn",
+      "target": "Anh tên là gì? ()  Anh is an umbrella term for any older male figure. Its literal meaning is \"older brother\".",
+      "romanization": "ayng theyn la yi",
+      "meaningEn": "What is your name? (informal, to a male who is not quite middle-aged AND/OR is not significantly older than you)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-b2f8466f",
+      "corridorId": "vi-vn",
+      "target": "Tôi tên là ______ . ()",
+      "romanization": "Thoye theyn la _____ .",
+      "meaningEn": "My name is ______ .",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-18b86588",
+      "corridorId": "vi-vn",
+      "target": "Làm ơn. ()",
+      "romanization": "lam uhhn",
+      "meaningEn": "Please.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-2973d1a6",
+      "corridorId": "vi-vn",
+      "target": "Cảm ơn. ()",
+      "romanization": "gam uhhn",
+      "meaningEn": "Thank you.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-4228f692",
+      "corridorId": "vi-vn",
+      "target": "Không sao đâu. ()",
+      "romanization": "kohng sao doh",
+      "meaningEn": "You're welcome.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-90748ff6",
+      "corridorId": "vi-vn",
+      "target": "Vâng (affirmative). (); Dạ (affirmative, respectful) (ya'aduhn)",
+      "romanization": "vuhng",
+      "meaningEn": "Yes.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-9bfa7f5e",
+      "corridorId": "vi-vn",
+      "target": "Không. ()",
+      "romanization": "kohng",
+      "meaningEn": "No.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-aa595be6",
+      "corridorId": "vi-vn",
+      "target": "Excuse me. () -->",
+      "romanization": "ehkz-KYOOZ mee",
+      "meaningEn": "Excuse me. (begging pardon)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-ac2bfb4f",
+      "corridorId": "vi-vn",
+      "target": "Xin lỗi. (seen loh'EE)",
+      "meaningEn": "I'm sorry.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-868acc1a",
+      "corridorId": "vi-vn",
+      "target": "Chào. (), Tạm biệt",
+      "romanization": "jow",
+      "meaningEn": "Goodbye",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-d9dc9f98",
+      "corridorId": "vi-vn",
+      "target": "Tôi không biết nói tiếng Việt [cho lắm]. (thoy kohng bee-IT noh-Y thee-IHNG vee'it [chaw lahm])",
+      "meaningEn": "I can't speak Vietnamese [well].",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-54fa9d53",
+      "corridorId": "vi-vn",
+      "target": "Biết nói tiếng Anh không? ()",
+      "romanization": "bee-IT noh-Y thee-IHNG ayng kohng",
+      "meaningEn": "Do you speak English?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-fa65bcfb",
+      "corridorId": "vi-vn",
+      "target": "Có ai ở đây biết nói tiếng Anh không? ()",
+      "romanization": "GAW ai dey bee-IT noh-Y thee-IHNG ayng kohng",
+      "meaningEn": "Is there someone here who speaks English?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-0fcc0927",
+      "corridorId": "vi-vn",
+      "target": "Cứu (tôi) với! ()",
+      "romanization": "gih-OO (thoy) vuh-y!",
+      "meaningEn": "Help!",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-d5dc9fe4",
+      "corridorId": "vi-vn",
+      "target": "Cẩn thận! (guhn tuh'n!)",
+      "meaningEn": "Look out!",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-ea4fe557",
+      "corridorId": "vi-vn",
+      "target": "Good evening. ()",
+      "romanization": "guhd EEV-ning",
+      "meaningEn": "Good evening.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-8eaf3e02",
+      "corridorId": "vi-vn",
+      "target": "Good night. ()",
+      "romanization": "guhd NIGHT",
+      "meaningEn": "Good night.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-1669e5c7",
+      "corridorId": "vi-vn",
+      "target": "Chúc ngủ ngon. () -->",
+      "romanization": "good NIGHT",
+      "meaningEn": "Good night (to sleep)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-afe3813b",
+      "corridorId": "vi-vn",
+      "target": "Tôi không hiểu. ()",
+      "romanization": "thoy kohng hee-oh",
+      "meaningEn": "I don't understand.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-2298e9ee",
+      "corridorId": "vi-vn",
+      "target": "Nhà vệ sinh ở đâu? (...)",
+      "meaningEn": "Where is the toilet?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-da50237c",
+      "corridorId": "vi-vn",
+      "target": "Tôi sẽ quay lại sớm ()",
+      "romanization": "...",
+      "meaningEn": "Be back soon",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Basics",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Basics"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-e2f20e47",
+      "corridorId": "vi-vn",
+      "target": "Đừng làm phiền tôi. () (beware that \"Thoi\" with a fat and long sounding \"T\" translates to \"enough!\" in standard Vietnamese)",
+      "romanization": "DUHung LAHm fien Thoy",
+      "meaningEn": "Leave me alone.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Problems",
+      "source": "wikivoyage",
+      "situationHints": [
+        "emergency",
+        "directions"
+      ],
+      "tags": [
+        "Problems"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-ce7d6bb7",
+      "corridorId": "vi-vn",
+      "target": "Đừng chạm vào tôi! ()",
+      "romanization": "...",
+      "meaningEn": "Don't touch me!",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Problems",
+      "source": "wikivoyage",
+      "situationHints": [
+        "emergency",
+        "directions"
+      ],
+      "tags": [
+        "Problems"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-c1c26e3d",
+      "corridorId": "vi-vn",
+      "target": "Tôi sẽ gọi cảnh sát./Tôi sẽ gọi công an. ()",
+      "romanization": "Thoy seEh GAWoy Kanh Sat/ Thoy seEH GAWoy Kong aanh",
+      "meaningEn": "I'll call the police.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Problems",
+      "source": "wikivoyage",
+      "situationHints": [
+        "emergency",
+        "directions"
+      ],
+      "tags": [
+        "Problems"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-96831971",
+      "corridorId": "vi-vn",
+      "target": "Công an!/Cảnh sát! ()",
+      "romanization": "Kong aanh!/Kanh Sat",
+      "meaningEn": "Police!",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Problems",
+      "source": "wikivoyage",
+      "situationHints": [
+        "emergency",
+        "directions"
+      ],
+      "tags": [
+        "Problems"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-c2180c09",
+      "corridorId": "vi-vn",
+      "target": "Ngừng lại! Ăn trộm! ()",
+      "romanization": "GNoong LAai! Anh Chom!",
+      "meaningEn": "Stop! Thief!",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Problems",
+      "source": "wikivoyage",
+      "situationHints": [
+        "emergency",
+        "directions"
+      ],
+      "tags": [
+        "Problems"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-79238f17",
+      "corridorId": "vi-vn",
+      "target": "Tôi cần (second person pronoun) giúp. (  )",
+      "romanization": "Thoy Khan yip",
+      "meaningEn": "I need your help.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Problems",
+      "source": "wikivoyage",
+      "situationHints": [
+        "emergency",
+        "directions"
+      ],
+      "tags": [
+        "Problems"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-b7c553c2",
+      "corridorId": "vi-vn",
+      "target": "Việc này khẩn cấp. ()",
+      "romanization": "VAHech nuhay Khan gup",
+      "meaningEn": "It's an emergency.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Problems",
+      "source": "wikivoyage",
+      "situationHints": [
+        "emergency",
+        "directions"
+      ],
+      "tags": [
+        "Problems"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-19cf9c8f",
+      "corridorId": "vi-vn",
+      "target": "Tôi bị lạc. ()",
+      "romanization": "Thoi bee lack",
+      "meaningEn": "I'm lost.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Problems",
+      "source": "wikivoyage",
+      "situationHints": [
+        "emergency",
+        "directions"
+      ],
+      "tags": [
+        "Problems"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-bc848840",
+      "corridorId": "vi-vn",
+      "target": "Tôi bị mất cái túi. ()",
+      "romanization": "Thoi bee mUHtt kai Thuii",
+      "meaningEn": "I lost my bag.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Problems",
+      "source": "wikivoyage",
+      "situationHints": [
+        "emergency",
+        "directions"
+      ],
+      "tags": [
+        "Problems"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-42d6f649",
+      "corridorId": "vi-vn",
+      "target": "Tôi bị mất cái ví. ()",
+      "romanization": "Thoi bee mUHtt kai veee",
+      "meaningEn": "I lost my wallet.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Problems",
+      "source": "wikivoyage",
+      "situationHints": [
+        "emergency",
+        "directions"
+      ],
+      "tags": [
+        "Problems"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-2ee907ce",
+      "corridorId": "vi-vn",
+      "target": "Tôi bị bệnh. ()",
+      "romanization": "Thoi bee binh",
+      "meaningEn": "I'm sick.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Problems",
+      "source": "wikivoyage",
+      "situationHints": [
+        "emergency",
+        "directions"
+      ],
+      "tags": [
+        "Problems"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-95a9f1e7",
+      "corridorId": "vi-vn",
+      "target": "Tôi bị thương. ()",
+      "romanization": "Thoi bee Tahuung",
+      "meaningEn": "I've been injured.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Problems",
+      "source": "wikivoyage",
+      "situationHints": [
+        "emergency",
+        "directions"
+      ],
+      "tags": [
+        "Problems"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-079520c5",
+      "corridorId": "vi-vn",
+      "target": "Tôi cần một bác sĩ. ()",
+      "romanization": "Thoi Khan moat back see",
+      "meaningEn": "I need a doctor.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Problems",
+      "source": "wikivoyage",
+      "situationHints": [
+        "emergency",
+        "directions"
+      ],
+      "tags": [
+        "Problems"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-fbc83d13",
+      "corridorId": "vi-vn",
+      "target": "Tôi dùng điện thoại của (second person pronoun) được không? ()",
+      "romanization": "Thoi young dean tahoaI KOOa DUHuc KHAong",
+      "meaningEn": "Can I use your phone?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Problems",
+      "source": "wikivoyage",
+      "situationHints": [
+        "emergency",
+        "directions"
+      ],
+      "tags": [
+        "Problems"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-ef0bbec3",
+      "corridorId": "vi-vn",
+      "target": "mười ()",
+      "romanization": "meui",
+      "meaningEn": "10",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-b42ffe92",
+      "corridorId": "vi-vn",
+      "target": "mười một (muh-uh-ee mo'oht)",
+      "meaningEn": "11",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-ee3253b5",
+      "corridorId": "vi-vn",
+      "target": "mười hai ()",
+      "romanization": "muh-uh-ee hai",
+      "meaningEn": "12",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-bd28a67d",
+      "corridorId": "vi-vn",
+      "target": "mười ba ()",
+      "romanization": "muh-uh-ee bah",
+      "meaningEn": "13",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-d98a3904",
+      "corridorId": "vi-vn",
+      "target": "mười bốn ()",
+      "romanization": "muh-uh-ee bohn?",
+      "meaningEn": "14",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-b00e03b3",
+      "corridorId": "vi-vn",
+      "target": "mười lăm ()",
+      "romanization": "muh-uh-ee lahm",
+      "meaningEn": "15",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-c5d50a26",
+      "corridorId": "vi-vn",
+      "target": "mười sáu ()",
+      "romanization": "muh-uh-ee sao?",
+      "meaningEn": "16",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-e1d00925",
+      "corridorId": "vi-vn",
+      "target": "mười bảy ()",
+      "romanization": "muh-uh-ee buh-ee",
+      "meaningEn": "17",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-27d74666",
+      "corridorId": "vi-vn",
+      "target": "mười tám ()",
+      "romanization": "muh-uh-ee thahm?",
+      "meaningEn": "18",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-cb6d1d04",
+      "corridorId": "vi-vn",
+      "target": "mười chín ()",
+      "romanization": "muh-uh-ee jeen?",
+      "meaningEn": "19",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-867dce48",
+      "corridorId": "vi-vn",
+      "target": "hai mươi ()",
+      "romanization": "hai muh-uh-ee",
+      "meaningEn": "20",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-9621e4df",
+      "corridorId": "vi-vn",
+      "target": "hai mươi mốt ()",
+      "romanization": "hai muh-uh-ee moht?",
+      "meaningEn": "21",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-01915c4d",
+      "corridorId": "vi-vn",
+      "target": "hai mươi hai ()",
+      "romanization": "hai muh-uh-ee hai",
+      "meaningEn": "22",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-bda62634",
+      "corridorId": "vi-vn",
+      "target": "hai mươi ba ()",
+      "romanization": "hai muh-uh-ee bah",
+      "meaningEn": "23",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-166a3d57",
+      "corridorId": "vi-vn",
+      "target": "ba mươi ()",
+      "romanization": "bah muh-uh-ee",
+      "meaningEn": "30",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-f9ed21a1",
+      "corridorId": "vi-vn",
+      "target": "bốn mươi ()",
+      "romanization": "bohn? muh-uh-ee",
+      "meaningEn": "40",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-045371db",
+      "corridorId": "vi-vn",
+      "target": "năm mươi ()",
+      "romanization": "nahm muh-uh-ee",
+      "meaningEn": "50",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-cb25f8be",
+      "corridorId": "vi-vn",
+      "target": "sáu mươi ()",
+      "romanization": "sao? muh-uh-ee",
+      "meaningEn": "60",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-10fc8257",
+      "corridorId": "vi-vn",
+      "target": "bảy mươi ()",
+      "romanization": "buh-ee muh-uh-ee",
+      "meaningEn": "70",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-26e1ee5c",
+      "corridorId": "vi-vn",
+      "target": "tám mươi ()",
+      "romanization": "thahm? muh-uh-ee",
+      "meaningEn": "80",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-fac17845",
+      "corridorId": "vi-vn",
+      "target": "chín mươi ()",
+      "romanization": "jeen? muh-uh-ee",
+      "meaningEn": "90",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-8a406f5e",
+      "corridorId": "vi-vn",
+      "target": "một trăm ( or often just \"cham\")",
+      "romanization": "moht cham",
+      "meaningEn": "100",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-9a8aa2ff",
+      "corridorId": "vi-vn",
+      "target": "hai trăm ()",
+      "romanization": "hai cham",
+      "meaningEn": "200",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-4e8af131",
+      "corridorId": "vi-vn",
+      "target": "ba trăm ()",
+      "romanization": "bah cham",
+      "meaningEn": "300",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-ac431e63",
+      "corridorId": "vi-vn",
+      "target": "một ngàn/nghìn (mo'oht ngang/ngeen...)",
+      "meaningEn": "1000",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-93cd1426",
+      "corridorId": "vi-vn",
+      "target": "hai ngàn/nghìn ()",
+      "romanization": "hai ngang/ngeen...",
+      "meaningEn": "2000",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-983337d8",
+      "corridorId": "vi-vn",
+      "target": "một triệu (mo'oht chee'ou)",
+      "meaningEn": "1,000,000",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-ddda707a",
+      "corridorId": "vi-vn",
+      "target": "một tỷ (mo'oht thee'ee?)",
+      "meaningEn": "1,000,000,000",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-f33c9263",
+      "corridorId": "vi-vn",
+      "target": "một ngàn/nghìn tỷ",
+      "meaningEn": "1,000,000,000,000",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-db372a09",
+      "corridorId": "vi-vn",
+      "target": "số _____ (\"so?\")",
+      "meaningEn": "number _____ (train, bus, etc.)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-8e0c8292",
+      "corridorId": "vi-vn",
+      "target": "nửa ()",
+      "romanization": "neu-uh?",
+      "meaningEn": "half",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-4a01a673",
+      "corridorId": "vi-vn",
+      "target": "ít hơn ()",
+      "romanization": "eet huhhhn",
+      "meaningEn": "less",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-b38f1675",
+      "corridorId": "vi-vn",
+      "target": "hơn (), thêm ()",
+      "romanization": "huhhhn",
+      "meaningEn": "more",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Numbers",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money",
+        "shopping"
+      ],
+      "tags": [
+        "Numbers"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-3041dd1b",
+      "corridorId": "vi-vn",
+      "target": "bây giờ () (northern dialect example: 'buy zaa')",
+      "romanization": "bee yuh...",
+      "meaningEn": "now",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Time",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Time"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-03c2d333",
+      "corridorId": "vi-vn",
+      "target": "lát nữa (laht? neu'uh?)",
+      "meaningEn": "later",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Time",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Time"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-7a420d15",
+      "corridorId": "vi-vn",
+      "target": "trước () (northern dialect example: 'Tchuck')",
+      "romanization": "jyeuck?",
+      "meaningEn": "before",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Time",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Time"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-21227108",
+      "corridorId": "vi-vn",
+      "target": "sáng ()",
+      "romanization": "sahng?",
+      "meaningEn": "morning",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Time",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Time"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-5130a57e",
+      "corridorId": "vi-vn",
+      "target": "chiều () (northern dialect example: hard 'ch', like TR down tone)",
+      "romanization": "jee-oh",
+      "meaningEn": "afternoon",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Time",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Time"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-74d091cd",
+      "corridorId": "vi-vn",
+      "target": "tối (), đêm ()",
+      "romanization": "thoh-ee",
+      "meaningEn": "evening, night",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Time",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Time"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-72398151",
+      "corridorId": "vi-vn",
+      "target": "một giờ sáng ()",
+      "romanization": "moht. yuh sahng?",
+      "meaningEn": "one o'clock AM",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Clock_time",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Clock time"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-b0f95852",
+      "corridorId": "vi-vn",
+      "target": "hai giờ sáng ()",
+      "romanization": "hai yuh sahng?",
+      "meaningEn": "two o'clock AM",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Clock_time",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Clock time"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-8f4fd88c",
+      "corridorId": "vi-vn",
+      "target": "trưa ()",
+      "romanization": "jyeu-uh",
+      "meaningEn": "noon",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Clock_time",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Clock time"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-34946cf7",
+      "corridorId": "vi-vn",
+      "target": "một giờ chiều ()",
+      "romanization": "moht. yuh jee-oh",
+      "meaningEn": "one o'clock PM",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Clock_time",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Clock time"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-5c267fcf",
+      "corridorId": "vi-vn",
+      "target": "hai giờ chiều ()",
+      "romanization": "hai yuh jee-oh",
+      "meaningEn": "two o'clock PM",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Clock_time",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Clock time"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-299a9afc",
+      "corridorId": "vi-vn",
+      "target": "nửa đêm ()",
+      "romanization": "neu-uh dehm",
+      "meaningEn": "midnight",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Clock_time",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Clock time"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-a01a6470",
+      "corridorId": "vi-vn",
+      "target": "phút () _____",
+      "romanization": "foodt",
+      "meaningEn": "_____ minute(s)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Duration",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Duration"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-0bc54379",
+      "corridorId": "vi-vn",
+      "target": "tiếng () _____",
+      "romanization": "thee-uhng?",
+      "meaningEn": "_____ hour(s)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Duration",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Duration"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-462fca35",
+      "corridorId": "vi-vn",
+      "target": "ngày () _____",
+      "romanization": "ngai",
+      "meaningEn": "_____ day(s)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Duration",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Duration"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-b7b58546",
+      "corridorId": "vi-vn",
+      "target": "tuần () _____",
+      "romanization": "thoo-uhn",
+      "meaningEn": "_____ week(s)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Duration",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Duration"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-8dc4f366",
+      "corridorId": "vi-vn",
+      "target": "tháng () _____",
+      "romanization": "tahng?",
+      "meaningEn": "_____ month(s)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Duration",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Duration"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-07ea4cdb",
+      "corridorId": "vi-vn",
+      "target": "năm () _____",
+      "romanization": "nahm",
+      "meaningEn": "_____ year(s)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Duration",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Duration"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-1b965c3b",
+      "corridorId": "vi-vn",
+      "target": "hôm nay ()",
+      "romanization": "home nye",
+      "meaningEn": "today",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Days",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Days"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-4de4fc3a",
+      "corridorId": "vi-vn",
+      "target": "hôm qua ()",
+      "romanization": "hohm gwah",
+      "meaningEn": "yesterday",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Days",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Days"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-f62c0da7",
+      "corridorId": "vi-vn",
+      "target": "mai ()",
+      "romanization": "my",
+      "meaningEn": "tomorrow",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Days",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Days"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-21d6ec97",
+      "corridorId": "vi-vn",
+      "target": "tuần này ()",
+      "romanization": "thoo-uhn nai",
+      "meaningEn": "this week",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Days",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Days"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-c4069a7d",
+      "corridorId": "vi-vn",
+      "target": "tuần trước ()",
+      "romanization": "thoo-uhn truh-UCK",
+      "meaningEn": "last week",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Days",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Days"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-67d68d62",
+      "corridorId": "vi-vn",
+      "target": "tuần sau ()",
+      "romanization": "thoo-uhn sao",
+      "meaningEn": "next week",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Days",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Days"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-3518b219",
+      "corridorId": "vi-vn",
+      "target": "chủ nhật ()",
+      "romanization": "joo nyuht.",
+      "meaningEn": "Sunday",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Days",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Days"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-53742149",
+      "corridorId": "vi-vn",
+      "target": "thứ hai ()",
+      "romanization": "teu? hai",
+      "meaningEn": "Monday",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Days",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Days"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-07a7bb53",
+      "corridorId": "vi-vn",
+      "target": "thứ ba ()",
+      "romanization": "teu? ba",
+      "meaningEn": "Tuesday",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Days",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Days"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-28c0f2ae",
+      "corridorId": "vi-vn",
+      "target": "thứ tư ()",
+      "romanization": "teu? theu",
+      "meaningEn": "Wednesday",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Days",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Days"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-2fdffba6",
+      "corridorId": "vi-vn",
+      "target": "thứ năm ()",
+      "romanization": "teu? nahm!",
+      "meaningEn": "Thursday",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Days",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Days"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-15102670",
+      "corridorId": "vi-vn",
+      "target": "thứ sáu ()",
+      "romanization": "teu? sao?!",
+      "meaningEn": "Friday",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Days",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Days"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-c46e4779",
+      "corridorId": "vi-vn",
+      "target": "thứ bảy ()",
+      "romanization": "teu? buh-ee?",
+      "meaningEn": "Saturday",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Days",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Days"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-4d9496c7",
+      "corridorId": "vi-vn",
+      "target": "tháng 3 / tháng ba ()",
+      "romanization": "tahng? ba",
+      "meaningEn": "March",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Months",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Months"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-6c8565a8",
+      "corridorId": "vi-vn",
+      "target": "Thứ sáu, ngày 17 tháng 12 năm 2004",
+      "meaningEn": "Friday, December 17, 2004",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Writing_time_and_date",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Writing time and date"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-bac04444",
+      "corridorId": "vi-vn",
+      "target": "17/12/2004",
+      "meaningEn": "12/17/2004",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Writing_time_and_date",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Writing time and date"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-374d2780",
+      "corridorId": "vi-vn",
+      "target": "Hai giờ sáng",
+      "meaningEn": "Two in the morning",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Writing_time_and_date",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Writing time and date"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-43aac566",
+      "corridorId": "vi-vn",
+      "target": "Hai giờ chiều",
+      "meaningEn": "Two in the afternoon",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Writing_time_and_date",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Writing time and date"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-b9240649",
+      "corridorId": "vi-vn",
+      "target": "Mười giờ đêm",
+      "meaningEn": "Ten in the evening",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Writing_time_and_date",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Writing time and date"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-86c6e6ab",
+      "corridorId": "vi-vn",
+      "target": "Hai giờ rưỡi",
+      "meaningEn": "Half past two",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Writing_time_and_date",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Writing time and date"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-d18264ee",
+      "corridorId": "vi-vn",
+      "target": "Trưa; 12 giờ trưa",
+      "meaningEn": "Noon",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Writing_time_and_date",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Writing time and date"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-9a997ce4",
+      "corridorId": "vi-vn",
+      "target": "Nửa đêm; 12 giờ đêm",
+      "meaningEn": "Evening",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Writing_time_and_date",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Writing time and date"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-ba9ed18d",
+      "corridorId": "vi-vn",
+      "target": "đen ()",
+      "romanization": "Dan",
+      "meaningEn": "black",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Colors",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Colors"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-48f8a939",
+      "corridorId": "vi-vn",
+      "target": "trắng ()",
+      "romanization": "chahng?!",
+      "meaningEn": "white",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Colors",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Colors"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-4e0b9173",
+      "corridorId": "vi-vn",
+      "target": "xám ()",
+      "romanization": "sahm?",
+      "meaningEn": "gray",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Colors",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Colors"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-d243c906",
+      "corridorId": "vi-vn",
+      "target": "đỏ ()",
+      "romanization": "daw... aw?",
+      "meaningEn": "red",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Colors",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Colors"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-3e70a18b",
+      "corridorId": "vi-vn",
+      "target": "xanh nước ()",
+      "romanization": "sahyng neu-uhk?",
+      "meaningEn": "blue",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Colors",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Colors"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-43b114eb",
+      "corridorId": "vi-vn",
+      "target": "vàng ()",
+      "romanization": "vahng...",
+      "meaningEn": "yellow",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Colors",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Colors"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-6ee8454b",
+      "corridorId": "vi-vn",
+      "target": "xanh (lá cây) ()",
+      "romanization": "sahyng lah? kay",
+      "meaningEn": "green",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Colors",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Colors"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-e21f0bc2",
+      "corridorId": "vi-vn",
+      "target": "cam ()",
+      "romanization": "kahm",
+      "meaningEn": "orange",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Colors",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Colors"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-1337dfed",
+      "corridorId": "vi-vn",
+      "target": "tím (tim but long 'i' )",
+      "romanization": "just as it is written,",
+      "meaningEn": "purple",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Colors",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Colors"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-93d16b6b",
+      "corridorId": "vi-vn",
+      "target": "nâu ()",
+      "romanization": "know",
+      "meaningEn": "brown",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Colors",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Colors"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-28a5dddf",
+      "corridorId": "vi-vn",
+      "target": "Một vé đến _____ là bao nhiêu? (mo'oht veah? dehn? _____ lah... bao nyee-oh)",
+      "meaningEn": "How much is a ticket to _____?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bus_and_train",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bus and train"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-4b02c382",
+      "corridorId": "vi-vn",
+      "target": "Xin cho tôi một vé đến _____. (seen jyaw thoh-ee mo'oht veah? dehn? _____)",
+      "meaningEn": "One ticket to _____, please.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bus_and_train",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bus and train"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-0182b2f4",
+      "corridorId": "vi-vn",
+      "target": "Tàu/xe này đi đâu? ()",
+      "romanization": "thoe.../seah nay...! dee doh",
+      "meaningEn": "Where does this train/bus go?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bus_and_train",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bus and train"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-b69edd10",
+      "corridorId": "vi-vn",
+      "target": "Tàu/xe đi đến _____ ở đâu? ()",
+      "romanization": "thoe.../seah dee dehn _____ uh...uh? doh",
+      "meaningEn": "Where is the train/bus to _____?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bus_and_train",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bus and train"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-a0bd37f8",
+      "corridorId": "vi-vn",
+      "target": "Tàu/xe này có dừng tại _____ không? (thoe.../seah nay...! goh? zeung... thah'ee _____ kohng)",
+      "meaningEn": "Does this train/bus stop in _____?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bus_and_train",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bus and train"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-348bf062",
+      "corridorId": "vi-vn",
+      "target": "Tàu/xe đi _____ chạy lúc nào? (thoe.../seah dee _____ jyah'ee loohk? nahh-oh...)",
+      "meaningEn": "When does the train/bus for _____ leave?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bus_and_train",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bus and train"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-24bb63f4",
+      "corridorId": "vi-vn",
+      "target": "Khi nào tàu/xe này sẽ đến _____? (kee nahh-oh thoe.../seah nay...! seah'uh? dehn? _____)",
+      "meaningEn": "When will this train/bus arrive in _____?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bus_and_train",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bus and train"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-30ab61d6",
+      "corridorId": "vi-vn",
+      "target": "Làm cách nào để tôi đến _____ ? ()",
+      "romanization": "...",
+      "meaningEn": "How do I get to _____ ?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-f17cc62d",
+      "corridorId": "vi-vn",
+      "target": "...nhà ga? ()",
+      "romanization": "...",
+      "meaningEn": "...the train station?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-745a6af9",
+      "corridorId": "vi-vn",
+      "target": "...trạm xe buýt? ()",
+      "romanization": "...",
+      "meaningEn": "...the bus station?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-dfb2e66f",
+      "corridorId": "vi-vn",
+      "target": "...sân bay? ()",
+      "romanization": "son bye...",
+      "meaningEn": "...the airport?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-de36f0b6",
+      "corridorId": "vi-vn",
+      "target": "...thành phố? ()",
+      "romanization": "...",
+      "meaningEn": "...downtown?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-4479ff60",
+      "corridorId": "vi-vn",
+      "target": "...nhà trọ cho khách du lịch? ()",
+      "romanization": "...",
+      "meaningEn": "...the youth hostel?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-4eb63a94",
+      "corridorId": "vi-vn",
+      "target": "...khách sạn _____? ()",
+      "romanization": "...",
+      "meaningEn": "...the _____ hotel?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-f550d376",
+      "corridorId": "vi-vn",
+      "target": "...tòa lãnh sự Mỹ/Canada/Úc/Anh? ()",
+      "romanization": "...",
+      "meaningEn": "...the American/Canadian/Australian/British consulate?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-62f01458",
+      "corridorId": "vi-vn",
+      "target": "Nơi nào có nhiều... ()",
+      "romanization": "...",
+      "meaningEn": "Where are there a lot of...",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-703b21b8",
+      "corridorId": "vi-vn",
+      "target": "...khách sạn? ()",
+      "romanization": "...",
+      "meaningEn": "...hotels?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-edad7185",
+      "corridorId": "vi-vn",
+      "target": "...nhà hàng? ()",
+      "romanization": "...",
+      "meaningEn": "...restaurants?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-717b90bb",
+      "corridorId": "vi-vn",
+      "target": "...quán rượu? ()",
+      "romanization": "...",
+      "meaningEn": "...bars?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-ef5822a9",
+      "corridorId": "vi-vn",
+      "target": "...thắng cảnh? ()",
+      "romanization": "...",
+      "meaningEn": "...sites to see?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-e1f16526",
+      "corridorId": "vi-vn",
+      "target": "Chỉ trên bản đồ cho tôi được không? ()",
+      "romanization": "...",
+      "meaningEn": "Can you show me on the map?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-f547889d",
+      "corridorId": "vi-vn",
+      "target": "đường ()",
+      "romanization": "...",
+      "meaningEn": "street",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-9e8b5686",
+      "corridorId": "vi-vn",
+      "target": "Rẽ trái. ()",
+      "romanization": "...",
+      "meaningEn": "Turn left.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-acfdffdd",
+      "corridorId": "vi-vn",
+      "target": "Rẽ phải. ()",
+      "romanization": "...",
+      "meaningEn": "Turn right.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-573c9e97",
+      "corridorId": "vi-vn",
+      "target": "trái ()",
+      "romanization": "...",
+      "meaningEn": "left",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-be4ea1f4",
+      "corridorId": "vi-vn",
+      "target": "phải ()",
+      "romanization": "...",
+      "meaningEn": "right",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-b730eef2",
+      "corridorId": "vi-vn",
+      "target": "đi thẳng ()",
+      "romanization": "...",
+      "meaningEn": "straight ahead",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-bb4aab7e",
+      "corridorId": "vi-vn",
+      "target": "tiến đến _____ ()",
+      "romanization": "...",
+      "meaningEn": "towards the _____",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-1a535e97",
+      "corridorId": "vi-vn",
+      "target": "đi qua _____ ()",
+      "romanization": "...",
+      "meaningEn": "past the _____",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-0f5fa0d6",
+      "corridorId": "vi-vn",
+      "target": "trước _____ ()",
+      "romanization": "...",
+      "meaningEn": "before the _____",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-1ca48316",
+      "corridorId": "vi-vn",
+      "target": "Coi chừng _____. ()",
+      "romanization": "...",
+      "meaningEn": "Watch for the _____.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-f620597b",
+      "corridorId": "vi-vn",
+      "target": "ngã ba/tư/năm/sáu/bảy (3/4/5/6/7-way intersection) ()",
+      "romanization": "...",
+      "meaningEn": "intersection",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-5763de89",
+      "corridorId": "vi-vn",
+      "target": "bắc ()",
+      "romanization": "...",
+      "meaningEn": "north",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-da9b9d8b",
+      "corridorId": "vi-vn",
+      "target": "nam ()",
+      "romanization": "...",
+      "meaningEn": "south",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-4f0e44a4",
+      "corridorId": "vi-vn",
+      "target": "đông ()",
+      "romanization": "...",
+      "meaningEn": "east",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-32a6fd66",
+      "corridorId": "vi-vn",
+      "target": "tây ()",
+      "romanization": "...",
+      "meaningEn": "west",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-5c609a04",
+      "corridorId": "vi-vn",
+      "target": "lên dốc ()",
+      "romanization": "...",
+      "meaningEn": "uphill",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-50721238",
+      "corridorId": "vi-vn",
+      "target": "xuống dốc ()",
+      "romanization": "...",
+      "meaningEn": "downhill",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Directions",
+      "source": "wikivoyage",
+      "situationHints": [
+        "directions"
+      ],
+      "tags": [
+        "Directions"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-eb93c5a4",
+      "corridorId": "vi-vn",
+      "target": "Taxi! ()",
+      "romanization": "tha? see",
+      "meaningEn": "Taxi!",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Taxi",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Taxi"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-a08ba363",
+      "corridorId": "vi-vn",
+      "target": "Vui lòng đưa tôi đến_____,. ()",
+      "romanization": "...",
+      "meaningEn": "Take me to _____, please.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Taxi",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Taxi"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-4edca444",
+      "corridorId": "vi-vn",
+      "target": "Đến _____ giá bao nhiêu? ()",
+      "romanization": "...",
+      "meaningEn": "How much does it cost to get to _____?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Taxi",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Taxi"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-81d7c352",
+      "corridorId": "vi-vn",
+      "target": "Vui lòng đưa tôi đến đó. ()",
+      "romanization": "...",
+      "meaningEn": "Take me there, please.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Taxi",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Taxi"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-b5472b8d",
+      "corridorId": "vi-vn",
+      "target": "Bạn còn phòng không? ()",
+      "romanization": "...",
+      "meaningEn": "Do you have any rooms available?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-c063baaa",
+      "corridorId": "vi-vn",
+      "target": "Giá phòng cho một/hai người là bao nhiêu? ()",
+      "romanization": "...",
+      "meaningEn": "How much is a room for one person/two people?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-88e5a95f",
+      "corridorId": "vi-vn",
+      "target": "Trong phòng có ... không? ()",
+      "romanization": "...",
+      "meaningEn": "Does the room come with...",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-04b02091",
+      "corridorId": "vi-vn",
+      "target": "...ga trải gường? ()",
+      "romanization": "...",
+      "meaningEn": "...bedsheets?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-ac240e86",
+      "corridorId": "vi-vn",
+      "target": "...phòng vệ sinh? (); ...phòng cầu tiêu ()",
+      "romanization": "...",
+      "meaningEn": "...a bathroom?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-9104243b",
+      "corridorId": "vi-vn",
+      "target": "...điện thoại? ()",
+      "romanization": "dee-ehn twhy",
+      "meaningEn": "...a telephone?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-f9f20199",
+      "corridorId": "vi-vn",
+      "target": "...TV? ()",
+      "romanization": "thee vee",
+      "meaningEn": "...a TV?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-bcf15e76",
+      "corridorId": "vi-vn",
+      "target": "Tôi xem phòng trước có được không? ()",
+      "romanization": "...",
+      "meaningEn": "May I see the room first?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-cf182159",
+      "corridorId": "vi-vn",
+      "target": "Có phòng nào yên tĩnh hơn không? ()",
+      "romanization": "...",
+      "meaningEn": "Do you have anything quieter?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-2e99cae8",
+      "corridorId": "vi-vn",
+      "target": "...lớn hơn không? ()",
+      "romanization": "...",
+      "meaningEn": "...bigger?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-66f3be43",
+      "corridorId": "vi-vn",
+      "target": "...sạch hơn không? ()",
+      "romanization": "...",
+      "meaningEn": "...cleaner?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-47dc8f4b",
+      "corridorId": "vi-vn",
+      "target": "...rẻ hơn không? ()",
+      "romanization": "...",
+      "meaningEn": "...cheaper?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-8845ca1e",
+      "corridorId": "vi-vn",
+      "target": "OK, tôi sẽ lấy phòng này. ()",
+      "romanization": "...",
+      "meaningEn": "OK, I'll take it.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-c62ef9a1",
+      "corridorId": "vi-vn",
+      "target": "Tôi sẽ ở đây _____ đêm. ()",
+      "romanization": "...",
+      "meaningEn": "I will stay for _____ night(s).",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-19b86e44",
+      "corridorId": "vi-vn",
+      "target": "Có thể giới thiệu cho tôi một khách sạn khác được không? ()",
+      "romanization": "...",
+      "meaningEn": "Can you suggest another hotel?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-8398031a",
+      "corridorId": "vi-vn",
+      "target": "Có két an toàn không? ()",
+      "romanization": "...",
+      "meaningEn": "Do you have a safe?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-c407037b",
+      "corridorId": "vi-vn",
+      "target": "... tủ đồ? ()",
+      "romanization": "...",
+      "meaningEn": "...lockers?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-f17a979a",
+      "corridorId": "vi-vn",
+      "target": "Có kèm theo bữa sáng/tối không? ()",
+      "romanization": "...",
+      "meaningEn": "Is breakfast/supper included?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-1dd564bf",
+      "corridorId": "vi-vn",
+      "target": "Ăn sáng/tối lúc mấy giờ? ()",
+      "romanization": "...",
+      "meaningEn": "What time is breakfast/supper?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-e7198f1e",
+      "corridorId": "vi-vn",
+      "target": "Làm ơn dọn phòng giúp tôi. ()",
+      "romanization": "...",
+      "meaningEn": "Please clean my room.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-16231a81",
+      "corridorId": "vi-vn",
+      "target": "Xin đánh thức tôi dậy lúc _____? ()",
+      "romanization": "...",
+      "meaningEn": "Can you wake me at _____?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-d95d8238",
+      "corridorId": "vi-vn",
+      "target": "Tôi muốn check out. ()",
+      "romanization": "...",
+      "meaningEn": "I want to check out.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Lodging",
+      "source": "wikivoyage",
+      "situationHints": [
+        "hotel"
+      ],
+      "tags": [
+        "Lodging"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-ca873b06",
+      "corridorId": "vi-vn",
+      "target": "Có chấp nhận đô la Mỹ/Úc/Canada không? ()",
+      "romanization": "...",
+      "meaningEn": "Do you accept American/Australian/Canadian dollars?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Money",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money"
+      ],
+      "tags": [
+        "Money"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-94ec15ab",
+      "corridorId": "vi-vn",
+      "target": "Có chấp nhận bảng Anh không? ()",
+      "romanization": "...",
+      "meaningEn": "Do you accept British pounds?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Money",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money"
+      ],
+      "tags": [
+        "Money"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-2f10ea02",
+      "corridorId": "vi-vn",
+      "target": "Có chấp nhận thẻ tín dụng không? ()",
+      "romanization": "...",
+      "meaningEn": "Do you accept credit cards?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Money",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money"
+      ],
+      "tags": [
+        "Money"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-2a0b8fb2",
+      "corridorId": "vi-vn",
+      "target": "Bạn đổi tiền cho tôi được không? ()",
+      "romanization": "...",
+      "meaningEn": "Can you change money for me?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Money",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money"
+      ],
+      "tags": [
+        "Money"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-1227b25c",
+      "corridorId": "vi-vn",
+      "target": "Tôi có thể đi đổi tiền ở đâu? ()",
+      "romanization": "...",
+      "meaningEn": "Where can I get money changed?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Money",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money"
+      ],
+      "tags": [
+        "Money"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-bdb6a4bf",
+      "corridorId": "vi-vn",
+      "target": "Có thể đổi séc du lịch cho tôi được không? ()",
+      "romanization": "...",
+      "meaningEn": "Can you change a traveler's check for me?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Money",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money"
+      ],
+      "tags": [
+        "Money"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-d8c07f1f",
+      "corridorId": "vi-vn",
+      "target": "Tôi có thể đổi séc du lịch ở đâu? ()",
+      "romanization": "...",
+      "meaningEn": "Where can I get a traveler's check changed?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Money",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money"
+      ],
+      "tags": [
+        "Money"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-5e16e076",
+      "corridorId": "vi-vn",
+      "target": "Tỷ giá là bao nhiêu? ()",
+      "romanization": "...",
+      "meaningEn": "What is the exchange rate?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Money",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money"
+      ],
+      "tags": [
+        "Money"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-dfe9629c",
+      "corridorId": "vi-vn",
+      "target": "Máy rút tiền (ATM) ở đâu? ()",
+      "romanization": "...",
+      "meaningEn": "Where is an automatic teller machine (ATM)?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Money",
+      "source": "wikivoyage",
+      "situationHints": [
+        "money"
+      ],
+      "tags": [
+        "Money"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-6b954957",
+      "corridorId": "vi-vn",
+      "target": "Cho tôi một bàn cho một/hai người. ()",
+      "romanization": "...",
+      "meaningEn": "A table for one person/two people, please.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-0da5f38b",
+      "corridorId": "vi-vn",
+      "target": "Làm ơn cho tôi xem menu? ()",
+      "romanization": "...",
+      "meaningEn": "Can I look at the menu, please?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-f0c02b61",
+      "corridorId": "vi-vn",
+      "target": "Cho tôi xem nhà bếp được không? ()",
+      "romanization": "...",
+      "meaningEn": "Can I look in the kitchen?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-7d182bb7",
+      "corridorId": "vi-vn",
+      "target": "Quán ăn này có món đặc sản nào không? ()",
+      "romanization": "...",
+      "meaningEn": "Is there a house specialty?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-6ca8e282",
+      "corridorId": "vi-vn",
+      "target": "Ở vùng này có món đặc sản nào không? ()",
+      "romanization": "...",
+      "meaningEn": "Is there a local specialty?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-51593994",
+      "corridorId": "vi-vn",
+      "target": "Tôi là người ăn chay. ()",
+      "romanization": "...",
+      "meaningEn": "I'm a vegetarian.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-91252231",
+      "corridorId": "vi-vn",
+      "target": "Tôi không ăn thịt lợn. ()",
+      "romanization": "...",
+      "meaningEn": "I don't eat pork.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-4ca82f8d",
+      "corridorId": "vi-vn",
+      "target": "Tôi không ăn thịt bò. ()",
+      "romanization": "...",
+      "meaningEn": "I don't eat beef.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-c117bde4",
+      "corridorId": "vi-vn",
+      "target": "()",
+      "romanization": "...",
+      "meaningEn": "I eat only kosher food.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-50789856",
+      "corridorId": "vi-vn",
+      "target": "Vui lòng làm nó ít béo được không? ()",
+      "romanization": "ít dầu/bơ/mỡ heo...",
+      "meaningEn": "Can you make it \"lite\", please? (less oil/butter/lard)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-3d84a288",
+      "corridorId": "vi-vn",
+      "target": "fixed-price meal ()",
+      "romanization": "...",
+      "meaningEn": "fixed-price meal",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-6013d55d",
+      "corridorId": "vi-vn",
+      "target": "gọi theo món ()",
+      "romanization": "...",
+      "meaningEn": "à la carte",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-4d93c975",
+      "corridorId": "vi-vn",
+      "target": "bữa sáng ()",
+      "romanization": "boo... ee? sahng?",
+      "meaningEn": "breakfast",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-880ac108",
+      "corridorId": "vi-vn",
+      "target": "bữa trưa ()",
+      "romanization": "boo... ee? cheu-uh",
+      "meaningEn": "lunch",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-16efaddf",
+      "corridorId": "vi-vn",
+      "target": "trà ()",
+      "romanization": "...",
+      "meaningEn": "tea (meal)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-41df42c0",
+      "corridorId": "vi-vn",
+      "target": "bữa tối ()",
+      "romanization": "boo... ee? chee-oh...",
+      "meaningEn": "supper",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-198aac87",
+      "corridorId": "vi-vn",
+      "target": "Xin _____. (\"seen\")",
+      "meaningEn": "I want _____.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-c4e46a28",
+      "corridorId": "vi-vn",
+      "target": "Cho tôi một đĩa có _____. ()",
+      "romanization": "...",
+      "meaningEn": "I want a dish containing _____.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-1b7581d4",
+      "corridorId": "vi-vn",
+      "target": "(thịt) gà ()",
+      "romanization": "teet. gah...",
+      "meaningEn": "chicken",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-21333961",
+      "corridorId": "vi-vn",
+      "target": "(thịt) bò ()",
+      "romanization": "teet. baw...",
+      "meaningEn": "beef",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-8a23c773",
+      "corridorId": "vi-vn",
+      "target": "cá ()",
+      "romanization": "gah?",
+      "meaningEn": "fish",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-761209b1",
+      "corridorId": "vi-vn",
+      "target": "jambon ()",
+      "romanization": "zhahm bohng",
+      "meaningEn": "ham",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-8a98abbd",
+      "corridorId": "vi-vn",
+      "target": "xúc xích ()",
+      "romanization": "sook? sick?",
+      "meaningEn": "sausage",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-52c4209d",
+      "corridorId": "vi-vn",
+      "target": "phô mai (...)",
+      "meaningEn": "cheese",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-d240a5d5",
+      "corridorId": "vi-vn",
+      "target": "trứng ()",
+      "romanization": "cheung?",
+      "meaningEn": "eggs",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-6e556669",
+      "corridorId": "vi-vn",
+      "target": "sa lát (...)",
+      "meaningEn": "salad",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-e74b6510",
+      "corridorId": "vi-vn",
+      "target": "rau (tươi) ()",
+      "romanization": "rao theu-uh-ee",
+      "meaningEn": "(fresh) vegetables",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-cd8fd63d",
+      "corridorId": "vi-vn",
+      "target": "trái cây (tươi) ()",
+      "romanization": "chai? gai",
+      "meaningEn": "(fresh) fruit",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-5e332e2d",
+      "corridorId": "vi-vn",
+      "target": "bánh mì (ba'in me...)",
+      "meaningEn": "bread",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-ec94b97c",
+      "corridorId": "vi-vn",
+      "target": "bánh mì nướng ()",
+      "romanization": "bain mee... neu-uhng?",
+      "meaningEn": "toast",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-688294d6",
+      "corridorId": "vi-vn",
+      "target": "mì ()",
+      "romanization": "me...",
+      "meaningEn": "wheat noodles",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-17663d57",
+      "corridorId": "vi-vn",
+      "target": "cơm ()",
+      "romanization": "guhm",
+      "meaningEn": "rice (cooked; as a dish)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-9b0e8ae2",
+      "corridorId": "vi-vn",
+      "target": "gạo (\"gah-ow.\")",
+      "meaningEn": "rice (uncooked)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-f26a61d1",
+      "corridorId": "vi-vn",
+      "target": "đậu ()",
+      "romanization": "duh-oh.",
+      "meaningEn": "beans (like mung beans)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-1391b5cb",
+      "corridorId": "vi-vn",
+      "target": "hột ()",
+      "romanization": "hoht.",
+      "meaningEn": "beans (like coffee beans)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-17a973d6",
+      "corridorId": "vi-vn",
+      "target": "Cho tôi một ly _____? ()",
+      "romanization": "...",
+      "meaningEn": "May I have a glass of _____?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-9541f914",
+      "corridorId": "vi-vn",
+      "target": "Cho tôi một cốc _____? ()",
+      "romanization": "...",
+      "meaningEn": "May I have a cup of _____?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-e4a1448b",
+      "corridorId": "vi-vn",
+      "target": "Cho tôi một chai _____? ()",
+      "romanization": "...",
+      "meaningEn": "May I have a bottle of _____?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-cc2f99b8",
+      "corridorId": "vi-vn",
+      "target": "cà phê ()",
+      "romanization": "ga... fey",
+      "meaningEn": "coffee",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-30a17491",
+      "corridorId": "vi-vn",
+      "target": "nước trà ()",
+      "romanization": "neu-uk? chah...",
+      "meaningEn": "tea (drink)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-3d1f14d5",
+      "corridorId": "vi-vn",
+      "target": "nước ép _____ ()",
+      "romanization": "...",
+      "meaningEn": "_____ juice",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-01f35cce",
+      "corridorId": "vi-vn",
+      "target": "nước ngọt ()",
+      "romanization": "neu-uk? ngawt.",
+      "meaningEn": "bubbly water",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-e639d9dc",
+      "corridorId": "vi-vn",
+      "target": "nước ()",
+      "romanization": "neu-uk?",
+      "meaningEn": "water",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-181ae53a",
+      "corridorId": "vi-vn",
+      "target": "rượu (), bia (pronounce \"beer\" with a British accent)",
+      "romanization": "rih-oh.",
+      "meaningEn": "beer",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-aca47c88",
+      "corridorId": "vi-vn",
+      "target": "rượu đỏ/trắng ()",
+      "romanization": "rih-oh. daw... aw? / chahng?!",
+      "meaningEn": "red/white wine",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-80e935e2",
+      "corridorId": "vi-vn",
+      "target": "Có thể cho tôi _____? ()",
+      "romanization": "...",
+      "meaningEn": "May I have some _____?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-3e3e44b6",
+      "corridorId": "vi-vn",
+      "target": "muối ()",
+      "romanization": "moo-ee?",
+      "meaningEn": "salt",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-d273eb4c",
+      "corridorId": "vi-vn",
+      "target": "hạt tiêu ()",
+      "romanization": "haht. thee-oh",
+      "meaningEn": "black pepper",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-87f8e3cb",
+      "corridorId": "vi-vn",
+      "target": "nước mắm",
+      "meaningEn": "fish sauce",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-75fc3a66",
+      "corridorId": "vi-vn",
+      "target": "xì dầu (in the north) / nước tương (in the south)",
+      "meaningEn": "soy sauce",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-f152e88b",
+      "corridorId": "vi-vn",
+      "target": "bơ ()",
+      "romanization": "buh",
+      "meaningEn": "butter",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-fd62b9ae",
+      "corridorId": "vi-vn",
+      "target": "Xong rồi. ()",
+      "romanization": "sah-ohng roh-ee...",
+      "meaningEn": "I'm finished.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-4f46902f",
+      "corridorId": "vi-vn",
+      "target": "Nó rất ngon. (...)",
+      "meaningEn": "It was delicious.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-fca46d89",
+      "corridorId": "vi-vn",
+      "target": "Xin hãy dọn đĩa đi. ()",
+      "romanization": "...",
+      "meaningEn": "Please clear the plates.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-8332f9ff",
+      "corridorId": "vi-vn",
+      "target": "Thanh toán tiền giúp tôi. ()",
+      "romanization": "...",
+      "meaningEn": "The check, please.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Eating",
+      "source": "wikivoyage",
+      "situationHints": [
+        "restaurant",
+        "food_stalls"
+      ],
+      "tags": [
+        "Eating"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-6034812d",
+      "corridorId": "vi-vn",
+      "target": "Có rượu ở đây không? ()",
+      "romanization": "...",
+      "meaningEn": "Do you serve alcohol?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bars",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bars"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-32d7e3f8",
+      "corridorId": "vi-vn",
+      "target": "()",
+      "romanization": "...",
+      "meaningEn": "Is there table service?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bars",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bars"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-b52fb32d",
+      "corridorId": "vi-vn",
+      "target": "Cho tôi một/hai cốc bia. ()",
+      "romanization": "...",
+      "meaningEn": "A beer/two beers, please.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bars",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bars"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-2bd2e055",
+      "corridorId": "vi-vn",
+      "target": "Cho tôi một ly rượu đỏ/trắng. ()",
+      "romanization": "...",
+      "meaningEn": "A glass of red/white wine, please.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bars",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bars"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-ff8c1db6",
+      "corridorId": "vi-vn",
+      "target": "()",
+      "romanization": "...",
+      "meaningEn": "A pint, please.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bars",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bars"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-2506faaa",
+      "corridorId": "vi-vn",
+      "target": "Cho tôi một chai. ()",
+      "romanization": "...",
+      "meaningEn": "A bottle, please.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bars",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bars"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-45b30d0a",
+      "corridorId": "vi-vn",
+      "target": "()",
+      "romanization": "...",
+      "meaningEn": "_____ (hard liquor) and _____ (mixer), please.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bars",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bars"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-f769f0af",
+      "corridorId": "vi-vn",
+      "target": "uytky ()",
+      "romanization": "...",
+      "meaningEn": "whiskey",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bars",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bars"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-e3a86533",
+      "corridorId": "vi-vn",
+      "target": "()",
+      "romanization": "...",
+      "meaningEn": "vodka",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bars",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bars"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-f9dbddd3",
+      "corridorId": "vi-vn",
+      "target": "()",
+      "romanization": "...",
+      "meaningEn": "rum",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bars",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bars"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-c7a32554",
+      "corridorId": "vi-vn",
+      "target": "nước ngọt ()",
+      "romanization": "neu-uhck? ngawt.",
+      "meaningEn": "soda pop",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bars",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bars"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-30aa860c",
+      "corridorId": "vi-vn",
+      "target": "()",
+      "romanization": "...",
+      "meaningEn": "club soda",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bars",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bars"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-acc82ce2",
+      "corridorId": "vi-vn",
+      "target": "()",
+      "romanization": "...",
+      "meaningEn": "tonic water",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bars",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bars"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-d0eee41c",
+      "corridorId": "vi-vn",
+      "target": "nước cam ()",
+      "romanization": "neu-uhck? gam",
+      "meaningEn": "orange juice",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bars",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bars"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-2f178c5b",
+      "corridorId": "vi-vn",
+      "target": "Côca-Côla ()",
+      "romanization": "koh-kah? koh-la",
+      "meaningEn": "Coke (soda)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bars",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bars"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-b53afb78",
+      "corridorId": "vi-vn",
+      "target": "()",
+      "romanization": "...",
+      "meaningEn": "Do you have any bar snacks?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bars",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bars"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-6a027943",
+      "corridorId": "vi-vn",
+      "target": "Cho tôi một ly/chai nữa. ()",
+      "romanization": "...",
+      "meaningEn": "One more, please.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bars",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bars"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-14410787",
+      "corridorId": "vi-vn",
+      "target": "()",
+      "romanization": "...",
+      "meaningEn": "Another round, please.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bars",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bars"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-53670855",
+      "corridorId": "vi-vn",
+      "target": "Bao giờ đóng cửa? ()",
+      "romanization": "Bow yuh... downg? geu-uh?",
+      "meaningEn": "When is closing time?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bars",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bars"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-08cc1f74",
+      "corridorId": "vi-vn",
+      "target": "Một, hai, ba, dzô! (mo'oht, high, bar, yo/zo!)",
+      "meaningEn": "Cheers!",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Bars",
+      "source": "wikivoyage",
+      "situationHints": [
+        "basics"
+      ],
+      "tags": [
+        "Bars"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-e5696383",
+      "corridorId": "vi-vn",
+      "target": "()",
+      "romanization": "...",
+      "meaningEn": "Do you have this in my size?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-a5e02cff",
+      "corridorId": "vi-vn",
+      "target": "Bao nhiêu (tiền)? ()",
+      "romanization": "bahw nyee-oh thee-uhn...",
+      "meaningEn": "How much (money) is this?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-99ccec26",
+      "corridorId": "vi-vn",
+      "target": "Đắt quá. ()",
+      "romanization": "daht?! kwahh?",
+      "meaningEn": "That's too expensive.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-7904f976",
+      "corridorId": "vi-vn",
+      "target": "Bạn lấy _____ được không? (ley? _____ deu'uhk kohng)",
+      "meaningEn": "Would you take _____?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-65fb5049",
+      "corridorId": "vi-vn",
+      "target": "đắt ()",
+      "romanization": "daht?!",
+      "meaningEn": "expensive",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-a94bc0f8",
+      "corridorId": "vi-vn",
+      "target": "rẻ ()",
+      "romanization": "reah...uh?",
+      "meaningEn": "cheap",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-a5494465",
+      "corridorId": "vi-vn",
+      "target": "Tôi không có đủ tiền mua. ()",
+      "romanization": "thoh-ee kohng kaw? doo...oo? thee-uhn... moo-uh",
+      "meaningEn": "I can't afford it.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-04c99ec8",
+      "corridorId": "vi-vn",
+      "target": "Tôi không muốn. ()",
+      "romanization": "thoh-ee kohng moo-uhn?",
+      "meaningEn": "I don't want it.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-e65f06cf",
+      "corridorId": "vi-vn",
+      "target": "Mày ăn gian tôi. ()",
+      "romanization": "my ang yang Thoy",
+      "meaningEn": "You're cheating me.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-71d893e3",
+      "corridorId": "vi-vn",
+      "target": "Tôi không thích lắm. (...)",
+      "meaningEn": "I'm not interested.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-79556944",
+      "corridorId": "vi-vn",
+      "target": "OK, tôi sẽ lấy nó. ()",
+      "romanization": "...",
+      "meaningEn": "OK, I'll take it.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-0970e974",
+      "corridorId": "vi-vn",
+      "target": "Bạn có túi không? (...)",
+      "meaningEn": "Can I have a bag?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-8fc64e19",
+      "corridorId": "vi-vn",
+      "target": "Có thể gởi đồ (ngoài nước) không? ()",
+      "romanization": "...",
+      "meaningEn": "Do you ship (overseas)?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-dabc3baa",
+      "corridorId": "vi-vn",
+      "target": "Tôi cần... ()",
+      "romanization": "thoh-ee cuhn...",
+      "meaningEn": "I need...",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-4ebe95a9",
+      "corridorId": "vi-vn",
+      "target": "...kem đánh răng. ()",
+      "romanization": "keahm dayng? rahng",
+      "meaningEn": "...toothpaste.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-20489f4b",
+      "corridorId": "vi-vn",
+      "target": "...bàn chải đánh răng. ()",
+      "romanization": "bahn... chah-ee? dayng? rahng",
+      "meaningEn": "...a toothbrush.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-a349e5d9",
+      "corridorId": "vi-vn",
+      "target": "băng vệ sinh",
+      "meaningEn": "...tampons.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-972cd9a1",
+      "corridorId": "vi-vn",
+      "target": "...xà bông. ()",
+      "romanization": "sah... bohng",
+      "meaningEn": "...soap.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-8208f890",
+      "corridorId": "vi-vn",
+      "target": "...dầu gội. ()",
+      "romanization": "...",
+      "meaningEn": "...shampoo.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-511eb7d0",
+      "corridorId": "vi-vn",
+      "target": "...thuốc giảm đau. ()",
+      "romanization": "too-uhc? yah...ahm? dahw!",
+      "meaningEn": "...pain reliever. (e.g., aspirin or ibuprofen)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-d4ea2292",
+      "corridorId": "vi-vn",
+      "target": "...thuốc cảm. ()",
+      "romanization": "...",
+      "meaningEn": "...cold medicine.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-3ef68382",
+      "corridorId": "vi-vn",
+      "target": "...thuốc đau bụng. ()",
+      "romanization": "...",
+      "meaningEn": "...stomach medicine.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-12757357",
+      "corridorId": "vi-vn",
+      "target": "...dao cạo râu. (yahw kah'oh ruh-oo)",
+      "meaningEn": "...a razor.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-f9b650bb",
+      "corridorId": "vi-vn",
+      "target": "...dù/ô. ()",
+      "romanization": "...",
+      "meaningEn": "...an umbrella.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-3b3bfe9e",
+      "corridorId": "vi-vn",
+      "target": "...kem chống nắng. ()",
+      "romanization": "...",
+      "meaningEn": "...sunblock lotion.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-37f668c2",
+      "corridorId": "vi-vn",
+      "target": "...bưu thiếp. ()",
+      "romanization": "...",
+      "meaningEn": "...a postcard.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-519b6ec3",
+      "corridorId": "vi-vn",
+      "target": "...tem. ()",
+      "romanization": "tham",
+      "meaningEn": "...postage stamps.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-72af44c3",
+      "corridorId": "vi-vn",
+      "target": "...pin. ()",
+      "romanization": "bean",
+      "meaningEn": "...batteries.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-0d2adf0e",
+      "corridorId": "vi-vn",
+      "target": "...giấy. ()",
+      "romanization": "yay?!",
+      "meaningEn": "...writing paper.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-e291c1a0",
+      "corridorId": "vi-vn",
+      "target": "...bút mực. () (in the north) / ...viết mực. (in the south)",
+      "romanization": "boot?!",
+      "meaningEn": "...a pen.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-0e593c44",
+      "corridorId": "vi-vn",
+      "target": "...bút chì. () (in the north) / ...viết chì. (in the south)",
+      "romanization": "boot?! chee...",
+      "meaningEn": "...a pencil.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-f555601d",
+      "corridorId": "vi-vn",
+      "target": "...sách Anh ngữ. ()",
+      "romanization": "...",
+      "meaningEn": "...English-language books.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-faa9d010",
+      "corridorId": "vi-vn",
+      "target": "...tạp chí Anh ngữ. (thuh'p chee? ayng-eu'eu?)",
+      "meaningEn": "...English-language magazines.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-b2fd4b68",
+      "corridorId": "vi-vn",
+      "target": "...báo Anh ngữ. (bahw? ayng-eu'eu?)",
+      "meaningEn": "...an English-language newspaper.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-b254a417",
+      "corridorId": "vi-vn",
+      "target": "...từ điển Anh-Anh. ()",
+      "romanization": "theu... dee-n? ayng-ayng",
+      "meaningEn": "...an English-English dictionary.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Shopping",
+      "source": "wikivoyage",
+      "situationHints": [
+        "shopping",
+        "money"
+      ],
+      "tags": [
+        "Shopping"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-1ac7808f",
+      "corridorId": "vi-vn",
+      "target": "Tôi muốn thuê xe. ()",
+      "romanization": "...",
+      "meaningEn": "I want to rent a car.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Driving",
+      "source": "wikivoyage",
+      "situationHints": [
+        "driving",
+        "taxi"
+      ],
+      "tags": [
+        "Driving"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-a8d15afa",
+      "corridorId": "vi-vn",
+      "target": "Có bảo hiểm cho tôi không? ()",
+      "romanization": "koh? bah...oo hee...m? chaw thoh-ee khohng",
+      "meaningEn": "Can I get insurance?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Driving",
+      "source": "wikivoyage",
+      "situationHints": [
+        "driving",
+        "taxi"
+      ],
+      "tags": [
+        "Driving"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-b772eeab",
+      "corridorId": "vi-vn",
+      "target": "dừng ()",
+      "romanization": "...",
+      "meaningEn": "stop (on a street sign)",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Driving",
+      "source": "wikivoyage",
+      "situationHints": [
+        "driving",
+        "taxi"
+      ],
+      "tags": [
+        "Driving"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-481b0eb8",
+      "corridorId": "vi-vn",
+      "target": "một chiều ()",
+      "romanization": "...",
+      "meaningEn": "one way",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Driving",
+      "source": "wikivoyage",
+      "situationHints": [
+        "driving",
+        "taxi"
+      ],
+      "tags": [
+        "Driving"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-4e46bcec",
+      "corridorId": "vi-vn",
+      "target": "yield ()",
+      "romanization": "...",
+      "meaningEn": "yield",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Driving",
+      "source": "wikivoyage",
+      "situationHints": [
+        "driving",
+        "taxi"
+      ],
+      "tags": [
+        "Driving"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-88804612",
+      "corridorId": "vi-vn",
+      "target": "không đỗ xe ()",
+      "romanization": "...",
+      "meaningEn": "no parking",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Driving",
+      "source": "wikivoyage",
+      "situationHints": [
+        "driving",
+        "taxi"
+      ],
+      "tags": [
+        "Driving"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-80aef865",
+      "corridorId": "vi-vn",
+      "target": "tốc độ cho phép ()",
+      "romanization": "...",
+      "meaningEn": "speed limit",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Driving",
+      "source": "wikivoyage",
+      "situationHints": [
+        "driving",
+        "taxi"
+      ],
+      "tags": [
+        "Driving"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-5fbce6e6",
+      "corridorId": "vi-vn",
+      "target": "cây xăng ()",
+      "romanization": "keh-ee sahng!",
+      "meaningEn": "gas (petrol) station",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Driving",
+      "source": "wikivoyage",
+      "situationHints": [
+        "driving",
+        "taxi"
+      ],
+      "tags": [
+        "Driving"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-d4a50bbf",
+      "corridorId": "vi-vn",
+      "target": "xăng ()",
+      "romanization": "sahng!",
+      "meaningEn": "petrol",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Driving",
+      "source": "wikivoyage",
+      "situationHints": [
+        "driving",
+        "taxi"
+      ],
+      "tags": [
+        "Driving"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-a3d5ef74",
+      "corridorId": "vi-vn",
+      "target": "(\"...\")",
+      "meaningEn": "diesel",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Driving",
+      "source": "wikivoyage",
+      "situationHints": [
+        "driving",
+        "taxi"
+      ],
+      "tags": [
+        "Driving"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-ff49dac1",
+      "corridorId": "vi-vn",
+      "target": "Tôi chưa làm gì sai. ()",
+      "romanization": "thoh-ee cheu-uh lam zee sai?",
+      "meaningEn": "I haven't done anything wrong.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Authority",
+      "source": "wikivoyage",
+      "situationHints": [
+        "emergency",
+        "immigration"
+      ],
+      "tags": [
+        "Authority"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-1423cdc7",
+      "corridorId": "vi-vn",
+      "target": "Chỉ là hiểu lầm thôi. ()",
+      "romanization": "chee...ee? lah... hee...oh? luhm... toh-ee",
+      "meaningEn": "It was a misunderstanding.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Authority",
+      "source": "wikivoyage",
+      "situationHints": [
+        "emergency",
+        "immigration"
+      ],
+      "tags": [
+        "Authority"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-9cf4cc12",
+      "corridorId": "vi-vn",
+      "target": "Bạn đang dẫn tôi đi đâu? (bahn dahng yuh'n? thoh-ee dee duhw)",
+      "meaningEn": "Where are you taking me?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Authority",
+      "source": "wikivoyage",
+      "situationHints": [
+        "emergency",
+        "immigration"
+      ],
+      "tags": [
+        "Authority"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-05f197e3",
+      "corridorId": "vi-vn",
+      "target": "Tôi là công dân Mỹ/Australia/Anh/Canada. (toh-ee lah... kohng yuhn mee'ee? / australia / ayng / kah-nah-dah)",
+      "meaningEn": "; I am an American/Australian/British/Canadian citizen.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Authority",
+      "source": "wikivoyage",
+      "situationHints": [
+        "emergency",
+        "immigration"
+      ],
+      "tags": [
+        "Authority"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-e67c58af",
+      "corridorId": "vi-vn",
+      "target": "Tôi muốn nói chuyện với luật sư. ()",
+      "romanization": "...",
+      "meaningEn": "I want to talk to a lawyer.",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Authority",
+      "source": "wikivoyage",
+      "situationHints": [
+        "emergency",
+        "immigration"
+      ],
+      "tags": [
+        "Authority"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    },
+    {
+      "id": "vi-vn-pool-16ba42b4",
+      "corridorId": "vi-vn",
+      "target": "Tôi chỉ trả tiền phạt thôi được không? ()",
+      "romanization": "...",
+      "meaningEn": "Can I just pay a fine now?",
+      "wvSource": "https://en.wikivoyage.org/wiki/Vietnamese_phrasebook#Authority",
+      "source": "wikivoyage",
+      "situationHints": [
+        "emergency",
+        "immigration"
+      ],
+      "tags": [
+        "Authority"
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-12T16:36:38.225Z"
+    }
+  ]
+}
