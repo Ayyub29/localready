@@ -1,0 +1,480 @@
+{
+  "corridorId": "id-id",
+  "lessons": [
+    {
+      "id": "id-id-basics",
+      "corridorId": "id-id",
+      "situation": "basics",
+      "order": 1,
+      "title": {
+        "en": "First hour & greetings",
+        "id": "Jam pertama & sapaan"
+      },
+      "free": true,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": [
+        {
+          "id": "id-id-basics-greetings",
+          "title": {
+            "en": "Greetings",
+            "id": "Sapaan"
+          },
+          "scenario": {
+            "en": "You meet staff at the hotel or shop for the first time.",
+            "id": "Kamu bertemu staf hotel atau toko untuk pertama kali."
+          },
+          "phrases": [
+            {
+              "id": "id-id-basics-hello-0",
+              "target": "Halo.",
+              "romanization": "HAH-loh",
+              "meaning": {
+                "en": "Hello.",
+                "id": "Hello."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics"
+            },
+            {
+              "id": "id-id-basics-hello-informal-1",
+              "target": "Hai.",
+              "romanization": "high",
+              "meaning": {
+                "en": "Hello. (informal)",
+                "id": "Hello. (informal)"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics"
+            },
+            {
+              "id": "id-id-basics-hello-muslim-2",
+              "target": "Assalamu 'alaikum",
+              "romanization": "ah-sah-LAH-mu ah-LEH-koom",
+              "meaning": {
+                "en": "Hello. (\"Muslim\")",
+                "id": "Hello. (\"Muslim\")"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics"
+            },
+            {
+              "id": "id-id-basics-how-are-you-3",
+              "target": "Apa kabar?",
+              "romanization": "AH-pah KAH-bar?",
+              "meaning": {
+                "en": "How are you?",
+                "id": "How are you?"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics"
+            },
+            {
+              "id": "id-id-basics-what-is-your-name-4",
+              "target": "Siapa nama?",
+              "romanization": "see-AH-pah NAH-mah?",
+              "meaning": {
+                "en": "What is your name?",
+                "id": "What is your name?"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics"
+            }
+          ],
+          "quiz": [
+            {
+              "id": "id-id-basics-greetings-q1",
+              "type": "pick-phrase",
+              "prompt": {
+                "en": "Which phrase matches the situation?",
+                "id": "Frasa mana yang cocok?"
+              },
+              "phraseIds": [
+                "id-id-basics-hello-0",
+                "id-id-basics-hello-informal-1",
+                "id-id-basics-hello-muslim-2",
+                "id-id-basics-how-are-you-3",
+                "id-id-basics-what-is-your-name-4"
+              ],
+              "correctPhraseId": "id-id-basics-hello-0"
+            }
+          ]
+        },
+        {
+          "id": "id-id-basics-polite",
+          "title": {
+            "en": "Thanks & excuse me",
+            "id": "Terima kasih & permisi"
+          },
+          "culture": [
+            {
+              "id": "id-id-basics-culture-polite",
+              "title": {
+                "en": "Politeness first",
+                "id": "Sopan dulu"
+              },
+              "body": {
+                "en": "Short polite phrases matter more than perfect grammar when traveling.",
+                "id": "Frasa sopan yang singkat lebih penting daripada grammar sempurna saat jalan-jalan."
+              }
+            }
+          ],
+          "scenario": {
+            "en": "You need to get attention or say thanks in a busy place.",
+            "id": "Kamu perlu menarik perhatian atau berterima kasih di tempat ramai."
+          },
+          "phrases": [
+            {
+              "id": "id-id-basics-please-inviting-someone-to-do-something-10",
+              "target": "Silakan.",
+              "romanization": "SIH-lah-kahn",
+              "meaning": {
+                "en": "Please. (inviting someone to do something)",
+                "id": "Please. (inviting someone to do something)"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics"
+            },
+            {
+              "id": "id-id-basics-please-asking-for-help-with-an-action-or-11",
+              "target": "Tolong",
+              "romanization": "TO-long",
+              "meaning": {
+                "en": "Please. (asking for help with an action or service)",
+                "id": "Please. (asking for help with an action or service)"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics"
+            },
+            {
+              "id": "id-id-basics-please-asking-to-be-given-something-12",
+              "target": "Minta",
+              "romanization": "MIN-tah",
+              "meaning": {
+                "en": "Please. (asking to be given something)",
+                "id": "Please. (asking to be given something)"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics"
+            },
+            {
+              "id": "id-id-basics-thank-you-13",
+              "target": "Terima kasih.",
+              "romanization": "tuh-REE-mah KAH-see",
+              "meaning": {
+                "en": "Thank you.",
+                "id": "Thank you."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics"
+            },
+            {
+              "id": "id-id-basics-yes-14",
+              "target": "Ya",
+              "romanization": "yah",
+              "meaning": {
+                "en": "Yes.",
+                "id": "Yes."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics"
+            }
+          ],
+          "quiz": [
+            {
+              "id": "id-id-basics-polite-q1",
+              "type": "pick-phrase",
+              "prompt": {
+                "en": "Which phrase matches the situation?",
+                "id": "Frasa mana yang cocok?"
+              },
+              "phraseIds": [
+                "id-id-basics-please-inviting-someone-to-do-something-10",
+                "id-id-basics-please-asking-for-help-with-an-action-or-11",
+                "id-id-basics-please-asking-to-be-given-something-12",
+                "id-id-basics-thank-you-13",
+                "id-id-basics-yes-14"
+              ],
+              "correctPhraseId": "id-id-basics-please-inviting-someone-to-do-something-10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "id-id-train",
+      "corridorId": "id-id",
+      "situation": "train",
+      "order": 2,
+      "title": {
+        "en": "Transit & tickets",
+        "id": "Transportasi & tiket"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "id-id-money",
+      "corridorId": "id-id",
+      "situation": "money",
+      "order": 3,
+      "title": {
+        "en": "Paying & convenience stores",
+        "id": "Bayar & minimarket"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "id-id-restaurant",
+      "corridorId": "id-id",
+      "situation": "restaurant",
+      "order": 4,
+      "title": {
+        "en": "Ordering & the bill",
+        "id": "Pesan makan & bon"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "id-id-hotel",
+      "corridorId": "id-id",
+      "situation": "hotel",
+      "order": 5,
+      "title": {
+        "en": "Check-in & your room",
+        "id": "Check-in & kamar"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "id-id-directions",
+      "corridorId": "id-id",
+      "situation": "directions",
+      "order": 6,
+      "title": {
+        "en": "Lost & maps",
+        "id": "Tersesat & peta"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "id-id-culture",
+      "corridorId": "id-id",
+      "situation": "culture",
+      "order": 7,
+      "title": {
+        "en": "Etiquette & temples",
+        "id": "Etiket & tempat suci"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "id-id-emergency",
+      "corridorId": "id-id",
+      "situation": "emergency",
+      "order": 8,
+      "title": {
+        "en": "Help, health & allergies",
+        "id": "Bantuan, kesehatan & alergi"
+      },
+      "free": true,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": [
+        {
+          "id": "id-id-emergency-core",
+          "title": {
+            "en": "Urgent help",
+            "id": "Bantuan darurat"
+          },
+          "scenario": {
+            "en": "Something went wrong and you need help quickly.",
+            "id": "Ada masalah dan kamu butuh bantuan cepat."
+          },
+          "phrases": [
+            {
+              "id": "id-id-emergency-i-ll-call-the-police-0",
+              "target": "Saya akan panggil polisi.",
+              "romanization": "SAH-yah AH-kahn PAHNG-gihl po-LEE-see",
+              "meaning": {
+                "en": "I'll call the police.",
+                "id": "I'll call the police."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
+            },
+            {
+              "id": "id-id-emergency-police-1",
+              "target": "Polisi!",
+              "romanization": "po-LEE-see",
+              "meaning": {
+                "en": "Police!",
+                "id": "Police!"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
+            },
+            {
+              "id": "id-id-emergency-i-need-your-help-2",
+              "target": "Saya minta tolong.",
+              "romanization": "SAH-yah MEEN-tah TO-long",
+              "meaning": {
+                "en": "I need your help.",
+                "id": "I need your help."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
+            },
+            {
+              "id": "id-id-emergency-it-s-an-emergency-3",
+              "target": "Ini darurat.",
+              "romanization": "EE-nee dah-ROO-rah(t)",
+              "meaning": {
+                "en": "It's an emergency.",
+                "id": "It's an emergency."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
+            },
+            {
+              "id": "id-id-emergency-i-m-lost-4",
+              "target": "Saya tersesat.",
+              "romanization": "SAH-yah tuhr-SUH-sah(t)",
+              "meaning": {
+                "en": "I'm lost.",
+                "id": "I'm lost."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
+            },
+            {
+              "id": "id-id-emergency-i-lost-my-bag-5",
+              "target": "Saya kehilangan tas saya.",
+              "romanization": "SAH-yah kuh-HEE-lahng-ahn tahss SAH-yah",
+              "meaning": {
+                "en": "I lost my bag.",
+                "id": "I lost my bag."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
+            }
+          ],
+          "quiz": [
+            {
+              "id": "id-id-emergency-core-q1",
+              "type": "pick-phrase",
+              "prompt": {
+                "en": "Which phrase matches the situation?",
+                "id": "Frasa mana yang cocok?"
+              },
+              "phraseIds": [
+                "id-id-emergency-i-ll-call-the-police-0",
+                "id-id-emergency-police-1",
+                "id-id-emergency-i-need-your-help-2",
+                "id-id-emergency-it-s-an-emergency-3",
+                "id-id-emergency-i-m-lost-4",
+                "id-id-emergency-i-lost-my-bag-5"
+              ],
+              "correctPhraseId": "id-id-emergency-i-ll-call-the-police-0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "emergencyPhrases": [
+    {
+      "id": "id-id-emergency-i-ll-call-the-police-0",
+      "target": "Saya akan panggil polisi.",
+      "romanization": "SAH-yah AH-kahn PAHNG-gihl po-LEE-see",
+      "meaning": {
+        "en": "I'll call the police.",
+        "id": "I'll call the police."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
+    },
+    {
+      "id": "id-id-emergency-police-1",
+      "target": "Polisi!",
+      "romanization": "po-LEE-see",
+      "meaning": {
+        "en": "Police!",
+        "id": "Police!"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
+    },
+    {
+      "id": "id-id-emergency-i-need-your-help-2",
+      "target": "Saya minta tolong.",
+      "romanization": "SAH-yah MEEN-tah TO-long",
+      "meaning": {
+        "en": "I need your help.",
+        "id": "I need your help."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
+    },
+    {
+      "id": "id-id-emergency-it-s-an-emergency-3",
+      "target": "Ini darurat.",
+      "romanization": "EE-nee dah-ROO-rah(t)",
+      "meaning": {
+        "en": "It's an emergency.",
+        "id": "It's an emergency."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
+    },
+    {
+      "id": "id-id-emergency-i-m-lost-4",
+      "target": "Saya tersesat.",
+      "romanization": "SAH-yah tuhr-SUH-sah(t)",
+      "meaning": {
+        "en": "I'm lost.",
+        "id": "I'm lost."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
+    },
+    {
+      "id": "id-id-emergency-i-lost-my-bag-5",
+      "target": "Saya kehilangan tas saya.",
+      "romanization": "SAH-yah kuh-HEE-lahng-ahn tahss SAH-yah",
+      "meaning": {
+        "en": "I lost my bag.",
+        "id": "I lost my bag."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
+    }
+  ]
+}

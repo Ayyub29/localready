@@ -66,6 +66,16 @@ Set `"approve": false` to insert as `pending`.
 
 **Note:** API writes to the repo `content/` folder. Use on local dev or a trusted host with a persistent disk; serverless deploys are read-only.
 
+## Starter packs (for app dev)
+
+Build **basics** + **emergency** lessons from the phrase pool (other lessons stubbed empty):
+
+```bash
+npm run content:build:starter
+```
+
+Output: `content/packs/{corridorId}.json` — loaded by the lesson player.
+
 ## Next steps (not implemented yet)
 
 - `content:draft-vignette` — approved pool → vignette JSON

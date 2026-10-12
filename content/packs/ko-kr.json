@@ -1,0 +1,480 @@
+{
+  "corridorId": "ko-kr",
+  "lessons": [
+    {
+      "id": "ko-kr-basics",
+      "corridorId": "ko-kr",
+      "situation": "basics",
+      "order": 1,
+      "title": {
+        "en": "First hour & greetings",
+        "id": "Jam pertama & sapaan"
+      },
+      "free": true,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": [
+        {
+          "id": "ko-kr-basics-greetings",
+          "title": {
+            "en": "Greetings",
+            "id": "Sapaan"
+          },
+          "scenario": {
+            "en": "You meet staff at the hotel or shop for the first time.",
+            "id": "Kamu bertemu staf hotel atau toko untuk pertama kali."
+          },
+          "phrases": [
+            {
+              "id": "ko-kr-basics-hello-formal-0",
+              "target": "안녕하십니까. Common in North Korea, Yanbian, provincial South Korea.",
+              "romanization": "annyeonghasimnikka",
+              "meaning": {
+                "en": "Hello. (formal)",
+                "id": "Hello. (formal)"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Basics"
+            },
+            {
+              "id": "ko-kr-basics-hello-1",
+              "target": "안녕하세요. Common in South Korea. to older people or to the people to meet first",
+              "romanization": "annyeonghaseyo",
+              "meaning": {
+                "en": "Hello.",
+                "id": "Hello."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Basics"
+            },
+            {
+              "id": "ko-kr-basics-hello-informal-2",
+              "target": "안녕. to your friend or younger people",
+              "romanization": "annyeong",
+              "meaning": {
+                "en": "Hello. (informal)",
+                "id": "Hello. (informal)"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Basics"
+            },
+            {
+              "id": "ko-kr-basics-hello-on-the-phone-3",
+              "target": "여보세요. when you answer the phone.",
+              "romanization": "yeoboseyo",
+              "meaning": {
+                "en": "Hello. (on the phone)",
+                "id": "Hello. (on the phone)"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Basics"
+            },
+            {
+              "id": "ko-kr-basics-how-are-you-4",
+              "target": "어떻게 지내십니까?",
+              "romanization": "eotteoke jinaesimnikka?",
+              "meaning": {
+                "en": "How are you?",
+                "id": "How are you?"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Basics"
+            }
+          ],
+          "quiz": [
+            {
+              "id": "ko-kr-basics-greetings-q1",
+              "type": "pick-phrase",
+              "prompt": {
+                "en": "Which phrase matches the situation?",
+                "id": "Frasa mana yang cocok?"
+              },
+              "phraseIds": [
+                "ko-kr-basics-hello-formal-0",
+                "ko-kr-basics-hello-1",
+                "ko-kr-basics-hello-informal-2",
+                "ko-kr-basics-hello-on-the-phone-3",
+                "ko-kr-basics-how-are-you-4"
+              ],
+              "correctPhraseId": "ko-kr-basics-hello-formal-0"
+            }
+          ]
+        },
+        {
+          "id": "ko-kr-basics-polite",
+          "title": {
+            "en": "Thanks & excuse me",
+            "id": "Terima kasih & permisi"
+          },
+          "culture": [
+            {
+              "id": "ko-kr-basics-culture-polite",
+              "title": {
+                "en": "Politeness first",
+                "id": "Sopan dulu"
+              },
+              "body": {
+                "en": "Short polite phrases matter more than perfect grammar when traveling.",
+                "id": "Frasa sopan yang singkat lebih penting daripada grammar sempurna saat jalan-jalan."
+              }
+            }
+          ],
+          "scenario": {
+            "en": "You need to get attention or say thanks in a busy place.",
+            "id": "Kamu perlu menarik perhatian atau berterima kasih di tempat ramai."
+          },
+          "phrases": [
+            {
+              "id": "ko-kr-basics-fine-thank-you-10",
+              "target": "잘 지냅니다, 감사합니다.",
+              "romanization": "jal jinaemnida, gamsahamnida",
+              "meaning": {
+                "en": "Fine, thank you.",
+                "id": "Fine, thank you."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Basics"
+            },
+            {
+              "id": "ko-kr-basics-please-11",
+              "target": "부탁합니다.",
+              "romanization": "butakamnida",
+              "meaning": {
+                "en": "Please.",
+                "id": "Please."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Basics"
+            },
+            {
+              "id": "ko-kr-basics-thank-you-12",
+              "target": "감사합니다.",
+              "romanization": "gamsahamnida",
+              "meaning": {
+                "en": "Thank you.",
+                "id": "Thank you."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Basics"
+            },
+            {
+              "id": "ko-kr-basics-yes-13",
+              "target": "예/네.",
+              "romanization": "ye/ne",
+              "meaning": {
+                "en": "Yes.",
+                "id": "Yes."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Basics"
+            },
+            {
+              "id": "ko-kr-basics-excuse-me-getting-attention-14",
+              "target": "실례합니다.",
+              "romanization": "sill(y)e hamnida",
+              "meaning": {
+                "en": "Excuse me. (getting attention)",
+                "id": "Excuse me. (getting attention)"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Basics"
+            }
+          ],
+          "quiz": [
+            {
+              "id": "ko-kr-basics-polite-q1",
+              "type": "pick-phrase",
+              "prompt": {
+                "en": "Which phrase matches the situation?",
+                "id": "Frasa mana yang cocok?"
+              },
+              "phraseIds": [
+                "ko-kr-basics-fine-thank-you-10",
+                "ko-kr-basics-please-11",
+                "ko-kr-basics-thank-you-12",
+                "ko-kr-basics-yes-13",
+                "ko-kr-basics-excuse-me-getting-attention-14"
+              ],
+              "correctPhraseId": "ko-kr-basics-fine-thank-you-10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ko-kr-train",
+      "corridorId": "ko-kr",
+      "situation": "train",
+      "order": 2,
+      "title": {
+        "en": "Transit & tickets",
+        "id": "Transportasi & tiket"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "ko-kr-money",
+      "corridorId": "ko-kr",
+      "situation": "money",
+      "order": 3,
+      "title": {
+        "en": "Paying & convenience stores",
+        "id": "Bayar & minimarket"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "ko-kr-restaurant",
+      "corridorId": "ko-kr",
+      "situation": "restaurant",
+      "order": 4,
+      "title": {
+        "en": "Ordering & the bill",
+        "id": "Pesan makan & bon"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "ko-kr-hotel",
+      "corridorId": "ko-kr",
+      "situation": "hotel",
+      "order": 5,
+      "title": {
+        "en": "Check-in & your room",
+        "id": "Check-in & kamar"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "ko-kr-directions",
+      "corridorId": "ko-kr",
+      "situation": "directions",
+      "order": 6,
+      "title": {
+        "en": "Lost & maps",
+        "id": "Tersesat & peta"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "ko-kr-culture",
+      "corridorId": "ko-kr",
+      "situation": "culture",
+      "order": 7,
+      "title": {
+        "en": "Etiquette & temples",
+        "id": "Etiket & tempat suci"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "ko-kr-emergency",
+      "corridorId": "ko-kr",
+      "situation": "emergency",
+      "order": 8,
+      "title": {
+        "en": "Help, health & allergies",
+        "id": "Bantuan, kesehatan & alergi"
+      },
+      "free": true,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": [
+        {
+          "id": "ko-kr-emergency-core",
+          "title": {
+            "en": "Urgent help",
+            "id": "Bantuan darurat"
+          },
+          "scenario": {
+            "en": "Something went wrong and you need help quickly.",
+            "id": "Ada masalah dan kamu butuh bantuan cepat."
+          },
+          "phrases": [
+            {
+              "id": "ko-kr-emergency-i-ll-call-the-police-0",
+              "target": "경찰을 부르겠습니다!",
+              "romanization": "gyeongchareul bureugetseumnida!",
+              "meaning": {
+                "en": "I'll call the police.",
+                "id": "I'll call the police."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
+            },
+            {
+              "id": "ko-kr-emergency-police-1",
+              "target": "경찰!",
+              "romanization": "gyeongchal!",
+              "meaning": {
+                "en": "Police!",
+                "id": "Police!"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
+            },
+            {
+              "id": "ko-kr-emergency-i-need-your-help-2",
+              "target": "당신의 도움이 필요합니다.",
+              "romanization": "dangsinui doumi piryohamnida",
+              "meaning": {
+                "en": "I need your help.",
+                "id": "I need your help."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
+            },
+            {
+              "id": "ko-kr-emergency-it-s-an-emergency-3",
+              "target": "응급 상황입니다.",
+              "romanization": "eunggeup sanghwang-imnida",
+              "meaning": {
+                "en": "It's an emergency.",
+                "id": "It's an emergency."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
+            },
+            {
+              "id": "ko-kr-emergency-i-m-lost-4",
+              "target": "길을 잃었습니다.",
+              "romanization": "gireul ireotseumnida",
+              "meaning": {
+                "en": "I'm lost.",
+                "id": "I'm lost."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
+            },
+            {
+              "id": "ko-kr-emergency-i-lost-my-bag-5",
+              "target": "가방을 잃었습니다.",
+              "romanization": "gabang-eul ireotseumnida",
+              "meaning": {
+                "en": "I lost my bag.",
+                "id": "I lost my bag."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
+            }
+          ],
+          "quiz": [
+            {
+              "id": "ko-kr-emergency-core-q1",
+              "type": "pick-phrase",
+              "prompt": {
+                "en": "Which phrase matches the situation?",
+                "id": "Frasa mana yang cocok?"
+              },
+              "phraseIds": [
+                "ko-kr-emergency-i-ll-call-the-police-0",
+                "ko-kr-emergency-police-1",
+                "ko-kr-emergency-i-need-your-help-2",
+                "ko-kr-emergency-it-s-an-emergency-3",
+                "ko-kr-emergency-i-m-lost-4",
+                "ko-kr-emergency-i-lost-my-bag-5"
+              ],
+              "correctPhraseId": "ko-kr-emergency-i-ll-call-the-police-0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "emergencyPhrases": [
+    {
+      "id": "ko-kr-emergency-i-ll-call-the-police-0",
+      "target": "경찰을 부르겠습니다!",
+      "romanization": "gyeongchareul bureugetseumnida!",
+      "meaning": {
+        "en": "I'll call the police.",
+        "id": "I'll call the police."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
+    },
+    {
+      "id": "ko-kr-emergency-police-1",
+      "target": "경찰!",
+      "romanization": "gyeongchal!",
+      "meaning": {
+        "en": "Police!",
+        "id": "Police!"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
+    },
+    {
+      "id": "ko-kr-emergency-i-need-your-help-2",
+      "target": "당신의 도움이 필요합니다.",
+      "romanization": "dangsinui doumi piryohamnida",
+      "meaning": {
+        "en": "I need your help.",
+        "id": "I need your help."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
+    },
+    {
+      "id": "ko-kr-emergency-it-s-an-emergency-3",
+      "target": "응급 상황입니다.",
+      "romanization": "eunggeup sanghwang-imnida",
+      "meaning": {
+        "en": "It's an emergency.",
+        "id": "It's an emergency."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
+    },
+    {
+      "id": "ko-kr-emergency-i-m-lost-4",
+      "target": "길을 잃었습니다.",
+      "romanization": "gireul ireotseumnida",
+      "meaning": {
+        "en": "I'm lost.",
+        "id": "I'm lost."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
+    },
+    {
+      "id": "ko-kr-emergency-i-lost-my-bag-5",
+      "target": "가방을 잃었습니다.",
+      "romanization": "gabang-eul ireotseumnida",
+      "meaning": {
+        "en": "I lost my bag.",
+        "id": "I lost my bag."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
+    }
+  ]
+}

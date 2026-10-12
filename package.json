@@ -12,7 +12,8 @@
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "content:seed:wv": "tsx scripts/content/wv-seed.ts",
-    "content:seed:ai": "tsx scripts/content/ai-seed-phrases.ts"
+    "content:seed:ai": "tsx scripts/content/ai-seed-phrases.ts",
+    "content:build:starter": "tsx scripts/content/build-starter-packs.ts"
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^1.11.3",

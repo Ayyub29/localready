@@ -1,0 +1,480 @@
+{
+  "corridorId": "ja-jp",
+  "lessons": [
+    {
+      "id": "ja-jp-basics",
+      "corridorId": "ja-jp",
+      "situation": "basics",
+      "order": 1,
+      "title": {
+        "en": "First hour & greetings",
+        "id": "Jam pertama & sapaan"
+      },
+      "free": true,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": [
+        {
+          "id": "ja-jp-basics-greetings",
+          "title": {
+            "en": "Greetings",
+            "id": "Sapaan"
+          },
+          "scenario": {
+            "en": "You meet staff at the hotel or shop for the first time.",
+            "id": "Kamu bertemu staf hotel atau toko untuk pertama kali."
+          },
+          "phrases": [
+            {
+              "id": "ja-jp-basics-good-afternoon-0",
+              "target": "こんにちは。",
+              "romanization": "Konnichiwa.",
+              "meaning": {
+                "en": "Good afternoon.",
+                "id": "Good afternoon."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Basics"
+            },
+            {
+              "id": "ja-jp-basics-how-are-you-1",
+              "target": "お元気ですか？",
+              "romanization": "O-genki desu ka?",
+              "meaning": {
+                "en": "How are you?",
+                "id": "How are you?"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Basics"
+            },
+            {
+              "id": "ja-jp-basics-what-s-your-name-lit-your-name-is-2",
+              "target": "お名前は？",
+              "romanization": "O-namae wa?",
+              "meaning": {
+                "en": "What's your name? (lit. \"Your name is...\")",
+                "id": "What's your name? (lit. \"Your name is...\")"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Basics"
+            },
+            {
+              "id": "ja-jp-basics-my-name-is-3",
+              "target": "... です。",
+              "romanization": "... desu.",
+              "meaning": {
+                "en": "My name is ... .",
+                "id": "My name is ... ."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Basics"
+            },
+            {
+              "id": "ja-jp-basics-nice-to-meet-you-formal-4",
+              "target": "始めまして。どうぞ宜しくお願いします。",
+              "romanization": "Hajimemashite. Dōzo yoroshiku onegaishimasu.",
+              "meaning": {
+                "en": "Nice to meet you. (formal)",
+                "id": "Nice to meet you. (formal)"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Basics"
+            }
+          ],
+          "quiz": [
+            {
+              "id": "ja-jp-basics-greetings-q1",
+              "type": "pick-phrase",
+              "prompt": {
+                "en": "Which phrase matches the situation?",
+                "id": "Frasa mana yang cocok?"
+              },
+              "phraseIds": [
+                "ja-jp-basics-good-afternoon-0",
+                "ja-jp-basics-how-are-you-1",
+                "ja-jp-basics-what-s-your-name-lit-your-name-is-2",
+                "ja-jp-basics-my-name-is-3",
+                "ja-jp-basics-nice-to-meet-you-formal-4"
+              ],
+              "correctPhraseId": "ja-jp-basics-good-afternoon-0"
+            }
+          ]
+        },
+        {
+          "id": "ja-jp-basics-polite",
+          "title": {
+            "en": "Thanks & excuse me",
+            "id": "Terima kasih & permisi"
+          },
+          "culture": [
+            {
+              "id": "ja-jp-basics-culture-polite",
+              "title": {
+                "en": "Politeness first",
+                "id": "Sopan dulu"
+              },
+              "body": {
+                "en": "Short polite phrases matter more than perfect grammar when traveling.",
+                "id": "Frasa sopan yang singkat lebih penting daripada grammar sempurna saat jalan-jalan."
+              }
+            }
+          ],
+          "scenario": {
+            "en": "You need to get attention or say thanks in a busy place.",
+            "id": "Kamu perlu menarik perhatian atau berterima kasih di tempat ramai."
+          },
+          "phrases": [
+            {
+              "id": "ja-jp-basics-good-afternoon-10",
+              "target": "こんにちは。",
+              "romanization": "Konnichiwa.",
+              "meaning": {
+                "en": "Good afternoon.",
+                "id": "Good afternoon."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Basics"
+            },
+            {
+              "id": "ja-jp-basics-fine-thank-you-11",
+              "target": "はい、元気です。",
+              "romanization": "Hai, genki desu.",
+              "meaning": {
+                "en": "Fine, thank you.",
+                "id": "Fine, thank you."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Basics"
+            },
+            {
+              "id": "ja-jp-basics-please-request-12",
+              "target": "お願いします。",
+              "romanization": "Onegai shimasu.",
+              "meaning": {
+                "en": "Please. (request)",
+                "id": "Please. (request)"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Basics"
+            },
+            {
+              "id": "ja-jp-basics-please-offer-13",
+              "target": "どうぞ。",
+              "romanization": "Dōzo.",
+              "meaning": {
+                "en": "Please. (offer)",
+                "id": "Please. (offer)"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Basics"
+            },
+            {
+              "id": "ja-jp-basics-thank-you-very-much-formal-14",
+              "target": "どうもありがとうございました。",
+              "romanization": "Dōmo arigatō gozaimashita.",
+              "meaning": {
+                "en": "Thank you very much. (formal)",
+                "id": "Thank you very much. (formal)"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Basics"
+            }
+          ],
+          "quiz": [
+            {
+              "id": "ja-jp-basics-polite-q1",
+              "type": "pick-phrase",
+              "prompt": {
+                "en": "Which phrase matches the situation?",
+                "id": "Frasa mana yang cocok?"
+              },
+              "phraseIds": [
+                "ja-jp-basics-good-afternoon-10",
+                "ja-jp-basics-fine-thank-you-11",
+                "ja-jp-basics-please-request-12",
+                "ja-jp-basics-please-offer-13",
+                "ja-jp-basics-thank-you-very-much-formal-14"
+              ],
+              "correctPhraseId": "ja-jp-basics-good-afternoon-10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-jp-train",
+      "corridorId": "ja-jp",
+      "situation": "train",
+      "order": 2,
+      "title": {
+        "en": "Transit & tickets",
+        "id": "Transportasi & tiket"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "ja-jp-money",
+      "corridorId": "ja-jp",
+      "situation": "money",
+      "order": 3,
+      "title": {
+        "en": "Paying & convenience stores",
+        "id": "Bayar & minimarket"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "ja-jp-restaurant",
+      "corridorId": "ja-jp",
+      "situation": "restaurant",
+      "order": 4,
+      "title": {
+        "en": "Ordering & the bill",
+        "id": "Pesan makan & bon"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "ja-jp-hotel",
+      "corridorId": "ja-jp",
+      "situation": "hotel",
+      "order": 5,
+      "title": {
+        "en": "Check-in & your room",
+        "id": "Check-in & kamar"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "ja-jp-directions",
+      "corridorId": "ja-jp",
+      "situation": "directions",
+      "order": 6,
+      "title": {
+        "en": "Lost & maps",
+        "id": "Tersesat & peta"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "ja-jp-culture",
+      "corridorId": "ja-jp",
+      "situation": "culture",
+      "order": 7,
+      "title": {
+        "en": "Etiquette & temples",
+        "id": "Etiket & tempat suci"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "ja-jp-emergency",
+      "corridorId": "ja-jp",
+      "situation": "emergency",
+      "order": 8,
+      "title": {
+        "en": "Help, health & allergies",
+        "id": "Bantuan, kesehatan & alergi"
+      },
+      "free": true,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": [
+        {
+          "id": "ja-jp-emergency-core",
+          "title": {
+            "en": "Urgent help",
+            "id": "Bantuan darurat"
+          },
+          "scenario": {
+            "en": "Something went wrong and you need help quickly.",
+            "id": "Ada masalah dan kamu butuh bantuan cepat."
+          },
+          "phrases": [
+            {
+              "id": "ja-jp-emergency-i-ll-call-the-police-0",
+              "target": "警察をよぶよ！",
+              "romanization": "Keisatsu o yobu yo!",
+              "meaning": {
+                "en": "I'll call the police.",
+                "id": "I'll call the police."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Problems"
+            },
+            {
+              "id": "ja-jp-emergency-police-1",
+              "target": "警察！",
+              "romanization": "Keisatsu!",
+              "meaning": {
+                "en": "Police!",
+                "id": "Police!"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Problems"
+            },
+            {
+              "id": "ja-jp-emergency-i-need-your-help-2",
+              "target": "手伝ってください。",
+              "romanization": "Tetsudatte kudasai.",
+              "meaning": {
+                "en": "I need your help.",
+                "id": "I need your help."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Problems"
+            },
+            {
+              "id": "ja-jp-emergency-it-s-an-emergency-3",
+              "target": "緊急です。",
+              "romanization": "Kinkyū desu.",
+              "meaning": {
+                "en": "It's an emergency.",
+                "id": "It's an emergency."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Problems"
+            },
+            {
+              "id": "ja-jp-emergency-i-m-lost-4",
+              "target": "道に迷っています。",
+              "romanization": "Michi ni mayotte imasu.",
+              "meaning": {
+                "en": "I'm lost.",
+                "id": "I'm lost."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Problems"
+            },
+            {
+              "id": "ja-jp-emergency-i-lost-my-bag-5",
+              "target": "鞄をなくしました。",
+              "romanization": "Kaban o nakushimashita.",
+              "meaning": {
+                "en": "I lost my bag.",
+                "id": "I lost my bag."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Problems"
+            }
+          ],
+          "quiz": [
+            {
+              "id": "ja-jp-emergency-core-q1",
+              "type": "pick-phrase",
+              "prompt": {
+                "en": "Which phrase matches the situation?",
+                "id": "Frasa mana yang cocok?"
+              },
+              "phraseIds": [
+                "ja-jp-emergency-i-ll-call-the-police-0",
+                "ja-jp-emergency-police-1",
+                "ja-jp-emergency-i-need-your-help-2",
+                "ja-jp-emergency-it-s-an-emergency-3",
+                "ja-jp-emergency-i-m-lost-4",
+                "ja-jp-emergency-i-lost-my-bag-5"
+              ],
+              "correctPhraseId": "ja-jp-emergency-i-ll-call-the-police-0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "emergencyPhrases": [
+    {
+      "id": "ja-jp-emergency-i-ll-call-the-police-0",
+      "target": "警察をよぶよ！",
+      "romanization": "Keisatsu o yobu yo!",
+      "meaning": {
+        "en": "I'll call the police.",
+        "id": "I'll call the police."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Problems"
+    },
+    {
+      "id": "ja-jp-emergency-police-1",
+      "target": "警察！",
+      "romanization": "Keisatsu!",
+      "meaning": {
+        "en": "Police!",
+        "id": "Police!"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Problems"
+    },
+    {
+      "id": "ja-jp-emergency-i-need-your-help-2",
+      "target": "手伝ってください。",
+      "romanization": "Tetsudatte kudasai.",
+      "meaning": {
+        "en": "I need your help.",
+        "id": "I need your help."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Problems"
+    },
+    {
+      "id": "ja-jp-emergency-it-s-an-emergency-3",
+      "target": "緊急です。",
+      "romanization": "Kinkyū desu.",
+      "meaning": {
+        "en": "It's an emergency.",
+        "id": "It's an emergency."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Problems"
+    },
+    {
+      "id": "ja-jp-emergency-i-m-lost-4",
+      "target": "道に迷っています。",
+      "romanization": "Michi ni mayotte imasu.",
+      "meaning": {
+        "en": "I'm lost.",
+        "id": "I'm lost."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Problems"
+    },
+    {
+      "id": "ja-jp-emergency-i-lost-my-bag-5",
+      "target": "鞄をなくしました。",
+      "romanization": "Kaban o nakushimashita.",
+      "meaning": {
+        "en": "I lost my bag.",
+        "id": "I lost my bag."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Japanese_phrasebook#Problems"
+    }
+  ]
+}

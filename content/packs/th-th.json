@@ -1,0 +1,458 @@
+{
+  "corridorId": "th-th",
+  "lessons": [
+    {
+      "id": "th-th-basics",
+      "corridorId": "th-th",
+      "situation": "basics",
+      "order": 1,
+      "title": {
+        "en": "First hour & greetings",
+        "id": "Jam pertama & sapaan"
+      },
+      "free": true,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": [
+        {
+          "id": "th-th-basics-greetings",
+          "title": {
+            "en": "Greetings",
+            "id": "Sapaan"
+          },
+          "scenario": {
+            "en": "You meet staff at the hotel or shop for the first time.",
+            "id": "Kamu bertemu staf hotel atau toko untuk pertama kali."
+          },
+          "phrases": [
+            {
+              "id": "th-th-basics-what-is-your-name-0",
+              "target": "คุณชื่ออะไร",
+              "romanization": "khun chue arai?",
+              "meaning": {
+                "en": "What is your name?",
+                "id": "What is your name?"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Thai_phrasebook#Basics"
+            },
+            {
+              "id": "th-th-basics-my-name-is-1",
+              "target": "ผม/ดิฉันชื่อ",
+              "romanization": "phŏm/dì-chăn cheu _____",
+              "meaning": {
+                "en": "My name is ______ .",
+                "id": "My name is ______ ."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Thai_phrasebook#Basics"
+            },
+            {
+              "id": "th-th-basics-nice-to-meet-you-2",
+              "target": "ยินดีที่ได้รู้จัก",
+              "romanization": "yin-dii thii dai ruu-jak",
+              "meaning": {
+                "en": "Nice to meet you.",
+                "id": "Nice to meet you."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Thai_phrasebook#Basics"
+            }
+          ],
+          "quiz": [
+            {
+              "id": "th-th-basics-greetings-q1",
+              "type": "pick-phrase",
+              "prompt": {
+                "en": "Which phrase matches the situation?",
+                "id": "Frasa mana yang cocok?"
+              },
+              "phraseIds": [
+                "th-th-basics-what-is-your-name-0",
+                "th-th-basics-my-name-is-1",
+                "th-th-basics-nice-to-meet-you-2"
+              ],
+              "correctPhraseId": "th-th-basics-what-is-your-name-0"
+            }
+          ]
+        },
+        {
+          "id": "th-th-basics-polite",
+          "title": {
+            "en": "Thanks & excuse me",
+            "id": "Terima kasih & permisi"
+          },
+          "culture": [
+            {
+              "id": "th-th-basics-culture-polite",
+              "title": {
+                "en": "Politeness first",
+                "id": "Sopan dulu"
+              },
+              "body": {
+                "en": "Short polite phrases matter more than perfect grammar when traveling.",
+                "id": "Frasa sopan yang singkat lebih penting daripada grammar sempurna saat jalan-jalan."
+              }
+            }
+          ],
+          "scenario": {
+            "en": "You need to get attention or say thanks in a busy place.",
+            "id": "Kamu perlu menarik perhatian atau berterima kasih di tempat ramai."
+          },
+          "phrases": [
+            {
+              "id": "th-th-basics-please-10",
+              "target": "กรุณา",
+              "romanization": "karunaa",
+              "meaning": {
+                "en": "Please.",
+                "id": "Please."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Thai_phrasebook#Basics"
+            },
+            {
+              "id": "th-th-basics-thank-you-very-much-11",
+              "target": "ขอบคุณ[มาก]",
+              "romanization": "khop khun [mâak]",
+              "meaning": {
+                "en": "Thank you [very much].",
+                "id": "Thank you [very much]."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Thai_phrasebook#Basics"
+            },
+            {
+              "id": "th-th-basics-yes-12",
+              "target": "ใช่",
+              "romanization": "chai",
+              "meaning": {
+                "en": "Yes.",
+                "id": "Yes."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Thai_phrasebook#Basics"
+            },
+            {
+              "id": "th-th-basics-no-13",
+              "target": "ไม่ใช่",
+              "romanization": "mai chai",
+              "meaning": {
+                "en": "No.",
+                "id": "No."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Thai_phrasebook#Basics"
+            },
+            {
+              "id": "th-th-basics-excuse-me-begging-pardon-14",
+              "target": "ขอโทษ",
+              "romanization": "kho thot",
+              "meaning": {
+                "en": "Excuse me. (begging pardon)",
+                "id": "Excuse me. (begging pardon)"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Thai_phrasebook#Basics"
+            }
+          ],
+          "quiz": [
+            {
+              "id": "th-th-basics-polite-q1",
+              "type": "pick-phrase",
+              "prompt": {
+                "en": "Which phrase matches the situation?",
+                "id": "Frasa mana yang cocok?"
+              },
+              "phraseIds": [
+                "th-th-basics-please-10",
+                "th-th-basics-thank-you-very-much-11",
+                "th-th-basics-yes-12",
+                "th-th-basics-no-13",
+                "th-th-basics-excuse-me-begging-pardon-14"
+              ],
+              "correctPhraseId": "th-th-basics-please-10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "th-th-train",
+      "corridorId": "th-th",
+      "situation": "train",
+      "order": 2,
+      "title": {
+        "en": "Transit & tickets",
+        "id": "Transportasi & tiket"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "th-th-money",
+      "corridorId": "th-th",
+      "situation": "money",
+      "order": 3,
+      "title": {
+        "en": "Paying & convenience stores",
+        "id": "Bayar & minimarket"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "th-th-restaurant",
+      "corridorId": "th-th",
+      "situation": "restaurant",
+      "order": 4,
+      "title": {
+        "en": "Ordering & the bill",
+        "id": "Pesan makan & bon"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "th-th-hotel",
+      "corridorId": "th-th",
+      "situation": "hotel",
+      "order": 5,
+      "title": {
+        "en": "Check-in & your room",
+        "id": "Check-in & kamar"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "th-th-directions",
+      "corridorId": "th-th",
+      "situation": "directions",
+      "order": 6,
+      "title": {
+        "en": "Lost & maps",
+        "id": "Tersesat & peta"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "th-th-culture",
+      "corridorId": "th-th",
+      "situation": "culture",
+      "order": 7,
+      "title": {
+        "en": "Etiquette & temples",
+        "id": "Etiket & tempat suci"
+      },
+      "free": false,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": []
+    },
+    {
+      "id": "th-th-emergency",
+      "corridorId": "th-th",
+      "situation": "emergency",
+      "order": 8,
+      "title": {
+        "en": "Help, health & allergies",
+        "id": "Bantuan, kesehatan & alergi"
+      },
+      "free": true,
+      "unitOrder": [
+        "culture",
+        "scenario",
+        "phrases",
+        "quiz"
+      ],
+      "vignettes": [
+        {
+          "id": "th-th-emergency-core",
+          "title": {
+            "en": "Urgent help",
+            "id": "Bantuan darurat"
+          },
+          "scenario": {
+            "en": "Something went wrong and you need help quickly.",
+            "id": "Ada masalah dan kamu butuh bantuan cepat."
+          },
+          "phrases": [
+            {
+              "id": "th-th-emergency-i-ll-call-the-police-0",
+              "target": "ผม/ฉัน จะแจ้งตำรวจ",
+              "romanization": "phom/chan ja jaang taamruat",
+              "meaning": {
+                "en": "I'll call the police.",
+                "id": "I'll call the police."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Thai_phrasebook#Problems"
+            },
+            {
+              "id": "th-th-emergency-police-1",
+              "target": "ตำรวจ!",
+              "romanization": "taamruat",
+              "meaning": {
+                "en": "Police!",
+                "id": "Police!"
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Thai_phrasebook#Problems"
+            },
+            {
+              "id": "th-th-emergency-i-need-your-help-2",
+              "target": "ผม/ฉัน ต้องการความช่วยเหลือ",
+              "romanization": "phom/chan tongkaan khwaam chuai luea",
+              "meaning": {
+                "en": "I need your help.",
+                "id": "I need your help."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Thai_phrasebook#Problems"
+            },
+            {
+              "id": "th-th-emergency-it-s-an-emergency-3",
+              "target": "เรื่องฉุกเฉิน",
+              "romanization": "rueang chuk chern",
+              "meaning": {
+                "en": "It's an emergency.",
+                "id": "It's an emergency."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Thai_phrasebook#Problems"
+            },
+            {
+              "id": "th-th-emergency-i-m-lost-4",
+              "target": "ผม/ฉัน หลงทาง",
+              "romanization": "phom/chan long thaang",
+              "meaning": {
+                "en": "I'm lost.",
+                "id": "I'm lost."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Thai_phrasebook#Problems"
+            },
+            {
+              "id": "th-th-emergency-i-lost-my-bag-5",
+              "target": "กระเป๋าของ ผม/ฉัน หาย",
+              "romanization": "krapao khong phom/chan haai",
+              "meaning": {
+                "en": "I lost my bag.",
+                "id": "I lost my bag."
+              },
+              "wvSource": "https://en.wikivoyage.org/wiki/Thai_phrasebook#Problems"
+            }
+          ],
+          "quiz": [
+            {
+              "id": "th-th-emergency-core-q1",
+              "type": "pick-phrase",
+              "prompt": {
+                "en": "Which phrase matches the situation?",
+                "id": "Frasa mana yang cocok?"
+              },
+              "phraseIds": [
+                "th-th-emergency-i-ll-call-the-police-0",
+                "th-th-emergency-police-1",
+                "th-th-emergency-i-need-your-help-2",
+                "th-th-emergency-it-s-an-emergency-3",
+                "th-th-emergency-i-m-lost-4",
+                "th-th-emergency-i-lost-my-bag-5"
+              ],
+              "correctPhraseId": "th-th-emergency-i-ll-call-the-police-0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "emergencyPhrases": [
+    {
+      "id": "th-th-emergency-i-ll-call-the-police-0",
+      "target": "ผม/ฉัน จะแจ้งตำรวจ",
+      "romanization": "phom/chan ja jaang taamruat",
+      "meaning": {
+        "en": "I'll call the police.",
+        "id": "I'll call the police."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Thai_phrasebook#Problems"
+    },
+    {
+      "id": "th-th-emergency-police-1",
+      "target": "ตำรวจ!",
+      "romanization": "taamruat",
+      "meaning": {
+        "en": "Police!",
+        "id": "Police!"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Thai_phrasebook#Problems"
+    },
+    {
+      "id": "th-th-emergency-i-need-your-help-2",
+      "target": "ผม/ฉัน ต้องการความช่วยเหลือ",
+      "romanization": "phom/chan tongkaan khwaam chuai luea",
+      "meaning": {
+        "en": "I need your help.",
+        "id": "I need your help."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Thai_phrasebook#Problems"
+    },
+    {
+      "id": "th-th-emergency-it-s-an-emergency-3",
+      "target": "เรื่องฉุกเฉิน",
+      "romanization": "rueang chuk chern",
+      "meaning": {
+        "en": "It's an emergency.",
+        "id": "It's an emergency."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Thai_phrasebook#Problems"
+    },
+    {
+      "id": "th-th-emergency-i-m-lost-4",
+      "target": "ผม/ฉัน หลงทาง",
+      "romanization": "phom/chan long thaang",
+      "meaning": {
+        "en": "I'm lost.",
+        "id": "I'm lost."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Thai_phrasebook#Problems"
+    },
+    {
+      "id": "th-th-emergency-i-lost-my-bag-5",
+      "target": "กระเป๋าของ ผม/ฉัน หาย",
+      "romanization": "krapao khong phom/chan haai",
+      "meaning": {
+        "en": "I lost my bag.",
+        "id": "I lost my bag."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Thai_phrasebook#Problems"
+    }
+  ]
+}

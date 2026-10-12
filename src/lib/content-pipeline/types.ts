@@ -1,6 +1,11 @@
 import type { CorridorId } from "@/lib/types";
 
-export type PhrasePoolStatus = "pending" | "approved" | "rejected";
+export type PhrasePoolStatus =
+  | "pending"
+  | "approved"
+  | "rejected"
+  /** No longer present in latest upstream sync (e.g. Wikivoyage). */
+  | "archived";
 
 export type PhrasePoolSource = "wikivoyage" | "ai" | "manual";
 

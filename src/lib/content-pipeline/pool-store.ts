@@ -32,7 +32,7 @@ export async function readPhrasePool(
   }
 }
 
-async function writePhrasePool(file: PhrasePoolFile): Promise<void> {
+export async function writePhrasePool(file: PhrasePoolFile): Promise<void> {
   const filePath = phrasePoolPath(file.corridorId);
   await mkdir(path.dirname(filePath), { recursive: true });
   const next: PhrasePoolFile = {
