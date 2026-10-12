@@ -20,10 +20,10 @@ function stepLabel(
 ): string {
   const labels = {
     culture: { en: "Culture", id: "Budaya" },
-    conversation: { en: "Conversation", id: "Percakapan" },
+    conversationDescription: { en: "Scene", id: "Adegan" },
+    conversationTurn: { en: "Conversation", id: "Percakapan" },
     scenario: { en: "Scenario", id: "Situasi" },
     phrase: { en: "Phrase", id: "Frasa" },
-    quiz: { en: "Quiz", id: "Kuis" },
   };
   return labels[step.type][locale];
 }
@@ -47,6 +47,11 @@ export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
 
   const vignetteCount = lesson.vignettes.length;
   const vignetteNumber = step.vignetteIndex + 1;
+
+  const activeConversation =
+    step.type === "conversationDescription" || step.type === "conversationTurn"
+      ? vignette.conversations[step.conversationIndex]
+      : undefined;
 
   function goNext() {
     if (!atEnd) setStepIndex(stepIndex + 1);
@@ -76,6 +81,11 @@ export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
         <p className="text-sm font-medium text-slate-800">
           {pickLocalized(vignette.title, locale)}
         </p>
+        {activeConversation?.title && (
+          <p className="text-xs text-slate-600">
+            {pickLocalized(activeConversation.title, locale)}
+          </p>
+        )}
         <p className="text-xs uppercase tracking-wide text-teal-800">
           {stepLabel(locale, step)}
         </p>
@@ -93,11 +103,24 @@ export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
           </section>
         )}
 
-        {step.type === "conversation" && vignette.conversation && (
+        {step.type === "conversationDescription" && activeConversation && (
+          <section className="rounded-xl border border-border bg-card p-5">
+            <p className="text-base leading-relaxed text-slate-800">
+              {pickLocalized(activeConversation.description, locale)}
+            </p>
+            <p className="mt-4 text-xs text-slate-500">
+              {locale === "id"
+                ? "Ketuk Lanjut untuk mulai percakapan."
+                : "Tap Next to start the conversation."}
+            </p>
+          </section>
+        )}
+
+        {step.type === "conversationTurn" && activeConversation && (
           <section className="rounded-xl border border-border bg-card p-4">
             <ConversationThread
               locale={locale}
-              turns={vignette.conversation}
+              turns={activeConversation.turns}
               visibleThrough={step.turnIndex}
             />
           </section>
@@ -111,7 +134,7 @@ export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
           </section>
         )}
 
-        {step.type === "phrase" && vignette.phrases[step.phraseIndex] && (
+        {step.type === "phrase" && vignette.phrases?.[step.phraseIndex] && (
           <section className="rounded-xl border border-border bg-card px-5 py-6 text-center">
             <p className="text-3xl font-semibold leading-snug tracking-tight">
               {vignette.phrases[step.phraseIndex].target}
@@ -124,51 +147,8 @@ export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
             <p className="mt-4 text-base text-slate-700">
               {pickLocalized(vignette.phrases[step.phraseIndex].meaning, locale)}
             </p>
-            <p className="mt-6 text-xs text-slate-500">
-              {step.phraseIndex + 1}/{vignette.phrases.length}{" "}
-              {locale === "id" ? "frasa di adegan ini" : "phrases in this vignette"}
-            </p>
           </section>
         )}
-
-        {step.type === "quiz" && vignette.quiz[step.quizIndex] && (() => {
-          const quiz = vignette.quiz[step.quizIndex];
-          return (
-          <section className="rounded-xl border border-border bg-card p-5 space-y-4">
-            <p className="font-medium">
-              {pickLocalized(quiz.prompt, locale)}
-            </p>
-            {quiz.type === "pick-phrase" && (
-              <ul className="space-y-2">
-                {quiz.phraseIds.map((id) => {
-                  const phrase = vignette.phrases.find((p) => p.id === id);
-                  if (!phrase) return null;
-                  return (
-                    <li
-                      key={id}
-                      className="rounded-lg border border-slate-100 bg-slate-50 px-4 py-3 text-center text-lg"
-                    >
-                      {phrase.target}
-                    </li>
-                  );
-                })}
-              </ul>
-            )}
-            {quiz.type === "mcq" && (
-              <ul className="space-y-2">
-                {quiz.options.map((opt, i) => (
-                  <li
-                    key={i}
-                    className="rounded-lg border border-slate-100 bg-slate-50 px-4 py-3 text-sm"
-                  >
-                    {pickLocalized(opt, locale)}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </section>
-          );
-        })()}
       </div>
 
       {atEnd && (

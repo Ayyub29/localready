@@ -1,0 +1,24 @@
+{
+  "description": "Maps MultiWOZ-style domains to LocalReady situation keys. Write master dialogues in EN under dialogue-master/en/.",
+  "multiwozToSituation": {
+    "hotel": "hotel",
+    "train": "train",
+    "taxi": "taxi",
+    "restaurant": "restaurant",
+    "attraction": "attractions",
+    "hospital": "emergency",
+    "police": "emergency",
+    "bus": "bus",
+    "general": "basics"
+  },
+  "plannedSituations": [
+    "basics",
+    "airport",
+    "train",
+    "taxi",
+    "hotel",
+    "restaurant",
+    "directions",
+    "emergency"
+  ]
+}

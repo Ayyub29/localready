@@ -28,5 +28,8 @@ export async function loadLesson(
 }
 
 export function lessonHasContent(lesson: LessonContent): boolean {
-  return lesson.vignettes.some((v) => v.phrases.length > 0);
+  return lesson.vignettes.some((v) =>
+    (v.conversations?.some((c) => c.turns.length > 0) ?? false) ||
+    (v.phrases?.length ?? 0) > 0,
+  );
 }

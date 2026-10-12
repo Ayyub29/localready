@@ -1,6 +1,6 @@
 /**
  * Example lesson: one situation (`basics`), multiple airport vignettes.
- * Flow per vignette: optional culture → scenario → phrases → quiz.
+ * Legacy example (scenario + phrases). Runtime packs use conversations[].
  *
  * Learner UI language: Indonesian (`id`) + English (`en`) in meanings.
  */
@@ -52,6 +52,7 @@ export const jaJpBasicsAirportLesson: LessonContent = {
           ],
         },
       ],
+      conversations: [],
       scenario: {
         id: "Koper kamu tidak muncul di carousel. Kamu ke meja informasi bagasi.",
         en: "Your bag never shows on the carousel. You go to the baggage service desk.",
@@ -95,6 +96,7 @@ export const jaJpBasicsAirportLesson: LessonContent = {
         id: "Naik taksi resmi",
         en: "Official taxi",
       },
+      conversations: [],
       scenario: {
         id: "Kamu keluar ke antrian taksi. Mau ke hotel di pusat kota.",
         en: "You join the official taxi queue. You need to reach your hotel downtown.",
@@ -147,6 +149,7 @@ export const jaJpBasicsAirportLesson: LessonContent = {
         id: "Ke pusat kota (kereta / bus)",
         en: "Into the city (train / bus)",
       },
+      conversations: [],
       scenario: {
         id: "Kamu cari cara termurah ke Shinjuku. Petunjuk pakai bahasa Jepang.",
         en: "You look for the cheapest way to Shinjuku. Signs are in Japanese.",

@@ -11,194 +11,12 @@
         "id": "Jam pertama & sapaan"
       },
       "free": true,
-      "unitOrder": [
-        "culture",
-        "conversation",
-        "quiz"
-      ],
       "vignettes": [
         {
-          "id": "ko-kr-basics-greetings",
+          "id": "ko-kr-basics-first-hour",
           "title": {
-            "en": "Greetings",
-            "id": "Sapaan"
-          },
-          "conversation": [
-            {
-              "id": "ko-kr-basics-greetings-t0",
-              "role": "narrator",
-              "line": {
-                "en": "You walk up to the hotel front desk. The staff member looks up and smiles.",
-                "id": "Kamu mendekati resepsionis hotel. Staf melihatmu dan tersenyum."
-              }
-            },
-            {
-              "id": "ko-kr-basics-greetings-t1",
-              "role": "local",
-              "label": {
-                "en": "Staff",
-                "id": "Staf"
-              },
-              "target": "안녕하십니까. Common in North Korea, Yanbian, provincial South Korea.",
-              "romanization": "annyeonghasimnikka",
-              "line": {
-                "en": "Hello. (formal)",
-                "id": "Hello. (formal)"
-              },
-              "phraseId": "ko-kr-basics-hello-formal-0"
-            },
-            {
-              "id": "ko-kr-basics-greetings-t2",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "안녕하십니까. Common in North Korea, Yanbian, provincial South Korea.",
-              "romanization": "annyeonghasimnikka",
-              "line": {
-                "en": "Hello. (formal)",
-                "id": "Hello. (formal)"
-              },
-              "phraseId": "ko-kr-basics-hello-formal-0"
-            },
-            {
-              "id": "ko-kr-basics-greetings-t3",
-              "role": "local",
-              "label": {
-                "en": "Staff",
-                "id": "Staf"
-              },
-              "target": "안녕하세요. Common in South Korea. to older people or to the people to meet first",
-              "romanization": "annyeonghaseyo",
-              "line": {
-                "en": "Hello.",
-                "id": "Hello."
-              },
-              "phraseId": "ko-kr-basics-hello-1"
-            },
-            {
-              "id": "ko-kr-basics-greetings-t4",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "안녕. to your friend or younger people",
-              "romanization": "annyeong",
-              "line": {
-                "en": "Hello. (informal)",
-                "id": "Hello. (informal)"
-              },
-              "phraseId": "ko-kr-basics-hello-informal-2"
-            },
-            {
-              "id": "ko-kr-basics-greetings-t5",
-              "role": "local",
-              "label": {
-                "en": "Staff",
-                "id": "Staf"
-              },
-              "target": "여보세요. when you answer the phone.",
-              "romanization": "yeoboseyo",
-              "line": {
-                "en": "Hello. (on the phone)",
-                "id": "Hello. (on the phone)"
-              },
-              "phraseId": "ko-kr-basics-hello-on-the-phone-3"
-            },
-            {
-              "id": "ko-kr-basics-greetings-t6",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "어떻게 지내십니까?",
-              "romanization": "eotteoke jinaesimnikka?",
-              "line": {
-                "en": "How are you?",
-                "id": "How are you?"
-              },
-              "phraseId": "ko-kr-basics-how-are-you-4"
-            }
-          ],
-          "phrases": [
-            {
-              "id": "ko-kr-basics-hello-formal-0",
-              "target": "안녕하십니까. Common in North Korea, Yanbian, provincial South Korea.",
-              "romanization": "annyeonghasimnikka",
-              "meaning": {
-                "en": "Hello. (formal)",
-                "id": "Hello. (formal)"
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Basics"
-            },
-            {
-              "id": "ko-kr-basics-hello-1",
-              "target": "안녕하세요. Common in South Korea. to older people or to the people to meet first",
-              "romanization": "annyeonghaseyo",
-              "meaning": {
-                "en": "Hello.",
-                "id": "Hello."
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Basics"
-            },
-            {
-              "id": "ko-kr-basics-hello-informal-2",
-              "target": "안녕. to your friend or younger people",
-              "romanization": "annyeong",
-              "meaning": {
-                "en": "Hello. (informal)",
-                "id": "Hello. (informal)"
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Basics"
-            },
-            {
-              "id": "ko-kr-basics-hello-on-the-phone-3",
-              "target": "여보세요. when you answer the phone.",
-              "romanization": "yeoboseyo",
-              "meaning": {
-                "en": "Hello. (on the phone)",
-                "id": "Hello. (on the phone)"
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Basics"
-            },
-            {
-              "id": "ko-kr-basics-how-are-you-4",
-              "target": "어떻게 지내십니까?",
-              "romanization": "eotteoke jinaesimnikka?",
-              "meaning": {
-                "en": "How are you?",
-                "id": "How are you?"
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Basics"
-            }
-          ],
-          "quiz": [
-            {
-              "id": "ko-kr-basics-greetings-q1",
-              "type": "pick-phrase",
-              "prompt": {
-                "en": "Which phrase matches the situation?",
-                "id": "Frasa mana yang cocok?"
-              },
-              "phraseIds": [
-                "ko-kr-basics-hello-formal-0",
-                "ko-kr-basics-hello-1",
-                "ko-kr-basics-hello-informal-2",
-                "ko-kr-basics-hello-on-the-phone-3",
-                "ko-kr-basics-how-are-you-4"
-              ],
-              "correctPhraseId": "ko-kr-basics-hello-formal-0"
-            }
-          ]
-        },
-        {
-          "id": "ko-kr-basics-polite",
-          "title": {
-            "en": "Thanks & excuse me",
-            "id": "Terima kasih & permisi"
+            "en": "Hotel & shop",
+            "id": "Hotel & toko"
           },
           "culture": [
             {
@@ -213,171 +31,209 @@
               }
             }
           ],
-          "conversation": [
+          "conversations": [
             {
-              "id": "ko-kr-basics-polite-t0",
-              "role": "narrator",
-              "line": {
+              "id": "ko-kr-basics-conv-greetings",
+              "title": {
+                "en": "Say hello at the desk",
+                "id": "Sapaan di meja resepsionis"
+              },
+              "description": {
+                "en": "You walk up to the hotel front desk. The staff member looks up and smiles.",
+                "id": "Kamu mendekati resepsionis hotel. Staf melihatmu dan tersenyum."
+              },
+              "turns": [
+                {
+                  "id": "ko-kr-basics-conv-greetings-t1",
+                  "role": "local",
+                  "label": {
+                    "en": "Staff",
+                    "id": "Staf"
+                  },
+                  "target": "안녕하십니까. Common in North Korea, Yanbian, provincial South Korea.",
+                  "romanization": "annyeonghasimnikka",
+                  "line": {
+                    "en": "Hello. (formal)",
+                    "id": "Hello. (formal)"
+                  },
+                  "phraseId": "ko-kr-basics-hello-formal-0"
+                },
+                {
+                  "id": "ko-kr-basics-conv-greetings-t2",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "안녕하십니까. Common in North Korea, Yanbian, provincial South Korea.",
+                  "romanization": "annyeonghasimnikka",
+                  "line": {
+                    "en": "Hello. (formal)",
+                    "id": "Hello. (formal)"
+                  },
+                  "phraseId": "ko-kr-basics-hello-formal-0"
+                },
+                {
+                  "id": "ko-kr-basics-conv-greetings-t3",
+                  "role": "local",
+                  "label": {
+                    "en": "Staff",
+                    "id": "Staf"
+                  },
+                  "target": "안녕하세요. Common in South Korea. to older people or to the people to meet first",
+                  "romanization": "annyeonghaseyo",
+                  "line": {
+                    "en": "Hello.",
+                    "id": "Hello."
+                  },
+                  "phraseId": "ko-kr-basics-hello-1"
+                },
+                {
+                  "id": "ko-kr-basics-conv-greetings-t4",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "안녕. to your friend or younger people",
+                  "romanization": "annyeong",
+                  "line": {
+                    "en": "Hello. (informal)",
+                    "id": "Hello. (informal)"
+                  },
+                  "phraseId": "ko-kr-basics-hello-informal-2"
+                },
+                {
+                  "id": "ko-kr-basics-conv-greetings-t5",
+                  "role": "local",
+                  "label": {
+                    "en": "Staff",
+                    "id": "Staf"
+                  },
+                  "target": "여보세요. when you answer the phone.",
+                  "romanization": "yeoboseyo",
+                  "line": {
+                    "en": "Hello. (on the phone)",
+                    "id": "Hello. (on the phone)"
+                  },
+                  "phraseId": "ko-kr-basics-hello-on-the-phone-3"
+                },
+                {
+                  "id": "ko-kr-basics-conv-greetings-t6",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "어떻게 지내십니까?",
+                  "romanization": "eotteoke jinaesimnikka?",
+                  "line": {
+                    "en": "How are you?",
+                    "id": "How are you?"
+                  },
+                  "phraseId": "ko-kr-basics-how-are-you-4"
+                }
+              ]
+            },
+            {
+              "id": "ko-kr-basics-conv-polite",
+              "title": {
+                "en": "Get attention in a shop",
+                "id": "Minta perhatian di toko"
+              },
+              "description": {
                 "en": "The shop is crowded. You gently get the clerk's attention.",
                 "id": "Toko sedang ramai. Kamu dengan sopan menarik perhatian pegawai."
-              }
-            },
-            {
-              "id": "ko-kr-basics-polite-t1",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
               },
-              "target": "잘 지냅니다, 감사합니다.",
-              "romanization": "jal jinaemnida, gamsahamnida",
-              "line": {
-                "en": "Fine, thank you.",
-                "id": "Fine, thank you."
-              },
-              "phraseId": "ko-kr-basics-fine-thank-you-10"
-            },
-            {
-              "id": "ko-kr-basics-polite-t2",
-              "role": "local",
-              "label": {
-                "en": "Staff",
-                "id": "Staf"
-              },
-              "line": {
-                "en": "Yes? How can I help?",
-                "id": "Ya? Ada yang bisa dibantu?"
-              }
-            },
-            {
-              "id": "ko-kr-basics-polite-t3",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "부탁합니다.",
-              "romanization": "butakamnida",
-              "line": {
-                "en": "Please.",
-                "id": "Please."
-              },
-              "phraseId": "ko-kr-basics-please-11"
-            },
-            {
-              "id": "ko-kr-basics-polite-t4",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "감사합니다.",
-              "romanization": "gamsahamnida",
-              "line": {
-                "en": "Thank you.",
-                "id": "Thank you."
-              },
-              "phraseId": "ko-kr-basics-thank-you-12"
-            },
-            {
-              "id": "ko-kr-basics-polite-t5",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "예/네.",
-              "romanization": "ye/ne",
-              "line": {
-                "en": "Yes.",
-                "id": "Yes."
-              },
-              "phraseId": "ko-kr-basics-yes-13"
-            },
-            {
-              "id": "ko-kr-basics-polite-t6",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "실례합니다.",
-              "romanization": "sill(y)e hamnida",
-              "line": {
-                "en": "Excuse me. (getting attention)",
-                "id": "Excuse me. (getting attention)"
-              },
-              "phraseId": "ko-kr-basics-excuse-me-getting-attention-14"
-            }
-          ],
-          "phrases": [
-            {
-              "id": "ko-kr-basics-fine-thank-you-10",
-              "target": "잘 지냅니다, 감사합니다.",
-              "romanization": "jal jinaemnida, gamsahamnida",
-              "meaning": {
-                "en": "Fine, thank you.",
-                "id": "Fine, thank you."
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Basics"
-            },
-            {
-              "id": "ko-kr-basics-please-11",
-              "target": "부탁합니다.",
-              "romanization": "butakamnida",
-              "meaning": {
-                "en": "Please.",
-                "id": "Please."
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Basics"
-            },
-            {
-              "id": "ko-kr-basics-thank-you-12",
-              "target": "감사합니다.",
-              "romanization": "gamsahamnida",
-              "meaning": {
-                "en": "Thank you.",
-                "id": "Thank you."
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Basics"
-            },
-            {
-              "id": "ko-kr-basics-yes-13",
-              "target": "예/네.",
-              "romanization": "ye/ne",
-              "meaning": {
-                "en": "Yes.",
-                "id": "Yes."
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Basics"
-            },
-            {
-              "id": "ko-kr-basics-excuse-me-getting-attention-14",
-              "target": "실례합니다.",
-              "romanization": "sill(y)e hamnida",
-              "meaning": {
-                "en": "Excuse me. (getting attention)",
-                "id": "Excuse me. (getting attention)"
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Basics"
-            }
-          ],
-          "quiz": [
-            {
-              "id": "ko-kr-basics-polite-q1",
-              "type": "pick-phrase",
-              "prompt": {
-                "en": "Which phrase matches the situation?",
-                "id": "Frasa mana yang cocok?"
-              },
-              "phraseIds": [
-                "ko-kr-basics-fine-thank-you-10",
-                "ko-kr-basics-please-11",
-                "ko-kr-basics-thank-you-12",
-                "ko-kr-basics-yes-13",
-                "ko-kr-basics-excuse-me-getting-attention-14"
-              ],
-              "correctPhraseId": "ko-kr-basics-fine-thank-you-10"
+              "turns": [
+                {
+                  "id": "ko-kr-basics-conv-polite-t1",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "잘 지냅니다, 감사합니다.",
+                  "romanization": "jal jinaemnida, gamsahamnida",
+                  "line": {
+                    "en": "Fine, thank you.",
+                    "id": "Fine, thank you."
+                  },
+                  "phraseId": "ko-kr-basics-fine-thank-you-10"
+                },
+                {
+                  "id": "ko-kr-basics-conv-polite-t2",
+                  "role": "local",
+                  "label": {
+                    "en": "Staff",
+                    "id": "Staf"
+                  },
+                  "line": {
+                    "en": "Yes? How can I help?",
+                    "id": "Ya? Ada yang bisa dibantu?"
+                  }
+                },
+                {
+                  "id": "ko-kr-basics-conv-polite-t3",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "부탁합니다.",
+                  "romanization": "butakamnida",
+                  "line": {
+                    "en": "Please.",
+                    "id": "Please."
+                  },
+                  "phraseId": "ko-kr-basics-please-11"
+                },
+                {
+                  "id": "ko-kr-basics-conv-polite-t4",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "감사합니다.",
+                  "romanization": "gamsahamnida",
+                  "line": {
+                    "en": "Thank you.",
+                    "id": "Thank you."
+                  },
+                  "phraseId": "ko-kr-basics-thank-you-12"
+                },
+                {
+                  "id": "ko-kr-basics-conv-polite-t5",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "예/네.",
+                  "romanization": "ye/ne",
+                  "line": {
+                    "en": "Yes.",
+                    "id": "Yes."
+                  },
+                  "phraseId": "ko-kr-basics-yes-13"
+                },
+                {
+                  "id": "ko-kr-basics-conv-polite-t6",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "실례합니다.",
+                  "romanization": "sill(y)e hamnida",
+                  "line": {
+                    "en": "Excuse me. (getting attention)",
+                    "id": "Excuse me. (getting attention)"
+                  },
+                  "phraseId": "ko-kr-basics-excuse-me-getting-attention-14"
+                }
+              ]
             }
           ]
         }
@@ -393,11 +249,6 @@
         "id": "Transportasi & tiket"
       },
       "free": false,
-      "unitOrder": [
-        "culture",
-        "conversation",
-        "quiz"
-      ],
       "vignettes": []
     },
     {
@@ -410,11 +261,6 @@
         "id": "Bayar & minimarket"
       },
       "free": false,
-      "unitOrder": [
-        "culture",
-        "conversation",
-        "quiz"
-      ],
       "vignettes": []
     },
     {
@@ -427,11 +273,6 @@
         "id": "Pesan makan & bon"
       },
       "free": false,
-      "unitOrder": [
-        "culture",
-        "conversation",
-        "quiz"
-      ],
       "vignettes": []
     },
     {
@@ -444,11 +285,6 @@
         "id": "Check-in & kamar"
       },
       "free": false,
-      "unitOrder": [
-        "culture",
-        "conversation",
-        "quiz"
-      ],
       "vignettes": []
     },
     {
@@ -461,11 +297,6 @@
         "id": "Tersesat & peta"
       },
       "free": false,
-      "unitOrder": [
-        "culture",
-        "conversation",
-        "quiz"
-      ],
       "vignettes": []
     },
     {
@@ -478,11 +309,6 @@
         "id": "Etiket & tempat suci"
       },
       "free": false,
-      "unitOrder": [
-        "culture",
-        "conversation",
-        "quiz"
-      ],
       "vignettes": []
     },
     {
@@ -495,194 +321,113 @@
         "id": "Bantuan, kesehatan & alergi"
       },
       "free": true,
-      "unitOrder": [
-        "culture",
-        "conversation",
-        "quiz"
-      ],
       "vignettes": [
         {
-          "id": "ko-kr-emergency-core",
+          "id": "ko-kr-emergency-street",
           "title": {
             "en": "Urgent help",
             "id": "Bantuan darurat"
           },
-          "conversation": [
+          "conversations": [
             {
-              "id": "ko-kr-emergency-core-t0",
-              "role": "narrator",
-              "line": {
-                "en": "You feel stuck and need help from someone on the street.",
-                "id": "Kamu merasa kesulitan dan butuh bantuan orang di jalan."
-              }
-            },
-            {
-              "id": "ko-kr-emergency-core-t1",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
+              "id": "ko-kr-emergency-conv-help",
+              "title": {
+                "en": "Ask for help",
+                "id": "Minta bantuan"
               },
-              "target": "경찰을 부르겠습니다!",
-              "romanization": "gyeongchareul bureugetseumnida!",
-              "line": {
-                "en": "I'll call the police.",
-                "id": "I'll call the police."
+              "description": {
+                "en": "Something went wrong and you need help from someone nearby.",
+                "id": "Ada masalah dan kamu butuh bantuan orang di sekitar."
               },
-              "phraseId": "ko-kr-emergency-i-ll-call-the-police-0"
-            },
-            {
-              "id": "ko-kr-emergency-core-t2",
-              "role": "local",
-              "label": {
-                "en": "Someone nearby",
-                "id": "Orang di sekitar"
-              },
-              "line": {
-                "en": "Are you okay? What's wrong?",
-                "id": "Kamu oke? Ada apa?"
-              }
-            },
-            {
-              "id": "ko-kr-emergency-core-t3",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "경찰!",
-              "romanization": "gyeongchal!",
-              "line": {
-                "en": "Police!",
-                "id": "Police!"
-              },
-              "phraseId": "ko-kr-emergency-police-1"
-            },
-            {
-              "id": "ko-kr-emergency-core-t4",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "당신의 도움이 필요합니다.",
-              "romanization": "dangsinui doumi piryohamnida",
-              "line": {
-                "en": "I need your help.",
-                "id": "I need your help."
-              },
-              "phraseId": "ko-kr-emergency-i-need-your-help-2"
-            },
-            {
-              "id": "ko-kr-emergency-core-t5",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "응급 상황입니다.",
-              "romanization": "eunggeup sanghwang-imnida",
-              "line": {
-                "en": "It's an emergency.",
-                "id": "It's an emergency."
-              },
-              "phraseId": "ko-kr-emergency-it-s-an-emergency-3"
-            },
-            {
-              "id": "ko-kr-emergency-core-t6",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "길을 잃었습니다.",
-              "romanization": "gireul ireotseumnida",
-              "line": {
-                "en": "I'm lost.",
-                "id": "I'm lost."
-              },
-              "phraseId": "ko-kr-emergency-i-m-lost-4"
-            }
-          ],
-          "phrases": [
-            {
-              "id": "ko-kr-emergency-i-ll-call-the-police-0",
-              "target": "경찰을 부르겠습니다!",
-              "romanization": "gyeongchareul bureugetseumnida!",
-              "meaning": {
-                "en": "I'll call the police.",
-                "id": "I'll call the police."
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
-            },
-            {
-              "id": "ko-kr-emergency-police-1",
-              "target": "경찰!",
-              "romanization": "gyeongchal!",
-              "meaning": {
-                "en": "Police!",
-                "id": "Police!"
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
-            },
-            {
-              "id": "ko-kr-emergency-i-need-your-help-2",
-              "target": "당신의 도움이 필요합니다.",
-              "romanization": "dangsinui doumi piryohamnida",
-              "meaning": {
-                "en": "I need your help.",
-                "id": "I need your help."
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
-            },
-            {
-              "id": "ko-kr-emergency-it-s-an-emergency-3",
-              "target": "응급 상황입니다.",
-              "romanization": "eunggeup sanghwang-imnida",
-              "meaning": {
-                "en": "It's an emergency.",
-                "id": "It's an emergency."
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
-            },
-            {
-              "id": "ko-kr-emergency-i-m-lost-4",
-              "target": "길을 잃었습니다.",
-              "romanization": "gireul ireotseumnida",
-              "meaning": {
-                "en": "I'm lost.",
-                "id": "I'm lost."
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
-            },
-            {
-              "id": "ko-kr-emergency-i-lost-my-bag-5",
-              "target": "가방을 잃었습니다.",
-              "romanization": "gabang-eul ireotseumnida",
-              "meaning": {
-                "en": "I lost my bag.",
-                "id": "I lost my bag."
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
-            }
-          ],
-          "quiz": [
-            {
-              "id": "ko-kr-emergency-core-q1",
-              "type": "pick-phrase",
-              "prompt": {
-                "en": "Which phrase matches the situation?",
-                "id": "Frasa mana yang cocok?"
-              },
-              "phraseIds": [
-                "ko-kr-emergency-i-ll-call-the-police-0",
-                "ko-kr-emergency-police-1",
-                "ko-kr-emergency-i-need-your-help-2",
-                "ko-kr-emergency-it-s-an-emergency-3",
-                "ko-kr-emergency-i-m-lost-4",
-                "ko-kr-emergency-i-lost-my-bag-5"
-              ],
-              "correctPhraseId": "ko-kr-emergency-i-ll-call-the-police-0"
+              "turns": [
+                {
+                  "id": "ko-kr-emergency-conv-help-t1",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "경찰을 부르겠습니다!",
+                  "romanization": "gyeongchareul bureugetseumnida!",
+                  "line": {
+                    "en": "I'll call the police.",
+                    "id": "I'll call the police."
+                  },
+                  "phraseId": "ko-kr-emergency-i-ll-call-the-police-0"
+                },
+                {
+                  "id": "ko-kr-emergency-conv-help-t2",
+                  "role": "local",
+                  "label": {
+                    "en": "Someone nearby",
+                    "id": "Orang di sekitar"
+                  },
+                  "line": {
+                    "en": "Are you okay? What's wrong?",
+                    "id": "Kamu oke? Ada apa?"
+                  }
+                },
+                {
+                  "id": "ko-kr-emergency-conv-help-t3",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "경찰!",
+                  "romanization": "gyeongchal!",
+                  "line": {
+                    "en": "Police!",
+                    "id": "Police!"
+                  },
+                  "phraseId": "ko-kr-emergency-police-1"
+                },
+                {
+                  "id": "ko-kr-emergency-conv-help-t4",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "당신의 도움이 필요합니다.",
+                  "romanization": "dangsinui doumi piryohamnida",
+                  "line": {
+                    "en": "I need your help.",
+                    "id": "I need your help."
+                  },
+                  "phraseId": "ko-kr-emergency-i-need-your-help-2"
+                },
+                {
+                  "id": "ko-kr-emergency-conv-help-t5",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "응급 상황입니다.",
+                  "romanization": "eunggeup sanghwang-imnida",
+                  "line": {
+                    "en": "It's an emergency.",
+                    "id": "It's an emergency."
+                  },
+                  "phraseId": "ko-kr-emergency-it-s-an-emergency-3"
+                },
+                {
+                  "id": "ko-kr-emergency-conv-help-t6",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "길을 잃었습니다.",
+                  "romanization": "gireul ireotseumnida",
+                  "line": {
+                    "en": "I'm lost.",
+                    "id": "I'm lost."
+                  },
+                  "phraseId": "ko-kr-emergency-i-m-lost-4"
+                }
+              ]
             }
           ]
         }
@@ -697,8 +442,7 @@
       "meaning": {
         "en": "I'll call the police.",
         "id": "I'll call the police."
-      },
-      "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
+      }
     },
     {
       "id": "ko-kr-emergency-police-1",
@@ -707,8 +451,7 @@
       "meaning": {
         "en": "Police!",
         "id": "Police!"
-      },
-      "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
+      }
     },
     {
       "id": "ko-kr-emergency-i-need-your-help-2",
@@ -717,8 +460,7 @@
       "meaning": {
         "en": "I need your help.",
         "id": "I need your help."
-      },
-      "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
+      }
     },
     {
       "id": "ko-kr-emergency-it-s-an-emergency-3",
@@ -727,8 +469,7 @@
       "meaning": {
         "en": "It's an emergency.",
         "id": "It's an emergency."
-      },
-      "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
+      }
     },
     {
       "id": "ko-kr-emergency-i-m-lost-4",
@@ -737,18 +478,7 @@
       "meaning": {
         "en": "I'm lost.",
         "id": "I'm lost."
-      },
-      "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
-    },
-    {
-      "id": "ko-kr-emergency-i-lost-my-bag-5",
-      "target": "가방을 잃었습니다.",
-      "romanization": "gabang-eul ireotseumnida",
-      "meaning": {
-        "en": "I lost my bag.",
-        "id": "I lost my bag."
-      },
-      "wvSource": "https://en.wikivoyage.org/wiki/Korean_phrasebook#Problems"
+      }
     }
   ]
 }

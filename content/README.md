@@ -1,6 +1,8 @@
 # LocalReady content pipeline
 
-Phrase pool → human filter → (later) vignette drafts → corridor pack JSON.
+Phrase pool → human filter → **master dialogue (EN)** → translate per corridor → corridor pack JSON.
+
+Conversational authoring (MultiWOZ-style structure): see **[CONVERSATION.md](./CONVERSATION.md)**.
 
 ## Phrase pool file
 
@@ -76,7 +78,16 @@ npm run content:build:starter
 
 Output: `content/packs/{corridorId}.json` — loaded by the lesson player.
 
+## Master dialogues (EN → translate later)
+
+```bash
+npm run content:validate:dialogue
+```
+
+Masters live in `content/dialogue-master/en/`. Per-corridor translations go in `content/dialogue-master/translations/{corridorId}/`.
+
 ## Next steps (not implemented yet)
 
-- `content:draft-vignette` — approved pool → vignette JSON
+- `content:translate-dialogue` — master EN → draft translation JSON
+- `content:compile:dialogue` — master + translation → merge into `content/packs/`
 - `content:validate` / `content:derive` — pack + cheatsheet

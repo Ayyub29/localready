@@ -11,194 +11,12 @@
         "id": "Jam pertama & sapaan"
       },
       "free": true,
-      "unitOrder": [
-        "culture",
-        "conversation",
-        "quiz"
-      ],
       "vignettes": [
         {
-          "id": "id-id-basics-greetings",
+          "id": "id-id-basics-first-hour",
           "title": {
-            "en": "Greetings",
-            "id": "Sapaan"
-          },
-          "conversation": [
-            {
-              "id": "id-id-basics-greetings-t0",
-              "role": "narrator",
-              "line": {
-                "en": "You walk up to the hotel front desk. The staff member looks up and smiles.",
-                "id": "Kamu mendekati resepsionis hotel. Staf melihatmu dan tersenyum."
-              }
-            },
-            {
-              "id": "id-id-basics-greetings-t1",
-              "role": "local",
-              "label": {
-                "en": "Staff",
-                "id": "Staf"
-              },
-              "target": "Halo.",
-              "romanization": "HAH-loh",
-              "line": {
-                "en": "Hello.",
-                "id": "Hello."
-              },
-              "phraseId": "id-id-basics-hello-0"
-            },
-            {
-              "id": "id-id-basics-greetings-t2",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "Halo.",
-              "romanization": "HAH-loh",
-              "line": {
-                "en": "Hello.",
-                "id": "Hello."
-              },
-              "phraseId": "id-id-basics-hello-0"
-            },
-            {
-              "id": "id-id-basics-greetings-t3",
-              "role": "local",
-              "label": {
-                "en": "Staff",
-                "id": "Staf"
-              },
-              "target": "Hai.",
-              "romanization": "high",
-              "line": {
-                "en": "Hello. (informal)",
-                "id": "Hello. (informal)"
-              },
-              "phraseId": "id-id-basics-hello-informal-1"
-            },
-            {
-              "id": "id-id-basics-greetings-t4",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "Assalamu 'alaikum",
-              "romanization": "ah-sah-LAH-mu ah-LEH-koom",
-              "line": {
-                "en": "Hello. (\"Muslim\")",
-                "id": "Hello. (\"Muslim\")"
-              },
-              "phraseId": "id-id-basics-hello-muslim-2"
-            },
-            {
-              "id": "id-id-basics-greetings-t5",
-              "role": "local",
-              "label": {
-                "en": "Staff",
-                "id": "Staf"
-              },
-              "target": "Apa kabar?",
-              "romanization": "AH-pah KAH-bar?",
-              "line": {
-                "en": "How are you?",
-                "id": "How are you?"
-              },
-              "phraseId": "id-id-basics-how-are-you-3"
-            },
-            {
-              "id": "id-id-basics-greetings-t6",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "Siapa nama?",
-              "romanization": "see-AH-pah NAH-mah?",
-              "line": {
-                "en": "What is your name?",
-                "id": "What is your name?"
-              },
-              "phraseId": "id-id-basics-what-is-your-name-4"
-            }
-          ],
-          "phrases": [
-            {
-              "id": "id-id-basics-hello-0",
-              "target": "Halo.",
-              "romanization": "HAH-loh",
-              "meaning": {
-                "en": "Hello.",
-                "id": "Hello."
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics"
-            },
-            {
-              "id": "id-id-basics-hello-informal-1",
-              "target": "Hai.",
-              "romanization": "high",
-              "meaning": {
-                "en": "Hello. (informal)",
-                "id": "Hello. (informal)"
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics"
-            },
-            {
-              "id": "id-id-basics-hello-muslim-2",
-              "target": "Assalamu 'alaikum",
-              "romanization": "ah-sah-LAH-mu ah-LEH-koom",
-              "meaning": {
-                "en": "Hello. (\"Muslim\")",
-                "id": "Hello. (\"Muslim\")"
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics"
-            },
-            {
-              "id": "id-id-basics-how-are-you-3",
-              "target": "Apa kabar?",
-              "romanization": "AH-pah KAH-bar?",
-              "meaning": {
-                "en": "How are you?",
-                "id": "How are you?"
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics"
-            },
-            {
-              "id": "id-id-basics-what-is-your-name-4",
-              "target": "Siapa nama?",
-              "romanization": "see-AH-pah NAH-mah?",
-              "meaning": {
-                "en": "What is your name?",
-                "id": "What is your name?"
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics"
-            }
-          ],
-          "quiz": [
-            {
-              "id": "id-id-basics-greetings-q1",
-              "type": "pick-phrase",
-              "prompt": {
-                "en": "Which phrase matches the situation?",
-                "id": "Frasa mana yang cocok?"
-              },
-              "phraseIds": [
-                "id-id-basics-hello-0",
-                "id-id-basics-hello-informal-1",
-                "id-id-basics-hello-muslim-2",
-                "id-id-basics-how-are-you-3",
-                "id-id-basics-what-is-your-name-4"
-              ],
-              "correctPhraseId": "id-id-basics-hello-0"
-            }
-          ]
-        },
-        {
-          "id": "id-id-basics-polite",
-          "title": {
-            "en": "Thanks & excuse me",
-            "id": "Terima kasih & permisi"
+            "en": "Hotel & shop",
+            "id": "Hotel & toko"
           },
           "culture": [
             {
@@ -213,171 +31,209 @@
               }
             }
           ],
-          "conversation": [
+          "conversations": [
             {
-              "id": "id-id-basics-polite-t0",
-              "role": "narrator",
-              "line": {
+              "id": "id-id-basics-conv-greetings",
+              "title": {
+                "en": "Say hello at the desk",
+                "id": "Sapaan di meja resepsionis"
+              },
+              "description": {
+                "en": "You walk up to the hotel front desk. The staff member looks up and smiles.",
+                "id": "Kamu mendekati resepsionis hotel. Staf melihatmu dan tersenyum."
+              },
+              "turns": [
+                {
+                  "id": "id-id-basics-conv-greetings-t1",
+                  "role": "local",
+                  "label": {
+                    "en": "Staff",
+                    "id": "Staf"
+                  },
+                  "target": "Halo.",
+                  "romanization": "HAH-loh",
+                  "line": {
+                    "en": "Hello.",
+                    "id": "Hello."
+                  },
+                  "phraseId": "id-id-basics-hello-0"
+                },
+                {
+                  "id": "id-id-basics-conv-greetings-t2",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Halo.",
+                  "romanization": "HAH-loh",
+                  "line": {
+                    "en": "Hello.",
+                    "id": "Hello."
+                  },
+                  "phraseId": "id-id-basics-hello-0"
+                },
+                {
+                  "id": "id-id-basics-conv-greetings-t3",
+                  "role": "local",
+                  "label": {
+                    "en": "Staff",
+                    "id": "Staf"
+                  },
+                  "target": "Hai.",
+                  "romanization": "high",
+                  "line": {
+                    "en": "Hello. (informal)",
+                    "id": "Hello. (informal)"
+                  },
+                  "phraseId": "id-id-basics-hello-informal-1"
+                },
+                {
+                  "id": "id-id-basics-conv-greetings-t4",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Assalamu 'alaikum",
+                  "romanization": "ah-sah-LAH-mu ah-LEH-koom",
+                  "line": {
+                    "en": "Hello. (\"Muslim\")",
+                    "id": "Hello. (\"Muslim\")"
+                  },
+                  "phraseId": "id-id-basics-hello-muslim-2"
+                },
+                {
+                  "id": "id-id-basics-conv-greetings-t5",
+                  "role": "local",
+                  "label": {
+                    "en": "Staff",
+                    "id": "Staf"
+                  },
+                  "target": "Apa kabar?",
+                  "romanization": "AH-pah KAH-bar?",
+                  "line": {
+                    "en": "How are you?",
+                    "id": "How are you?"
+                  },
+                  "phraseId": "id-id-basics-how-are-you-3"
+                },
+                {
+                  "id": "id-id-basics-conv-greetings-t6",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Siapa nama?",
+                  "romanization": "see-AH-pah NAH-mah?",
+                  "line": {
+                    "en": "What is your name?",
+                    "id": "What is your name?"
+                  },
+                  "phraseId": "id-id-basics-what-is-your-name-4"
+                }
+              ]
+            },
+            {
+              "id": "id-id-basics-conv-polite",
+              "title": {
+                "en": "Get attention in a shop",
+                "id": "Minta perhatian di toko"
+              },
+              "description": {
                 "en": "The shop is crowded. You gently get the clerk's attention.",
                 "id": "Toko sedang ramai. Kamu dengan sopan menarik perhatian pegawai."
-              }
-            },
-            {
-              "id": "id-id-basics-polite-t1",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
               },
-              "target": "Silakan.",
-              "romanization": "SIH-lah-kahn",
-              "line": {
-                "en": "Please. (inviting someone to do something)",
-                "id": "Please. (inviting someone to do something)"
-              },
-              "phraseId": "id-id-basics-please-inviting-someone-to-do-something-10"
-            },
-            {
-              "id": "id-id-basics-polite-t2",
-              "role": "local",
-              "label": {
-                "en": "Staff",
-                "id": "Staf"
-              },
-              "line": {
-                "en": "Yes? How can I help?",
-                "id": "Ya? Ada yang bisa dibantu?"
-              }
-            },
-            {
-              "id": "id-id-basics-polite-t3",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "Tolong",
-              "romanization": "TO-long",
-              "line": {
-                "en": "Please. (asking for help with an action or service)",
-                "id": "Please. (asking for help with an action or service)"
-              },
-              "phraseId": "id-id-basics-please-asking-for-help-with-an-action-or-11"
-            },
-            {
-              "id": "id-id-basics-polite-t4",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "Minta",
-              "romanization": "MIN-tah",
-              "line": {
-                "en": "Please. (asking to be given something)",
-                "id": "Please. (asking to be given something)"
-              },
-              "phraseId": "id-id-basics-please-asking-to-be-given-something-12"
-            },
-            {
-              "id": "id-id-basics-polite-t5",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "Terima kasih.",
-              "romanization": "tuh-REE-mah KAH-see",
-              "line": {
-                "en": "Thank you.",
-                "id": "Thank you."
-              },
-              "phraseId": "id-id-basics-thank-you-13"
-            },
-            {
-              "id": "id-id-basics-polite-t6",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "Ya",
-              "romanization": "yah",
-              "line": {
-                "en": "Yes.",
-                "id": "Yes."
-              },
-              "phraseId": "id-id-basics-yes-14"
-            }
-          ],
-          "phrases": [
-            {
-              "id": "id-id-basics-please-inviting-someone-to-do-something-10",
-              "target": "Silakan.",
-              "romanization": "SIH-lah-kahn",
-              "meaning": {
-                "en": "Please. (inviting someone to do something)",
-                "id": "Please. (inviting someone to do something)"
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics"
-            },
-            {
-              "id": "id-id-basics-please-asking-for-help-with-an-action-or-11",
-              "target": "Tolong",
-              "romanization": "TO-long",
-              "meaning": {
-                "en": "Please. (asking for help with an action or service)",
-                "id": "Please. (asking for help with an action or service)"
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics"
-            },
-            {
-              "id": "id-id-basics-please-asking-to-be-given-something-12",
-              "target": "Minta",
-              "romanization": "MIN-tah",
-              "meaning": {
-                "en": "Please. (asking to be given something)",
-                "id": "Please. (asking to be given something)"
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics"
-            },
-            {
-              "id": "id-id-basics-thank-you-13",
-              "target": "Terima kasih.",
-              "romanization": "tuh-REE-mah KAH-see",
-              "meaning": {
-                "en": "Thank you.",
-                "id": "Thank you."
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics"
-            },
-            {
-              "id": "id-id-basics-yes-14",
-              "target": "Ya",
-              "romanization": "yah",
-              "meaning": {
-                "en": "Yes.",
-                "id": "Yes."
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics"
-            }
-          ],
-          "quiz": [
-            {
-              "id": "id-id-basics-polite-q1",
-              "type": "pick-phrase",
-              "prompt": {
-                "en": "Which phrase matches the situation?",
-                "id": "Frasa mana yang cocok?"
-              },
-              "phraseIds": [
-                "id-id-basics-please-inviting-someone-to-do-something-10",
-                "id-id-basics-please-asking-for-help-with-an-action-or-11",
-                "id-id-basics-please-asking-to-be-given-something-12",
-                "id-id-basics-thank-you-13",
-                "id-id-basics-yes-14"
-              ],
-              "correctPhraseId": "id-id-basics-please-inviting-someone-to-do-something-10"
+              "turns": [
+                {
+                  "id": "id-id-basics-conv-polite-t1",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Silakan.",
+                  "romanization": "SIH-lah-kahn",
+                  "line": {
+                    "en": "Please. (inviting someone to do something)",
+                    "id": "Please. (inviting someone to do something)"
+                  },
+                  "phraseId": "id-id-basics-please-inviting-someone-to-do-something-10"
+                },
+                {
+                  "id": "id-id-basics-conv-polite-t2",
+                  "role": "local",
+                  "label": {
+                    "en": "Staff",
+                    "id": "Staf"
+                  },
+                  "line": {
+                    "en": "Yes? How can I help?",
+                    "id": "Ya? Ada yang bisa dibantu?"
+                  }
+                },
+                {
+                  "id": "id-id-basics-conv-polite-t3",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Tolong",
+                  "romanization": "TO-long",
+                  "line": {
+                    "en": "Please. (asking for help with an action or service)",
+                    "id": "Please. (asking for help with an action or service)"
+                  },
+                  "phraseId": "id-id-basics-please-asking-for-help-with-an-action-or-11"
+                },
+                {
+                  "id": "id-id-basics-conv-polite-t4",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Minta",
+                  "romanization": "MIN-tah",
+                  "line": {
+                    "en": "Please. (asking to be given something)",
+                    "id": "Please. (asking to be given something)"
+                  },
+                  "phraseId": "id-id-basics-please-asking-to-be-given-something-12"
+                },
+                {
+                  "id": "id-id-basics-conv-polite-t5",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Terima kasih.",
+                  "romanization": "tuh-REE-mah KAH-see",
+                  "line": {
+                    "en": "Thank you.",
+                    "id": "Thank you."
+                  },
+                  "phraseId": "id-id-basics-thank-you-13"
+                },
+                {
+                  "id": "id-id-basics-conv-polite-t6",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Ya",
+                  "romanization": "yah",
+                  "line": {
+                    "en": "Yes.",
+                    "id": "Yes."
+                  },
+                  "phraseId": "id-id-basics-yes-14"
+                }
+              ]
             }
           ]
         }
@@ -393,11 +249,6 @@
         "id": "Transportasi & tiket"
       },
       "free": false,
-      "unitOrder": [
-        "culture",
-        "conversation",
-        "quiz"
-      ],
       "vignettes": []
     },
     {
@@ -410,11 +261,6 @@
         "id": "Bayar & minimarket"
       },
       "free": false,
-      "unitOrder": [
-        "culture",
-        "conversation",
-        "quiz"
-      ],
       "vignettes": []
     },
     {
@@ -427,11 +273,6 @@
         "id": "Pesan makan & bon"
       },
       "free": false,
-      "unitOrder": [
-        "culture",
-        "conversation",
-        "quiz"
-      ],
       "vignettes": []
     },
     {
@@ -444,11 +285,6 @@
         "id": "Check-in & kamar"
       },
       "free": false,
-      "unitOrder": [
-        "culture",
-        "conversation",
-        "quiz"
-      ],
       "vignettes": []
     },
     {
@@ -461,11 +297,6 @@
         "id": "Tersesat & peta"
       },
       "free": false,
-      "unitOrder": [
-        "culture",
-        "conversation",
-        "quiz"
-      ],
       "vignettes": []
     },
     {
@@ -478,11 +309,6 @@
         "id": "Etiket & tempat suci"
       },
       "free": false,
-      "unitOrder": [
-        "culture",
-        "conversation",
-        "quiz"
-      ],
       "vignettes": []
     },
     {
@@ -495,194 +321,113 @@
         "id": "Bantuan, kesehatan & alergi"
       },
       "free": true,
-      "unitOrder": [
-        "culture",
-        "conversation",
-        "quiz"
-      ],
       "vignettes": [
         {
-          "id": "id-id-emergency-core",
+          "id": "id-id-emergency-street",
           "title": {
             "en": "Urgent help",
             "id": "Bantuan darurat"
           },
-          "conversation": [
+          "conversations": [
             {
-              "id": "id-id-emergency-core-t0",
-              "role": "narrator",
-              "line": {
-                "en": "You feel stuck and need help from someone on the street.",
-                "id": "Kamu merasa kesulitan dan butuh bantuan orang di jalan."
-              }
-            },
-            {
-              "id": "id-id-emergency-core-t1",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
+              "id": "id-id-emergency-conv-help",
+              "title": {
+                "en": "Ask for help",
+                "id": "Minta bantuan"
               },
-              "target": "Saya akan panggil polisi.",
-              "romanization": "SAH-yah AH-kahn PAHNG-gihl po-LEE-see",
-              "line": {
-                "en": "I'll call the police.",
-                "id": "I'll call the police."
+              "description": {
+                "en": "Something went wrong and you need help from someone nearby.",
+                "id": "Ada masalah dan kamu butuh bantuan orang di sekitar."
               },
-              "phraseId": "id-id-emergency-i-ll-call-the-police-0"
-            },
-            {
-              "id": "id-id-emergency-core-t2",
-              "role": "local",
-              "label": {
-                "en": "Someone nearby",
-                "id": "Orang di sekitar"
-              },
-              "line": {
-                "en": "Are you okay? What's wrong?",
-                "id": "Kamu oke? Ada apa?"
-              }
-            },
-            {
-              "id": "id-id-emergency-core-t3",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "Polisi!",
-              "romanization": "po-LEE-see",
-              "line": {
-                "en": "Police!",
-                "id": "Police!"
-              },
-              "phraseId": "id-id-emergency-police-1"
-            },
-            {
-              "id": "id-id-emergency-core-t4",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "Saya minta tolong.",
-              "romanization": "SAH-yah MEEN-tah TO-long",
-              "line": {
-                "en": "I need your help.",
-                "id": "I need your help."
-              },
-              "phraseId": "id-id-emergency-i-need-your-help-2"
-            },
-            {
-              "id": "id-id-emergency-core-t5",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "Ini darurat.",
-              "romanization": "EE-nee dah-ROO-rah(t)",
-              "line": {
-                "en": "It's an emergency.",
-                "id": "It's an emergency."
-              },
-              "phraseId": "id-id-emergency-it-s-an-emergency-3"
-            },
-            {
-              "id": "id-id-emergency-core-t6",
-              "role": "traveler",
-              "label": {
-                "en": "You",
-                "id": "Kamu"
-              },
-              "target": "Saya tersesat.",
-              "romanization": "SAH-yah tuhr-SUH-sah(t)",
-              "line": {
-                "en": "I'm lost.",
-                "id": "I'm lost."
-              },
-              "phraseId": "id-id-emergency-i-m-lost-4"
-            }
-          ],
-          "phrases": [
-            {
-              "id": "id-id-emergency-i-ll-call-the-police-0",
-              "target": "Saya akan panggil polisi.",
-              "romanization": "SAH-yah AH-kahn PAHNG-gihl po-LEE-see",
-              "meaning": {
-                "en": "I'll call the police.",
-                "id": "I'll call the police."
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
-            },
-            {
-              "id": "id-id-emergency-police-1",
-              "target": "Polisi!",
-              "romanization": "po-LEE-see",
-              "meaning": {
-                "en": "Police!",
-                "id": "Police!"
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
-            },
-            {
-              "id": "id-id-emergency-i-need-your-help-2",
-              "target": "Saya minta tolong.",
-              "romanization": "SAH-yah MEEN-tah TO-long",
-              "meaning": {
-                "en": "I need your help.",
-                "id": "I need your help."
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
-            },
-            {
-              "id": "id-id-emergency-it-s-an-emergency-3",
-              "target": "Ini darurat.",
-              "romanization": "EE-nee dah-ROO-rah(t)",
-              "meaning": {
-                "en": "It's an emergency.",
-                "id": "It's an emergency."
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
-            },
-            {
-              "id": "id-id-emergency-i-m-lost-4",
-              "target": "Saya tersesat.",
-              "romanization": "SAH-yah tuhr-SUH-sah(t)",
-              "meaning": {
-                "en": "I'm lost.",
-                "id": "I'm lost."
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
-            },
-            {
-              "id": "id-id-emergency-i-lost-my-bag-5",
-              "target": "Saya kehilangan tas saya.",
-              "romanization": "SAH-yah kuh-HEE-lahng-ahn tahss SAH-yah",
-              "meaning": {
-                "en": "I lost my bag.",
-                "id": "I lost my bag."
-              },
-              "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
-            }
-          ],
-          "quiz": [
-            {
-              "id": "id-id-emergency-core-q1",
-              "type": "pick-phrase",
-              "prompt": {
-                "en": "Which phrase matches the situation?",
-                "id": "Frasa mana yang cocok?"
-              },
-              "phraseIds": [
-                "id-id-emergency-i-ll-call-the-police-0",
-                "id-id-emergency-police-1",
-                "id-id-emergency-i-need-your-help-2",
-                "id-id-emergency-it-s-an-emergency-3",
-                "id-id-emergency-i-m-lost-4",
-                "id-id-emergency-i-lost-my-bag-5"
-              ],
-              "correctPhraseId": "id-id-emergency-i-ll-call-the-police-0"
+              "turns": [
+                {
+                  "id": "id-id-emergency-conv-help-t1",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Saya akan panggil polisi.",
+                  "romanization": "SAH-yah AH-kahn PAHNG-gihl po-LEE-see",
+                  "line": {
+                    "en": "I'll call the police.",
+                    "id": "I'll call the police."
+                  },
+                  "phraseId": "id-id-emergency-i-ll-call-the-police-0"
+                },
+                {
+                  "id": "id-id-emergency-conv-help-t2",
+                  "role": "local",
+                  "label": {
+                    "en": "Someone nearby",
+                    "id": "Orang di sekitar"
+                  },
+                  "line": {
+                    "en": "Are you okay? What's wrong?",
+                    "id": "Kamu oke? Ada apa?"
+                  }
+                },
+                {
+                  "id": "id-id-emergency-conv-help-t3",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Polisi!",
+                  "romanization": "po-LEE-see",
+                  "line": {
+                    "en": "Police!",
+                    "id": "Police!"
+                  },
+                  "phraseId": "id-id-emergency-police-1"
+                },
+                {
+                  "id": "id-id-emergency-conv-help-t4",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Saya minta tolong.",
+                  "romanization": "SAH-yah MEEN-tah TO-long",
+                  "line": {
+                    "en": "I need your help.",
+                    "id": "I need your help."
+                  },
+                  "phraseId": "id-id-emergency-i-need-your-help-2"
+                },
+                {
+                  "id": "id-id-emergency-conv-help-t5",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Ini darurat.",
+                  "romanization": "EE-nee dah-ROO-rah(t)",
+                  "line": {
+                    "en": "It's an emergency.",
+                    "id": "It's an emergency."
+                  },
+                  "phraseId": "id-id-emergency-it-s-an-emergency-3"
+                },
+                {
+                  "id": "id-id-emergency-conv-help-t6",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Saya tersesat.",
+                  "romanization": "SAH-yah tuhr-SUH-sah(t)",
+                  "line": {
+                    "en": "I'm lost.",
+                    "id": "I'm lost."
+                  },
+                  "phraseId": "id-id-emergency-i-m-lost-4"
+                }
+              ]
             }
           ]
         }
@@ -697,8 +442,7 @@
       "meaning": {
         "en": "I'll call the police.",
         "id": "I'll call the police."
-      },
-      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
+      }
     },
     {
       "id": "id-id-emergency-police-1",
@@ -707,8 +451,7 @@
       "meaning": {
         "en": "Police!",
         "id": "Police!"
-      },
-      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
+      }
     },
     {
       "id": "id-id-emergency-i-need-your-help-2",
@@ -717,8 +460,7 @@
       "meaning": {
         "en": "I need your help.",
         "id": "I need your help."
-      },
-      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
+      }
     },
     {
       "id": "id-id-emergency-it-s-an-emergency-3",
@@ -727,8 +469,7 @@
       "meaning": {
         "en": "It's an emergency.",
         "id": "It's an emergency."
-      },
-      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
+      }
     },
     {
       "id": "id-id-emergency-i-m-lost-4",
@@ -737,18 +478,7 @@
       "meaning": {
         "en": "I'm lost.",
         "id": "I'm lost."
-      },
-      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
-    },
-    {
-      "id": "id-id-emergency-i-lost-my-bag-5",
-      "target": "Saya kehilangan tas saya.",
-      "romanization": "SAH-yah kuh-HEE-lahng-ahn tahss SAH-yah",
-      "meaning": {
-        "en": "I lost my bag.",
-        "id": "I lost my bag."
-      },
-      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems"
+      }
     }
   ]
 }

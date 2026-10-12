@@ -4,16 +4,16 @@
  */
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { defaultLessonUnitOrder } from "../../src/lib/lesson-content-types";
 import type { CorridorContentPack, LessonContent, LessonVignette, Phrase } from "../../src/lib/lesson-content-types";
+import { phrasesFromLesson } from "../../src/lib/content/extract-phrases";
 import { readPhrasePool } from "../../src/lib/content-pipeline/pool-store";
 import type { PhrasePoolItem } from "../../src/lib/content-pipeline/types";
 import type { CorridorId, SituationKey } from "../../src/lib/types";
 import { situationOrder } from "../../src/lib/situations";
 import {
-  emergencyConversation,
-  greetingsConversation,
-  politeConversation,
+  emergencyScene,
+  greetingsScene,
+  politeScene,
 } from "./conversation-templates";
 
 const CORRIDORS: CorridorId[] = ["ja-jp", "ko-kr", "th-th", "vi-vn", "id-id"];
@@ -103,30 +103,9 @@ function poolPhraseToPhrase(
     romanization: item.romanization?.replace(/\s*\(\)\s*/g, " ").trim(),
     meaning: {
       en: item.meaningEn.replace(/\s+/g, " ").trim(),
-      // Starter packs: Indonesian gloss TBD in review; mirror EN for now.
       id: item.meaningId?.trim() || item.meaningEn.replace(/\s+/g, " ").trim(),
     },
     wvSource: item.wvSource,
-  };
-}
-
-function makePickPhraseQuiz(
-  corridorId: CorridorId,
-  situation: SituationKey,
-  vignetteSlug: string,
-  phrases: Phrase[],
-  correctIndex: number,
-) {
-  const correct = phrases[correctIndex];
-  return {
-    id: `${corridorId}-${situation}-${vignetteSlug}-q1`,
-    type: "pick-phrase" as const,
-    prompt: {
-      en: "Which phrase matches the situation?",
-      id: "Frasa mana yang cocok?",
-    },
-    phraseIds: phrases.map((p) => p.id),
-    correctPhraseId: correct.id,
   };
 }
 
@@ -151,29 +130,28 @@ function buildBasicsLesson(
   );
 
   const vignettes: LessonVignette[] = [];
+  const conversations = [];
 
   if (greetings.length >= 2) {
     const phrases = greetings.map((item, idx) =>
       poolPhraseToPhrase(corridorId, "basics", item, idx),
     );
-    const vid = `${corridorId}-basics-greetings`;
-    vignettes.push({
-      id: vid,
-      title: { en: "Greetings", id: "Sapaan" },
-      conversation: greetingsConversation(vid, phrases),
-      phrases,
-      quiz: [makePickPhraseQuiz(corridorId, "basics", "greetings", phrases, 0)],
-    });
+    conversations.push(
+      greetingsScene(`${corridorId}-basics-conv-greetings`, phrases),
+    );
   }
 
   if (polite.length >= 2) {
     const phrases = polite.map((item, idx) =>
       poolPhraseToPhrase(corridorId, "basics", item, idx + 10),
     );
-    const pid = `${corridorId}-basics-polite`;
+    conversations.push(politeScene(`${corridorId}-basics-conv-polite`, phrases));
+  }
+
+  if (conversations.length > 0) {
     vignettes.push({
-      id: pid,
-      title: { en: "Thanks & excuse me", id: "Terima kasih & permisi" },
+      id: `${corridorId}-basics-first-hour`,
+      title: { en: "Hotel & shop", id: "Hotel & toko" },
       culture: [
         {
           id: `${corridorId}-basics-culture-polite`,
@@ -184,9 +162,7 @@ function buildBasicsLesson(
           },
         },
       ],
-      conversation: politeConversation(pid, phrases),
-      phrases,
-      quiz: [makePickPhraseQuiz(corridorId, "basics", "polite", phrases, 0)],
+      conversations,
     });
   }
 
@@ -197,7 +173,6 @@ function buildBasicsLesson(
     order,
     title: LESSON_TITLES.basics,
     free: true,
-    unitOrder: defaultLessonUnitOrder,
     vignettes,
   };
 }
@@ -222,13 +197,12 @@ function buildEmergencyLesson(
 
   const vignettes: LessonVignette[] = [];
   if (phrases.length >= 2) {
-    const eid = `${corridorId}-emergency-core`;
     vignettes.push({
-      id: eid,
+      id: `${corridorId}-emergency-street`,
       title: { en: "Urgent help", id: "Bantuan darurat" },
-      conversation: emergencyConversation(eid, phrases),
-      phrases,
-      quiz: [makePickPhraseQuiz(corridorId, "emergency", "core", phrases, 0)],
+      conversations: [
+        emergencyScene(`${corridorId}-emergency-conv-help`, phrases),
+      ],
     });
   }
 
@@ -239,7 +213,6 @@ function buildEmergencyLesson(
     order,
     title: LESSON_TITLES.emergency,
     free: true,
-    unitOrder: defaultLessonUnitOrder,
     vignettes,
   };
 }
@@ -256,7 +229,6 @@ function stubLesson(
     order,
     title: LESSON_TITLES[situation],
     free: situation === "basics",
-    unitOrder: defaultLessonUnitOrder,
     vignettes: [],
   };
 }
@@ -280,7 +252,7 @@ async function buildPack(corridorId: CorridorId): Promise<CorridorContentPack> {
     return stubLesson(corridorId, situation, idx + 1);
   });
 
-  const emergencyPhrases = emergency.vignettes[0]?.phrases.slice(0, 8) ?? [];
+  const emergencyPhrases = phrasesFromLesson(emergency).slice(0, 12);
 
   return {
     corridorId,
@@ -297,13 +269,10 @@ async function main() {
     const pack = await buildPack(corridorId);
     const filePath = path.join(outDir, `${corridorId}.json`);
     await writeFile(filePath, `${JSON.stringify(pack, null, 2)}\n`, "utf8");
-    const basicsCount = pack.lessons.find((l) => l.situation === "basics")?.vignettes
-      .reduce((n, v) => n + v.phrases.length, 0);
-    const emergCount = pack.lessons.find((l) => l.situation === "emergency")?.vignettes
-      .reduce((n, v) => n + v.phrases.length, 0);
-    console.log(
-      `${corridorId}: basics ${basicsCount ?? 0} phrases, emergency ${emergCount ?? 0} phrases`,
-    );
+    const convCount = pack.lessons
+      .flatMap((l) => l.vignettes)
+      .reduce((n, v) => n + v.conversations.length, 0);
+    console.log(`${corridorId}: ${convCount} conversations in pack`);
   }
 }
 

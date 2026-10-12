@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "hotel-checkin-001",
+  "multiwozDomain": "hotel",
+  "situation": "hotel",
+  "title": { "en": "Check-in at the front desk" },
+  "slotSchema": ["guest-name", "nights", "breakfast", "room-type"],
+  "turns": [
+    {
+      "id": "t1",
+      "speaker": "system",
+      "utterance": { "en": "Good evening. Welcome to {hotel-name}. Do you have a reservation?" },
+      "acts": ["greet", "ask"]
+    },
+    {
+      "id": "t2",
+      "speaker": "user",
+      "utterance": { "en": "Yes, I have a reservation under {guest-name}." },
+      "acts": ["inform"]
+    },
+    {
+      "id": "t3",
+      "speaker": "system",
+      "utterance": { "en": "Thank you. How many nights will you be staying?" },
+      "acts": ["ask"],
+      "slots": { "guest-name": "{guest-name}" }
+    },
+    {
+      "id": "t4",
+      "speaker": "user",
+      "utterance": { "en": "Two nights, please." },
+      "acts": ["inform"],
+      "slots": { "nights": "2" }
+    },
+    {
+      "id": "t5",
+      "speaker": "system",
+      "utterance": { "en": "Breakfast is included. Would you like a non-smoking room?" },
+      "acts": ["inform", "ask"]
+    },
+    {
+      "id": "t6",
+      "speaker": "user",
+      "utterance": { "en": "Non-smoking, please. What time is breakfast?" },
+      "acts": ["request", "ask"]
+    },
+    {
+      "id": "t7",
+      "speaker": "system",
+      "utterance": { "en": "Breakfast is from 7 to 10 a.m. Here is your key card." },
+      "acts": ["inform"]
+    },
+    {
+      "id": "t8",
+      "speaker": "user",
+      "utterance": { "en": "Thank you very much." },
+      "acts": ["thank"]
+    }
+  ]
+}

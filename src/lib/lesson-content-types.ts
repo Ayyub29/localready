@@ -1,9 +1,7 @@
 import type { CorridorId, LocalizedString, SituationKey } from "./types";
 
 /**
- * Configurable player steps. Default product flow per vignette:
- * culture (optional) → conversation → quiz.
- * Legacy packs may still use scenario + phrases.
+ * Player flow per vignette: optional culture → each conversation (description → turns).
  */
 export type LessonUnitType =
   | "culture"
@@ -33,6 +31,7 @@ export type CultureCard = {
   avoid?: LocalizedString[];
 };
 
+/** @deprecated Quizzes are not stored in runtime packs; may return for exercises later. */
 export type QuizQuestion =
   | {
       id: string;
@@ -51,33 +50,34 @@ export type QuizQuestion =
 
 export type ConversationRole = "narrator" | "local" | "traveler";
 
-/** One line in a vignette dialogue. Traveler/local lines use `target` + `line` (gloss). */
 export type ConversationTurn = {
   id: string;
   role: ConversationRole;
   label?: LocalizedString;
   target?: string;
   romanization?: string;
-  /** Narration or meaning in learner locales (en + id). */
   line: LocalizedString;
   phraseId?: string;
 };
 
-/**
- * One micro-situation inside a lesson (e.g. luggage, taxi, train to city at the airport).
- * Prefer `conversation` for the player; keep `phrases` for quiz / cheatsheet indexing.
- */
+/** One dialogue scene inside a vignette (description screen, then turn-by-turn chat). */
+export type VignetteConversation = {
+  id: string;
+  title?: LocalizedString;
+  description: LocalizedString;
+  turns: ConversationTurn[];
+};
+
 export type LessonVignette = {
   id: string;
   title: LocalizedString;
-  /** Etiquette / context for this vignette only. Optional — empty or omitted skips culture. */
   culture?: CultureCard[];
-  /** Legacy intro text when `conversation` is not used. */
+  /** One or more dialogues in this micro-situation. */
+  conversations: VignetteConversation[];
+  /** Legacy packs only — prefer `conversations`. */
   scenario?: LocalizedString;
-  /** Ordered dialogue; player advances one turn per step. */
-  conversation?: ConversationTurn[];
-  phrases: Phrase[];
-  quiz: QuizQuestion[];
+  phrases?: Phrase[];
+  quiz?: QuizQuestion[];
 };
 
 export type LessonContent = {
@@ -87,12 +87,8 @@ export type LessonContent = {
   order: number;
   title: LocalizedString;
   free: boolean;
-  /** Ordered micro-scenarios inside this lesson. */
   vignettes: LessonVignette[];
-  /**
-   * Step order per vignette. With `conversation`, scenario/phrases steps are skipped.
-   */
-  unitOrder: LessonUnitType[];
+  unitOrder?: LessonUnitType[];
 };
 
 export type CorridorContentPack = {
@@ -101,14 +97,8 @@ export type CorridorContentPack = {
   emergencyPhrases: Phrase[];
 };
 
-/** Default flow requested for LocalReady lessons. */
-export const defaultLessonUnitOrder: LessonUnitType[] = [
-  "culture",
-  "conversation",
-  "quiz",
-];
+export const defaultLessonUnitOrder: LessonUnitType[] = ["culture", "conversation"];
 
-/** Legacy phrase-by-phrase flow. */
 export const legacyLessonUnitOrder: LessonUnitType[] = [
   "culture",
   "scenario",
