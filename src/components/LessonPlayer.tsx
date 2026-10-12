@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { ConversationThread } from "@/components/ConversationThread";
+import { getSituationTitle } from "@/data/catalog";
 import { buildLessonSteps } from "@/lib/content/lesson-player-steps";
 import { pickLocalized } from "@/lib/locale";
 import type { LessonContent } from "@/lib/lesson-content-types";
@@ -81,9 +82,14 @@ export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
         <p className="text-sm font-medium text-slate-800">
           {pickLocalized(vignette.title, locale)}
         </p>
-        {activeConversation?.title && (
+        {activeConversation && (
           <p className="text-xs text-slate-600">
-            {pickLocalized(activeConversation.title, locale)}
+            <span className="rounded bg-slate-100 px-1.5 py-0.5 font-medium text-slate-700">
+              {getSituationTitle(activeConversation.situation, locale)}
+            </span>
+            {activeConversation.title ? (
+              <span className="ml-2">{pickLocalized(activeConversation.title, locale)}</span>
+            ) : null}
           </p>
         )}
         <p className="text-xs uppercase tracking-wide text-teal-800">

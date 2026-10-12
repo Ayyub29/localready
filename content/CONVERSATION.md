@@ -11,8 +11,9 @@ CorridorContentPack
       culture?[]          # optional cards
       conversations[]     # one vignette → many dialogues
         id
+        situation         # when/where (basics, hotel, emergency, …) — required
         title?            # short label (en + id)
-        description       # scene setup (en + id) — shown before turns
+        description       # what is happening in this scene (en + id)
         turns[]           # chat lines (local / traveler / narrator rare)
       conversations[].turns[]
         role: narrator | local | traveler

@@ -12,7 +12,10 @@ export type StoredConversation = {
   schemaVersion: 1;
   id: string;
   corridorId: CorridorId;
-  /** Lesson this dialogue belongs to when compiled. */
+  /**
+   * Travel situation when this dialogue happens (basics, hotel, emergency, …).
+   * Used for curriculum, phrase catalog tags, and UI labels.
+   */
   situation: SituationKey;
   source: ConversationSource;
   sourceUrl?: string;
@@ -29,6 +32,7 @@ export function storedToVignetteConversation(
 ): VignetteConversation {
   return {
     id: stored.id,
+    situation: stored.situation,
     title: stored.title,
     description: stored.description,
     turns: stored.turns,

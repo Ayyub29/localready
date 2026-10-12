@@ -1,4 +1,5 @@
 import type { ConversationTurn, Phrase, VignetteConversation } from "../../src/lib/lesson-content-types";
+import type { SituationKey } from "../../src/lib/types";
 
 const YOU = { en: "You", id: "Kamu" };
 const STAFF = { en: "Staff", id: "Staf" };
@@ -23,6 +24,7 @@ function speechTurn(
 
 export function greetingsScene(
   convId: string,
+  situation: SituationKey,
   phrases: Phrase[],
 ): VignetteConversation {
   const [hi, howAre, fine, nameAsk, nameAns, niceMeet] = phrases;
@@ -48,6 +50,7 @@ export function greetingsScene(
   }
   return {
     id: convId,
+    situation,
     title: { en: "Say hello at the desk", id: "Sapaan di meja resepsionis" },
     description: {
       en: "You walk up to the hotel front desk. The staff member looks up and smiles.",
@@ -57,7 +60,11 @@ export function greetingsScene(
   };
 }
 
-export function politeScene(convId: string, phrases: Phrase[]): VignetteConversation {
+export function politeScene(
+  convId: string,
+  situation: SituationKey,
+  phrases: Phrase[],
+): VignetteConversation {
   const [excuse, thanks, sorry, please, yes] = phrases;
   const turns: ConversationTurn[] = [
     ...(excuse ? [speechTurn(`${convId}-t1`, "traveler", YOU, excuse)] : []),
@@ -74,6 +81,7 @@ export function politeScene(convId: string, phrases: Phrase[]): VignetteConversa
   ];
   return {
     id: convId,
+    situation,
     title: { en: "Get attention in a shop", id: "Minta perhatian di toko" },
     description: {
       en: "The shop is crowded. You gently get the clerk's attention.",
@@ -85,6 +93,7 @@ export function politeScene(convId: string, phrases: Phrase[]): VignetteConversa
 
 export function emergencyScene(
   convId: string,
+  situation: SituationKey,
   phrases: Phrase[],
 ): VignetteConversation {
   const [help, lost, sick, doctor, phone] = phrases;
@@ -104,6 +113,7 @@ export function emergencyScene(
   if (phone) turns.push(speechTurn(`${convId}-t6`, "traveler", YOU, phone));
   return {
     id: convId,
+    situation,
     title: { en: "Ask for help", id: "Minta bantuan" },
     description: {
       en: "Something went wrong and you need help from someone nearby.",

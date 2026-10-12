@@ -60,10 +60,16 @@ export type ConversationTurn = {
   phraseId?: string;
 };
 
-/** One dialogue scene inside a vignette (description screen, then turn-by-turn chat). */
+/**
+ * One dialogue scene inside a vignette (description screen, then turn-by-turn chat).
+ * `situation` = travel context when this talk happens (hotel, train, basics, …).
+ */
 export type VignetteConversation = {
   id: string;
+  /** Curriculum situation key — when / where this conversation takes place. */
+  situation: SituationKey;
   title?: LocalizedString;
+  /** Scene setup shown before turns (what is happening right now). */
   description: LocalizedString;
   turns: ConversationTurn[];
 };

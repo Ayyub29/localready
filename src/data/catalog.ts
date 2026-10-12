@@ -1,4 +1,4 @@
-import type { CorridorId, LocalizedString, SituationKey } from "@/lib/types";
+import type { CorridorId, Locale, LocalizedString, SituationKey } from "@/lib/types";
 import { situationOrder } from "@/lib/situations";
 
 export type Destination = {
@@ -60,6 +60,14 @@ export const destinations: Destination[] = [
 
 export function getDestination(id: CorridorId): Destination | undefined {
   return destinations.find((d) => d.id === id);
+}
+
+export function getSituationTitle(
+  situation: SituationKey,
+  locale: Locale,
+): string {
+  const title = lessonTitles[situation];
+  return locale === "id" ? title.id : title.en;
 }
 
 export function getLessons(corridorId: CorridorId): LessonListItem[] {

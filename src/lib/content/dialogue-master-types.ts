@@ -109,6 +109,7 @@ export function compileVignetteConversation(
   );
   return {
     id: master.id,
+    situation: master.situation,
     title: { en: master.title.en, id: master.title.en },
     description,
     turns,

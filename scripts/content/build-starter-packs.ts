@@ -138,7 +138,7 @@ function buildBasicsLesson(
       poolPhraseToPhrase(corridorId, "basics", item, idx),
     );
     conversations.push(
-      greetingsScene(`${corridorId}-basics-conv-greetings`, phrases),
+      greetingsScene(`${corridorId}-basics-conv-greetings`, "basics", phrases),
     );
   }
 
@@ -146,7 +146,9 @@ function buildBasicsLesson(
     const phrases = polite.map((item, idx) =>
       poolPhraseToPhrase(corridorId, "basics", item, idx + 10),
     );
-    conversations.push(politeScene(`${corridorId}-basics-conv-polite`, phrases));
+    conversations.push(
+      politeScene(`${corridorId}-basics-conv-polite`, "basics", phrases),
+    );
   }
 
   if (conversations.length > 0) {
@@ -202,7 +204,7 @@ function buildEmergencyLesson(
       id: `${corridorId}-emergency-street`,
       title: { en: "Urgent help", id: "Bantuan darurat" },
       conversations: [
-        emergencyScene(`${corridorId}-emergency-conv-help`, phrases),
+        emergencyScene(`${corridorId}-emergency-conv-help`, "emergency", phrases),
       ],
     });
   }

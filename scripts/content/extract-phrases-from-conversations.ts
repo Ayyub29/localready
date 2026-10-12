@@ -8,23 +8,29 @@ import { phrasesFromConversation } from "../../src/lib/content/extract-phrases";
 import type { StoredConversation } from "../../src/lib/content/stored-conversation-types";
 import { readPhrasePool } from "../../src/lib/content-pipeline/pool-store";
 import type { Phrase } from "../../src/lib/lesson-content-types";
-import type { CorridorId } from "../../src/lib/types";
+import type { CorridorId, SituationKey } from "../../src/lib/types";
 import { storedToVignetteConversation } from "../../src/lib/content/stored-conversation-types";
 
 const corridorArg = process.argv[2] as CorridorId | undefined;
 
 const CORRIDORS: CorridorId[] = ["ja-jp", "ko-kr", "th-th", "vi-vn", "id-id"];
 
-function dedupePhrases(items: Phrase[]): Phrase[] {
-  const out: Phrase[] = [];
-  const seen = new Set<string>();
-  for (const p of items) {
-    const key = `${p.target.trim().toLowerCase()}|${p.meaning.en.trim().toLowerCase()}`;
-    if (seen.has(key)) continue;
-    seen.add(key);
-    out.push(p);
+type CatalogEntry = Phrase & { situations: SituationKey[] };
+
+function mergeCatalog(entries: CatalogEntry[]): CatalogEntry[] {
+  const byKey = new Map<string, CatalogEntry>();
+  for (const entry of entries) {
+    const key = `${entry.target.trim().toLowerCase()}|${entry.meaning.en.trim().toLowerCase()}`;
+    const existing = byKey.get(key);
+    if (!existing) {
+      byKey.set(key, entry);
+      continue;
+    }
+    for (const s of entry.situations) {
+      if (!existing.situations.includes(s)) existing.situations.push(s);
+    }
   }
-  return out;
+  return [...byKey.values()];
 }
 
 async function loadStoredConversations(corridorId: CorridorId): Promise<StoredConversation[]> {
@@ -51,15 +57,18 @@ async function main() {
   }
 
   const stored = await loadStoredConversations(corridorId);
-  const fromConv: Phrase[] = [];
+  const fromConv: CatalogEntry[] = [];
   for (const s of stored) {
-    fromConv.push(...phrasesFromConversation(storedToVignetteConversation(s)));
+    const vignetteConv = storedToVignetteConversation(s);
+    for (const p of phrasesFromConversation(vignetteConv)) {
+      fromConv.push({ ...p, situations: [s.situation] });
+    }
   }
 
   const pool = await readPhrasePool(corridorId);
-  const fromPool: Phrase[] = pool.items
+  const fromPool: CatalogEntry[] = pool.items
     .filter((i) => i.status === "approved" || i.status === "pending")
-    .map((item, idx) => ({
+    .map((item) => ({
       id: item.id,
       target: item.target,
       romanization: item.romanization,
@@ -68,9 +77,23 @@ async function main() {
         id: item.meaningId ?? item.meaningEn,
       },
       wvSource: item.wvSource,
+      situations: item.situationHints.filter(
+        (h): h is SituationKey =>
+          [
+            "script",
+            "basics",
+            "train",
+            "money",
+            "restaurant",
+            "hotel",
+            "directions",
+            "culture",
+            "emergency",
+          ].includes(h),
+      ),
     }));
 
-  const phrases = dedupePhrases([...fromConv, ...fromPool]);
+  const phrases = mergeCatalog([...fromConv, ...fromPool]);
   const outDir = path.join(process.cwd(), "content", "derived", corridorId);
   await mkdir(outDir, { recursive: true });
   const outPath = path.join(outDir, "phrase-catalog.json");

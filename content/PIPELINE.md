@@ -22,7 +22,7 @@ flowchart LR
 | **Manual** | JSON in `content/conversations/` | Inject API or Git |
 | **Scrape** | Only where license allows; store `sourceUrl` | Not implemented |
 
-Each conversation is a **scene**: `description` + `turns[]` (no quiz in source files).
+Each conversation is a **scene**: **`situation`** (travel context key) + `description` (what is happening) + `turns[]` (no quiz in source files).
 
 ### 2) Store conversation content
 

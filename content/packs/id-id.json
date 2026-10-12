@@ -46,6 +46,7 @@
           "conversations": [
             {
               "id": "id-id-basics-conv-greetings",
+              "situation": "basics",
               "title": {
                 "en": "Say hello at the desk",
                 "id": "Sapaan di meja resepsionis"
@@ -149,6 +150,7 @@
             },
             {
               "id": "id-id-basics-conv-polite",
+              "situation": "basics",
               "title": {
                 "en": "Get attention in a shop",
                 "id": "Minta perhatian di toko"
@@ -343,6 +345,7 @@
           "conversations": [
             {
               "id": "id-id-emergency-conv-help",
+              "situation": "emergency",
               "title": {
                 "en": "Ask for help",
                 "id": "Minta bantuan"
