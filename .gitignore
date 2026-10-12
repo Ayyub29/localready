@@ -31,6 +31,9 @@ yarn-error.log*
 # env files
 .env*.local
 
+# content pipeline snapshots (re-fetch with npm run content:seed:wv)
+content/open/**/wv-raw/*.wikitext
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
