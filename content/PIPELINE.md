@@ -1,6 +1,8 @@
-# Content pipeline (conversations first)
+# Content pipeline
 
-LocalReady treats **dialogues as source of truth**. Phrases are **derived** (from turns + Wikivoyage pool). **Lesson 0 (`script`)** teaches the writing system for non-Latin corridors.
+**Target model:** three pools (conversations, phrase lists, mini lessons) + phrase **corpus**; humans assemble **lessons** from refs. See **[ARCHITECTURE.md](./ARCHITECTURE.md)**.
+
+Below is the current “conversations first” compile path while lesson manifests and extra pools land. **Lesson 0 (`script`)** teaches the writing system for non-Latin corridors.
 
 ## Four steps
 
@@ -73,11 +75,11 @@ npm run content:build:starter            # today: pool + templates → pack (dev
 
 Shape: see `CONVERSATION.md` (vignettes → `conversations[]` with `description` + `turns`).
 
-**Curriculum manifest** (planned):
+**Lesson manifests** (planned):
 
 ```
-content/curriculum/spine.json          # lesson order, free/paid
-content/curriculum/{corridorId}.json   # vignetteId → conversationId[], situation, lesson 0 blocks
+content/lessons/{corridorId}/{lessonId}.json   # vignettes → sequence of pool refs
+content/curriculum/spine.json                  # lesson order, free/paid
 ```
 
 ---

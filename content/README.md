@@ -1,8 +1,8 @@
 # LocalReady content pipeline
 
-**Conversations first** → store → extract phrases (+ Wikivoyage pool) → compile runtime pack.
+**Pools** (conversations, phrase lists, mini lessons) + **phrase corpus** → human **lesson manifest** → compile runtime pack.
 
-See **[PIPELINE.md](./PIPELINE.md)** (four steps + lesson 0). Runtime shape: **[CONVERSATION.md](./CONVERSATION.md)**.
+See **[ARCHITECTURE.md](./ARCHITECTURE.md)** (pools, vignettes, ingest). **[PIPELINE.md](./PIPELINE.md)** (per-pool steps + lesson 0). Runtime shape: **[CONVERSATION.md](./CONVERSATION.md)**.
 
 ## Phrase pool file
 
