@@ -1,35 +1,36 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
+import { buildLessonSteps } from "@/lib/content/lesson-player-steps";
 import { pickLocalized } from "@/lib/locale";
-import type { LessonContent, LessonUnitType, LessonVignette } from "@/lib/lesson-content-types";
+import type { LessonContent } from "@/lib/lesson-content-types";
 import type { Locale } from "@/lib/types";
 
 type LessonPlayerProps = {
   locale: Locale;
   lesson: LessonContent;
+  homeHref: string;
 };
 
-function unitsForVignette(
-  unitOrder: LessonUnitType[],
-  vignette: LessonVignette,
-): LessonUnitType[] {
-  const hasCulture = (vignette.culture?.length ?? 0) > 0;
-  return hasCulture ? unitOrder : unitOrder.filter((u) => u !== "culture");
+function stepLabel(
+  locale: Locale,
+  step: ReturnType<typeof buildLessonSteps>[number],
+): string {
+  const labels = {
+    culture: { en: "Culture", id: "Budaya" },
+    scenario: { en: "Scenario", id: "Situasi" },
+    phrase: { en: "Phrase", id: "Frasa" },
+    quiz: { en: "Quiz", id: "Kuis" },
+  };
+  return labels[step.type][locale];
 }
 
-export function LessonPlayer({ locale, lesson }: LessonPlayerProps) {
-  const [vignetteIndex, setVignetteIndex] = useState(0);
-  const [unitIndex, setUnitIndex] = useState(0);
+export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
+  const steps = useMemo(() => buildLessonSteps(lesson), [lesson]);
+  const [stepIndex, setStepIndex] = useState(0);
 
-  const vignette = lesson.vignettes[vignetteIndex];
-  const units = useMemo(
-    () => (vignette ? unitsForVignette(lesson.unitOrder, vignette) : []),
-    [lesson.unitOrder, vignette],
-  );
-  const unit = units[unitIndex];
-
-  if (!vignette) {
+  if (steps.length === 0) {
     return (
       <p className="text-sm text-slate-600">
         {locale === "id" ? "Konten belum tersedia." : "Content not available yet."}
@@ -37,115 +38,148 @@ export function LessonPlayer({ locale, lesson }: LessonPlayerProps) {
     );
   }
 
+  const step = steps[stepIndex];
+  const vignette = lesson.vignettes[step.vignetteIndex];
+  const atStart = stepIndex === 0;
+  const atEnd = stepIndex === steps.length - 1;
+
+  const vignetteCount = lesson.vignettes.length;
+  const vignetteNumber = step.vignetteIndex + 1;
+
   function goNext() {
-    if (unitIndex < units.length - 1) {
-      setUnitIndex(unitIndex + 1);
-      return;
-    }
-    if (vignetteIndex < lesson.vignettes.length - 1) {
-      setVignetteIndex(vignetteIndex + 1);
-      setUnitIndex(0);
-    }
+    if (!atEnd) setStepIndex(stepIndex + 1);
   }
 
   function goPrev() {
-    if (unitIndex > 0) {
-      setUnitIndex(unitIndex - 1);
-      return;
-    }
-    if (vignetteIndex > 0) {
-      const prevV = lesson.vignettes[vignetteIndex - 1];
-      const prevUnits = unitsForVignette(lesson.unitOrder, prevV);
-      setVignetteIndex(vignetteIndex - 1);
-      setUnitIndex(prevUnits.length - 1);
-    }
+    if (!atStart) setStepIndex(stepIndex - 1);
   }
 
-  const atStart = vignetteIndex === 0 && unitIndex === 0;
-  const atEnd =
-    vignetteIndex === lesson.vignettes.length - 1 && unitIndex === units.length - 1;
-
   return (
-    <div className="space-y-6">
-      <header className="space-y-1">
-        <p className="text-xs uppercase tracking-wide text-slate-500">
-          {pickLocalized(vignette.title, locale)} · {unit}
+    <div className="flex min-h-[50vh] flex-col gap-6">
+      <div className="space-y-2">
+        <div className="flex items-center justify-between text-xs text-slate-500">
+          <span>
+            {locale === "id" ? "Langkah" : "Step"} {stepIndex + 1}/{steps.length}
+          </span>
+          <span>
+            {locale === "id" ? "Adegan" : "Vignette"} {vignetteNumber}/{vignetteCount}
+          </span>
+        </div>
+        <div className="h-1.5 overflow-hidden rounded-full bg-slate-100">
+          <div
+            className="h-full rounded-full bg-teal-600 transition-all duration-300"
+            style={{ width: `${((stepIndex + 1) / steps.length) * 100}%` }}
+          />
+        </div>
+        <p className="text-sm font-medium text-slate-800">
+          {pickLocalized(vignette.title, locale)}
         </p>
-        <p className="text-sm text-slate-600">
-          {locale === "id" ? "Vignette" : "Vignette"}{" "}
-          {vignetteIndex + 1}/{lesson.vignettes.length}
+        <p className="text-xs uppercase tracking-wide text-teal-800">
+          {stepLabel(locale, step)}
         </p>
-      </header>
+      </div>
 
-      {unit === "culture" && vignette.culture?.map((card) => (
-        <section
-          key={card.id}
-          className="rounded-xl border border-amber-200 bg-amber-50/80 p-4 space-y-2"
-        >
-          <h2 className="font-semibold text-amber-950">
-            {pickLocalized(card.title, locale)}
-          </h2>
-          <p className="text-sm text-amber-950/90">{pickLocalized(card.body, locale)}</p>
-        </section>
-      ))}
+      <div className="flex-1">
+        {step.type === "culture" && vignette.culture?.[step.cardIndex] && (
+          <section className="rounded-xl border border-amber-200 bg-amber-50/80 p-5 space-y-3">
+            <h2 className="text-lg font-semibold text-amber-950">
+              {pickLocalized(vignette.culture[step.cardIndex].title, locale)}
+            </h2>
+            <p className="text-sm leading-relaxed text-amber-950/90">
+              {pickLocalized(vignette.culture[step.cardIndex].body, locale)}
+            </p>
+          </section>
+        )}
 
-      {unit === "scenario" && (
-        <section className="rounded-xl border border-border bg-card p-4">
-          <p className="text-sm leading-relaxed">{pickLocalized(vignette.scenario, locale)}</p>
-        </section>
-      )}
+        {step.type === "scenario" && (
+          <section className="rounded-xl border border-border bg-card p-5">
+            <p className="text-base leading-relaxed">
+              {pickLocalized(vignette.scenario, locale)}
+            </p>
+          </section>
+        )}
 
-      {unit === "phrases" && (
-        <ul className="space-y-3">
-          {vignette.phrases.map((phrase) => (
-            <li
-              key={phrase.id}
-              className="rounded-xl border border-border bg-card px-4 py-3"
-            >
-              <p className="text-xl font-semibold leading-snug">{phrase.target}</p>
-              {phrase.romanization && (
-                <p className="text-sm text-teal-800">{phrase.romanization}</p>
-              )}
-              <p className="mt-1 text-sm text-slate-700">
-                {pickLocalized(phrase.meaning, locale)}
+        {step.type === "phrase" && vignette.phrases[step.phraseIndex] && (
+          <section className="rounded-xl border border-border bg-card px-5 py-6 text-center">
+            <p className="text-3xl font-semibold leading-snug tracking-tight">
+              {vignette.phrases[step.phraseIndex].target}
+            </p>
+            {vignette.phrases[step.phraseIndex].romanization && (
+              <p className="mt-2 text-lg text-teal-800">
+                {vignette.phrases[step.phraseIndex].romanization}
               </p>
-            </li>
-          ))}
-        </ul>
-      )}
+            )}
+            <p className="mt-4 text-base text-slate-700">
+              {pickLocalized(vignette.phrases[step.phraseIndex].meaning, locale)}
+            </p>
+            <p className="mt-6 text-xs text-slate-500">
+              {step.phraseIndex + 1}/{vignette.phrases.length}{" "}
+              {locale === "id" ? "frasa di adegan ini" : "phrases in this vignette"}
+            </p>
+          </section>
+        )}
 
-      {unit === "quiz" && vignette.quiz[0] && (
-        <section className="rounded-xl border border-border bg-card p-4 space-y-3">
-          <p className="font-medium">{pickLocalized(vignette.quiz[0].prompt, locale)}</p>
-          {vignette.quiz[0].type === "pick-phrase" && (
-            <ul className="space-y-2 text-sm">
-              {vignette.quiz[0].phraseIds.map((id) => {
-                const phrase = vignette.phrases.find((p) => p.id === id);
-                if (!phrase) return null;
-                return (
-                  <li key={id} className="rounded-lg bg-slate-50 px-3 py-2">
-                    {phrase.target}
+        {step.type === "quiz" && vignette.quiz[step.quizIndex] && (() => {
+          const quiz = vignette.quiz[step.quizIndex];
+          return (
+          <section className="rounded-xl border border-border bg-card p-5 space-y-4">
+            <p className="font-medium">
+              {pickLocalized(quiz.prompt, locale)}
+            </p>
+            {quiz.type === "pick-phrase" && (
+              <ul className="space-y-2">
+                {quiz.phraseIds.map((id) => {
+                  const phrase = vignette.phrases.find((p) => p.id === id);
+                  if (!phrase) return null;
+                  return (
+                    <li
+                      key={id}
+                      className="rounded-lg border border-slate-100 bg-slate-50 px-4 py-3 text-center text-lg"
+                    >
+                      {phrase.target}
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+            {quiz.type === "mcq" && (
+              <ul className="space-y-2">
+                {quiz.options.map((opt, i) => (
+                  <li
+                    key={i}
+                    className="rounded-lg border border-slate-100 bg-slate-50 px-4 py-3 text-sm"
+                  >
+                    {pickLocalized(opt, locale)}
                   </li>
-                );
-              })}
-            </ul>
-          )}
-          <p className="text-xs text-slate-500">
-            {locale === "id"
-              ? "Kuis interaktif menyusul — untuk sekarang baca frasa di atas."
-              : "Interactive quiz coming soon — review the phrases above for now."}
-          </p>
-        </section>
+                ))}
+              </ul>
+            )}
+          </section>
+          );
+        })()}
+      </div>
+
+      {atEnd && (
+        <div className="rounded-xl border border-teal-200 bg-teal-50 px-4 py-3 text-center text-sm text-teal-900">
+          {locale === "id"
+            ? "Kamu sudah menyelesaikan pelajaran ini."
+            : "You finished this lesson."}
+          <div className="mt-2">
+            <Link href={homeHref} className="font-medium text-teal-800 underline">
+              {locale === "id" ? "Kembali ke beranda" : "Back to home"}
+            </Link>
+          </div>
+        </div>
       )}
 
-      <div className="flex gap-3 pt-2">
+      <div className="sticky bottom-0 flex gap-3 border-t border-border bg-background pt-4 pb-1">
         <button
           type="button"
           disabled={atStart}
           onClick={goPrev}
           className="flex-1 rounded-xl border border-border px-4 py-3 text-sm font-medium disabled:opacity-40"
         >
-          {locale === "id" ? "Sebelumnya" : "Back"}
+          {locale === "id" ? "Sebelumnya" : "Previous"}
         </button>
         <button
           type="button"
@@ -153,13 +187,7 @@ export function LessonPlayer({ locale, lesson }: LessonPlayerProps) {
           onClick={goNext}
           className="flex-1 rounded-xl bg-teal-700 px-4 py-3 text-sm font-medium text-white disabled:opacity-40"
         >
-          {atEnd
-            ? locale === "id"
-              ? "Selesai"
-              : "Done"
-            : locale === "id"
-              ? "Lanjut"
-              : "Next"}
+          {locale === "id" ? "Lanjut" : "Next"}
         </button>
       </div>
     </div>

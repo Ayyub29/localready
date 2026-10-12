@@ -51,7 +51,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
         </p>
       </header>
       {hasContent ? (
-        <LessonPlayer locale={loc} lesson={lesson} />
+        <LessonPlayer locale={loc} lesson={lesson} homeHref={`/${loc}`} />
       ) : (
         <p className="rounded-xl border border-dashed border-border px-4 py-8 text-center text-sm text-slate-600">
           {loc === "id"
