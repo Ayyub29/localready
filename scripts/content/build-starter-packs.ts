@@ -8,6 +8,7 @@ import type { CorridorContentPack, LessonContent, LessonVignette, Phrase } from 
 import { phrasesFromLesson } from "../../src/lib/content/extract-phrases";
 import { readPhrasePool } from "../../src/lib/content-pipeline/pool-store";
 import type { PhrasePoolItem } from "../../src/lib/content-pipeline/types";
+import { glossIdFromMeaningEn } from "../../src/lib/content/gloss-id-from-en";
 import type { CorridorId, SituationKey } from "../../src/lib/types";
 import { situationOrder } from "../../src/lib/situations";
 import {
@@ -104,7 +105,10 @@ function poolPhraseToPhrase(
     romanization: item.romanization?.replace(/\s*\(\)\s*/g, " ").trim(),
     meaning: {
       en: item.meaningEn.replace(/\s+/g, " ").trim(),
-      id: item.meaningId?.trim() || item.meaningEn.replace(/\s+/g, " ").trim(),
+      id:
+        item.meaningId?.trim() ||
+        glossIdFromMeaningEn(item.meaningEn) ||
+        "",
     },
     wvSource: item.wvSource,
   };

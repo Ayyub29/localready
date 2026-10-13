@@ -26,6 +26,12 @@ CorridorContentPack
 
 **Legacy (avoid):** per-vignette `phrases[]` without playback. **Quizzes:** `fillBlankQuizzes[]`, `flashcardDecks[]` via lesson manifest refs.
 
+### Bilingual gloss (`line.en` + `line.id`)
+
+- **Spoken bubble:** `target` (corridor language), both speakers.
+- **`/en/…` UI:** gloss from `line.en` when it differs from the spoken line (e.g. English translation under Indonesian for `id-id`).
+- **`/id/…` UI on `id-id`:** when the spoken line is already Indonesian, gloss shows **`line.en`** so learners still get English meaning; fill both gloss fields in admin.
+
 ## Player order (per vignette)
 
 1. Each **culture** card (if any)  

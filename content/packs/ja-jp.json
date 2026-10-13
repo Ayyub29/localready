@@ -68,7 +68,7 @@
                   "romanization": "Konnichiwa.",
                   "line": {
                     "en": "Good afternoon.",
-                    "id": "Good afternoon."
+                    "id": "Selamat siang."
                   },
                   "phraseId": "ja-jp-basics-good-afternoon-0"
                 },
@@ -83,7 +83,7 @@
                   "romanization": "Konnichiwa.",
                   "line": {
                     "en": "Good afternoon.",
-                    "id": "Good afternoon."
+                    "id": "Selamat siang."
                   },
                   "phraseId": "ja-jp-basics-good-afternoon-0"
                 },
@@ -98,7 +98,7 @@
                   "romanization": "O-genki desu ka?",
                   "line": {
                     "en": "How are you?",
-                    "id": "How are you?"
+                    "id": "Apa kabar?"
                   },
                   "phraseId": "ja-jp-basics-how-are-you-1"
                 },
@@ -113,7 +113,7 @@
                   "romanization": "O-namae wa?",
                   "line": {
                     "en": "What's your name? (lit. \"Your name is...\")",
-                    "id": "What's your name? (lit. \"Your name is...\")"
+                    "id": "Siapa nama Anda? (secara harfiah: \"Nama Anda...\")"
                   },
                   "phraseId": "ja-jp-basics-what-s-your-name-lit-your-name-is-2"
                 },
@@ -128,7 +128,7 @@
                   "romanization": "... desu.",
                   "line": {
                     "en": "My name is ... .",
-                    "id": "My name is ... ."
+                    "id": "Nama saya ... ."
                   },
                   "phraseId": "ja-jp-basics-my-name-is-3"
                 },
@@ -143,7 +143,7 @@
                   "romanization": "Hajimemashite. Dōzo yoroshiku onegaishimasu.",
                   "line": {
                     "en": "Nice to meet you. (formal)",
-                    "id": "Nice to meet you. (formal)"
+                    "id": "Senang bertemu dengan Anda. (formal)"
                   },
                   "phraseId": "ja-jp-basics-nice-to-meet-you-formal-4"
                 }
@@ -172,7 +172,7 @@
                   "romanization": "Konnichiwa.",
                   "line": {
                     "en": "Good afternoon.",
-                    "id": "Good afternoon."
+                    "id": "Selamat siang."
                   },
                   "phraseId": "ja-jp-basics-good-afternoon-10"
                 },
@@ -199,7 +199,7 @@
                   "romanization": "Hai, genki desu.",
                   "line": {
                     "en": "Fine, thank you.",
-                    "id": "Fine, thank you."
+                    "id": "Baik, terima kasih."
                   },
                   "phraseId": "ja-jp-basics-fine-thank-you-11"
                 },
@@ -214,7 +214,7 @@
                   "romanization": "Onegai shimasu.",
                   "line": {
                     "en": "Please. (request)",
-                    "id": "Please. (request)"
+                    "id": "Tolong. (permintaan)"
                   },
                   "phraseId": "ja-jp-basics-please-request-12"
                 },
@@ -229,7 +229,7 @@
                   "romanization": "Dōzo.",
                   "line": {
                     "en": "Please. (offer)",
-                    "id": "Please. (offer)"
+                    "id": "Silakan. (menawarkan)"
                   },
                   "phraseId": "ja-jp-basics-please-offer-13"
                 },
@@ -244,7 +244,7 @@
                   "romanization": "Dōmo arigatō gozaimashita.",
                   "line": {
                     "en": "Thank you very much. (formal)",
-                    "id": "Thank you very much. (formal)"
+                    "id": "Terima kasih banyak. (formal)"
                   },
                   "phraseId": "ja-jp-basics-thank-you-very-much-formal-14"
                 }
@@ -367,7 +367,7 @@
                   "romanization": "Keisatsu o yobu yo!",
                   "line": {
                     "en": "I'll call the police.",
-                    "id": "I'll call the police."
+                    "id": "Saya akan menelepon polisi."
                   },
                   "phraseId": "ja-jp-emergency-i-ll-call-the-police-0"
                 },
@@ -394,7 +394,7 @@
                   "romanization": "Keisatsu!",
                   "line": {
                     "en": "Police!",
-                    "id": "Police!"
+                    "id": "Polisi!"
                   },
                   "phraseId": "ja-jp-emergency-police-1"
                 },
@@ -409,7 +409,7 @@
                   "romanization": "Tetsudatte kudasai.",
                   "line": {
                     "en": "I need your help.",
-                    "id": "I need your help."
+                    "id": "Saya butuh bantuan Anda."
                   },
                   "phraseId": "ja-jp-emergency-i-need-your-help-2"
                 },
@@ -424,7 +424,7 @@
                   "romanization": "Kinkyū desu.",
                   "line": {
                     "en": "It's an emergency.",
-                    "id": "It's an emergency."
+                    "id": "Ini darurat."
                   },
                   "phraseId": "ja-jp-emergency-it-s-an-emergency-3"
                 },
@@ -439,7 +439,7 @@
                   "romanization": "Michi ni mayotte imasu.",
                   "line": {
                     "en": "I'm lost.",
-                    "id": "I'm lost."
+                    "id": "Saya tersesat."
                   },
                   "phraseId": "ja-jp-emergency-i-m-lost-4"
                 }
@@ -457,7 +457,7 @@
       "romanization": "Keisatsu o yobu yo!",
       "meaning": {
         "en": "I'll call the police.",
-        "id": "I'll call the police."
+        "id": "Saya akan menelepon polisi."
       }
     },
     {
@@ -466,7 +466,7 @@
       "romanization": "Keisatsu!",
       "meaning": {
         "en": "Police!",
-        "id": "Police!"
+        "id": "Polisi!"
       }
     },
     {
@@ -475,7 +475,7 @@
       "romanization": "Tetsudatte kudasai.",
       "meaning": {
         "en": "I need your help.",
-        "id": "I need your help."
+        "id": "Saya butuh bantuan Anda."
       }
     },
     {
@@ -484,7 +484,7 @@
       "romanization": "Kinkyū desu.",
       "meaning": {
         "en": "It's an emergency.",
-        "id": "It's an emergency."
+        "id": "Ini darurat."
       }
     },
     {
@@ -493,7 +493,7 @@
       "romanization": "Michi ni mayotte imasu.",
       "meaning": {
         "en": "I'm lost.",
-        "id": "I'm lost."
+        "id": "Saya tersesat."
       }
     }
   ]

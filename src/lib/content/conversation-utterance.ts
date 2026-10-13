@@ -1,3 +1,4 @@
+import { learnerGlossId } from "@/lib/content/gloss-id-from-en";
 import type { ConversationTurn } from "@/lib/lesson-content-types";
 import type { CorridorId, Locale } from "@/lib/types";
 
@@ -32,6 +33,12 @@ export function conversationGloss(
     const helper = turn.line[helperLocale]?.trim();
     if (!helper || helper === utterance) return null;
     return helper;
+  }
+
+  if (uiLocale === "id") {
+    const gloss = learnerGlossId(turn.line);
+    if (!gloss || gloss === utterance) return null;
+    return gloss;
   }
 
   const gloss = turn.line[uiLocale]?.trim();

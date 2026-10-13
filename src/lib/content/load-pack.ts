@@ -1,5 +1,6 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import { enrichPackGlosses } from "@/lib/content/enrich-pack-glosses";
 import type { CorridorContentPack, LessonContent } from "@/lib/lesson-content-types";
 import type { CorridorId, SituationKey } from "@/lib/types";
 
@@ -12,7 +13,8 @@ export async function loadCorridorPack(
 ): Promise<CorridorContentPack | null> {
   try {
     const raw = await readFile(packPath(corridorId), "utf8");
-    return JSON.parse(raw) as CorridorContentPack;
+    const pack = JSON.parse(raw) as CorridorContentPack;
+    return await enrichPackGlosses(pack);
   } catch {
     return null;
   }

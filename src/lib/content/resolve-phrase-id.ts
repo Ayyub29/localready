@@ -1,3 +1,4 @@
+import { glossIdFromMeaningEn } from "@/lib/content/gloss-id-from-en";
 import type { PhrasePoolItem } from "@/lib/content-pipeline/types";
 import { readPhrasePool } from "@/lib/content-pipeline/pool-store";
 import type { StoredConversation } from "@/lib/content/stored-conversation-types";
@@ -11,7 +12,7 @@ function phraseFromPoolItem(item: PhrasePoolItem): Phrase {
     romanization: item.romanization,
     meaning: {
       en: item.meaningEn,
-      id: item.meaningId ?? item.meaningEn,
+      id: item.meaningId?.trim() || glossIdFromMeaningEn(item.meaningEn) || item.meaningEn,
     },
     wvSource: item.wvSource,
   };

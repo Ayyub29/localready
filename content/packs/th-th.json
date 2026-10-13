@@ -68,7 +68,7 @@
                   "romanization": "khun chue arai?",
                   "line": {
                     "en": "What is your name?",
-                    "id": "What is your name?"
+                    "id": ""
                   },
                   "phraseId": "th-th-basics-what-is-your-name-0"
                 },
@@ -83,7 +83,7 @@
                   "romanization": "khun chue arai?",
                   "line": {
                     "en": "What is your name?",
-                    "id": "What is your name?"
+                    "id": ""
                   },
                   "phraseId": "th-th-basics-what-is-your-name-0"
                 },
@@ -98,7 +98,7 @@
                   "romanization": "phŏm/dì-chăn cheu _____",
                   "line": {
                     "en": "My name is ______ .",
-                    "id": "My name is ______ ."
+                    "id": ""
                   },
                   "phraseId": "th-th-basics-my-name-is-1"
                 },
@@ -113,7 +113,7 @@
                   "romanization": "yin-dii thii dai ruu-jak",
                   "line": {
                     "en": "Nice to meet you.",
-                    "id": "Nice to meet you."
+                    "id": ""
                   },
                   "phraseId": "th-th-basics-nice-to-meet-you-2"
                 }
@@ -142,7 +142,7 @@
                   "romanization": "karunaa",
                   "line": {
                     "en": "Please.",
-                    "id": "Please."
+                    "id": ""
                   },
                   "phraseId": "th-th-basics-please-10"
                 },
@@ -169,7 +169,7 @@
                   "romanization": "khop khun [mâak]",
                   "line": {
                     "en": "Thank you [very much].",
-                    "id": "Thank you [very much]."
+                    "id": ""
                   },
                   "phraseId": "th-th-basics-thank-you-very-much-11"
                 },
@@ -184,7 +184,7 @@
                   "romanization": "chai",
                   "line": {
                     "en": "Yes.",
-                    "id": "Yes."
+                    "id": ""
                   },
                   "phraseId": "th-th-basics-yes-12"
                 },
@@ -199,7 +199,7 @@
                   "romanization": "mai chai",
                   "line": {
                     "en": "No.",
-                    "id": "No."
+                    "id": ""
                   },
                   "phraseId": "th-th-basics-no-13"
                 },
@@ -214,7 +214,7 @@
                   "romanization": "kho thot",
                   "line": {
                     "en": "Excuse me. (begging pardon)",
-                    "id": "Excuse me. (begging pardon)"
+                    "id": ""
                   },
                   "phraseId": "th-th-basics-excuse-me-begging-pardon-14"
                 }
@@ -337,7 +337,7 @@
                   "romanization": "phom/chan ja jaang taamruat",
                   "line": {
                     "en": "I'll call the police.",
-                    "id": "I'll call the police."
+                    "id": "Saya akan menelepon polisi."
                   },
                   "phraseId": "th-th-emergency-i-ll-call-the-police-0"
                 },
@@ -364,7 +364,7 @@
                   "romanization": "taamruat",
                   "line": {
                     "en": "Police!",
-                    "id": "Police!"
+                    "id": "Polisi!"
                   },
                   "phraseId": "th-th-emergency-police-1"
                 },
@@ -379,7 +379,7 @@
                   "romanization": "phom/chan tongkaan khwaam chuai luea",
                   "line": {
                     "en": "I need your help.",
-                    "id": "I need your help."
+                    "id": "Saya butuh bantuan Anda."
                   },
                   "phraseId": "th-th-emergency-i-need-your-help-2"
                 },
@@ -394,7 +394,7 @@
                   "romanization": "rueang chuk chern",
                   "line": {
                     "en": "It's an emergency.",
-                    "id": "It's an emergency."
+                    "id": "Ini darurat."
                   },
                   "phraseId": "th-th-emergency-it-s-an-emergency-3"
                 },
@@ -409,7 +409,7 @@
                   "romanization": "phom/chan long thaang",
                   "line": {
                     "en": "I'm lost.",
-                    "id": "I'm lost."
+                    "id": "Saya tersesat."
                   },
                   "phraseId": "th-th-emergency-i-m-lost-4"
                 }
@@ -427,7 +427,7 @@
       "romanization": "phom/chan ja jaang taamruat",
       "meaning": {
         "en": "I'll call the police.",
-        "id": "I'll call the police."
+        "id": "Saya akan menelepon polisi."
       }
     },
     {
@@ -436,7 +436,7 @@
       "romanization": "taamruat",
       "meaning": {
         "en": "Police!",
-        "id": "Police!"
+        "id": "Polisi!"
       }
     },
     {
@@ -445,7 +445,7 @@
       "romanization": "phom/chan tongkaan khwaam chuai luea",
       "meaning": {
         "en": "I need your help.",
-        "id": "I need your help."
+        "id": "Saya butuh bantuan Anda."
       }
     },
     {
@@ -454,7 +454,7 @@
       "romanization": "rueang chuk chern",
       "meaning": {
         "en": "It's an emergency.",
-        "id": "It's an emergency."
+        "id": "Ini darurat."
       }
     },
     {
@@ -463,7 +463,7 @@
       "romanization": "phom/chan long thaang",
       "meaning": {
         "en": "I'm lost.",
-        "id": "I'm lost."
+        "id": "Saya tersesat."
       }
     }
   ]
