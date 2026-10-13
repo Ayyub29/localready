@@ -293,7 +293,7 @@ Today: **JSON API** for phrases only (`POST /api/content/inject`, `GET/PATCH /ap
 
 **Conversation CSV:** usually awkward for multi-turn dialogue; prefer **JSON per conversation** or a **turns.csv** keyed by `conversation_id,turn_order,role,target,line_en,line_id,phrase_id`. CSV for metadata + one JSON file per scene is a practical hybrid.
 
-**Lesson manifest:** edit JSON in Git (or a small admin UI later); not ideal as flat CSV because of vignette `sequence` and anchors.
+**Lesson manifest:** edit JSON in Git (or the planned `/admin` UI); not ideal as flat CSV because of vignette `sequence` and anchors. See [ADMIN.md](./ADMIN.md).
 
 ## Human lesson generation workflow
 
