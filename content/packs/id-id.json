@@ -331,98 +331,131 @@
             {
               "id": "id-id-basics-fill-arrival-001",
               "title": {
-                "en": "Complete the phrase",
-                "id": "Lengkapi frasanya"
+                "en": "What would you say?",
+                "id": "Apa yang akan kamu katakan?"
               },
               "questions": [
                 {
-                  "id": "fb-terima-kasih",
-                  "instruction": {
-                    "en": "Choose the missing word in Indonesian.",
-                    "id": "Pilih kata yang hilang dalam bahasa Indonesia."
+                  "id": "fb-warung-cold-drink",
+                  "kind": "situation",
+                  "prompt": {
+                    "en": "You want to buy a cold bottled drink at a warung. What should you say?",
+                    "id": "Kamu mau beli air mineral dingin di warung. Apa yang sebaiknya kamu katakan?"
                   },
-                  "before": "Terima ",
-                  "after": ".",
-                  "answers": [
-                    "kasih"
-                  ],
-                  "phraseId": "id-id-basics-terima-kasih",
+                  "correctPhraseId": "id-id-basics-ada-air-mineral",
                   "choices": [
                     {
-                      "id": "fb-terima-kasih-opt-0",
-                      "label": "kasih"
+                      "id": "fb-warung-cold-drink-opt-0",
+                      "label": "Lima ribu rupiah."
                     },
                     {
-                      "id": "fb-terima-kasih-opt-1",
-                      "label": "lima"
+                      "id": "fb-warung-cold-drink-opt-1",
+                      "label": "Permisi, ada air mineral?"
                     },
                     {
-                      "id": "fb-terima-kasih-opt-2",
-                      "label": "Lima"
+                      "id": "fb-warung-cold-drink-opt-2",
+                      "label": "Permisi, toilet di mana?"
                     },
                     {
-                      "id": "fb-terima-kasih-opt-3",
-                      "label": "mineral"
+                      "id": "fb-warung-cold-drink-opt-3",
+                      "label": "Selamat datang di Jakarta!"
                     }
                   ],
-                  "correctChoiceId": "fb-terima-kasih-opt-0"
+                  "correctChoiceId": "fb-warung-cold-drink-opt-1"
                 },
                 {
-                  "id": "fb-air-mineral",
-                  "before": "Permisi, ada air ",
-                  "after": "?",
-                  "answers": [
-                    "mineral"
-                  ],
-                  "phraseId": "id-id-basics-ada-air-mineral",
+                  "id": "fb-warung-dingin",
+                  "kind": "reply",
+                  "prompt": {
+                    "en": "They ask if you want it cold.",
+                    "id": "Penjual menanyakan apakah kamu mau yang dingin."
+                  },
+                  "cueTarget": "Ada. Mau yang dingin?",
+                  "cueSpeaker": {
+                    "en": "Shopkeeper",
+                    "id": "Penjual"
+                  },
+                  "correctPhraseId": "id-id-basics-satu-botol",
                   "choices": [
                     {
-                      "id": "fb-air-mineral-opt-0",
-                      "label": "lima"
+                      "id": "fb-warung-dingin-opt-0",
+                      "label": "Ada. Mau yang dingin?"
                     },
                     {
-                      "id": "fb-air-mineral-opt-1",
-                      "label": "Lima"
+                      "id": "fb-warung-dingin-opt-1",
+                      "label": "Terima kasih. Saya turis."
                     },
                     {
-                      "id": "fb-air-mineral-opt-2",
-                      "label": "mineral"
+                      "id": "fb-warung-dingin-opt-2",
+                      "label": "Yang dingin, satu botol."
                     },
                     {
-                      "id": "fb-air-mineral-opt-3",
-                      "label": "kasih"
+                      "id": "fb-warung-dingin-opt-3",
+                      "label": "Terima kasih."
                     }
                   ],
-                  "correctChoiceId": "fb-air-mineral-opt-2"
+                  "correctChoiceId": "fb-warung-dingin-opt-2"
                 },
                 {
-                  "id": "fb-lima-ribu",
-                  "before": "",
-                  "after": " ribu rupiah.",
-                  "answers": [
-                    "lima",
-                    "Lima"
-                  ],
-                  "hint": {
-                    "en": "The price you heard at the warung.",
-                    "id": "Harga yang kamu dengar di warung."
+                  "id": "fb-warung-thanks",
+                  "kind": "situation",
+                  "prompt": {
+                    "en": "You paid for your water at the warung. How do you thank them?",
+                    "id": "Kamu sudah bayar air di warung. Bagaimana cara berterima kasih?"
                   },
-                  "phraseId": "id-id-basics-lima-ribu",
+                  "correctPhraseId": "id-id-basics-terima-kasih",
                   "choices": [
                     {
-                      "id": "fb-lima-ribu-opt-0",
-                      "label": "kasih"
+                      "id": "fb-warung-thanks-opt-0",
+                      "label": "Permisi, ada air mineral?"
                     },
                     {
-                      "id": "fb-lima-ribu-opt-1",
-                      "label": "lima"
+                      "id": "fb-warung-thanks-opt-1",
+                      "label": "Permisi, toilet di mana?"
                     },
                     {
-                      "id": "fb-lima-ribu-opt-2",
-                      "label": "mineral"
+                      "id": "fb-warung-thanks-opt-2",
+                      "label": "Lima ribu rupiah."
+                    },
+                    {
+                      "id": "fb-warung-thanks-opt-3",
+                      "label": "Terima kasih."
                     }
                   ],
-                  "correctChoiceId": "fb-lima-ribu-opt-1"
+                  "correctChoiceId": "fb-warung-thanks-opt-3"
+                },
+                {
+                  "id": "fb-driver-turis",
+                  "kind": "reply",
+                  "prompt": {
+                    "en": "Your driver welcomes you. You want to say you're a tourist.",
+                    "id": "Supirmu menyambut kamu. Kamu ingin bilang bahwa kamu turis."
+                  },
+                  "cueTarget": "Selamat datang di Jakarta!",
+                  "cueSpeaker": {
+                    "en": "Driver",
+                    "id": "Supir"
+                  },
+                  "correctPhraseId": "id-id-basics-saya-turis",
+                  "choices": [
+                    {
+                      "id": "fb-driver-turis-opt-0",
+                      "label": "Silakan masuk."
+                    },
+                    {
+                      "id": "fb-driver-turis-opt-1",
+                      "label": "Di sebelah kiri, dekat kafe."
+                    },
+                    {
+                      "id": "fb-driver-turis-opt-2",
+                      "label": "Selamat datang di Jakarta!"
+                    },
+                    {
+                      "id": "fb-driver-turis-opt-3",
+                      "label": "Terima kasih. Saya turis."
+                    }
+                  ],
+                  "correctChoiceId": "fb-driver-turis-opt-3"
                 }
               ]
             }

@@ -33,16 +33,18 @@ export type CultureCard = {
   avoid?: LocalizedString[];
 };
 
+export type FillBlankPromptKind = "situation" | "reply";
+
 export type FillBlankQuestion = {
   id: string;
-  instruction?: LocalizedString;
-  before: string;
-  after?: string;
-  answers: string[];
+  kind: FillBlankPromptKind;
+  prompt: LocalizedString;
+  cueTarget?: string;
+  cueSpeaker?: LocalizedString;
   hint?: LocalizedString;
-  phraseId?: string;
-  choices?: McqOption[];
-  correctChoiceId?: string;
+  correctPhraseId: string;
+  choices: McqOption[];
+  correctChoiceId: string;
 };
 
 export type VignetteFillBlankQuiz = {

@@ -1,34 +1,52 @@
 import { buildMcqOptions } from "@/lib/content/mcq-options";
-import type { FillBlankQuestion } from "@/lib/lesson-content-types";
+import type { FillBlankQuestion, Phrase } from "@/lib/lesson-content-types";
 import type { StoredFillBlankQuestion } from "@/lib/content/stored-fill-blank-types";
+
+function phraseIdsFromQuestions(questions: StoredFillBlankQuestion[]): string[] {
+  const ids = new Set<string>();
+  for (const q of questions) {
+    ids.add(q.correctPhraseId);
+    q.distractorPhraseIds?.forEach((id) => ids.add(id));
+  }
+  return [...ids];
+}
 
 export function compileFillBlankQuestion(
   q: StoredFillBlankQuestion,
+  resolvePhrase: (phraseId: string) => Phrase | null,
   allQuestions: StoredFillBlankQuestion[],
-): FillBlankQuestion {
-  const correct = q.answers[0]?.trim() ?? "";
-  const fromOthers = allQuestions
-    .flatMap((item) => item.answers)
-    .map((a) => a.trim())
-    .filter((a) => a && a.toLowerCase() !== correct.toLowerCase());
-  const distractors = q.distractors?.length
-    ? q.distractors
-    : [...new Set(fromOthers)];
+): FillBlankQuestion | null {
+  const correctPhrase = resolvePhrase(q.correctPhraseId);
+  if (!correctPhrase?.target?.trim()) {
+    return null;
+  }
+
+  const poolIds = phraseIdsFromQuestions(allQuestions);
+  const distractorIds =
+    q.distractorPhraseIds?.length
+      ? q.distractorPhraseIds.filter((id) => id !== q.correctPhraseId)
+      : poolIds.filter((id) => id !== q.correctPhraseId);
+
+  const distractorLabels: string[] = [];
+  for (const id of distractorIds) {
+    const p = resolvePhrase(id);
+    if (p?.target?.trim()) distractorLabels.push(p.target.trim());
+  }
 
   const { options, correctOptionId } = buildMcqOptions(
-    correct,
-    distractors,
+    correctPhrase.target.trim(),
+    distractorLabels,
     q.id,
   );
 
   return {
     id: q.id,
-    instruction: q.instruction,
-    before: q.before,
-    after: q.after,
-    answers: q.answers,
+    kind: q.kind,
+    prompt: q.prompt,
+    cueTarget: q.cueTarget,
+    cueSpeaker: q.cueSpeaker,
     hint: q.hint,
-    phraseId: q.phraseId,
+    correctPhraseId: q.correctPhraseId,
     choices: options,
     correctChoiceId: correctOptionId,
   };

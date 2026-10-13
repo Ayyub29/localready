@@ -167,12 +167,23 @@ export async function compileLessonManifest(
           warnings.push(`Missing fill-blank quiz: ${item.ref}`);
           continue;
         }
+        const questions = [];
+        for (const q of quiz.questions) {
+          const compiled = compileFillBlankQuestion(
+            q,
+            resolvePhrase,
+            quiz.questions,
+          );
+          if (!compiled) {
+            warnings.push(`Unresolved fill-blank question ${q.id} in ${item.ref}`);
+            continue;
+          }
+          questions.push(compiled);
+        }
         vignetteFillBlank.push({
           id: quiz.id,
           title: quiz.title,
-          questions: quiz.questions.map((q) =>
-            compileFillBlankQuestion(q, quiz.questions),
-          ),
+          questions,
         });
         playback.push({ kind: "fillBlank", fillBlankQuizId: quiz.id });
         continue;

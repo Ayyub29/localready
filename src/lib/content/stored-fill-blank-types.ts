@@ -2,19 +2,20 @@ import type { CorridorId, LocalizedString } from "@/lib/types";
 
 export type FillBlankSource = "manual" | "generated";
 
+/** `situation` = scene prompt; `reply` = respond to someone's line. */
+export type FillBlankPromptKind = "situation" | "reply";
+
 export type StoredFillBlankQuestion = {
   id: string;
-  instruction?: LocalizedString;
-  /** Text before the blank (target language). */
-  before: string;
-  /** Text after the blank. */
-  after?: string;
-  /** Accepted answers (case-insensitive trim match). */
-  answers: string[];
-  /** Optional wrong options; compile fills more from other questions if omitted. */
-  distractors?: string[];
+  kind: FillBlankPromptKind;
+  /** Learner-facing setup (situation) or short gloss for a reply prompt. */
+  prompt: LocalizedString;
+  /** Target-language line they said (reply kind). */
+  cueTarget?: string;
+  cueSpeaker?: LocalizedString;
+  correctPhraseId: string;
+  distractorPhraseIds?: string[];
   hint?: LocalizedString;
-  phraseId?: string;
 };
 
 /** Authoring pool: content/fill-blank/{corridorId}/*.json */

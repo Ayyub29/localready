@@ -31,7 +31,7 @@ function stepLabel(
     conversationTurn: { en: "Conversation", id: "Percakapan" },
     miniLesson: { en: "Mini lesson", id: "Pelajaran singkat" },
     phraseListPhrase: { en: "Phrase review", id: "Ulang frasa" },
-    fillBlank: { en: "Fill in the blank", id: "Isi kata yang hilang" },
+    fillBlank: { en: "What would you say?", id: "Apa yang kamu katakan?" },
     flashcard: { en: "Flashcard", id: "Kartu kata" },
     scenario: { en: "Scenario", id: "Situasi" },
     phrase: { en: "Phrase", id: "Frasa" },
