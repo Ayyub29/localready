@@ -12,6 +12,8 @@ export type StoredFillBlankQuestion = {
   prompt: LocalizedString;
   /** Target-language line they said (reply kind). */
   cueTarget?: string;
+  /** Optional: gloss for `cueTarget` from phrase pool at compile time. */
+  cuePhraseId?: string;
   cueSpeaker?: LocalizedString;
   correctPhraseId: string;
   distractorPhraseIds?: string[];

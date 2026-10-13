@@ -367,10 +367,14 @@
                   "id": "fb-warung-dingin",
                   "kind": "reply",
                   "prompt": {
-                    "en": "They ask if you want it cold.",
-                    "id": "Penjual menanyakan apakah kamu mau yang dingin."
+                    "en": "You are at a warung buying bottled water.",
+                    "id": "Kamu di warung membeli air mineral botol."
                   },
                   "cueTarget": "Ada. Mau yang dingin?",
+                  "cueGloss": {
+                    "en": "Yes. Do you want it cold?",
+                    "id": "Ada. Mau yang dingin?"
+                  },
                   "cueSpeaker": {
                     "en": "Shopkeeper",
                     "id": "Penjual"

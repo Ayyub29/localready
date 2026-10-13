@@ -25,12 +25,13 @@
     {
       "id": "fb-warung-dingin",
       "kind": "reply",
+      "prompt": {
+        "en": "You are at a warung buying bottled water.",
+        "id": "Kamu di warung membeli air mineral botol."
+      },
       "cueSpeaker": { "en": "Shopkeeper", "id": "Penjual" },
       "cueTarget": "Ada. Mau yang dingin?",
-      "prompt": {
-        "en": "They ask if you want it cold.",
-        "id": "Penjual menanyakan apakah kamu mau yang dingin."
-      },
+      "cuePhraseId": "id-id-basics-mau-dingin",
       "correctPhraseId": "id-id-basics-satu-botol",
       "distractorPhraseIds": [
         "id-id-basics-mau-dingin",
@@ -55,12 +56,13 @@
     {
       "id": "fb-driver-turis",
       "kind": "reply",
+      "prompt": {
+        "en": "You just met your airport driver outside arrivals.",
+        "id": "Kamu baru bertemu supir bandara di luar area kedatangan."
+      },
       "cueSpeaker": { "en": "Driver", "id": "Supir" },
       "cueTarget": "Selamat datang di Jakarta!",
-      "prompt": {
-        "en": "Your driver welcomes you. You want to say you're a tourist.",
-        "id": "Supirmu menyambut kamu. Kamu ingin bilang bahwa kamu turis."
-      },
+      "cuePhraseId": "id-id-basics-selamat-datang",
       "correctPhraseId": "id-id-basics-saya-turis",
       "distractorPhraseIds": [
         "id-id-basics-selamat-datang",

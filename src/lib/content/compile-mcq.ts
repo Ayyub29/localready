@@ -39,11 +39,18 @@ export function compileFillBlankQuestion(
     q.id,
   );
 
+  let cueGloss: FillBlankQuestion["cueGloss"];
+  if (q.cuePhraseId) {
+    const cuePhrase = resolvePhrase(q.cuePhraseId);
+    if (cuePhrase) cueGloss = cuePhrase.meaning;
+  }
+
   return {
     id: q.id,
     kind: q.kind,
     prompt: q.prompt,
     cueTarget: q.cueTarget,
+    cueGloss,
     cueSpeaker: q.cueSpeaker,
     hint: q.hint,
     correctPhraseId: q.correctPhraseId,

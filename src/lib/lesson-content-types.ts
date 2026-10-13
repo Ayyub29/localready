@@ -38,8 +38,10 @@ export type FillBlankPromptKind = "situation" | "reply";
 export type FillBlankQuestion = {
   id: string;
   kind: FillBlankPromptKind;
+  /** Situation / what’s going on (learner en + id). */
   prompt: LocalizedString;
   cueTarget?: string;
+  cueGloss?: LocalizedString;
   cueSpeaker?: LocalizedString;
   hint?: LocalizedString;
   correctPhraseId: string;
