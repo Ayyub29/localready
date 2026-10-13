@@ -38,7 +38,7 @@ Create or edit rows in the **authoring pools** (validate schema, stable ids):
 | Phrase list | `content/phrase-lists/{corridor}/*.json` | Ordered `phraseIds` |
 | Flashcard deck | `content/flashcard-decks/{corridor}/*.json` | Cards ↔ phrase ids |
 
-**Today:** phrases only via `POST /api/content/inject` + pool `GET/PATCH` (Bearer secret). Other pools are JSON/CLI.
+**Today:** Admin UI supports create / edit / delete for conversations, phrase pool rows, fill-blank / phrase-list / flashcard decks, mini lessons (form UI), lesson manifests, and situation manifests. Phrase inject also available via `POST /api/content/inject` + pool API (Bearer secret).
 
 ### 2. Craft lesson (pick from pools)
 
