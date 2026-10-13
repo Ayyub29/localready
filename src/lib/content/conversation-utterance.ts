@@ -18,30 +18,26 @@ export function conversationUtterance(
   return turn.line[spoken]?.trim() ?? turn.line.en?.trim() ?? "";
 }
 
-/** Learner gloss; omit when it duplicates the spoken line. */
+/** Learner gloss under the target-language line — follows app UI locale (`/en/` vs `/id/`). */
 export function conversationGloss(
   turn: ConversationTurn,
   corridorId: CorridorId,
   uiLocale: Locale,
 ): string | null {
   const utterance = conversationUtterance(turn, corridorId);
-  const spokenLocale = corridorSpokenLocale(corridorId);
 
-  // UI in the same language as the corridor (e.g. id-id + /id/…): show the other gloss (usually EN).
-  if (uiLocale === spokenLocale) {
-    const helperLocale: Locale = spokenLocale === "id" ? "en" : "id";
-    const helper = turn.line[helperLocale]?.trim();
-    if (!helper || helper === utterance) return null;
-    return helper;
+  const primary =
+    uiLocale === "id"
+      ? learnerGlossId(turn.line)?.trim()
+      : turn.line.en?.trim();
+
+  if (primary && primary !== utterance) return primary;
+
+  // Indonesian UI on id-id: speech is already ID — show English helper when ID gloss duplicates target.
+  if (uiLocale === "id" && corridorId === "id-id") {
+    const en = turn.line.en?.trim();
+    if (en && en !== utterance) return en;
   }
 
-  if (uiLocale === "id") {
-    const gloss = learnerGlossId(turn.line);
-    if (!gloss || gloss === utterance) return null;
-    return gloss;
-  }
-
-  const gloss = turn.line[uiLocale]?.trim();
-  if (!gloss || gloss === utterance) return null;
-  return gloss;
+  return null;
 }
