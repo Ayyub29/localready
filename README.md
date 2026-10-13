@@ -83,3 +83,7 @@ npm run build
 ```
 
 `DATABASE_URL` must be set in production.
+
+## Deploy (Cloudflare Workers)
+
+Production hosting is **Cloudflare Workers** via OpenNext, not Vercel. See **[docs/CLOUDFLARE.md](./docs/CLOUDFLARE.md)** for tokens, secrets, Google OAuth redirect URLs, and `npm run deploy:cf`.
