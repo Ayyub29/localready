@@ -60,13 +60,13 @@ export function AdminLessonEditor({
     });
   }
 
-  function updateVignetteTitle(vIndex: number, en: string) {
+  function updateVignetteTitle(vIndex: number, field: "en" | "id", value: string) {
     setDoc((d) => {
       const vignettes = [...d.vignettes];
       const v = vignettes[vIndex];
       vignettes[vIndex] = {
         ...v,
-        title: { en, id: v.title.id },
+        title: field === "en" ? { en: value, id: v.title.id } : { en: v.title.en, id: value },
       };
       return { ...d, vignettes };
     });
@@ -166,12 +166,22 @@ export function AdminLessonEditor({
             className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
           />
         </label>
-        <label className="text-sm sm:col-span-2">
+        <label className="text-sm">
           Title (EN)
           <input
             value={doc.title.en}
             onChange={(e) =>
               setDoc({ ...doc, title: { en: e.target.value, id: doc.title.id } })
+            }
+            className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
+          />
+        </label>
+        <label className="text-sm">
+          Title (ID)
+          <input
+            value={doc.title.id}
+            onChange={(e) =>
+              setDoc({ ...doc, title: { en: doc.title.en, id: e.target.value } })
             }
             className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
           />
@@ -192,14 +202,24 @@ export function AdminLessonEditor({
           className="space-y-3 rounded-xl border border-slate-200 bg-white p-4"
         >
           <h2 className="font-semibold">Vignette: {vignette.id}</h2>
-          <label className="block text-sm">
-            Title (EN)
-            <input
-              value={vignette.title.en}
-              onChange={(e) => updateVignetteTitle(vIndex, e.target.value)}
-              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
-            />
-          </label>
+          <div className="grid gap-2 sm:grid-cols-2">
+            <label className="block text-sm">
+              Title (EN)
+              <input
+                value={vignette.title.en}
+                onChange={(e) => updateVignetteTitle(vIndex, "en", e.target.value)}
+                className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
+              />
+            </label>
+            <label className="block text-sm">
+              Title (ID)
+              <input
+                value={vignette.title.id}
+                onChange={(e) => updateVignetteTitle(vIndex, "id", e.target.value)}
+                className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
+              />
+            </label>
+          </div>
 
           <ol className="space-y-2">
             {vignette.sequence.map((item, sIndex) => (

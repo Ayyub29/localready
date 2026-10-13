@@ -1,6 +1,17 @@
 # Admin (planned)
 
-Browser UI at **`/admin`** for content authors. Learner app stays under `/[locale]/…`. Admin is **English-first** (no locale prefix) and writes the same Git-backed stores documented in [ARCHITECTURE.md](./ARCHITECTURE.md) and [PIPELINE.md](./PIPELINE.md).
+Browser UI at **`/admin`** for content authors. Learner app stays under `/[locale]/…` (**`en`** and **`id`**). Admin chrome is English for now; **content you author must stay bilingual** wherever the data model uses `LocalizedString` (`en` + `id`).
+
+### Bilingual content (required)
+
+| Learner locale | What they see |
+|----------------|----------------|
+| **`en`** | English glosses (`meaning.en`, `line.en`, `title.en`, `prompt.en`, …) |
+| **`id`** | Indonesian learner UI copy (`meaning.id`, `line.id`, `title.id`, …) — not a translation of the corridor language line |
+
+For **`id-id`**, `target` is Indonesian; `meaningEn` / `line.en` explain it in English; `meaningId` / `line.id` explain it when the app UI is in Bahasa Indonesia. **Do not ship empty `id` fields** on user-visible strings. Phrase inject, conversations, lessons, and JSON quiz files should always fill both.
+
+Admin is **not** under `/[locale]/admin` (no locale prefix on routes). Writes the same Git-backed stores documented in [ARCHITECTURE.md](./ARCHITECTURE.md) and [PIPELINE.md](./PIPELINE.md).
 
 ## Access control
 

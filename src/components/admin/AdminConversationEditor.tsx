@@ -97,14 +97,27 @@ export function AdminConversationEditor({ corridorId, initial }: AdminConversati
             <option value="generated">generated</option>
           </select>
         </label>
-        <label className="text-sm sm:col-span-2">
+        <label className="text-sm">
           <span className="text-slate-600">Title (EN)</span>
           <input
             value={doc.title?.en ?? ""}
             onChange={(e) =>
               setDoc({
                 ...doc,
-                title: { en: e.target.value, id: doc.title?.id ?? e.target.value },
+                title: { en: e.target.value, id: doc.title?.id ?? "" },
+              })
+            }
+            className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
+          />
+        </label>
+        <label className="text-sm">
+          <span className="text-slate-600">Title (ID)</span>
+          <input
+            value={doc.title?.id ?? ""}
+            onChange={(e) =>
+              setDoc({
+                ...doc,
+                title: { en: doc.title?.en ?? "", id: e.target.value },
               })
             }
             className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
@@ -204,7 +217,19 @@ export function AdminConversationEditor({ corridorId, initial }: AdminConversati
                 value={turn.line?.en ?? ""}
                 onChange={(e) =>
                   updateTurn(index, {
-                    line: { en: e.target.value, id: turn.line?.id ?? e.target.value },
+                    line: { en: e.target.value, id: turn.line?.id ?? "" },
+                  })
+                }
+                className="mt-1 w-full rounded-lg border border-slate-300 px-2 py-1.5 text-sm"
+              />
+            </label>
+            <label className="block text-sm">
+              Line gloss (ID)
+              <input
+                value={turn.line?.id ?? ""}
+                onChange={(e) =>
+                  updateTurn(index, {
+                    line: { en: turn.line?.en ?? "", id: e.target.value },
                   })
                 }
                 className="mt-1 w-full rounded-lg border border-slate-300 px-2 py-1.5 text-sm"

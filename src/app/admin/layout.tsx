@@ -1,3 +1,4 @@
+import { AdminBilingualNotice } from "@/components/admin/AdminBilingualNotice";
 import { requireAdminSession } from "@/lib/admin/require-admin";
 
 export const metadata = {
@@ -20,7 +21,10 @@ export default async function AdminLayout({
           <span className="text-xs text-slate-500">Content authoring (preview)</span>
         </div>
       </header>
-      <main className="mx-auto max-w-5xl px-4 py-8">{children}</main>
+      <main className="mx-auto max-w-5xl space-y-6 px-4 py-8">
+        <AdminBilingualNotice />
+        {children}
+      </main>
     </div>
   );
 }

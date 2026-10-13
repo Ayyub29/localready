@@ -115,7 +115,7 @@ export function AdminPhrasesPanel({ corridorId, initialItems }: AdminPhrasesPane
             />
           </label>
           <label className="block text-sm">
-            <span className="text-slate-600">Meaning (ID gloss)</span>
+            <span className="text-slate-600">Meaning (ID — learner UI in Bahasa Indonesia)</span>
             <input
               name="meaningId"
               className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
