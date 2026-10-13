@@ -2,7 +2,15 @@
   "nav": {
     "home": "Home",
     "destinations": "Destinations",
+    "cheatsheet": "Cheatsheet",
     "profile": "Profile"
+  },
+  "cheatsheet": {
+    "title": "Phrase cheatsheet",
+    "pickDestination": "Choose a destination to see phrases on the ground.",
+    "pickSituation": "Tap a situation to see useful phrases.",
+    "changeDestination": "Change destination",
+    "empty": "No phrases yet for this destination. Try another corridor or add content."
   },
   "login": {
     "title": "Sign in to continue",

@@ -109,9 +109,10 @@ Compile resolves `phraseId` → `target` / `romanization` / `meaning` from that 
     {
       "id": "q2",
       "kind": "reply",
+      "prompt": { "en": "You are at the ticket counter.", "id": "..." },
       "cueSpeaker": { "en": "Staff", "id": "Petugas" },
       "cueTarget": "どちらまでですか。",
-      "prompt": { "en": "They ask where you’re going.", "id": "..." },
+      "cuePhraseId": "ja-jp-basics-doko-made",
       "correctPhraseId": "ja-jp-basics-shinjuku-e",
       "distractorPhraseIds": ["..."]
     }
@@ -122,8 +123,8 @@ Compile resolves `phraseId` → `target` / `romanization` / `meaning` from that 
 
 | `kind` | Learner sees | MCQ options |
 |--------|----------------|-------------|
-| **`situation`** | Short **scene** in en/id | Full **traveler lines** in target language |
-| **`reply`** | **Local** bubble (`cueTarget` in target language) + gloss | Full **responses** in target language |
+| **`situation`** | **Situation** card (`prompt` in en/id) | Full **traveler lines** in target language |
+| **`reply`** | **Context** card (`prompt`) + **They said** bubble (`cueTarget` + optional `cueGloss` from `cuePhraseId`) | Full **responses** in target language |
 
 - **`correctPhraseId`** / **`distractorPhraseIds`** → must exist for that **`corridorId`** (pool or conversation turns).
 - Player: one step per question; **Next** after correct choice (`FillBlankStep` + `McqChoiceStep`).

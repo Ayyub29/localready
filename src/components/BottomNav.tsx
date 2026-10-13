@@ -3,10 +3,11 @@
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 
-type Tab = "home" | "destinations" | "profile";
+type Tab = "home" | "destinations" | "cheatsheet" | "profile";
 
 function tabFromPath(pathname: string): Tab {
   if (pathname.startsWith("/profile")) return "profile";
+  if (pathname.startsWith("/cheatsheet")) return "cheatsheet";
   if (pathname.startsWith("/destinations")) return "destinations";
   return "home";
 }
@@ -16,7 +17,11 @@ export function BottomNav() {
   const pathname = usePathname();
   const active = tabFromPath(pathname);
 
-  const item = (key: Tab, href: "/" | "/destinations" | "/profile", icon: string) => {
+  const item = (
+    key: Tab,
+    href: "/" | "/destinations" | "/cheatsheet" | "/profile",
+    icon: string,
+  ) => {
     const on = active === key;
     return (
       <Link
@@ -47,6 +52,7 @@ export function BottomNav() {
       <div className="mx-auto flex max-w-lg px-2 pt-1">
         {item("home", "/", "🏠")}
         {item("destinations", "/destinations", "🌏")}
+        {item("cheatsheet", "/cheatsheet", "📋")}
         {item("profile", "/profile", "👤")}
       </div>
     </nav>

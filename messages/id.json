@@ -2,7 +2,15 @@
   "nav": {
     "home": "Beranda",
     "destinations": "Destinasi",
+    "cheatsheet": "Cheatsheet",
     "profile": "Profil"
+  },
+  "cheatsheet": {
+    "title": "Cheatsheet frasa",
+    "pickDestination": "Pilih destinasi untuk melihat frasa di lapangan.",
+    "pickSituation": "Ketuk situasi untuk melihat frasa berguna.",
+    "changeDestination": "Ganti destinasi",
+    "empty": "Belum ada frasa untuk destinasi ini."
   },
   "login": {
     "title": "Masuk untuk melanjutkan",
