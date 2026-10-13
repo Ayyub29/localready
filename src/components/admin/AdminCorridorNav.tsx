@@ -1,26 +1,31 @@
 "use client";
 
 import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
-import type { CorridorId } from "@/lib/types";
+import { adminCorridorPath } from "@/lib/admin/admin-path";
+import type { CorridorId, Locale } from "@/lib/types";
 
 const links = [
-  { href: "", label: "Overview" },
-  { href: "/phrases", label: "Phrases" },
-  { href: "/conversations", label: "Conversations" },
-  { href: "/mini-lessons", label: "Mini lessons" },
-  { href: "/quizzes", label: "Quizzes & decks" },
-  { href: "/lessons", label: "Lessons" },
-  { href: "/cheatsheet", label: "Cheatsheet" },
-] as const;
+  { href: "", labelKey: "overview" as const },
+  { href: "/phrases", labelKey: "phrases" as const },
+  { href: "/conversations", labelKey: "conversations" as const },
+  { href: "/mini-lessons", labelKey: "miniLessons" as const },
+  { href: "/quizzes", labelKey: "quizzes" as const },
+  { href: "/lessons", labelKey: "lessons" as const },
+  { href: "/cheatsheet", labelKey: "cheatsheet" as const },
+];
 
 type AdminCorridorNavProps = {
   corridorId: CorridorId;
 };
 
 export function AdminCorridorNav({ corridorId }: AdminCorridorNavProps) {
+  const t = useTranslations("admin.nav");
+  const locale = useLocale() as Locale;
   const currentPath = usePathname() ?? "";
-  const base = `/admin/${corridorId}`;
+  const base = adminCorridorPath(locale, corridorId);
+
   return (
     <nav className="flex flex-wrap gap-2 border-b border-slate-200 pb-4">
       {links.map((link) => {
@@ -39,7 +44,7 @@ export function AdminCorridorNav({ corridorId }: AdminCorridorNavProps) {
                 : "bg-white text-slate-700 ring-1 ring-slate-200 hover:bg-slate-50"
             }`}
           >
-            {link.label}
+            {t(link.labelKey)}
           </Link>
         );
       })}

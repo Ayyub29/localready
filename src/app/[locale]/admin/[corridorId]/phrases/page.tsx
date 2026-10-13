@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { AdminPhrasesPanel } from "@/components/admin/AdminPhrasesPanel";
 import { isCorridorId } from "@/data/catalog";
 import { readPhrasePool } from "@/lib/content-pipeline/pool-store";
@@ -12,10 +13,11 @@ export default async function AdminPhrasesPage({ params }: PageProps) {
   const { corridorId } = await params;
   if (!isCorridorId(corridorId)) notFound();
   const pool = await readPhrasePool(corridorId as CorridorId);
+  const t = await getTranslations("admin");
 
   return (
     <div className="space-y-4">
-      <h1 className="text-2xl font-bold">Phrase pool</h1>
+      <h1 className="text-2xl font-bold">{t("phrasesTitle")}</h1>
       <AdminPhrasesPanel corridorId={corridorId} initialItems={pool.items} />
     </div>
   );

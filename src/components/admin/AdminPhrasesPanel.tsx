@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useMemo, useState, useTransition } from "react";
 import type { PhrasePoolItem, PhrasePoolStatus } from "@/lib/content-pipeline/types";
 import {
@@ -14,6 +15,7 @@ type AdminPhrasesPanelProps = {
 };
 
 export function AdminPhrasesPanel({ corridorId, initialItems }: AdminPhrasesPanelProps) {
+  const t = useTranslations("admin");
   const [items, setItems] = useState(initialItems);
   const [statusFilter, setStatusFilter] = useState<PhrasePoolStatus | "all">("pending");
   const [search, setSearch] = useState("");
@@ -96,10 +98,10 @@ export function AdminPhrasesPanel({ corridorId, initialItems }: AdminPhrasesPane
       ) : null}
 
       <section className="rounded-xl border border-slate-200 bg-white p-4">
-        <h2 className="text-lg font-semibold">Inject phrase</h2>
+        <h2 className="text-lg font-semibold">{t("injectTitle")}</h2>
         <form onSubmit={onInject} className="mt-4 grid gap-3 sm:grid-cols-2">
           <label className="block text-sm sm:col-span-2">
-            <span className="text-slate-600">Target (corridor language)</span>
+            <span className="text-slate-600">{t("target")}</span>
             <input
               name="target"
               required
@@ -107,7 +109,7 @@ export function AdminPhrasesPanel({ corridorId, initialItems }: AdminPhrasesPane
             />
           </label>
           <label className="block text-sm">
-            <span className="text-slate-600">Meaning (EN)</span>
+            <span className="text-slate-600">{t("meaningEn")}</span>
             <input
               name="meaningEn"
               required
@@ -115,21 +117,21 @@ export function AdminPhrasesPanel({ corridorId, initialItems }: AdminPhrasesPane
             />
           </label>
           <label className="block text-sm">
-            <span className="text-slate-600">Meaning (ID — learner UI in Bahasa Indonesia)</span>
+            <span className="text-slate-600">{t("meaningId")}</span>
             <input
               name="meaningId"
               className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
             />
           </label>
           <label className="block text-sm sm:col-span-2">
-            <span className="text-slate-600">Romanization</span>
+            <span className="text-slate-600">{t("romanization")}</span>
             <input
               name="romanization"
               className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
             />
           </label>
           <fieldset className="sm:col-span-2">
-            <legend className="text-sm text-slate-600">Situation hints</legend>
+            <legend className="text-sm text-slate-600">{t("situationHints")}</legend>
             <div className="mt-2 flex flex-wrap gap-3">
               {situationOrder.map((s) => (
                 <label key={s} className="flex items-center gap-1.5 text-sm">
@@ -141,38 +143,38 @@ export function AdminPhrasesPanel({ corridorId, initialItems }: AdminPhrasesPane
           </fieldset>
           <label className="flex items-center gap-2 text-sm sm:col-span-2">
             <input type="checkbox" name="approve" className="rounded" />
-            Approve immediately
+            {t("approveImmediately")}
           </label>
           <button
             type="submit"
             disabled={pending}
             className="rounded-lg bg-teal-800 px-4 py-2 text-sm font-medium text-white disabled:opacity-50 sm:col-span-2"
           >
-            {pending ? "Saving…" : "Add to pool"}
+            {pending ? t("saving") : t("addToPool")}
           </button>
         </form>
       </section>
 
       <section className="space-y-3">
         <div className="flex flex-wrap items-center gap-3">
-          <h2 className="text-lg font-semibold">Pool</h2>
+          <h2 className="text-lg font-semibold">{t("poolTitle")}</h2>
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value as PhrasePoolStatus | "all")}
             className="rounded-lg border border-slate-300 px-2 py-1 text-sm"
           >
-            <option value="all">All statuses</option>
-            <option value="pending">Pending</option>
-            <option value="approved">Approved</option>
-            <option value="rejected">Rejected</option>
+            <option value="all">{t("allStatuses")}</option>
+            <option value="pending">{t("pending")}</option>
+            <option value="approved">{t("approve")}</option>
+            <option value="rejected">{t("reject")}</option>
           </select>
           <input
-            placeholder="Search…"
+            placeholder={t("search")}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="min-w-[12rem] flex-1 rounded-lg border border-slate-300 px-3 py-1.5 text-sm"
           />
-          <span className="text-xs text-slate-500">{filtered.length} shown</span>
+          <span className="text-xs text-slate-500">{t("shown", { count: filtered.length })}</span>
         </div>
 
         <ul className="divide-y divide-slate-100 rounded-xl border border-slate-200 bg-white">
@@ -194,7 +196,7 @@ export function AdminPhrasesPanel({ corridorId, initialItems }: AdminPhrasesPane
                     onClick={() => setStatus([item.id], "approved")}
                     className="rounded-lg bg-emerald-700 px-3 py-1 text-xs font-medium text-white"
                   >
-                    Approve
+                    {t("approve")}
                   </button>
                 ) : null}
                 {item.status !== "rejected" ? (
@@ -204,7 +206,7 @@ export function AdminPhrasesPanel({ corridorId, initialItems }: AdminPhrasesPane
                     onClick={() => setStatus([item.id], "rejected")}
                     className="rounded-lg bg-slate-200 px-3 py-1 text-xs font-medium text-slate-800"
                   >
-                    Reject
+                    {t("reject")}
                   </button>
                 ) : null}
                 {item.status !== "pending" ? (
@@ -214,7 +216,7 @@ export function AdminPhrasesPanel({ corridorId, initialItems }: AdminPhrasesPane
                     onClick={() => setStatus([item.id], "pending")}
                     className="rounded-lg ring-1 ring-slate-300 px-3 py-1 text-xs font-medium"
                   >
-                    Pending
+                    {t("pending")}
                   </button>
                 ) : null}
               </div>

@@ -26,9 +26,7 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <div className="mx-auto min-h-dvh max-w-lg px-4 py-6" lang={locale}>
-        {children}
-      </div>
+      {children}
     </NextIntlClientProvider>
   );
 }

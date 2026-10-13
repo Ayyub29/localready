@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useMemo, useState, useTransition } from "react";
 import type { PhrasePoolItem } from "@/lib/content-pipeline/types";
 import {
@@ -20,6 +21,7 @@ export function AdminCheatsheetEditor({
   initialSituations,
   phraseItems,
 }: AdminCheatsheetEditorProps) {
+  const t = useTranslations("admin");
   const [situations, setSituations] = useState(initialSituations);
   const [activeSituation, setActiveSituation] = useState<SituationKey>("basics");
   const [phraseSearch, setPhraseSearch] = useState("");
@@ -116,10 +118,10 @@ export function AdminCheatsheetEditor({
 
       <div className="grid gap-6 lg:grid-cols-2">
         <section className="rounded-xl border border-slate-200 bg-white p-4">
-          <h2 className="font-semibold">Picked for {activeSituation}</h2>
+          <h2 className="font-semibold">{t("pickedFor", { situation: activeSituation })}</h2>
           <ul className="mt-3 space-y-2">
             {activeIds.length === 0 ? (
-              <li className="text-sm text-slate-500">No phrases yet.</li>
+              <li className="text-sm text-slate-500">{t("noPhrasesYet")}</li>
             ) : (
               activeIds.map((id) => {
                 const p = phraseById.get(id);
@@ -156,9 +158,9 @@ export function AdminCheatsheetEditor({
         </section>
 
         <section className="rounded-xl border border-slate-200 bg-white p-4">
-          <h2 className="font-semibold">Add from pool</h2>
+          <h2 className="font-semibold">{t("addFromPool")}</h2>
           <input
-            placeholder="Search phrases…"
+            placeholder={t("search")}
             value={phraseSearch}
             onChange={(e) => setPhraseSearch(e.target.value)}
             className="mt-2 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
@@ -187,7 +189,7 @@ export function AdminCheatsheetEditor({
           onClick={save}
           className="rounded-lg bg-teal-800 px-4 py-2 text-sm font-medium text-white disabled:opacity-50"
         >
-          Save manifest
+          {t("saveManifest")}
         </button>
         <button
           type="button"
@@ -195,7 +197,7 @@ export function AdminCheatsheetEditor({
           onClick={buildCatalog}
           className="rounded-lg bg-slate-800 px-4 py-2 text-sm font-medium text-white disabled:opacity-50"
         >
-          Build cheatsheet catalog
+          {t("buildCatalog")}
         </button>
       </div>
     </div>

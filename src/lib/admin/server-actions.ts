@@ -25,6 +25,7 @@ import type { StoredLessonManifest } from "@/lib/content/stored-lesson-manifest-
 import type { StoredMiniLesson } from "@/lib/content/stored-mini-lesson-types";
 import type { StoredPhraseList } from "@/lib/content/stored-phrase-list-types";
 import { isCorridorId } from "@/data/catalog";
+import { routing } from "@/i18n/routing";
 import type { CorridorId, SituationKey } from "@/lib/types";
 
 const execFileAsync = promisify(execFile);
@@ -41,8 +42,10 @@ function assertCorridor(corridorId: string): CorridorId {
 }
 
 function revalidateAdmin(corridorId: CorridorId) {
-  revalidatePath("/admin");
-  revalidatePath(`/admin/${corridorId}`);
+  for (const locale of routing.locales) {
+    revalidatePath(`/${locale}/admin`);
+    revalidatePath(`/${locale}/admin/${corridorId}`);
+  }
 }
 
 export async function adminGetPhrasePool(corridorId: string) {

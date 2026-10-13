@@ -1,6 +1,6 @@
 # Admin (planned)
 
-Browser UI at **`/admin`** for content authors. Learner app stays under `/[locale]/…` (**`en`** and **`id`**). Admin chrome is English for now; **content you author must stay bilingual** wherever the data model uses `LocalizedString` (`en` + `id`).
+Browser UI at **`/{locale}/admin`** (`en` or `id`) for content authors. Same locales as the learner app. Legacy **`/admin`** redirects to `/en/admin`. **Content you author must stay bilingual** wherever the data model uses `LocalizedString` (`en` + `id`).
 
 ### Bilingual content (required)
 
@@ -11,13 +11,13 @@ Browser UI at **`/admin`** for content authors. Learner app stays under `/[local
 
 For **`id-id`**, `target` is Indonesian; `meaningEn` / `line.en` explain it in English; `meaningId` / `line.id` explain it when the app UI is in Bahasa Indonesia. **Do not ship empty `id` fields** on user-visible strings. Phrase inject, conversations, lessons, and JSON quiz files should always fill both.
 
-Admin is **not** under `/[locale]/admin` (no locale prefix on routes). Writes the same Git-backed stores documented in [ARCHITECTURE.md](./ARCHITECTURE.md) and [PIPELINE.md](./PIPELINE.md).
+Admin UI strings live in `messages/en.json` and `messages/id.json` under the `admin` key. Writes the same Git-backed stores documented in [ARCHITECTURE.md](./ARCHITECTURE.md) and [PIPELINE.md](./PIPELINE.md).
 
 ## Access control
 
 | Mechanism | Use |
 |-----------|-----|
-| **`ADMIN_ALLOWLIST`** | Comma-separated Google account emails allowed to open `/admin/*`. Empty = no access (layout returns 404). |
+| **`ADMIN_ALLOWLIST`** | Comma-separated Google account emails allowed to open `/{locale}/admin/*`. Empty = no access (layout returns 404). |
 | **Signed-in session** | Auth.js Google OAuth (`auth()`). Admin layout checks `session.user.email` against the allowlist. |
 | **`CONTENT_INJECT_SECRET`** | Today: machine/script access to `POST /api/content/inject` and `GET/PATCH /api/content/pool`. Keep for CI and local CLI; admin UI can proxy these server-side later so editors never handle the bearer token. |
 
@@ -62,13 +62,13 @@ Editor for **`content/cheatsheets/{corridor}.json`**:
 ## Route map (planned)
 
 ```
-/admin                          Hub (corridor picker, links)
-/admin/[corridorId]/phrases     Pool review + inject
-/admin/[corridorId]/conversations
-/admin/[corridorId]/mini-lessons
-/admin/[corridorId]/quizzes     fill-blank (+ flashcards tab)
-/admin/[corridorId]/lessons     Manifest editor
-/admin/[corridorId]/cheatsheet  Situation → phrase picks
+/{locale}/admin                          Hub (corridor picker, links)
+/{locale}/admin/[corridorId]/phrases     Pool review + inject
+/{locale}/admin/[corridorId]/conversations
+/{locale}/admin/[corridorId]/mini-lessons
+/{locale}/admin/[corridorId]/quizzes     fill-blank (+ flashcards tab)
+/{locale}/admin/[corridorId]/lessons     Manifest editor
+/{locale}/admin/[corridorId]/cheatsheet  Situation → phrase picks
 ```
 
 Shared UX: corridor switcher, save → write JSON under `content/`, show “run compile” hints, diff-friendly ids.
@@ -86,14 +86,14 @@ Document which mode the environment uses in `ADMIN_DEPLOY_MODE=local|git-pr` (fu
 
 | Route | Capability |
 |-------|------------|
-| `/admin` | Corridor picker |
-| `/admin/[corridorId]` | Section overview |
-| `/admin/[corridorId]/phrases` | Inject + approve/reject pool |
-| `/admin/[corridorId]/conversations` | List + form editor (turns) |
-| `/admin/[corridorId]/mini-lessons` | List + JSON editor |
-| `/admin/[corridorId]/quizzes` | Fill-blank, phrase lists, flashcards (JSON editors) |
-| `/admin/[corridorId]/lessons` | Manifest editor (vignette sequence from pool refs) |
-| `/admin/[corridorId]/cheatsheet` | Per-situation phrase picks + build catalog |
+| `/{locale}/admin` | Corridor picker (EN/ID UI) |
+| `/{locale}/admin/[corridorId]` | Section overview |
+| `/{locale}/admin/[corridorId]/phrases` | Inject + approve/reject pool |
+| `/{locale}/admin/[corridorId]/conversations` | List + form editor (turns) |
+| `/{locale}/admin/[corridorId]/mini-lessons` | List + JSON editor |
+| `/{locale}/admin/[corridorId]/quizzes` | Fill-blank, phrase lists, flashcards (JSON editors) |
+| `/{locale}/admin/[corridorId]/lessons` | Manifest editor (vignette sequence from pool refs) |
+| `/{locale}/admin/[corridorId]/cheatsheet` | Per-situation phrase picks + build catalog |
 
 Server actions live in `src/lib/admin/server-actions.ts` (session-gated). Local dev: `ADMIN_DEV_BYPASS=true` or `ADMIN_ALLOWLIST=your@gmail.com`.
 

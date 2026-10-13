@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { AdminCheatsheetEditor } from "@/components/admin/AdminCheatsheetEditor";
 import { isCorridorId } from "@/data/catalog";
 import { readCheatsheetManifest } from "@/lib/admin/content-io";
@@ -22,13 +23,12 @@ export default async function AdminCheatsheetPage({ params }: PageProps) {
   for (const s of situationOrder) {
     initialSituations[s] = manifest?.situations?.[s] ?? [];
   }
+  const t = await getTranslations("admin");
 
   return (
     <div className="space-y-4">
-      <h1 className="text-2xl font-bold">Cheatsheet picks</h1>
-      <p className="text-sm text-slate-600">
-        Choose phrases per travel situation, save the manifest, then build the learner catalog.
-      </p>
+      <h1 className="text-2xl font-bold">{t("cheatsheetTitle")}</h1>
+      <p className="text-sm text-slate-600">{t("cheatsheetIntro")}</p>
       <AdminCheatsheetEditor
         corridorId={c}
         initialSituations={initialSituations}
