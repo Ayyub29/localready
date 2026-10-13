@@ -3,7 +3,9 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { LessonPlayer } from "@/components/LessonPlayer";
 import { getDestination, isCorridorId } from "@/data/catalog";
+import { buildLessonSteps } from "@/lib/content/lesson-player-steps";
 import { lessonHasContent, loadLesson } from "@/lib/content/load-pack";
+import { getItemProgress } from "@/lib/progress";
 import { pickLocalized } from "@/lib/locale";
 import { situationOrder } from "@/lib/situations";
 import type { Locale, SituationKey } from "@/lib/types";
@@ -33,6 +35,12 @@ export default async function LessonPage({ params }: LessonPageProps) {
 
   const hasContent = lessonHasContent(lesson);
   const backLabel = loc === "id" ? "Kembali" : "Back";
+  const saved = await getItemProgress(corridorId, "lesson", situation);
+  const stepCount = buildLessonSteps(lesson).length;
+  const initialStepIndex =
+    saved?.completed && stepCount > 0
+      ? stepCount - 1
+      : saved?.stepIndex ?? 0;
 
   return (
     <div className="space-y-6">
@@ -51,7 +59,15 @@ export default async function LessonPage({ params }: LessonPageProps) {
         </p>
       </header>
       {hasContent ? (
-        <LessonPlayer locale={loc} lesson={lesson} homeHref={`/${loc}`} />
+        <LessonPlayer
+          locale={loc}
+          corridorId={corridorId}
+          situation={situation}
+          lesson={lesson}
+          homeHref={`/${loc}`}
+          initialStepIndex={initialStepIndex}
+          initiallyCompleted={saved?.completed ?? false}
+        />
       ) : (
         <p className="rounded-xl border border-dashed border-border px-4 py-8 text-center text-sm text-slate-600">
           {loc === "id"

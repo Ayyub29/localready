@@ -7,17 +7,24 @@ import { Button } from "./Button";
 
 type DestinationPickerProps = {
   locale: Locale;
+  /** Hide page title when embedded in profile. */
+  embedded?: boolean;
 };
 
-export async function DestinationPicker({ locale }: DestinationPickerProps) {
+export async function DestinationPicker({
+  locale,
+  embedded = false,
+}: DestinationPickerProps) {
   const t = await getTranslations("destinations");
 
   return (
-    <div className="space-y-6">
-      <header>
-        <h1 className="text-2xl font-bold">{t("title")}</h1>
-        <p className="mt-1 text-sm text-slate-600">{t("subtitle")}</p>
-      </header>
+    <div className={embedded ? "space-y-3" : "space-y-6"}>
+      {!embedded && (
+        <header>
+          <h1 className="text-2xl font-bold">{t("title")}</h1>
+          <p className="mt-1 text-sm text-slate-600">{t("subtitle")}</p>
+        </header>
+      )}
       <ul className="space-y-3">
         {destinations.map((dest) => (
           <li key={dest.id}>

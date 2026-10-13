@@ -3,19 +3,30 @@
 import { useEffect, useMemo, useState } from "react";
 import { FillBlankStep } from "@/components/FillBlankStep";
 import { FlashcardStep } from "@/components/FlashcardStep";
+import { LearningProgressReporter } from "@/components/LearningProgressReporter";
 import type { PlayableQuiz } from "@/lib/content/load-quiz-for-play";
+import { quizProgressKey } from "@/lib/progress/utils";
 import { pickLocalized } from "@/lib/locale";
-import type { Locale } from "@/lib/types";
+import type { CorridorId, Locale } from "@/lib/types";
 
 type QuizSessionPlayerProps = {
   locale: Locale;
+  corridorId: CorridorId;
   playable: PlayableQuiz;
+  initialStepIndex?: number;
+  initiallyCompleted?: boolean;
 };
 
 type Step =
   | { type: "fillBlank"; index: number }
   | { type: "flashcard"; index: number }
   | { type: "phrase"; index: number };
+
+function progressQuizId(playable: PlayableQuiz): string {
+  if (playable.kind === "fillBlank") return playable.quiz.id;
+  if (playable.kind === "flashcards") return playable.deck.id;
+  return playable.list.id;
+}
 
 function buildSteps(playable: PlayableQuiz): Step[] {
   if (playable.kind === "fillBlank") {
@@ -33,9 +44,17 @@ function buildSteps(playable: PlayableQuiz): Step[] {
   return playable.list.phrases.map((_, index) => ({ type: "phrase", index }));
 }
 
-export function QuizSessionPlayer({ locale, playable }: QuizSessionPlayerProps) {
+export function QuizSessionPlayer({
+  locale,
+  corridorId,
+  playable,
+  initialStepIndex = 0,
+  initiallyCompleted = false,
+}: QuizSessionPlayerProps) {
   const steps = useMemo(() => buildSteps(playable), [playable]);
-  const [stepIndex, setStepIndex] = useState(0);
+  const [stepIndex, setStepIndex] = useState(() =>
+    Math.min(Math.max(0, initialStepIndex), Math.max(0, steps.length - 1)),
+  );
   const [canAdvance, setCanAdvance] = useState(false);
 
   useEffect(() => {
@@ -70,8 +89,19 @@ export function QuizSessionPlayer({ locale, playable }: QuizSessionPlayerProps) 
     return null;
   }
 
+  const progressKey = quizProgressKey(playable.kind, progressQuizId(playable));
+  const completed = initiallyCompleted || atEnd;
+
   return (
     <div className="space-y-4">
+      <LearningProgressReporter
+        corridorId={corridorId}
+        itemType="quiz"
+        itemId={progressKey}
+        stepIndex={stepIndex}
+        totalSteps={steps.length}
+        completed={completed}
+      />
       <div className="flex items-center justify-between text-sm text-slate-600">
         <span>
           {locale === "id" ? "Soal" : "Item"} {stepIndex + 1}/{steps.length}

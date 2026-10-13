@@ -2,11 +2,12 @@ import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { auth } from "@/auth";
 import { loginWithGoogle, logout } from "@/app/[locale]/login/actions";
+import { DestinationPicker } from "@/components/DestinationPicker";
+import { TripProgressPanel } from "@/components/TripProgressPanel";
 import { getDestination } from "@/data/catalog";
 import { pickLocalized } from "@/lib/locale";
 import { getLastCorridor } from "@/lib/last-corridor";
 import { Button } from "@/components/Button";
-import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/lib/types";
 
 type ProfilePageProps = {
@@ -23,6 +24,26 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
   const lastCorridor = await getLastCorridor();
   const destination = lastCorridor ? getDestination(lastCorridor) : null;
 
+  const tripSection = (
+    <section className="rounded-2xl border border-border bg-card p-4 space-y-4">
+      <div>
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+          {t("trip")}
+        </h2>
+        {destination ? (
+          <p className="mt-2 font-medium">
+            {pickLocalized(destination.name, loc)} ·{" "}
+            {pickLocalized(destination.targetLanguage, loc)}
+          </p>
+        ) : (
+          <p className="mt-2 text-sm text-slate-600">{t("noDestination")}</p>
+        )}
+        <p className="mt-1 text-xs text-slate-500">{t("tripHint")}</p>
+      </div>
+      <DestinationPicker locale={loc} embedded />
+    </section>
+  );
+
   if (!session?.user) {
     return (
       <div className="space-y-6">
@@ -31,16 +52,12 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
           <p className="mt-2 text-sm text-slate-600">{t("guestSubtitle")}</p>
         </header>
 
-        {destination && (
-          <section className="rounded-2xl border border-border bg-card p-4">
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
-              {t("trip")}
-            </h2>
-            <p className="mt-2 font-medium">
-              {pickLocalized(destination.name, loc)} ·{" "}
-              {pickLocalized(destination.targetLanguage, loc)}
-            </p>
-            <p className="mt-2 text-xs text-slate-500">{t("guestTripHint")}</p>
+        {tripSection}
+
+        {lastCorridor && (
+          <section className="space-y-2">
+            <h2 className="text-lg font-bold">{t("progressTitle")}</h2>
+            <TripProgressPanel locale={loc} corridorId={lastCorridor} />
           </section>
         )}
 
@@ -86,29 +103,15 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
         </div>
       </section>
 
-      <section className="rounded-2xl border border-border bg-card p-4">
-        <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
-          {t("trip")}
-        </h2>
-        {destination ? (
-          <p className="mt-2 font-medium">
-            {pickLocalized(destination.name, loc)} ·{" "}
-            {pickLocalized(destination.targetLanguage, loc)}
-          </p>
-        ) : (
-          <p className="mt-2 text-sm text-slate-600">{t("noDestination")}</p>
-        )}
-        <Link
-          href="/destinations"
-          className="mt-3 inline-block text-sm font-medium text-teal-700 underline"
-        >
-          {t("changeDestination")}
-        </Link>
-      </section>
+      {tripSection}
 
-      <section className="rounded-2xl border border-dashed border-border p-4 text-sm text-slate-600">
-        {t("stub")}
-      </section>
+      {lastCorridor && (
+        <section className="space-y-2">
+          <h2 className="text-lg font-bold">{t("progressTitle")}</h2>
+          <p className="text-sm text-slate-600">{t("progressSubtitle")}</p>
+          <TripProgressPanel locale={loc} corridorId={lastCorridor} />
+        </section>
+      )}
 
       <form action={logout.bind(null, locale)}>
         <Button type="submit" variant="secondary" className="w-full">

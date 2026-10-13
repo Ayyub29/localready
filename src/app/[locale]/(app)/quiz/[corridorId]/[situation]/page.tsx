@@ -3,11 +3,13 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { getDestination, getSituationTitle, isCorridorId } from "@/data/catalog";
+import { ProgressBar } from "@/components/ProgressBar";
 import {
   loadQuizCatalog,
   quizzesForSituation,
   type QuizCatalogEntry,
 } from "@/lib/content/load-quiz-catalog";
+import { getCorridorProgress, progressPercent, quizProgressKey } from "@/lib/progress";
 import type { QuizKind } from "@/lib/content/quiz-situation";
 import { pickLocalized } from "@/lib/locale";
 import { situationOrder } from "@/lib/situations";
@@ -51,7 +53,10 @@ export default async function QuizSituationPage({ params }: QuizSituationPagePro
   const destination = getDestination(corridorId);
   if (!destination) notFound();
 
-  const catalog = await loadQuizCatalog(corridorId);
+  const [catalog, progress] = await Promise.all([
+    loadQuizCatalog(corridorId),
+    getCorridorProgress(corridorId),
+  ]);
   const quizzes = quizzesForSituation(catalog, situation);
   const t = await getTranslations({ locale: loc, namespace: "quiz" });
 
@@ -76,24 +81,31 @@ export default async function QuizSituationPage({ params }: QuizSituationPagePro
         </p>
       ) : (
         <ul className="space-y-2">
-          {quizzes.map((entry) => (
+          {quizzes.map((entry) => {
+            const key = quizProgressKey(entry.kind, entry.id);
+            const percent = progressPercent(progress.quizzes[key]);
+            return (
             <li key={`${entry.kind}-${entry.id}`}>
               <Link
                 href={playHref(loc, corridorId, situation, entry)}
-                className="flex items-center justify-between gap-3 rounded-xl border border-border bg-card px-4 py-3 hover:border-teal-300"
+                className="block rounded-xl border border-border bg-card px-4 py-3 hover:border-teal-300"
               >
-                <div className="min-w-0">
-                  <p className="font-medium text-slate-900">
-                    {pickLocalized(entry.title, loc)}
-                  </p>
-                  <p className="text-xs text-slate-500">{kindLabel(entry.kind, loc)}</p>
+                <div className="flex items-center justify-between gap-3">
+                  <div className="min-w-0">
+                    <p className="font-medium text-slate-900">
+                      {pickLocalized(entry.title, loc)}
+                    </p>
+                    <p className="text-xs text-slate-500">{kindLabel(entry.kind, loc)}</p>
+                  </div>
+                  <span className="shrink-0 text-sm text-slate-500">
+                    {entry.itemCount} {loc === "id" ? "item" : "items"}
+                  </span>
                 </div>
-                <span className="shrink-0 text-sm text-slate-500">
-                  {entry.itemCount} {loc === "id" ? "item" : "items"}
-                </span>
+                <ProgressBar percent={percent} className="mt-3" />
               </Link>
             </li>
-          ))}
+            );
+          })}
         </ul>
       )}
     </div>

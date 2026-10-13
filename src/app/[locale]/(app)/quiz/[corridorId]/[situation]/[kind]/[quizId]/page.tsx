@@ -5,6 +5,7 @@ import { getTranslations } from "next-intl/server";
 import { QuizSessionPlayer } from "@/components/QuizSessionPlayer";
 import { getDestination, getSituationTitle, isCorridorId } from "@/data/catalog";
 import { loadQuizForPlay } from "@/lib/content/load-quiz-for-play";
+import { getItemProgress, quizProgressKey } from "@/lib/progress";
 import type { QuizKind } from "@/lib/content/quiz-situation";
 import { situationOrder } from "@/lib/situations";
 import type { Locale, SituationKey } from "@/lib/types";
@@ -46,6 +47,17 @@ export default async function QuizPlayPage({ params }: QuizPlayPageProps) {
   const playable = await loadQuizForPlay(corridorId, kind, quizId);
   if (!playable) notFound();
 
+  const progressId = quizProgressKey(kind, quizId);
+  const saved = await getItemProgress(corridorId, "quiz", progressId);
+  const totalSteps =
+    playable.kind === "fillBlank"
+      ? playable.quiz.questions.length
+      : playable.kind === "flashcards"
+        ? playable.deck.cards.length
+        : playable.list.phrases.length;
+  const initialStepIndex =
+    saved?.completed && totalSteps > 0 ? totalSteps - 1 : saved?.stepIndex ?? 0;
+
   const t = await getTranslations({ locale: loc, namespace: "quiz" });
 
   return (
@@ -62,7 +74,13 @@ export default async function QuizPlayPage({ params }: QuizPlayPageProps) {
         <h1 className="text-xl font-bold">{getSituationTitle(situation, loc)}</h1>
         <p className="text-sm text-slate-600">{t("inProgress")}</p>
       </header>
-      <QuizSessionPlayer locale={loc} playable={playable} />
+      <QuizSessionPlayer
+        locale={loc}
+        corridorId={corridorId}
+        playable={playable}
+        initialStepIndex={initialStepIndex}
+        initiallyCompleted={saved?.completed ?? false}
+      />
     </div>
   );
 }

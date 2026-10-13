@@ -52,6 +52,27 @@ export const sessions = pgTable("session", {
   expires: timestamp("expires", { mode: "date" }).notNull(),
 });
 
+export const learningProgress = pgTable(
+  "learning_progress",
+  {
+    userId: text("userId")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    corridorId: text("corridorId").notNull(),
+    itemType: text("itemType").notNull(),
+    itemId: text("itemId").notNull(),
+    stepIndex: integer("stepIndex").notNull().default(0),
+    totalSteps: integer("totalSteps").notNull().default(0),
+    completed: integer("completed").notNull().default(0),
+    updatedAt: timestamp("updatedAt", { mode: "date" }).defaultNow(),
+  },
+  (row) => ({
+    compoundKey: primaryKey({
+      columns: [row.userId, row.corridorId, row.itemType, row.itemId],
+    }),
+  }),
+);
+
 export const verificationTokens = pgTable(
   "verificationToken",
   {

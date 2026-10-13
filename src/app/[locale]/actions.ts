@@ -13,5 +13,5 @@ export async function selectDestination(
   }
 
   await setLastCorridor(corridorId);
-  redirect(`/${locale}`);
+  redirect(`/${locale}/profile`);
 }

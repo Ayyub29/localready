@@ -11,14 +11,19 @@ import {
   playerStepKey,
   stepNeedsGate,
 } from "@/lib/content/lesson-player-step-key";
+import { LearningProgressReporter } from "@/components/LearningProgressReporter";
 import { pickLocalized } from "@/lib/locale";
 import type { LessonContent } from "@/lib/lesson-content-types";
-import type { Locale } from "@/lib/types";
+import type { CorridorId, Locale, SituationKey } from "@/lib/types";
 
 type LessonPlayerProps = {
   locale: Locale;
+  corridorId: CorridorId;
+  situation: SituationKey;
   lesson: LessonContent;
   homeHref: string;
+  initialStepIndex?: number;
+  initiallyCompleted?: boolean;
 };
 
 function stepLabel(
@@ -39,9 +44,19 @@ function stepLabel(
   return labels[step.type][locale];
 }
 
-export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
+export function LessonPlayer({
+  locale,
+  corridorId,
+  situation,
+  lesson,
+  homeHref,
+  initialStepIndex = 0,
+  initiallyCompleted = false,
+}: LessonPlayerProps) {
   const steps = useMemo(() => buildLessonSteps(lesson), [lesson]);
-  const [stepIndex, setStepIndex] = useState(0);
+  const [stepIndex, setStepIndex] = useState(() =>
+    Math.min(Math.max(0, initialStepIndex), Math.max(0, steps.length - 1)),
+  );
   const [canAdvance, setCanAdvance] = useState(true);
 
   const step = steps[stepIndex];
@@ -92,8 +107,18 @@ export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
     if (!atStart) setStepIndex(stepIndex - 1);
   }
 
+  const completed = initiallyCompleted || atEnd;
+
   return (
     <div className="flex min-h-[50vh] flex-col gap-6">
+      <LearningProgressReporter
+        corridorId={corridorId}
+        itemType="lesson"
+        itemId={situation}
+        stepIndex={stepIndex}
+        totalSteps={steps.length}
+        completed={completed}
+      />
       <div className="space-y-2">
         <div className="flex items-center justify-between text-xs text-slate-500">
           <span>
