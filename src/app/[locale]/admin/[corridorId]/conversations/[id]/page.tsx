@@ -4,6 +4,10 @@ import { AdminConversationEditor } from "@/components/admin/AdminConversationEdi
 import { isCorridorId } from "@/data/catalog";
 import { readContentJson } from "@/lib/admin/content-io";
 import type { StoredConversation } from "@/lib/content/stored-conversation-types";
+import {
+  loadSituationsForCorridor,
+  situationKeysInOrder,
+} from "@/lib/content/load-situations";
 import { requireAdminSession } from "@/lib/admin/require-admin";
 import type { CorridorId } from "@/lib/types";
 
@@ -37,12 +41,18 @@ export default async function AdminConversationEditPage({ params }: PageProps) {
     doc = newConversation(c, `${c}-conversation-${Date.now()}`);
   }
 
+  const situationDefs = await loadSituationsForCorridor(c);
+  const situationKeys = situationKeysInOrder(situationDefs);
   const t = await getTranslations("admin");
 
   return (
     <div className="space-y-4">
       <h1 className="text-2xl font-bold">{t("editConversation")}</h1>
-      <AdminConversationEditor corridorId={c} initial={doc} />
+      <AdminConversationEditor
+        corridorId={c}
+        initial={doc}
+        situationKeys={situationKeys}
+      />
     </div>
   );
 }

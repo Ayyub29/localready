@@ -3,8 +3,11 @@ import path from "node:path";
 import { phrasesFromLesson } from "@/lib/content/extract-phrases";
 import type { Phrase } from "@/lib/lesson-content-types";
 import { loadCorridorPack } from "@/lib/content/load-pack";
+import {
+  enabledSituationKeysInOrder,
+  loadSituationsForCorridor,
+} from "@/lib/content/load-situations";
 import type { CorridorId, SituationKey } from "@/lib/types";
-import { situationOrder } from "@/lib/situations";
 
 export type PhraseCatalogEntry = Phrase & { situations: SituationKey[] };
 
@@ -102,8 +105,20 @@ export function phrasesForSituation(
   return catalog.phrases.filter((p) => p.situations.includes(situation));
 }
 
-export function situationsWithPhrases(catalog: PhraseCatalog): SituationKey[] {
+export function situationsWithPhrases(
+  catalog: PhraseCatalog,
+  situationOrder: SituationKey[],
+): SituationKey[] {
   return situationOrder.filter((situation) =>
     catalog.phrases.some((p) => p.situations.includes(situation)),
   );
+}
+
+export async function enabledSituationsWithPhrases(
+  corridorId: CorridorId,
+  catalog: PhraseCatalog,
+): Promise<SituationKey[]> {
+  const defs = await loadSituationsForCorridor(corridorId);
+  const order = enabledSituationKeysInOrder(defs);
+  return situationsWithPhrases(catalog, order);
 }

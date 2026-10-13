@@ -2,12 +2,16 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
-import { getDestination, getSituationTitle, isCorridorId } from "@/data/catalog";
+import { getDestination, isCorridorId } from "@/data/catalog";
 import {
+  enabledSituationsWithPhrases,
   loadPhraseCatalog,
   phrasesForSituation,
-  situationsWithPhrases,
 } from "@/lib/content/load-phrase-catalog";
+import {
+  loadSituationsForCorridor,
+  situationTitle,
+} from "@/lib/content/load-situations";
 import { pickLocalized } from "@/lib/locale";
 import type { Locale } from "@/lib/types";
 
@@ -27,8 +31,11 @@ export default async function CheatsheetCorridorPage({
   const destination = getDestination(corridorId);
   if (!destination) notFound();
 
-  const catalog = await loadPhraseCatalog(corridorId);
-  const situations = situationsWithPhrases(catalog);
+  const [catalog, situationDefs] = await Promise.all([
+    loadPhraseCatalog(corridorId),
+    loadSituationsForCorridor(corridorId),
+  ]);
+  const situations = await enabledSituationsWithPhrases(corridorId, catalog);
   const t = await getTranslations({ locale: loc, namespace: "cheatsheet" });
 
   return (
@@ -62,7 +69,7 @@ export default async function CheatsheetCorridorPage({
                   className="flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 hover:border-teal-300"
                 >
                   <span className="font-medium text-slate-900">
-                    {getSituationTitle(situation, loc)}
+                    {situationTitle(situationDefs, situation, loc)}
                   </span>
                   <span className="text-sm text-slate-500">
                     {count} {loc === "id" ? "frasa" : "phrases"}

@@ -2,12 +2,16 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
-import { getDestination, getSituationTitle, isCorridorId } from "@/data/catalog";
+import { getDestination, isCorridorId } from "@/data/catalog";
 import {
+  enabledSituationsWithQuizzes,
   loadQuizCatalog,
   quizzesForSituation,
-  situationsWithQuizzes,
 } from "@/lib/content/load-quiz-catalog";
+import {
+  loadSituationsForCorridor,
+  situationTitle,
+} from "@/lib/content/load-situations";
 import { canAccessQuizzes, getContentAccess } from "@/lib/access/content-access";
 import { getCorridorProgress } from "@/lib/progress";
 import { quizProgressKey } from "@/lib/progress/utils";
@@ -30,13 +34,14 @@ export default async function QuizCorridorPage({ params }: QuizCorridorPageProps
 
   const access = await getContentAccess();
   const quizzesUnlocked = canAccessQuizzes(access);
-  const [catalog, progress] = await Promise.all([
+  const [catalog, progress, situationDefs] = await Promise.all([
     loadQuizCatalog(corridorId),
     access.canSaveProgress && quizzesUnlocked
       ? getCorridorProgress(corridorId)
       : Promise.resolve(null),
+    loadSituationsForCorridor(corridorId),
   ]);
-  const situations = situationsWithQuizzes(catalog);
+  const situations = await enabledSituationsWithQuizzes(corridorId, catalog);
   const t = await getTranslations({ locale: loc, namespace: "quiz" });
 
   function situationScoreSummary(situation: (typeof situations)[number]): string | null {
@@ -89,7 +94,7 @@ export default async function QuizCorridorPage({ params }: QuizCorridorPageProps
                   className="flex items-center justify-between gap-2 rounded-xl border border-border bg-card px-4 py-3 hover:border-teal-300"
                 >
                   <span className="font-medium text-slate-900">
-                    {getSituationTitle(situation, loc)}
+                    {situationTitle(situationDefs, situation, loc)}
                   </span>
                   <div className="text-right text-sm">
                     {scoreSummary && (

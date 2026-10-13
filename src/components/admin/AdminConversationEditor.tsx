@@ -5,18 +5,23 @@ import { useState, useTransition } from "react";
 import type { StoredConversation } from "@/lib/content/stored-conversation-types";
 import type { ConversationTurn } from "@/lib/lesson-content-types";
 import { adminSaveConversation } from "@/lib/admin/server-actions";
-import { situationOrder } from "@/lib/situations";
+import type { SituationKey } from "@/lib/types";
 
 type AdminConversationEditorProps = {
   corridorId: string;
   initial: StoredConversation;
+  situationKeys: SituationKey[];
 };
 
 function newTurnId(convId: string, n: number): string {
   return `${convId}-t${n}`;
 }
 
-export function AdminConversationEditor({ corridorId, initial }: AdminConversationEditorProps) {
+export function AdminConversationEditor({
+  corridorId,
+  initial,
+  situationKeys,
+}: AdminConversationEditorProps) {
   const t = useTranslations("admin");
   const [doc, setDoc] = useState(initial);
   const [pending, startTransition] = useTransition();
@@ -99,7 +104,7 @@ export function AdminConversationEditor({ corridorId, initial }: AdminConversati
             }
             className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
           >
-            {situationOrder.map((s) => (
+            {situationKeys.map((s) => (
               <option key={s} value={s}>{s}</option>
             ))}
           </select>

@@ -1,5 +1,4 @@
-import type { CorridorId, Locale, LocalizedString, SituationKey } from "@/lib/types";
-import { situationOrder } from "@/lib/situations";
+import type { CorridorId, LocalizedString, SituationKey } from "@/lib/types";
 
 export type Destination = {
   id: CorridorId;
@@ -13,21 +12,6 @@ export type LessonListItem = {
   situation: SituationKey;
   order: number;
   title: LocalizedString;
-};
-
-const lessonTitles: Record<SituationKey, LocalizedString> = {
-  script: {
-    en: "Letters & first words",
-    id: "Huruf & kata penting",
-  },
-  basics: { en: "First hour & greetings", id: "Jam pertama & sapaan" },
-  train: { en: "Transit & tickets", id: "Transportasi & tiket" },
-  money: { en: "Paying & convenience stores", id: "Bayar & minimarket" },
-  restaurant: { en: "Ordering & the bill", id: "Pesan makan & bon" },
-  hotel: { en: "Check-in & your room", id: "Check-in & kamar" },
-  directions: { en: "Lost & maps", id: "Tersesat & peta" },
-  culture: { en: "Etiquette & temples", id: "Etiket & tempat suci" },
-  emergency: { en: "Help, health & allergies", id: "Bantuan, kesehatan & alergi" },
 };
 
 export const destinations: Destination[] = [
@@ -60,24 +44,6 @@ export const destinations: Destination[] = [
 
 export function getDestination(id: CorridorId): Destination | undefined {
   return destinations.find((d) => d.id === id);
-}
-
-export function getSituationTitle(
-  situation: SituationKey,
-  locale: Locale,
-): string {
-  const title = lessonTitles[situation];
-  return locale === "id" ? title.id : title.en;
-}
-
-export function getLessons(corridorId: CorridorId): LessonListItem[] {
-  return situationOrder.map((situation, index) => ({
-    id: `${corridorId}-${situation}`,
-    corridorId,
-    situation,
-    order: situation === "script" ? 0 : index,
-    title: lessonTitles[situation],
-  }));
 }
 
 export function isCorridorId(value: string): value is CorridorId {

@@ -7,19 +7,20 @@ import {
   adminBuildCheatsheetCatalog,
   adminSaveCheatsheet,
 } from "@/lib/admin/server-actions";
-import { situationOrder } from "@/lib/situations";
 import type { SituationKey } from "@/lib/types";
 
 type AdminCheatsheetEditorProps = {
   corridorId: string;
   initialSituations: Partial<Record<SituationKey, string[]>>;
   phraseItems: PhrasePoolItem[];
+  situationKeys: SituationKey[];
 };
 
 export function AdminCheatsheetEditor({
   corridorId,
   initialSituations,
   phraseItems,
+  situationKeys,
 }: AdminCheatsheetEditorProps) {
   const t = useTranslations("admin");
   const [situations, setSituations] = useState(initialSituations);
@@ -100,7 +101,7 @@ export function AdminCheatsheetEditor({
       ) : null}
 
       <div className="flex flex-wrap gap-2">
-        {situationOrder.map((s) => (
+        {situationKeys.map((s) => (
           <button
             key={s}
             type="button"

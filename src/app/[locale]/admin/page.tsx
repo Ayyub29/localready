@@ -22,6 +22,15 @@ export default async function AdminHomePage() {
         </p>
       </div>
 
+      <p>
+        <Link
+          href={`/${locale}/admin/situations`}
+          className="text-sm font-medium text-teal-800 hover:underline"
+        >
+          {t("globalSituations")} →
+        </Link>
+      </p>
+
       <ul className="grid gap-3 sm:grid-cols-2">
         {destinations.map((d) => (
           <li key={d.id}>

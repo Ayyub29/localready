@@ -2,21 +2,21 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { CheatsheetPhraseList } from "@/components/CheatsheetPhraseList";
-import { getSituationTitle, isCorridorId } from "@/data/catalog";
+import { isCorridorId } from "@/data/catalog";
 import {
   loadPhraseCatalog,
   phrasesForSituation,
 } from "@/lib/content/load-phrase-catalog";
-import { situationOrder } from "@/lib/situations";
-import type { Locale, SituationKey } from "@/lib/types";
+import {
+  isSituationKeyForCorridor,
+  loadSituationsForCorridor,
+  situationTitle,
+} from "@/lib/content/load-situations";
+import type { CorridorId, Locale, SituationKey } from "@/lib/types";
 
 type CheatsheetSituationPageProps = {
   params: Promise<{ locale: string; corridorId: string; situation: string }>;
 };
-
-function isSituationKey(value: string): value is SituationKey {
-  return (situationOrder as string[]).includes(value);
-}
 
 export default async function CheatsheetSituationPage({
   params,
@@ -25,12 +25,20 @@ export default async function CheatsheetSituationPage({
   setRequestLocale(locale);
   const loc = locale as Locale;
 
-  if (!isCorridorId(corridorId) || !isSituationKey(situation)) {
+  if (!isCorridorId(corridorId)) {
+    notFound();
+  }
+  const c = corridorId as CorridorId;
+  if (!(await isSituationKeyForCorridor(c, situation))) {
     notFound();
   }
 
-  const catalog = await loadPhraseCatalog(corridorId);
-  const phrases = phrasesForSituation(catalog, situation);
+  const [catalog, situationDefs] = await Promise.all([
+    loadPhraseCatalog(corridorId),
+    loadSituationsForCorridor(c),
+  ]);
+  const phrases = phrasesForSituation(catalog, situation as SituationKey);
+  const title = situationTitle(situationDefs, situation as SituationKey, loc);
 
   return (
     <div className="mx-auto max-w-lg space-y-6 px-4 py-6">
@@ -41,7 +49,7 @@ export default async function CheatsheetSituationPage({
         >
           ← {loc === "id" ? "Situasi" : "Situations"}
         </Link>
-        <h1 className="text-2xl font-bold">{getSituationTitle(situation, loc)}</h1>
+        <h1 className="text-2xl font-bold">{title}</h1>
         <p className="text-sm text-slate-600">
           {phrases.length} {loc === "id" ? "frasa" : "phrases"}
         </p>

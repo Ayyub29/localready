@@ -14,6 +14,7 @@ const links = [
   { href: "/quizzes", labelKey: "quizzes" as const },
   { href: "/lessons", labelKey: "lessons" as const },
   { href: "/cheatsheet", labelKey: "cheatsheet" as const },
+  { href: "/situations", labelKey: "situations" as const },
 ];
 
 type AdminCorridorNavProps = {

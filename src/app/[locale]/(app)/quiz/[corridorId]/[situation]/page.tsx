@@ -2,7 +2,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
-import { getDestination, getSituationTitle, isCorridorId } from "@/data/catalog";
+import { getDestination, isCorridorId } from "@/data/catalog";
+import {
+  isSituationKeyForCorridor,
+  loadSituationsForCorridor,
+  situationTitle,
+} from "@/lib/content/load-situations";
 import { ProgressBar } from "@/components/ProgressBar";
 import {
   loadQuizCatalog,
@@ -19,16 +24,11 @@ import {
 } from "@/lib/progress/utils";
 import type { QuizKind } from "@/lib/content/quiz-situation";
 import { pickLocalized } from "@/lib/locale";
-import { situationOrder } from "@/lib/situations";
-import type { Locale, SituationKey } from "@/lib/types";
+import type { CorridorId, Locale, SituationKey } from "@/lib/types";
 
 type QuizSituationPageProps = {
   params: Promise<{ locale: string; corridorId: string; situation: string }>;
 };
-
-function isSituationKey(value: string): value is SituationKey {
-  return (situationOrder as string[]).includes(value);
-}
 
 function kindLabel(kind: QuizKind, loc: Locale): string {
   if (loc === "id") {
@@ -55,20 +55,25 @@ export default async function QuizSituationPage({ params }: QuizSituationPagePro
   setRequestLocale(locale);
   const loc = locale as Locale;
 
-  if (!isCorridorId(corridorId) || !isSituationKey(situation)) notFound();
+  if (!isCorridorId(corridorId)) notFound();
+  const c = corridorId as CorridorId;
+  if (!(await isSituationKeyForCorridor(c, situation))) notFound();
 
   const destination = getDestination(corridorId);
   if (!destination) notFound();
 
   const access = await getContentAccess();
   const quizzesUnlocked = canAccessQuizzes(access);
-  const [catalog, progress] = await Promise.all([
+  const [catalog, progress, situationDefs] = await Promise.all([
     loadQuizCatalog(corridorId),
     access.canSaveProgress && quizzesUnlocked
       ? getCorridorProgress(corridorId)
       : Promise.resolve(null),
+    loadSituationsForCorridor(c),
   ]);
-  const quizzes = quizzesForSituation(catalog, situation);
+  const situationKey = situation as SituationKey;
+  const situationLabel = situationTitle(situationDefs, situationKey, loc);
+  const quizzes = quizzesForSituation(catalog, situationKey);
   const t = await getTranslations({ locale: loc, namespace: "quiz" });
 
   return (
@@ -78,9 +83,9 @@ export default async function QuizSituationPage({ params }: QuizSituationPagePro
           href={`/${loc}/quiz/${corridorId}`}
           className="text-sm font-medium text-teal-800 hover:underline"
         >
-          ← {getSituationTitle(situation, loc)}
+          ← {situationLabel}
         </Link>
-        <h1 className="text-2xl font-bold">{getSituationTitle(situation, loc)}</h1>
+        <h1 className="text-2xl font-bold">{situationLabel}</h1>
         <p className="text-sm text-slate-600">
           {pickLocalized(destination.name, loc)} · {t("pickQuiz")}
         </p>
@@ -107,7 +112,7 @@ export default async function QuizSituationPage({ params }: QuizSituationPagePro
             return (
             <li key={`${entry.kind}-${entry.id}`}>
               <Link
-                href={playHref(loc, corridorId, situation, entry)}
+                href={playHref(loc, corridorId, situationKey, entry)}
                 className="block rounded-xl border border-border bg-card px-4 py-3 hover:border-teal-300"
               >
                 <div className="flex items-center justify-between gap-3">

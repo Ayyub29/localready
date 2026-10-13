@@ -69,6 +69,8 @@ Editor for **`content/cheatsheets/{corridor}.json`**:
 /{locale}/admin/[corridorId]/quizzes     fill-blank (+ flashcards tab)
 /{locale}/admin/[corridorId]/lessons     Manifest editor
 /{locale}/admin/[corridorId]/cheatsheet  Situation → phrase picks
+/{locale}/admin/situations               Global situation titles, order, enabled flags (`content/situations/default.json`)
+/{locale}/admin/[corridorId]/situations   Per-corridor overrides (`content/situations/{corridorId}.json`, merged over default)
 ```
 
 Shared UX: corridor switcher, save → write JSON under `content/`, show “run compile” hints, diff-friendly ids.

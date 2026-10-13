@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { getDestination, getLessons } from "@/data/catalog";
+import { getDestination } from "@/data/catalog";
+import { getLessonsForCorridor } from "@/lib/content/load-situations";
 import { buildLessonSteps } from "@/lib/content/lesson-player-steps";
 import { lessonHasContent, loadCorridorPack } from "@/lib/content/load-pack";
 import { getContentAccess } from "@/lib/access/content-access";
@@ -25,7 +26,7 @@ export async function LessonListView({
   }
 
   const t = await getTranslations("lessons");
-  const lessons = getLessons(corridorId);
+  const lessons = await getLessonsForCorridor(corridorId);
   const access = await getContentAccess();
   const [pack, progress] = await Promise.all([
     loadCorridorPack(corridorId),

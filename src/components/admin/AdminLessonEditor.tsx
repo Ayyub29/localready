@@ -3,7 +3,7 @@
 import { useState, useTransition } from "react";
 import type { StoredLessonManifest, StoredSequenceItem } from "@/lib/content/stored-lesson-manifest-types";
 import { adminSaveLessonManifest } from "@/lib/admin/server-actions";
-import { situationOrder } from "@/lib/situations";
+import type { SituationKey } from "@/lib/types";
 
 type PoolRefs = {
   conversations: string[];
@@ -17,6 +17,7 @@ type AdminLessonEditorProps = {
   corridorId: string;
   initial: StoredLessonManifest;
   poolRefs: PoolRefs;
+  situationKeys: SituationKey[];
 };
 
 const sequenceKinds: StoredSequenceItem["kind"][] = [
@@ -48,6 +49,7 @@ export function AdminLessonEditor({
   corridorId,
   initial,
   poolRefs,
+  situationKeys,
 }: AdminLessonEditorProps) {
   const [doc, setDoc] = useState(initial);
   const [pending, startTransition] = useTransition();
@@ -152,7 +154,7 @@ export function AdminLessonEditor({
             }
             className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
           >
-            {situationOrder.map((s) => (
+            {situationKeys.map((s) => (
               <option key={s} value={s}>{s}</option>
             ))}
           </select>

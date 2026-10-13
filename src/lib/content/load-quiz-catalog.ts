@@ -5,7 +5,11 @@ import {
   loadStoredPhraseListsMap,
 } from "@/lib/content/load-pool-files";
 import { situationFromContentId, type QuizKind } from "@/lib/content/quiz-situation";
-import { situationOrder } from "@/lib/situations";
+import {
+  enabledSituationKeysInOrder,
+  loadSituationsForCorridor,
+  situationKeysInOrder,
+} from "@/lib/content/load-situations";
 import type { CorridorId, LocalizedString, SituationKey } from "@/lib/types";
 
 export type QuizCatalogEntry = {
@@ -33,12 +37,14 @@ export async function loadQuizCatalog(
 ): Promise<QuizCatalogEntry[]> {
   const byKey = new Map<string, QuizCatalogEntry>();
 
-  const [fillBlank, flashcards, phraseLists, pack] = await Promise.all([
+  const [fillBlank, flashcards, phraseLists, pack, situationDefs] = await Promise.all([
     loadStoredFillBlankQuizzesMap(corridorId),
     loadStoredFlashcardDecksMap(corridorId),
     loadStoredPhraseListsMap(corridorId),
     loadCorridorPack(corridorId),
+    loadSituationsForCorridor(corridorId),
   ]);
+  const situationOrder = situationKeysInOrder(situationDefs);
 
   for (const quiz of fillBlank.values()) {
     const situation =
@@ -125,10 +131,20 @@ export async function loadQuizCatalog(
 
 export function situationsWithQuizzes(
   entries: QuizCatalogEntry[],
+  situationOrder: SituationKey[],
 ): SituationKey[] {
   const set = new Set<SituationKey>();
   for (const e of entries) set.add(e.situation);
   return situationOrder.filter((s) => set.has(s));
+}
+
+export async function enabledSituationsWithQuizzes(
+  corridorId: CorridorId,
+  entries: QuizCatalogEntry[],
+): Promise<SituationKey[]> {
+  const defs = await loadSituationsForCorridor(corridorId);
+  const order = enabledSituationKeysInOrder(defs);
+  return situationsWithQuizzes(entries, order);
 }
 
 export function quizzesForSituation(

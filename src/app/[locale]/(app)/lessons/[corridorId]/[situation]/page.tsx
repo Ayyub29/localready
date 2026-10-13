@@ -8,28 +8,36 @@ import { buildLessonSteps } from "@/lib/content/lesson-player-steps";
 import { lessonHasContent, loadLesson } from "@/lib/content/load-pack";
 import { getItemProgress } from "@/lib/progress";
 import { pickLocalized } from "@/lib/locale";
-import { situationOrder } from "@/lib/situations";
-import type { Locale, SituationKey } from "@/lib/types";
+import {
+  isSituationKeyForCorridor,
+  titleMapFromDefinitions,
+  loadSituationsForCorridor,
+} from "@/lib/content/load-situations";
+import type { CorridorId, Locale, SituationKey } from "@/lib/types";
 
 type LessonPageProps = {
   params: Promise<{ locale: string; corridorId: string; situation: string }>;
 };
-
-function isSituationKey(value: string): value is SituationKey {
-  return (situationOrder as string[]).includes(value);
-}
 
 export default async function LessonPage({ params }: LessonPageProps) {
   const { locale, corridorId, situation } = await params;
   setRequestLocale(locale);
   const loc = locale as Locale;
 
-  if (!isCorridorId(corridorId) || !isSituationKey(situation)) {
+  if (!isCorridorId(corridorId)) {
+    notFound();
+  }
+  const c = corridorId as CorridorId;
+  if (!(await isSituationKeyForCorridor(c, situation))) {
     notFound();
   }
 
+  const situationDefs = await loadSituationsForCorridor(c);
+  const situationTitles = titleMapFromDefinitions(situationDefs);
+
   const destination = getDestination(corridorId);
-  const lesson = await loadLesson(corridorId, situation);
+  const situationKey = situation as SituationKey;
+  const lesson = await loadLesson(corridorId, situationKey);
   if (!destination || !lesson) {
     notFound();
   }
@@ -38,7 +46,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
   const backLabel = loc === "id" ? "Kembali" : "Back";
   const access = await getContentAccess();
   const saved = access.canSaveProgress
-    ? await getItemProgress(corridorId, "lesson", situation)
+    ? await getItemProgress(corridorId, "lesson", situationKey)
     : null;
   const stepCount = filterLessonSteps(
     buildLessonSteps(lesson),
@@ -69,7 +77,8 @@ export default async function LessonPage({ params }: LessonPageProps) {
         <LessonPlayer
           locale={loc}
           corridorId={corridorId}
-          situation={situation}
+          situation={situation as SituationKey}
+          situationTitles={situationTitles}
           lesson={lesson}
           homeHref={`/${loc}`}
           initialStepIndex={initialStepIndex}

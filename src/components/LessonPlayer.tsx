@@ -5,7 +5,6 @@ import { useEffect, useMemo, useState } from "react";
 import { ConversationThread } from "@/components/ConversationThread";
 import { FillBlankStep } from "@/components/FillBlankStep";
 import { FlashcardStep } from "@/components/FlashcardStep";
-import { getSituationTitle } from "@/data/catalog";
 import {
   filterLessonSteps,
   lessonPreviewIsLimited,
@@ -19,12 +18,13 @@ import {
 import { LearningProgressReporter } from "@/components/LearningProgressReporter";
 import { pickLocalized } from "@/lib/locale";
 import type { LessonContent } from "@/lib/lesson-content-types";
-import type { CorridorId, Locale, SituationKey } from "@/lib/types";
+import type { CorridorId, Locale, LocalizedString, SituationKey } from "@/lib/types";
 
 type LessonPlayerProps = {
   locale: Locale;
   corridorId: CorridorId;
   situation: SituationKey;
+  situationTitles: Record<SituationKey, LocalizedString>;
   lesson: LessonContent;
   homeHref: string;
   initialStepIndex?: number;
@@ -56,6 +56,7 @@ export function LessonPlayer({
   locale,
   corridorId,
   situation,
+  situationTitles,
   lesson,
   homeHref,
   initialStepIndex = 0,
@@ -159,7 +160,13 @@ export function LessonPlayer({
         {activeConversation && (
           <p className="text-xs text-slate-600">
             <span className="rounded bg-slate-100 px-1.5 py-0.5 font-medium text-slate-700">
-              {getSituationTitle(activeConversation.situation, locale)}
+              {pickLocalized(
+                situationTitles[activeConversation.situation] ?? {
+                  en: activeConversation.situation,
+                  id: activeConversation.situation,
+                },
+                locale,
+              )}
             </span>
             {activeConversation.title ? (
               <span className="ml-2">{pickLocalized(activeConversation.title, locale)}</span>

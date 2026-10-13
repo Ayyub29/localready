@@ -24,8 +24,14 @@ import type { StoredFlashcardDeck } from "@/lib/content/stored-flashcard-deck-ty
 import type { StoredLessonManifest } from "@/lib/content/stored-lesson-manifest-types";
 import type { StoredMiniLesson } from "@/lib/content/stored-mini-lesson-types";
 import type { StoredPhraseList } from "@/lib/content/stored-phrase-list-types";
-import { isCorridorId } from "@/data/catalog";
+import { destinations, isCorridorId } from "@/data/catalog";
 import { routing } from "@/i18n/routing";
+import type { SituationDefinition } from "@/lib/content/situations-manifest-types";
+import {
+  readDefaultSituationsManifest,
+  writeCorridorSituationsManifest,
+  writeDefaultSituationsManifest,
+} from "@/lib/content/load-situations";
 import type { CorridorId, SituationKey } from "@/lib/types";
 
 const execFileAsync = promisify(execFile);
@@ -46,6 +52,71 @@ function revalidateAdmin(corridorId: CorridorId) {
     revalidatePath(`/${locale}/admin`);
     revalidatePath(`/${locale}/admin/${corridorId}`);
   }
+}
+
+function revalidateLearnerCorridor(locale: string, corridorId: CorridorId) {
+  revalidatePath(`/${locale}`);
+  revalidatePath(`/${locale}/lessons/${corridorId}`);
+  revalidatePath(`/${locale}/quiz/${corridorId}`);
+  revalidatePath(`/${locale}/cheatsheet/${corridorId}`);
+}
+
+function revalidateSituationsPaths(corridorId?: CorridorId) {
+  for (const locale of routing.locales) {
+    revalidatePath(`/${locale}/admin/situations`);
+    if (corridorId) {
+      revalidatePath(`/${locale}/admin/${corridorId}/situations`);
+      revalidateLearnerCorridor(locale, corridorId);
+    } else {
+      for (const d of destinations) {
+        revalidateLearnerCorridor(locale, d.id);
+      }
+    }
+  }
+}
+
+function corridorSituationOverrides(
+  base: SituationDefinition[],
+  edited: SituationDefinition[],
+): SituationDefinition[] {
+  const byKey = new Map(base.map((s) => [s.key, s]));
+  const overrides: SituationDefinition[] = [];
+  for (const row of edited) {
+    const prev = byKey.get(row.key);
+    if (
+      !prev ||
+      prev.order !== row.order ||
+      prev.enabled !== row.enabled ||
+      prev.title.en !== row.title.en ||
+      prev.title.id !== row.title.id
+    ) {
+      overrides.push(row);
+    }
+  }
+  return overrides;
+}
+
+export async function adminSaveDefaultSituations(situations: SituationDefinition[]) {
+  await assertAdmin();
+  await writeDefaultSituationsManifest({ schemaVersion: 1, situations });
+  revalidateSituationsPaths();
+}
+
+export async function adminSaveCorridorSituations(
+  corridorId: string,
+  situations: SituationDefinition[],
+) {
+  await assertAdmin();
+  const c = assertCorridor(corridorId);
+  const baseDoc = await readDefaultSituationsManifest();
+  const overrides = corridorSituationOverrides(baseDoc.situations, situations);
+  await writeCorridorSituationsManifest({
+    schemaVersion: 1,
+    corridorId: c,
+    situations: overrides,
+  });
+  revalidateAdmin(c);
+  revalidateSituationsPaths(c);
 }
 
 export async function adminGetPhrasePool(corridorId: string) {

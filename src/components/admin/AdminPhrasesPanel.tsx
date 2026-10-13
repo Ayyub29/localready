@@ -7,14 +7,19 @@ import {
   adminInjectPhrases,
   adminUpdatePhraseStatus,
 } from "@/lib/admin/server-actions";
-import { situationOrder } from "@/lib/situations";
+import type { SituationKey } from "@/lib/types";
 
 type AdminPhrasesPanelProps = {
   corridorId: string;
   initialItems: PhrasePoolItem[];
+  situationKeys: SituationKey[];
 };
 
-export function AdminPhrasesPanel({ corridorId, initialItems }: AdminPhrasesPanelProps) {
+export function AdminPhrasesPanel({
+  corridorId,
+  initialItems,
+  situationKeys,
+}: AdminPhrasesPanelProps) {
   const t = useTranslations("admin");
   const [items, setItems] = useState(initialItems);
   const [statusFilter, setStatusFilter] = useState<PhrasePoolStatus | "all">("pending");
@@ -59,7 +64,7 @@ export function AdminPhrasesPanel({ corridorId, initialItems }: AdminPhrasesPane
     const meaningEn = String(fd.get("meaningEn") ?? "").trim();
     const meaningId = String(fd.get("meaningId") ?? "").trim();
     const romanization = String(fd.get("romanization") ?? "").trim();
-    const situations = situationOrder.filter((s) => fd.get(`sit-${s}`) === "on");
+    const situations = situationKeys.filter((s) => fd.get(`sit-${s}`) === "on");
     const approve = fd.get("approve") === "on";
     if (!target || !meaningEn) {
       setMessage("Target and English meaning are required.");
@@ -133,7 +138,7 @@ export function AdminPhrasesPanel({ corridorId, initialItems }: AdminPhrasesPane
           <fieldset className="sm:col-span-2">
             <legend className="text-sm text-slate-600">{t("situationHints")}</legend>
             <div className="mt-2 flex flex-wrap gap-3">
-              {situationOrder.map((s) => (
+              {situationKeys.map((s) => (
                 <label key={s} className="flex items-center gap-1.5 text-sm">
                   <input type="checkbox" name={`sit-${s}`} className="rounded" />
                   {s}

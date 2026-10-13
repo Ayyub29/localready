@@ -3,14 +3,18 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { QuizSessionPlayer } from "@/components/QuizSessionPlayer";
-import { getDestination, getSituationTitle, isCorridorId } from "@/data/catalog";
+import { getDestination, isCorridorId } from "@/data/catalog";
+import {
+  isSituationKeyForCorridor,
+  loadSituationsForCorridor,
+  situationTitle,
+} from "@/lib/content/load-situations";
 import { canAccessQuizzes, getContentAccess } from "@/lib/access/content-access";
 import { ContentPaywall } from "@/components/ContentPaywall";
 import { loadQuizForPlay } from "@/lib/content/load-quiz-for-play";
 import { getItemProgress, quizProgressKey } from "@/lib/progress";
 import type { QuizKind } from "@/lib/content/quiz-situation";
-import { situationOrder } from "@/lib/situations";
-import type { Locale, SituationKey } from "@/lib/types";
+import type { CorridorId, Locale, SituationKey } from "@/lib/types";
 
 type QuizPlayPageProps = {
   params: Promise<{
@@ -21,10 +25,6 @@ type QuizPlayPageProps = {
     quizId: string;
   }>;
 };
-
-function isSituationKey(value: string): value is SituationKey {
-  return (situationOrder as string[]).includes(value);
-}
 
 function parseKind(value: string): QuizKind | null {
   if (value === "fillBlank" || value === "flashcards" || value === "phraseDrill") {
@@ -39,12 +39,23 @@ export default async function QuizPlayPage({ params }: QuizPlayPageProps) {
   const loc = locale as Locale;
 
   const kind = parseKind(kindParam);
-  if (!isCorridorId(corridorId) || !isSituationKey(situation) || !kind) {
+  if (!isCorridorId(corridorId) || !kind) {
+    notFound();
+  }
+  const c = corridorId as CorridorId;
+  if (!(await isSituationKeyForCorridor(c, situation))) {
     notFound();
   }
 
   const destination = getDestination(corridorId);
   if (!destination) notFound();
+
+  const situationDefs = await loadSituationsForCorridor(c);
+  const situationLabel = situationTitle(
+    situationDefs,
+    situation as SituationKey,
+    loc,
+  );
 
   const playable = await loadQuizForPlay(corridorId, kind, quizId);
   if (!playable) notFound();
@@ -77,7 +88,7 @@ export default async function QuizPlayPage({ params }: QuizPlayPageProps) {
         </Link>
       </div>
       <header>
-        <h1 className="text-xl font-bold">{getSituationTitle(situation, loc)}</h1>
+        <h1 className="text-xl font-bold">{situationLabel}</h1>
         <p className="text-sm text-slate-600">{t("inProgress")}</p>
       </header>
       {!canAccessQuizzes(access) ? (
