@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { AdminConversationEditor } from "@/components/admin/AdminConversationEditor";
 import { isCorridorId } from "@/data/catalog";
 import { readContentJson } from "@/lib/admin/content-io";
@@ -36,9 +37,11 @@ export default async function AdminConversationEditPage({ params }: PageProps) {
     doc = newConversation(c, `${c}-conversation-${Date.now()}`);
   }
 
+  const t = await getTranslations("admin");
+
   return (
     <div className="space-y-4">
-      <h1 className="text-2xl font-bold">Edit conversation</h1>
+      <h1 className="text-2xl font-bold">{t("editConversation")}</h1>
       <AdminConversationEditor corridorId={c} initial={doc} />
     </div>
   );

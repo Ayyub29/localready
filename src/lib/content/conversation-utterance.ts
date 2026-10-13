@@ -17,13 +17,23 @@ export function conversationUtterance(
   return turn.line[spoken]?.trim() ?? turn.line.en?.trim() ?? "";
 }
 
-/** Learner gloss in UI locale; omit when it duplicates the utterance. */
+/** Learner gloss; omit when it duplicates the spoken line. */
 export function conversationGloss(
   turn: ConversationTurn,
   corridorId: CorridorId,
   uiLocale: Locale,
 ): string | null {
   const utterance = conversationUtterance(turn, corridorId);
+  const spokenLocale = corridorSpokenLocale(corridorId);
+
+  // UI in the same language as the corridor (e.g. id-id + /id/…): show the other gloss (usually EN).
+  if (uiLocale === spokenLocale) {
+    const helperLocale: Locale = spokenLocale === "id" ? "en" : "id";
+    const helper = turn.line[helperLocale]?.trim();
+    if (!helper || helper === utterance) return null;
+    return helper;
+  }
+
   const gloss = turn.line[uiLocale]?.trim();
   if (!gloss || gloss === utterance) return null;
   return gloss;
