@@ -2,7 +2,6 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import "../globals.css";
 import type { ReactNode } from "react";
 
 type LocaleLayoutProps = {
@@ -26,12 +25,10 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
-      <body className="antialiased">
-        <NextIntlClientProvider messages={messages}>
-          <div className="mx-auto min-h-dvh max-w-lg px-4 py-6">{children}</div>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <div className="mx-auto min-h-dvh max-w-lg px-4 py-6" lang={locale}>
+        {children}
+      </div>
+    </NextIntlClientProvider>
   );
 }
