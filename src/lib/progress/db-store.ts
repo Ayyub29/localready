@@ -88,19 +88,6 @@ export async function writeUserItemProgress(
       },
     });
   } catch {
-    // DB unavailable — guest cookie path may still apply
-  }
-}
-
-export async function mergeGuestProgressIntoUser(
-  userId: string,
-  guestCorridor: CorridorProgress,
-  corridorId: CorridorId,
-): Promise<void> {
-  for (const [itemId, state] of Object.entries(guestCorridor.lessons)) {
-    await writeUserItemProgress(userId, corridorId, "lesson", itemId, state);
-  }
-  for (const [itemId, state] of Object.entries(guestCorridor.quizzes)) {
-    await writeUserItemProgress(userId, corridorId, "quiz", itemId, state);
+    // DB unavailable
   }
 }

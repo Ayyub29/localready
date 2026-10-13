@@ -4,6 +4,8 @@ import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { QuizSessionPlayer } from "@/components/QuizSessionPlayer";
 import { getDestination, getSituationTitle, isCorridorId } from "@/data/catalog";
+import { canAccessQuizzes, getContentAccess } from "@/lib/access/content-access";
+import { ContentPaywall } from "@/components/ContentPaywall";
 import { loadQuizForPlay } from "@/lib/content/load-quiz-for-play";
 import { getItemProgress, quizProgressKey } from "@/lib/progress";
 import type { QuizKind } from "@/lib/content/quiz-situation";
@@ -47,8 +49,12 @@ export default async function QuizPlayPage({ params }: QuizPlayPageProps) {
   const playable = await loadQuizForPlay(corridorId, kind, quizId);
   if (!playable) notFound();
 
+  const access = await getContentAccess();
   const progressId = quizProgressKey(kind, quizId);
-  const saved = await getItemProgress(corridorId, "quiz", progressId);
+  const saved =
+    access.canSaveProgress && canAccessQuizzes(access)
+      ? await getItemProgress(corridorId, "quiz", progressId)
+      : null;
   const totalSteps =
     playable.kind === "fillBlank"
       ? playable.quiz.questions.length
@@ -74,13 +80,21 @@ export default async function QuizPlayPage({ params }: QuizPlayPageProps) {
         <h1 className="text-xl font-bold">{getSituationTitle(situation, loc)}</h1>
         <p className="text-sm text-slate-600">{t("inProgress")}</p>
       </header>
-      <QuizSessionPlayer
-        locale={loc}
-        corridorId={corridorId}
-        playable={playable}
-        initialStepIndex={initialStepIndex}
-        initiallyCompleted={saved?.completed ?? false}
-      />
+      {!canAccessQuizzes(access) ? (
+        <ContentPaywall
+          locale={loc}
+          variant={access.isSignedIn ? "subscribe" : "signIn"}
+        />
+      ) : (
+        <QuizSessionPlayer
+          locale={loc}
+          corridorId={corridorId}
+          playable={playable}
+          initialStepIndex={initialStepIndex}
+          initiallyCompleted={saved?.completed ?? false}
+          canSaveProgress={access.canSaveProgress}
+        />
+      )}
     </div>
   );
 }

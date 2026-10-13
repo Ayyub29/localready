@@ -57,7 +57,11 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
         {lastCorridor && (
           <section className="space-y-2">
             <h2 className="text-lg font-bold">{t("progressTitle")}</h2>
-            <TripProgressPanel locale={loc} corridorId={lastCorridor} />
+            <TripProgressPanel
+              locale={loc}
+              corridorId={lastCorridor}
+              isSignedIn={false}
+            />
           </section>
         )}
 
@@ -109,7 +113,11 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
         <section className="space-y-2">
           <h2 className="text-lg font-bold">{t("progressTitle")}</h2>
           <p className="text-sm text-slate-600">{t("progressSubtitle")}</p>
-          <TripProgressPanel locale={loc} corridorId={lastCorridor} />
+          <TripProgressPanel
+            locale={loc}
+            corridorId={lastCorridor}
+            isSignedIn={true}
+          />
         </section>
       )}
 

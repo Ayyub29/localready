@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { LessonPlayer } from "@/components/LessonPlayer";
 import { getDestination, isCorridorId } from "@/data/catalog";
+import { filterLessonSteps, getContentAccess } from "@/lib/access/content-access";
 import { buildLessonSteps } from "@/lib/content/lesson-player-steps";
 import { lessonHasContent, loadLesson } from "@/lib/content/load-pack";
 import { getItemProgress } from "@/lib/progress";
@@ -35,8 +36,14 @@ export default async function LessonPage({ params }: LessonPageProps) {
 
   const hasContent = lessonHasContent(lesson);
   const backLabel = loc === "id" ? "Kembali" : "Back";
-  const saved = await getItemProgress(corridorId, "lesson", situation);
-  const stepCount = buildLessonSteps(lesson).length;
+  const access = await getContentAccess();
+  const saved = access.canSaveProgress
+    ? await getItemProgress(corridorId, "lesson", situation)
+    : null;
+  const stepCount = filterLessonSteps(
+    buildLessonSteps(lesson),
+    access.maxVignetteIndex,
+  ).length;
   const initialStepIndex =
     saved?.completed && stepCount > 0
       ? stepCount - 1
@@ -67,6 +74,9 @@ export default async function LessonPage({ params }: LessonPageProps) {
           homeHref={`/${loc}`}
           initialStepIndex={initialStepIndex}
           initiallyCompleted={saved?.completed ?? false}
+          canSaveProgress={access.canSaveProgress}
+          maxVignetteIndex={access.maxVignetteIndex}
+          isSignedIn={access.isSignedIn}
         />
       ) : (
         <p className="rounded-xl border border-dashed border-border px-4 py-8 text-center text-sm text-slate-600">

@@ -15,6 +15,7 @@ type QuizSessionPlayerProps = {
   playable: PlayableQuiz;
   initialStepIndex?: number;
   initiallyCompleted?: boolean;
+  canSaveProgress: boolean;
 };
 
 type Step =
@@ -50,6 +51,7 @@ export function QuizSessionPlayer({
   playable,
   initialStepIndex = 0,
   initiallyCompleted = false,
+  canSaveProgress,
 }: QuizSessionPlayerProps) {
   const steps = useMemo(() => buildSteps(playable), [playable]);
   const [stepIndex, setStepIndex] = useState(() =>
@@ -90,18 +92,20 @@ export function QuizSessionPlayer({
   }
 
   const progressKey = quizProgressKey(playable.kind, progressQuizId(playable));
-  const completed = initiallyCompleted || atEnd;
+  const completed = canSaveProgress && (initiallyCompleted || atEnd);
 
   return (
     <div className="space-y-4">
-      <LearningProgressReporter
-        corridorId={corridorId}
-        itemType="quiz"
-        itemId={progressKey}
-        stepIndex={stepIndex}
-        totalSteps={steps.length}
-        completed={completed}
-      />
+      {canSaveProgress && (
+        <LearningProgressReporter
+          corridorId={corridorId}
+          itemType="quiz"
+          itemId={progressKey}
+          stepIndex={stepIndex}
+          totalSteps={steps.length}
+          completed={completed}
+        />
+      )}
       <div className="flex items-center justify-between text-sm text-slate-600">
         <span>
           {locale === "id" ? "Soal" : "Item"} {stepIndex + 1}/{steps.length}

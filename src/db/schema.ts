@@ -17,6 +17,8 @@ export const users = pgTable("user", {
   image: text("image"),
   locale: text("locale").default("en"),
   lastCorridorId: text("lastCorridorId"),
+  /** Trip kit / full lesson & quiz access (purchase or grant). */
+  fullAccess: integer("fullAccess").notNull().default(0),
   createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
 });
 

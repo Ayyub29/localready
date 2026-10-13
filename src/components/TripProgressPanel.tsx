@@ -7,25 +7,37 @@ import {
   quizzesForSituation,
   situationsWithQuizzes,
 } from "@/lib/content/load-quiz-catalog";
+import { canAccessQuizzes, getContentAccess } from "@/lib/access/content-access";
 import { getCorridorProgress, progressPercent, quizProgressKey } from "@/lib/progress";
 import { pickLocalized } from "@/lib/locale";
 import type { CorridorId, Locale } from "@/lib/types";
+import { ContentPaywall } from "./ContentPaywall";
 import { ProgressBar } from "./ProgressBar";
 
 type TripProgressPanelProps = {
   locale: Locale;
   corridorId: CorridorId;
+  isSignedIn: boolean;
 };
 
-export async function TripProgressPanel({ locale, corridorId }: TripProgressPanelProps) {
+export async function TripProgressPanel({
+  locale,
+  corridorId,
+  isSignedIn,
+}: TripProgressPanelProps) {
+  if (!isSignedIn) {
+    return <ContentPaywall locale={locale} variant="signIn" />;
+  }
   const destination = getDestination(corridorId);
   if (!destination) return null;
 
-  const [progress, pack, quizCatalog] = await Promise.all([
+  const [progress, pack, quizCatalog, access] = await Promise.all([
     getCorridorProgress(corridorId),
     loadCorridorPack(corridorId),
     loadQuizCatalog(corridorId),
+    getContentAccess(),
   ]);
+  const quizzesUnlocked = canAccessQuizzes(access);
 
   const lessons = getLessons(corridorId);
   const quizSituations = situationsWithQuizzes(quizCatalog);
@@ -86,7 +98,9 @@ export async function TripProgressPanel({ locale, corridorId }: TripProgressPane
         <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
           {quizzesLabel}
         </h2>
-        {quizSituations.length === 0 ? (
+        {!quizzesUnlocked ? (
+          <ContentPaywall locale={locale} variant="subscribe" />
+        ) : quizSituations.length === 0 ? (
           <p className="mt-2 text-sm text-slate-600">
             {locale === "id"
               ? "Belum ada kuis untuk trip ini."
@@ -137,8 +151,8 @@ export async function TripProgressPanel({ locale, corridorId }: TripProgressPane
 
       <p className="text-center text-xs text-slate-500">
         {locale === "id"
-          ? "Progress disimpan di perangkat ini; masuk dengan Google untuk sinkron (jika database aktif)."
-          : "Progress is saved on this device; sign in with Google to sync when the database is enabled."}
+          ? "Progress disimpan ke akunmu (Neon) saat kamu masuk."
+          : "Progress is saved to your account when you are signed in."}
       </p>
     </section>
   );

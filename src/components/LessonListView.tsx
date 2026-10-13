@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { getDestination, getLessons } from "@/data/catalog";
 import { buildLessonSteps } from "@/lib/content/lesson-player-steps";
 import { lessonHasContent, loadCorridorPack } from "@/lib/content/load-pack";
+import { getContentAccess } from "@/lib/access/content-access";
 import { getCorridorProgress, progressPercent } from "@/lib/progress";
 import { pickLocalized } from "@/lib/locale";
 import { ProgressBar } from "@/components/ProgressBar";
@@ -24,9 +25,10 @@ export async function LessonListView({
 
   const t = await getTranslations("lessons");
   const lessons = getLessons(corridorId);
+  const access = await getContentAccess();
   const [pack, progress] = await Promise.all([
     loadCorridorPack(corridorId),
-    getCorridorProgress(corridorId),
+    access.canSaveProgress ? getCorridorProgress(corridorId) : Promise.resolve(null),
   ]);
 
   return (
@@ -44,7 +46,9 @@ export async function LessonListView({
           const contentLesson = pack?.lessons.find((l) => l.situation === lesson.situation);
           const ready = contentLesson ? lessonHasContent(contentLesson) : false;
           const totalSteps = contentLesson ? buildLessonSteps(contentLesson).length : 0;
-          const percent = progressPercent(progress.lessons[lesson.situation]);
+          const percent = progress
+            ? progressPercent(progress.lessons[lesson.situation])
+            : 0;
           return (
             <li key={lesson.id}>
               <Link
@@ -70,7 +74,7 @@ export async function LessonListView({
                   <p className="font-medium">
                     {pickLocalized(lesson.title, locale)}
                   </p>
-                  {ready && totalSteps > 0 && (
+                  {access.canSaveProgress && ready && totalSteps > 0 && (
                     <ProgressBar percent={percent} className="mt-2" />
                   )}
                 </div>

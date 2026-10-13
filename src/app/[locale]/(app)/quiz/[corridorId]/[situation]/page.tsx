@@ -9,6 +9,8 @@ import {
   quizzesForSituation,
   type QuizCatalogEntry,
 } from "@/lib/content/load-quiz-catalog";
+import { canAccessQuizzes, getContentAccess } from "@/lib/access/content-access";
+import { ContentPaywall } from "@/components/ContentPaywall";
 import { getCorridorProgress, progressPercent, quizProgressKey } from "@/lib/progress";
 import type { QuizKind } from "@/lib/content/quiz-situation";
 import { pickLocalized } from "@/lib/locale";
@@ -53,9 +55,13 @@ export default async function QuizSituationPage({ params }: QuizSituationPagePro
   const destination = getDestination(corridorId);
   if (!destination) notFound();
 
+  const access = await getContentAccess();
+  const quizzesUnlocked = canAccessQuizzes(access);
   const [catalog, progress] = await Promise.all([
     loadQuizCatalog(corridorId),
-    getCorridorProgress(corridorId),
+    access.canSaveProgress && quizzesUnlocked
+      ? getCorridorProgress(corridorId)
+      : Promise.resolve(null),
   ]);
   const quizzes = quizzesForSituation(catalog, situation);
   const t = await getTranslations({ locale: loc, namespace: "quiz" });
@@ -75,6 +81,13 @@ export default async function QuizSituationPage({ params }: QuizSituationPagePro
         </p>
       </header>
 
+      {!quizzesUnlocked && (
+        <ContentPaywall
+          locale={loc}
+          variant={access.isSignedIn ? "subscribe" : "signIn"}
+        />
+      )}
+
       {quizzes.length === 0 ? (
         <p className="rounded-xl border border-dashed border-border px-4 py-8 text-center text-sm text-slate-600">
           {t("emptySituation")}
@@ -83,7 +96,9 @@ export default async function QuizSituationPage({ params }: QuizSituationPagePro
         <ul className="space-y-2">
           {quizzes.map((entry) => {
             const key = quizProgressKey(entry.kind, entry.id);
-            const percent = progressPercent(progress.quizzes[key]);
+            const percent = progress
+              ? progressPercent(progress.quizzes[key])
+              : 0;
             return (
             <li key={`${entry.kind}-${entry.id}`}>
               <Link
@@ -101,7 +116,9 @@ export default async function QuizSituationPage({ params }: QuizSituationPagePro
                     {entry.itemCount} {loc === "id" ? "item" : "items"}
                   </span>
                 </div>
-                <ProgressBar percent={percent} className="mt-3" />
+                {quizzesUnlocked && access.canSaveProgress && (
+                  <ProgressBar percent={percent} className="mt-3" />
+                )}
               </Link>
             </li>
             );

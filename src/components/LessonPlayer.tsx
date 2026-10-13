@@ -6,6 +6,11 @@ import { ConversationThread } from "@/components/ConversationThread";
 import { FillBlankStep } from "@/components/FillBlankStep";
 import { FlashcardStep } from "@/components/FlashcardStep";
 import { getSituationTitle } from "@/data/catalog";
+import {
+  filterLessonSteps,
+  lessonPreviewIsLimited,
+} from "@/lib/access/content-access";
+import { ContentPaywall } from "@/components/ContentPaywall";
 import { buildLessonSteps } from "@/lib/content/lesson-player-steps";
 import {
   playerStepKey,
@@ -24,6 +29,9 @@ type LessonPlayerProps = {
   homeHref: string;
   initialStepIndex?: number;
   initiallyCompleted?: boolean;
+  canSaveProgress: boolean;
+  maxVignetteIndex: number | null;
+  isSignedIn: boolean;
 };
 
 function stepLabel(
@@ -52,8 +60,16 @@ export function LessonPlayer({
   homeHref,
   initialStepIndex = 0,
   initiallyCompleted = false,
+  canSaveProgress,
+  maxVignetteIndex,
+  isSignedIn,
 }: LessonPlayerProps) {
-  const steps = useMemo(() => buildLessonSteps(lesson), [lesson]);
+  const allSteps = useMemo(() => buildLessonSteps(lesson), [lesson]);
+  const steps = useMemo(
+    () => filterLessonSteps(allSteps, maxVignetteIndex),
+    [allSteps, maxVignetteIndex],
+  );
+  const previewLimited = lessonPreviewIsLimited(allSteps, steps);
   const [stepIndex, setStepIndex] = useState(() =>
     Math.min(Math.max(0, initialStepIndex), Math.max(0, steps.length - 1)),
   );
@@ -107,18 +123,21 @@ export function LessonPlayer({
     if (!atStart) setStepIndex(stepIndex - 1);
   }
 
-  const completed = initiallyCompleted || atEnd;
+  const completed =
+    canSaveProgress && (initiallyCompleted || (atEnd && !previewLimited));
 
   return (
     <div className="flex min-h-[50vh] flex-col gap-6">
-      <LearningProgressReporter
-        corridorId={corridorId}
-        itemType="lesson"
-        itemId={situation}
-        stepIndex={stepIndex}
-        totalSteps={steps.length}
-        completed={completed}
-      />
+      {canSaveProgress && (
+        <LearningProgressReporter
+          corridorId={corridorId}
+          itemType="lesson"
+          itemId={situation}
+          stepIndex={stepIndex}
+          totalSteps={steps.length}
+          completed={completed}
+        />
+      )}
       <div className="space-y-2">
         <div className="flex items-center justify-between text-xs text-slate-500">
           <span>
@@ -310,7 +329,14 @@ export function LessonPlayer({
         )}
       </div>
 
-      {atEnd && (
+      {atEnd && previewLimited && (
+        <ContentPaywall
+          locale={locale}
+          variant={isSignedIn ? "subscribe" : "signIn"}
+        />
+      )}
+
+      {atEnd && !previewLimited && (
         <div className="rounded-xl border border-teal-200 bg-teal-50 px-4 py-3 text-center text-sm text-teal-900">
           {locale === "id"
             ? "Kamu sudah menyelesaikan pelajaran ini."
