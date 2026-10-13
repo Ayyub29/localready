@@ -4,13 +4,18 @@ import { useTranslations } from "next-intl";
 import { useState, useTransition } from "react";
 import type { StoredConversation } from "@/lib/content/stored-conversation-types";
 import type { ConversationTurn } from "@/lib/lesson-content-types";
-import { adminSaveConversation } from "@/lib/admin/server-actions";
+import { AdminDeleteButton } from "@/components/admin/AdminDeleteButton";
+import {
+  adminDeleteConversation,
+  adminSaveConversation,
+} from "@/lib/admin/server-actions";
 import type { SituationKey } from "@/lib/types";
 
 type AdminConversationEditorProps = {
   corridorId: string;
   initial: StoredConversation;
   situationKeys: SituationKey[];
+  listHref: string;
 };
 
 function newTurnId(convId: string, n: number): string {
@@ -21,6 +26,7 @@ export function AdminConversationEditor({
   corridorId,
   initial,
   situationKeys,
+  listHref,
 }: AdminConversationEditorProps) {
   const t = useTranslations("admin");
   const [doc, setDoc] = useState(initial);
@@ -282,14 +288,20 @@ export function AdminConversationEditor({
         ))}
       </section>
 
-      <button
-        type="button"
-        disabled={pending}
-        onClick={save}
-        className="rounded-lg bg-teal-800 px-5 py-2.5 text-sm font-medium text-white disabled:opacity-50"
-      >
-        {pending ? t("saving") : t("saveConversation")}
-      </button>
+      <div className="flex flex-wrap gap-3">
+        <button
+          type="button"
+          disabled={pending}
+          onClick={save}
+          className="rounded-lg bg-teal-800 px-5 py-2.5 text-sm font-medium text-white disabled:opacity-50"
+        >
+          {pending ? t("saving") : t("saveConversation")}
+        </button>
+        <AdminDeleteButton
+          redirectTo={listHref}
+          onDelete={() => adminDeleteConversation(corridorId, initial.id)}
+        />
+      </div>
     </div>
   );
 }

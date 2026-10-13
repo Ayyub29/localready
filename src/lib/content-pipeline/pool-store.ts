@@ -137,6 +137,25 @@ export async function updatePoolItems(
   return { updated, notFound };
 }
 
+export async function deletePoolItems(
+  corridorId: CorridorId,
+  ids: string[],
+): Promise<{ deleted: number; notFound: string[] }> {
+  const pool = await readPhrasePool(corridorId);
+  const wanted = new Set(ids);
+  const notFound: string[] = [];
+  for (const id of ids) {
+    if (!pool.items.some((i) => i.id === id)) notFound.push(id);
+  }
+  const before = pool.items.length;
+  pool.items = pool.items.filter((i) => !wanted.has(i.id));
+  const deleted = before - pool.items.length;
+  if (deleted > 0) {
+    await writePhrasePool(pool);
+  }
+  return { deleted, notFound };
+}
+
 function stripUndefined(patch: PhrasePoolUpdate): Partial<PhrasePoolItem> {
   const out: Partial<PhrasePoolItem> = {};
   if (patch.status !== undefined) out.status = patch.status;

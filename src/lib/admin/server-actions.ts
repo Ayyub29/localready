@@ -14,9 +14,11 @@ import {
 } from "@/lib/admin/content-io";
 import {
   appendPoolItems,
+  deletePoolItems,
   readPhrasePool,
   updatePoolItems,
 } from "@/lib/content-pipeline/pool-store";
+import type { PhrasePoolUpdate } from "@/lib/content-pipeline/types";
 import type { ManualPhraseInput, PhrasePoolStatus } from "@/lib/content-pipeline/types";
 import type { StoredConversation } from "@/lib/content/stored-conversation-types";
 import type { StoredFillBlankQuiz } from "@/lib/content/stored-fill-blank-types";
@@ -149,6 +151,22 @@ export async function adminUpdatePhraseStatus(
   return result;
 }
 
+export async function adminUpdatePhrase(corridorId: string, update: PhrasePoolUpdate) {
+  await assertAdmin();
+  const c = assertCorridor(corridorId);
+  const result = await updatePoolItems(c, [update]);
+  revalidateAdmin(c);
+  return result;
+}
+
+export async function adminDeletePhrase(corridorId: string, phraseId: string) {
+  await assertAdmin();
+  const c = assertCorridor(corridorId);
+  const result = await deletePoolItems(c, [phraseId]);
+  revalidateAdmin(c);
+  return result;
+}
+
 export async function adminSaveConversation(
   corridorId: string,
   doc: StoredConversation,
@@ -174,6 +192,13 @@ export async function adminDeleteConversation(corridorId: string, id: string) {
   revalidateAdmin(c);
 }
 
+export async function adminDeleteMiniLesson(corridorId: string, id: string) {
+  await assertAdmin();
+  const c = assertCorridor(corridorId);
+  await deleteContentJson(c, "mini-lessons", id);
+  revalidateAdmin(c);
+}
+
 export async function adminSaveMiniLesson(corridorId: string, doc: StoredMiniLesson) {
   await assertAdmin();
   const c = assertCorridor(corridorId);
@@ -185,6 +210,13 @@ export async function adminSaveMiniLesson(corridorId: string, doc: StoredMiniLes
     updatedAt: now,
     createdAt: doc.createdAt ?? now,
   });
+  revalidateAdmin(c);
+}
+
+export async function adminDeletePhraseList(corridorId: string, id: string) {
+  await assertAdmin();
+  const c = assertCorridor(corridorId);
+  await deleteContentJson(c, "phrase-lists", id);
   revalidateAdmin(c);
 }
 
@@ -202,11 +234,25 @@ export async function adminSavePhraseList(corridorId: string, doc: StoredPhraseL
   revalidateAdmin(c);
 }
 
+export async function adminDeleteFillBlank(corridorId: string, id: string) {
+  await assertAdmin();
+  const c = assertCorridor(corridorId);
+  await deleteContentJson(c, "fill-blank", id);
+  revalidateAdmin(c);
+}
+
 export async function adminSaveFillBlank(corridorId: string, doc: StoredFillBlankQuiz) {
   await assertAdmin();
   const c = assertCorridor(corridorId);
   if (doc.corridorId !== c) throw new Error("corridor mismatch");
   await writeContentJson(c, "fill-blank", { ...doc, schemaVersion: 1 });
+  revalidateAdmin(c);
+}
+
+export async function adminDeleteFlashcardDeck(corridorId: string, id: string) {
+  await assertAdmin();
+  const c = assertCorridor(corridorId);
+  await deleteContentJson(c, "flashcard-decks", id);
   revalidateAdmin(c);
 }
 
@@ -229,6 +275,13 @@ export async function adminSaveLessonManifest(
   const c = assertCorridor(corridorId);
   if (doc.corridorId !== c) throw new Error("corridor mismatch");
   await writeContentJson(c, "lessons", { ...doc, schemaVersion: 1 });
+  revalidateAdmin(c);
+}
+
+export async function adminDeleteLessonManifest(corridorId: string, lessonId: string) {
+  await assertAdmin();
+  const c = assertCorridor(corridorId);
+  await deleteContentJson(c, "lessons", lessonId);
   revalidateAdmin(c);
 }
 

@@ -2,7 +2,11 @@
 
 import { useState, useTransition } from "react";
 import type { StoredLessonManifest, StoredSequenceItem } from "@/lib/content/stored-lesson-manifest-types";
-import { adminSaveLessonManifest } from "@/lib/admin/server-actions";
+import { AdminDeleteButton } from "@/components/admin/AdminDeleteButton";
+import {
+  adminDeleteLessonManifest,
+  adminSaveLessonManifest,
+} from "@/lib/admin/server-actions";
 import type { SituationKey } from "@/lib/types";
 
 type PoolRefs = {
@@ -18,6 +22,7 @@ type AdminLessonEditorProps = {
   initial: StoredLessonManifest;
   poolRefs: PoolRefs;
   situationKeys: SituationKey[];
+  listHref: string;
 };
 
 const sequenceKinds: StoredSequenceItem["kind"][] = [
@@ -50,6 +55,7 @@ export function AdminLessonEditor({
   initial,
   poolRefs,
   situationKeys,
+  listHref,
 }: AdminLessonEditorProps) {
   const [doc, setDoc] = useState(initial);
   const [pending, startTransition] = useTransition();
@@ -309,14 +315,20 @@ export function AdminLessonEditor({
         Add vignette
       </button>
 
-      <button
-        type="button"
-        disabled={pending}
-        onClick={save}
-        className="rounded-lg bg-teal-800 px-5 py-2.5 text-sm font-medium text-white disabled:opacity-50"
-      >
-        {pending ? "Saving…" : "Save lesson manifest"}
-      </button>
+      <div className="flex flex-wrap gap-3">
+        <button
+          type="button"
+          disabled={pending}
+          onClick={save}
+          className="rounded-lg bg-teal-800 px-5 py-2.5 text-sm font-medium text-white disabled:opacity-50"
+        >
+          {pending ? "Saving…" : "Save lesson manifest"}
+        </button>
+        <AdminDeleteButton
+          redirectTo={listHref}
+          onDelete={() => adminDeleteLessonManifest(corridorId, initial.id)}
+        />
+      </div>
     </div>
   );
 }

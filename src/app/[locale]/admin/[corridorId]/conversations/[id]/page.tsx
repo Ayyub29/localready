@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
+import { adminSectionPath } from "@/lib/admin/admin-path";
 import { AdminConversationEditor } from "@/components/admin/AdminConversationEditor";
 import { isCorridorId } from "@/data/catalog";
 import { readContentJson } from "@/lib/admin/content-io";
@@ -9,7 +10,7 @@ import {
   situationKeysInOrder,
 } from "@/lib/content/load-situations";
 import { requireAdminSession } from "@/lib/admin/require-admin";
-import type { CorridorId } from "@/lib/types";
+import type { CorridorId, Locale } from "@/lib/types";
 
 type PageProps = { params: Promise<{ corridorId: string; id: string }> };
 
@@ -41,8 +42,10 @@ export default async function AdminConversationEditPage({ params }: PageProps) {
     doc = newConversation(c, `${c}-conversation-${Date.now()}`);
   }
 
+  const locale = (await getLocale()) as Locale;
   const situationDefs = await loadSituationsForCorridor(c);
   const situationKeys = situationKeysInOrder(situationDefs);
+  const listHref = adminSectionPath(locale, c, "conversations");
   const t = await getTranslations("admin");
 
   return (
@@ -52,6 +55,7 @@ export default async function AdminConversationEditPage({ params }: PageProps) {
         corridorId={c}
         initial={doc}
         situationKeys={situationKeys}
+        listHref={listHref}
       />
     </div>
   );

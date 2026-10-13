@@ -4,7 +4,9 @@ import { useTranslations } from "next-intl";
 import { useMemo, useState, useTransition } from "react";
 import type { PhrasePoolItem, PhrasePoolStatus } from "@/lib/content-pipeline/types";
 import {
+  adminDeletePhrase,
   adminInjectPhrases,
+  adminUpdatePhrase,
   adminUpdatePhraseStatus,
 } from "@/lib/admin/server-actions";
 import type { SituationKey } from "@/lib/types";
@@ -26,6 +28,7 @@ export function AdminPhrasesPanel({
   const [search, setSearch] = useState("");
   const [pending, startTransition] = useTransition();
   const [message, setMessage] = useState<string | null>(null);
+  const [editingId, setEditingId] = useState<string | null>(null);
 
   const filtered = useMemo(() => {
     let list = items;
@@ -43,6 +46,33 @@ export function AdminPhrasesPanel({
     }
     return list.slice(0, 200);
   }, [items, statusFilter, search]);
+
+  function saveEdit(item: PhrasePoolItem) {
+    startTransition(async () => {
+      await adminUpdatePhrase(corridorId, {
+        id: item.id,
+        target: item.target,
+        meaningEn: item.meaningEn,
+        meaningId: item.meaningId,
+        romanization: item.romanization,
+        situationHints: item.situationHints,
+        notes: item.notes,
+      });
+      setItems((prev) => prev.map((i) => (i.id === item.id ? item : i)));
+      setEditingId(null);
+      setMessage(t("saved"));
+    });
+  }
+
+  function deletePhrase(id: string) {
+    if (!window.confirm(t("deleteConfirm"))) return;
+    startTransition(async () => {
+      await adminDeletePhrase(corridorId, id);
+      setItems((prev) => prev.filter((i) => i.id !== id));
+      if (editingId === id) setEditingId(null);
+      setMessage(t("deleted"));
+    });
+  }
 
   function setStatus(ids: string[], status: PhrasePoolStatus) {
     startTransition(async () => {
@@ -183,17 +213,106 @@ export function AdminPhrasesPanel({
         </div>
 
         <ul className="divide-y divide-slate-100 rounded-xl border border-slate-200 bg-white">
-          {filtered.map((item) => (
-            <li key={item.id} className="flex flex-col gap-2 px-4 py-3 sm:flex-row sm:items-start sm:justify-between">
+          {filtered.map((item) => {
+            const editing = editingId === item.id;
+            const draft =
+              editing && items.find((i) => i.id === item.id)
+                ? items.find((i) => i.id === item.id)!
+                : item;
+            return (
+            <li key={item.id} className="flex flex-col gap-2 px-4 py-3">
+              {editing ? (
+                <div className="grid gap-2 sm:grid-cols-2">
+                  <label className="text-sm sm:col-span-2">
+                    {t("target")}
+                    <input
+                      value={draft.target}
+                      onChange={(e) =>
+                        setItems((prev) =>
+                          prev.map((i) =>
+                            i.id === item.id ? { ...i, target: e.target.value } : i,
+                          ),
+                        )
+                      }
+                      className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
+                    />
+                  </label>
+                  <label className="text-sm">
+                    {t("meaningEn")}
+                    <input
+                      value={draft.meaningEn}
+                      onChange={(e) =>
+                        setItems((prev) =>
+                          prev.map((i) =>
+                            i.id === item.id ? { ...i, meaningEn: e.target.value } : i,
+                          ),
+                        )
+                      }
+                      className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
+                    />
+                  </label>
+                  <label className="text-sm">
+                    {t("meaningId")}
+                    <input
+                      value={draft.meaningId ?? ""}
+                      onChange={(e) =>
+                        setItems((prev) =>
+                          prev.map((i) =>
+                            i.id === item.id ? { ...i, meaningId: e.target.value } : i,
+                          ),
+                        )
+                      }
+                      className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
+                    />
+                  </label>
+                  <div className="flex flex-wrap gap-2 sm:col-span-2">
+                    <button
+                      type="button"
+                      disabled={pending}
+                      onClick={() => saveEdit(draft)}
+                      className="rounded-lg bg-teal-800 px-3 py-1.5 text-sm text-white"
+                    >
+                      {t("save")}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setEditingId(null)}
+                      className="rounded-lg ring-1 ring-slate-300 px-3 py-1.5 text-sm"
+                    >
+                      {t("cancelEdit")}
+                    </button>
+                  </div>
+                </div>
+              ) : (
+              <>
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
               <div className="min-w-0 flex-1">
                 <p className="font-medium text-slate-900">{item.target}</p>
                 <p className="text-sm text-slate-600">{item.meaningEn}</p>
+                {item.meaningId ? (
+                  <p className="text-sm text-slate-600">{item.meaningId}</p>
+                ) : null}
                 <p className="mt-1 font-mono text-xs text-slate-400">{item.id}</p>
                 <p className="text-xs text-slate-500">
                   {item.status} · {item.situationHints.join(", ") || "no situations"}
                 </p>
               </div>
               <div className="flex shrink-0 flex-wrap gap-2">
+                <button
+                  type="button"
+                  onClick={() => setEditingId(item.id)}
+                  className="rounded-lg ring-1 ring-slate-300 px-3 py-1 text-xs font-medium"
+                >
+                  {t("edit")}
+                </button>
+                <button
+                  type="button"
+                  disabled={pending}
+                  onClick={() => deletePhrase(item.id)}
+                  className="rounded-lg border border-red-200 bg-red-50 px-3 py-1 text-xs font-medium text-red-800"
+                >
+                  {t("delete")}
+                </button>
                 {item.status !== "approved" ? (
                   <button
                     type="button"
@@ -225,8 +344,12 @@ export function AdminPhrasesPanel({
                   </button>
                 ) : null}
               </div>
+              </div>
+              </>
+              )}
             </li>
-          ))}
+          );
+          })}
         </ul>
       </section>
     </div>

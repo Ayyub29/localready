@@ -1,4 +1,6 @@
 import { notFound } from "next/navigation";
+import { getLocale } from "next-intl/server";
+import { adminSectionPath } from "@/lib/admin/admin-path";
 import { AdminLessonEditor } from "@/components/admin/AdminLessonEditor";
 import { isCorridorId } from "@/data/catalog";
 import { listContentIds, readContentJson } from "@/lib/admin/content-io";
@@ -8,7 +10,7 @@ import {
   situationKeysInOrder,
 } from "@/lib/content/load-situations";
 import { requireAdminSession } from "@/lib/admin/require-admin";
-import type { CorridorId } from "@/lib/types";
+import type { CorridorId, Locale } from "@/lib/types";
 
 type PageProps = { params: Promise<{ corridorId: string; lessonId: string }> };
 
@@ -49,6 +51,8 @@ export default async function AdminLessonEditPage({ params }: PageProps) {
     loadSituationsForCorridor(c),
   ]);
   const situationKeys = situationKeysInOrder(situationDefs);
+  const locale = (await getLocale()) as Locale;
+  const listHref = adminSectionPath(locale, c, "lessons");
 
   return (
     <div className="space-y-4">
@@ -64,6 +68,7 @@ export default async function AdminLessonEditPage({ params }: PageProps) {
           flashcardDecks,
         }}
         situationKeys={situationKeys}
+        listHref={listHref}
       />
     </div>
   );

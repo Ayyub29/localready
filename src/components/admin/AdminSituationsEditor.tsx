@@ -120,6 +120,13 @@ export function AdminSituationsEditor({
                   }
                 />
               </label>
+              <button
+                type="button"
+                onClick={() => setRows((prev) => prev.filter((_, i) => i !== index))}
+                className="text-sm text-red-700 hover:underline"
+              >
+                {t("remove")}
+              </button>
             </div>
             <div className="grid gap-2 sm:grid-cols-2">
               <label className="block text-sm">
