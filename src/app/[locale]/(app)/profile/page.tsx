@@ -3,7 +3,6 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { auth } from "@/auth";
 import { loginWithGoogle, logout } from "@/app/[locale]/login/actions";
 import { DestinationPicker } from "@/components/DestinationPicker";
-import { TripProgressPanel } from "@/components/TripProgressPanel";
 import { getDestination } from "@/data/catalog";
 import { pickLocalized } from "@/lib/locale";
 import { getLastCorridor } from "@/lib/last-corridor";
@@ -54,17 +53,6 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
 
         {tripSection}
 
-        {lastCorridor && (
-          <section className="space-y-2">
-            <h2 className="text-lg font-bold">{t("progressTitle")}</h2>
-            <TripProgressPanel
-              locale={loc}
-              corridorId={lastCorridor}
-              isSignedIn={false}
-            />
-          </section>
-        )}
-
         <form action={loginWithGoogle.bind(null, locale)}>
           <Button type="submit" className="w-full">
             {t("signInGoogle")}
@@ -108,18 +96,6 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
       </section>
 
       {tripSection}
-
-      {lastCorridor && (
-        <section className="space-y-2">
-          <h2 className="text-lg font-bold">{t("progressTitle")}</h2>
-          <p className="text-sm text-slate-600">{t("progressSubtitle")}</p>
-          <TripProgressPanel
-            locale={loc}
-            corridorId={lastCorridor}
-            isSignedIn={true}
-          />
-        </section>
-      )}
 
       <form action={logout.bind(null, locale)}>
         <Button type="submit" variant="secondary" className="w-full">

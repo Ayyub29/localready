@@ -93,6 +93,7 @@ export default async function QuizPlayPage({ params }: QuizPlayPageProps) {
           initialStepIndex={initialStepIndex}
           initiallyCompleted={saved?.completed ?? false}
           canSaveProgress={access.canSaveProgress}
+          initialScoreCorrect={saved?.scoreCorrect ?? 0}
         />
       )}
     </div>

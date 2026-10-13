@@ -46,6 +46,8 @@ export async function saveItemProgress(
     stepIndex: number;
     totalSteps: number;
     completed: boolean;
+    scoreCorrect?: number;
+    scoreTotal?: number;
   },
 ): Promise<void> {
   const userId = await requireUserId();

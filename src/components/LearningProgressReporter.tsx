@@ -12,6 +12,8 @@ type LearningProgressReporterProps = {
   stepIndex: number;
   totalSteps: number;
   completed: boolean;
+  scoreCorrect?: number;
+  scoreTotal?: number;
 };
 
 export function LearningProgressReporter({
@@ -21,12 +23,14 @@ export function LearningProgressReporter({
   stepIndex,
   totalSteps,
   completed,
+  scoreCorrect,
+  scoreTotal,
 }: LearningProgressReporterProps) {
   const lastSent = useRef<string>("");
 
   useEffect(() => {
     if (totalSteps < 1) return;
-    const signature = `${stepIndex}:${totalSteps}:${completed}`;
+    const signature = `${stepIndex}:${totalSteps}:${completed}:${scoreCorrect ?? ""}:${scoreTotal ?? ""}`;
     if (signature === lastSent.current) return;
     lastSent.current = signature;
     void reportLearningProgress(
@@ -36,8 +40,19 @@ export function LearningProgressReporter({
       stepIndex,
       totalSteps,
       completed,
+      scoreCorrect,
+      scoreTotal,
     );
-  }, [corridorId, itemType, itemId, stepIndex, totalSteps, completed]);
+  }, [
+    corridorId,
+    itemType,
+    itemId,
+    stepIndex,
+    totalSteps,
+    completed,
+    scoreCorrect,
+    scoreTotal,
+  ]);
 
   return null;
 }

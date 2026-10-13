@@ -4,7 +4,8 @@ import { getDestination, getLessons } from "@/data/catalog";
 import { buildLessonSteps } from "@/lib/content/lesson-player-steps";
 import { lessonHasContent, loadCorridorPack } from "@/lib/content/load-pack";
 import { getContentAccess } from "@/lib/access/content-access";
-import { getCorridorProgress, progressPercent } from "@/lib/progress";
+import { getCorridorProgress } from "@/lib/progress";
+import { lessonProgressLabel, progressPercent } from "@/lib/progress/utils";
 import { pickLocalized } from "@/lib/locale";
 import { ProgressBar } from "@/components/ProgressBar";
 import type { CorridorId, Locale } from "@/lib/types";
@@ -46,9 +47,11 @@ export async function LessonListView({
           const contentLesson = pack?.lessons.find((l) => l.situation === lesson.situation);
           const ready = contentLesson ? lessonHasContent(contentLesson) : false;
           const totalSteps = contentLesson ? buildLessonSteps(contentLesson).length : 0;
-          const percent = progress
-            ? progressPercent(progress.lessons[lesson.situation])
-            : 0;
+          const lessonState = progress?.lessons[lesson.situation];
+          const percent = progressPercent(lessonState);
+          const statusLabel = access.canSaveProgress
+            ? lessonProgressLabel(lessonState, locale)
+            : null;
           return (
             <li key={lesson.id}>
               <Link
@@ -63,14 +66,21 @@ export async function LessonListView({
                   {lesson.order}
                 </span>
                 <div className="min-w-0 flex-1">
-                  <p className="text-xs uppercase text-slate-500">
-                    {lesson.situation}
-                    {ready ? (
-                      <span className="ml-2 normal-case text-teal-700">
-                        · {locale === "id" ? "Siap" : "Ready"}
+                  <div className="flex items-start justify-between gap-2">
+                    <p className="text-xs uppercase text-slate-500">
+                      {lesson.situation}
+                      {ready ? (
+                        <span className="ml-2 normal-case text-teal-700">
+                          · {locale === "id" ? "Siap" : "Ready"}
+                        </span>
+                      ) : null}
+                    </p>
+                    {statusLabel && (
+                      <span className="shrink-0 text-xs font-semibold text-teal-800">
+                        {statusLabel}
                       </span>
-                    ) : null}
-                  </p>
+                    )}
+                  </div>
                   <p className="font-medium">
                     {pickLocalized(lesson.title, locale)}
                   </p>

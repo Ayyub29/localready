@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { FillBlankStep } from "@/components/FillBlankStep";
 import { FlashcardStep } from "@/components/FlashcardStep";
 import { LearningProgressReporter } from "@/components/LearningProgressReporter";
@@ -16,6 +16,7 @@ type QuizSessionPlayerProps = {
   initialStepIndex?: number;
   initiallyCompleted?: boolean;
   canSaveProgress: boolean;
+  initialScoreCorrect?: number;
 };
 
 type Step =
@@ -45,6 +46,12 @@ function buildSteps(playable: PlayableQuiz): Step[] {
   return playable.list.phrases.map((_, index) => ({ type: "phrase", index }));
 }
 
+function scoreTotalForQuiz(playable: PlayableQuiz): number {
+  if (playable.kind === "fillBlank") return playable.quiz.questions.length;
+  if (playable.kind === "flashcards") return playable.deck.cards.length;
+  return playable.list.phrases.length;
+}
+
 export function QuizSessionPlayer({
   locale,
   corridorId,
@@ -52,12 +59,20 @@ export function QuizSessionPlayer({
   initialStepIndex = 0,
   initiallyCompleted = false,
   canSaveProgress,
+  initialScoreCorrect = 0,
 }: QuizSessionPlayerProps) {
   const steps = useMemo(() => buildSteps(playable), [playable]);
+  const scoreTotal = scoreTotalForQuiz(playable);
+  const tracksMcqScore = playable.kind === "fillBlank";
+
   const [stepIndex, setStepIndex] = useState(() =>
     Math.min(Math.max(0, initialStepIndex), Math.max(0, steps.length - 1)),
   );
   const [canAdvance, setCanAdvance] = useState(false);
+  const [solvedQuestionIds, setSolvedQuestionIds] = useState<Set<string>>(
+    () => new Set(),
+  );
+  const [reviewedCount, setReviewedCount] = useState(initialScoreCorrect);
 
   useEffect(() => {
     const current = steps[stepIndex];
@@ -74,11 +89,38 @@ export function QuizSessionPlayer({
   const atEnd = stepIndex >= steps.length - 1;
   const step = steps[stepIndex];
 
+  const scoreCorrect = tracksMcqScore ? solvedQuestionIds.size : reviewedCount;
+
+  const markFillBlankSolved = useCallback((questionId: string) => {
+    setSolvedQuestionIds((prev) => {
+      const next = new Set(prev);
+      next.add(questionId);
+      return next;
+    });
+    setCanAdvance(true);
+  }, []);
+
+  const [revealedCardIds, setRevealedCardIds] = useState<Set<string>>(() => new Set());
+
+  const markCardRevealed = useCallback((cardId: string) => {
+    setRevealedCardIds((prev) => {
+      if (prev.has(cardId)) return prev;
+      const next = new Set(prev);
+      next.add(cardId);
+      setReviewedCount(next.size);
+      return next;
+    });
+    setCanAdvance(true);
+  }, []);
+
   function goNext() {
     if (!canAdvance && step?.type !== "phrase") return;
     if (atEnd) return;
+    if (step?.type === "phrase" && playable.kind === "phraseDrill") {
+      setReviewedCount((c) => Math.max(c, step.index + 1));
+    }
     setStepIndex((i) => i + 1);
-    setCanAdvance(step?.type === "phrase");
+    setCanAdvance(steps[stepIndex + 1]?.type === "phrase");
   }
 
   function goPrev() {
@@ -104,21 +146,32 @@ export function QuizSessionPlayer({
           stepIndex={stepIndex}
           totalSteps={steps.length}
           completed={completed}
+          scoreCorrect={scoreCorrect}
+          scoreTotal={scoreTotal}
         />
       )}
-      <div className="flex items-center justify-between text-sm text-slate-600">
+      <div className="flex items-center justify-between gap-2 text-sm text-slate-600">
         <span>
           {locale === "id" ? "Soal" : "Item"} {stepIndex + 1}/{steps.length}
         </span>
-        <span className="font-medium text-slate-800">{pickLocalized(title, locale)}</span>
+        <span className="text-right font-medium text-slate-800">
+          {pickLocalized(title, locale)}
+        </span>
       </div>
+      {tracksMcqScore && (
+        <p className="text-center text-sm font-semibold text-teal-800">
+          {locale === "id" ? "Skor" : "Score"}: {scoreCorrect}/{scoreTotal}
+        </p>
+      )}
 
       {step.type === "fillBlank" && playable.kind === "fillBlank" && (
         <FillBlankStep
           key={playable.quiz.questions[step.index].id}
           locale={locale}
           question={playable.quiz.questions[step.index]}
-          onSolved={() => setCanAdvance(true)}
+          onSolved={() =>
+            markFillBlankSolved(playable.quiz.questions[step.index].id)
+          }
         />
       )}
 
@@ -127,7 +180,7 @@ export function QuizSessionPlayer({
           key={playable.deck.cards[step.index].id}
           locale={locale}
           card={playable.deck.cards[step.index]}
-          onRevealed={() => setCanAdvance(true)}
+          onRevealed={() => markCardRevealed(playable.deck.cards[step.index].id)}
         />
       )}
 
@@ -149,7 +202,13 @@ export function QuizSessionPlayer({
 
       {atEnd && (
         <div className="rounded-xl border border-teal-200 bg-teal-50 px-4 py-3 text-center text-sm text-teal-900">
-          {locale === "id" ? "Kuis selesai — kerja bagus!" : "Quiz complete — nice work!"}
+          {tracksMcqScore
+            ? locale === "id"
+              ? `Kuis selesai — skor ${scoreCorrect}/${scoreTotal}.`
+              : `Quiz complete — score ${scoreCorrect}/${scoreTotal}.`
+            : locale === "id"
+              ? "Kuis selesai — kerja bagus!"
+              : "Quiz complete — nice work!"}
         </div>
       )}
 

@@ -66,6 +66,8 @@ export const learningProgress = pgTable(
     stepIndex: integer("stepIndex").notNull().default(0),
     totalSteps: integer("totalSteps").notNull().default(0),
     completed: integer("completed").notNull().default(0),
+    scoreCorrect: integer("scoreCorrect"),
+    scoreTotal: integer("scoreTotal"),
     updatedAt: timestamp("updatedAt", { mode: "date" }).defaultNow(),
   },
   (row) => ({

@@ -7,6 +7,9 @@ export type ProgressItemState = {
   totalSteps: number;
   completed: boolean;
   updatedAt: string;
+  /** Quiz: scorable items answered correctly (e.g. MCQ). */
+  scoreCorrect?: number;
+  scoreTotal?: number;
 };
 
 export type CorridorProgress = {

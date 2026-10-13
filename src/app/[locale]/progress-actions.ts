@@ -11,6 +11,8 @@ export async function reportLearningProgress(
   stepIndex: number,
   totalSteps: number,
   completed: boolean,
+  scoreCorrect?: number,
+  scoreTotal?: number,
 ): Promise<void> {
   const session = await auth();
   if (!session?.user?.id) return;
@@ -21,5 +23,8 @@ export async function reportLearningProgress(
     stepIndex: clampedStep,
     totalSteps,
     completed,
+    ...(scoreCorrect != null && scoreTotal != null
+      ? { scoreCorrect, scoreTotal }
+      : {}),
   });
 }

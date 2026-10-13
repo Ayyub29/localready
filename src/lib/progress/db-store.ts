@@ -13,6 +13,8 @@ function rowToState(row: {
   stepIndex: number;
   totalSteps: number;
   completed: number;
+  scoreCorrect: number | null;
+  scoreTotal: number | null;
   updatedAt: Date | null;
 }): ProgressItemState {
   return {
@@ -20,6 +22,9 @@ function rowToState(row: {
     totalSteps: row.totalSteps,
     completed: row.completed === 1,
     updatedAt: (row.updatedAt ?? new Date()).toISOString(),
+    ...(row.scoreCorrect != null && row.scoreTotal != null
+      ? { scoreCorrect: row.scoreCorrect, scoreTotal: row.scoreTotal }
+      : {}),
   };
 }
 
@@ -71,6 +76,8 @@ export async function writeUserItemProgress(
       stepIndex: state.stepIndex,
       totalSteps: state.totalSteps,
       completed: state.completed ? 1 : 0,
+      scoreCorrect: state.scoreCorrect ?? null,
+      scoreTotal: state.scoreTotal ?? null,
       updatedAt: new Date(state.updatedAt),
     })
     .onConflictDoUpdate({
@@ -84,6 +91,8 @@ export async function writeUserItemProgress(
         stepIndex: state.stepIndex,
         totalSteps: state.totalSteps,
         completed: state.completed ? 1 : 0,
+        scoreCorrect: state.scoreCorrect ?? null,
+        scoreTotal: state.scoreTotal ?? null,
         updatedAt: new Date(state.updatedAt),
       },
     });

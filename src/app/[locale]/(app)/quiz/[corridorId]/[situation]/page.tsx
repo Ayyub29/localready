@@ -11,7 +11,12 @@ import {
 } from "@/lib/content/load-quiz-catalog";
 import { canAccessQuizzes, getContentAccess } from "@/lib/access/content-access";
 import { ContentPaywall } from "@/components/ContentPaywall";
-import { getCorridorProgress, progressPercent, quizProgressKey } from "@/lib/progress";
+import { getCorridorProgress } from "@/lib/progress";
+import {
+  progressPercent,
+  quizProgressKey,
+  quizScoreLabel,
+} from "@/lib/progress/utils";
 import type { QuizKind } from "@/lib/content/quiz-situation";
 import { pickLocalized } from "@/lib/locale";
 import { situationOrder } from "@/lib/situations";
@@ -96,9 +101,9 @@ export default async function QuizSituationPage({ params }: QuizSituationPagePro
         <ul className="space-y-2">
           {quizzes.map((entry) => {
             const key = quizProgressKey(entry.kind, entry.id);
-            const percent = progress
-              ? progressPercent(progress.quizzes[key])
-              : 0;
+            const quizState = progress?.quizzes[key];
+            const percent = progressPercent(quizState);
+            const scoreLabel = quizScoreLabel(quizState, loc);
             return (
             <li key={`${entry.kind}-${entry.id}`}>
               <Link
@@ -112,9 +117,14 @@ export default async function QuizSituationPage({ params }: QuizSituationPagePro
                     </p>
                     <p className="text-xs text-slate-500">{kindLabel(entry.kind, loc)}</p>
                   </div>
-                  <span className="shrink-0 text-sm text-slate-500">
-                    {entry.itemCount} {loc === "id" ? "item" : "items"}
-                  </span>
+                  <div className="shrink-0 text-right text-sm">
+                    {scoreLabel && (
+                      <p className="font-semibold text-teal-800">{scoreLabel}</p>
+                    )}
+                    <p className="text-slate-500">
+                      {entry.itemCount} {loc === "id" ? "item" : "items"}
+                    </p>
+                  </div>
                 </div>
                 {quizzesUnlocked && access.canSaveProgress && (
                   <ProgressBar percent={percent} className="mt-3" />
