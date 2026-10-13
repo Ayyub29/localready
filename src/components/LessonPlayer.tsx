@@ -5,9 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ConversationThread } from "@/components/ConversationThread";
 import { FillBlankStep } from "@/components/FillBlankStep";
 import { FlashcardStep } from "@/components/FlashcardStep";
-import { McqChoiceStep } from "@/components/McqChoiceStep";
 import { getSituationTitle } from "@/data/catalog";
-import { isTravelerMcqTurn } from "@/lib/content/compile-mcq";
 import { buildLessonSteps } from "@/lib/content/lesson-player-steps";
 import {
   playerStepKey,
@@ -51,8 +49,8 @@ export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
 
   useEffect(() => {
     if (!step) return;
-    setCanAdvance(!stepNeedsGate(step, lesson));
-  }, [stepKey, step, lesson]);
+    setCanAdvance(!stepNeedsGate(step));
+  }, [stepKey, step]);
 
   if (steps.length === 0 || !step) {
     return (
@@ -72,11 +70,6 @@ export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
   const activeConversation =
     step.type === "conversationDescription" || step.type === "conversationTurn"
       ? vignette.conversations[step.conversationIndex]
-      : undefined;
-
-  const activeTurn =
-    step.type === "conversationTurn" && activeConversation
-      ? activeConversation.turns[step.turnIndex]
       : undefined;
 
   const fillBlankQuestion =
@@ -159,32 +152,14 @@ export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
           </section>
         )}
 
-        {step.type === "conversationTurn" && activeConversation && activeTurn && (
-          <section className="rounded-xl border border-border bg-card p-4 space-y-4">
+        {step.type === "conversationTurn" && activeConversation && (
+          <section className="rounded-xl border border-border bg-card p-4">
             <ConversationThread
               locale={locale}
               corridorId={lesson.corridorId}
               turns={activeConversation.turns}
-              visibleThrough={
-                isTravelerMcqTurn(activeTurn) ? step.turnIndex - 1 : step.turnIndex
-              }
+              visibleThrough={step.turnIndex}
             />
-            {isTravelerMcqTurn(activeTurn) && activeTurn.choices && activeTurn.correctChoiceId && (
-              <div className="border-t border-border pt-4">
-                <McqChoiceStep
-                  key={activeTurn.id}
-                  locale={locale}
-                  options={activeTurn.choices}
-                  correctOptionId={activeTurn.correctChoiceId}
-                  onSolved={() => setCanAdvance(true)}
-                  prompt={
-                    locale === "id"
-                      ? "Apa yang kamu katakan?"
-                      : "What do you say?"
-                  }
-                />
-              </div>
-            )}
           </section>
         )}
 

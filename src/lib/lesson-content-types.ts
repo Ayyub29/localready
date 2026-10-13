@@ -81,9 +81,6 @@ export type ConversationTurn = {
   romanization?: string;
   line: LocalizedString;
   phraseId?: string;
-  /** Traveler lines: pick the right reply (compiled at pack build). */
-  choices?: McqOption[];
-  correctChoiceId?: string;
 };
 
 /**

@@ -19,10 +19,7 @@ import {
   loadStoredMiniLessonsMap,
   loadStoredPhraseListsMap,
 } from "@/lib/content/load-pool-files";
-import {
-  compileFillBlankQuestion,
-  enrichConversationTravelerMcq,
-} from "@/lib/content/compile-mcq";
+import { compileFillBlankQuestion } from "@/lib/content/compile-mcq";
 import { buildPhraseResolver } from "@/lib/content/resolve-phrase-id";
 
 export type CompileLessonResult = {
@@ -205,15 +202,11 @@ export async function compileLessonManifest(
       }
     }
 
-    const conversationsWithMcq = vignetteConversations.map((conv) =>
-      enrichConversationTravelerMcq(conv, vignetteConversations, corridorId),
-    );
-
     return {
       id: vm.id,
       title: vm.title,
       culture: vm.culture,
-      conversations: conversationsWithMcq,
+      conversations: vignetteConversations,
       miniLessons: vignetteMiniLessons.length ? vignetteMiniLessons : undefined,
       phraseLists: vignettePhraseLists.length ? vignettePhraseLists : undefined,
       fillBlankQuizzes: vignetteFillBlank.length ? vignetteFillBlank : undefined,

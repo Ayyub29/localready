@@ -1,7 +1,5 @@
 import type { PlayerStep } from "@/lib/content/lesson-player-steps";
 import type { LessonContent } from "@/lib/lesson-content-types";
-import { isTravelerMcqTurn } from "@/lib/content/compile-mcq";
-
 export function playerStepKey(step: PlayerStep, lesson: LessonContent): string {
   const vignette = lesson.vignettes[step.vignetteIndex];
   switch (step.type) {
@@ -29,14 +27,6 @@ export function playerStepKey(step: PlayerStep, lesson: LessonContent): string {
   }
 }
 
-export function stepNeedsGate(step: PlayerStep, lesson: LessonContent): boolean {
-  if (step.type === "fillBlank" || step.type === "flashcard") {
-    return true;
-  }
-  if (step.type === "conversationTurn") {
-    const vignette = lesson.vignettes[step.vignetteIndex];
-    const turn = vignette.conversations[step.conversationIndex]?.turns[step.turnIndex];
-    return turn ? isTravelerMcqTurn(turn) : false;
-  }
-  return false;
+export function stepNeedsGate(step: PlayerStep): boolean {
+  return step.type === "fillBlank" || step.type === "flashcard";
 }

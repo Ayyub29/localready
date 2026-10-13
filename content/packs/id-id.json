@@ -82,26 +82,7 @@
                     "en": "Thank you. I'm a tourist.",
                     "id": "Terima kasih. Saya turis."
                   },
-                  "phraseId": "id-id-basics-saya-turis",
-                  "choices": [
-                    {
-                      "id": "id-id-basics-driver-001-t2-opt-0",
-                      "label": "Permisi, toilet di mana?"
-                    },
-                    {
-                      "id": "id-id-basics-driver-001-t2-opt-1",
-                      "label": "Permisi, ada air mineral?"
-                    },
-                    {
-                      "id": "id-id-basics-driver-001-t2-opt-2",
-                      "label": "Yang dingin, satu botol."
-                    },
-                    {
-                      "id": "id-id-basics-driver-001-t2-opt-3",
-                      "label": "Terima kasih. Saya turis."
-                    }
-                  ],
-                  "correctChoiceId": "id-id-basics-driver-001-t2-opt-3"
+                  "phraseId": "id-id-basics-saya-turis"
                 },
                 {
                   "id": "id-id-basics-driver-001-t3",
@@ -129,26 +110,7 @@
                     "en": "Excuse me, where is the toilet?",
                     "id": "Permisi, toilet di mana?"
                   },
-                  "phraseId": "id-id-basics-toilet-di-mana",
-                  "choices": [
-                    {
-                      "id": "id-id-basics-driver-001-t4-opt-0",
-                      "label": "Terima kasih. Saya turis."
-                    },
-                    {
-                      "id": "id-id-basics-driver-001-t4-opt-1",
-                      "label": "Permisi, toilet di mana?"
-                    },
-                    {
-                      "id": "id-id-basics-driver-001-t4-opt-2",
-                      "label": "Yang dingin, satu botol."
-                    },
-                    {
-                      "id": "id-id-basics-driver-001-t4-opt-3",
-                      "label": "Permisi, ada air mineral?"
-                    }
-                  ],
-                  "correctChoiceId": "id-id-basics-driver-001-t4-opt-1"
+                  "phraseId": "id-id-basics-toilet-di-mana"
                 },
                 {
                   "id": "id-id-basics-driver-001-t5",
@@ -190,26 +152,7 @@
                     "en": "Excuse me, do you have bottled water?",
                     "id": "Permisi, ada air mineral?"
                   },
-                  "phraseId": "id-id-basics-ada-air-mineral",
-                  "choices": [
-                    {
-                      "id": "id-id-basics-warung-001-t1-opt-0",
-                      "label": "Permisi, ada air mineral?"
-                    },
-                    {
-                      "id": "id-id-basics-warung-001-t1-opt-1",
-                      "label": "Yang dingin, satu botol."
-                    },
-                    {
-                      "id": "id-id-basics-warung-001-t1-opt-2",
-                      "label": "Terima kasih."
-                    },
-                    {
-                      "id": "id-id-basics-warung-001-t1-opt-3",
-                      "label": "Terima kasih. Saya turis."
-                    }
-                  ],
-                  "correctChoiceId": "id-id-basics-warung-001-t1-opt-0"
+                  "phraseId": "id-id-basics-ada-air-mineral"
                 },
                 {
                   "id": "id-id-basics-warung-001-t2",
@@ -237,26 +180,7 @@
                     "en": "Cold, one bottle please.",
                     "id": "Yang dingin, satu botol."
                   },
-                  "phraseId": "id-id-basics-satu-botol",
-                  "choices": [
-                    {
-                      "id": "id-id-basics-warung-001-t3-opt-0",
-                      "label": "Terima kasih."
-                    },
-                    {
-                      "id": "id-id-basics-warung-001-t3-opt-1",
-                      "label": "Terima kasih. Saya turis."
-                    },
-                    {
-                      "id": "id-id-basics-warung-001-t3-opt-2",
-                      "label": "Yang dingin, satu botol."
-                    },
-                    {
-                      "id": "id-id-basics-warung-001-t3-opt-3",
-                      "label": "Permisi, ada air mineral?"
-                    }
-                  ],
-                  "correctChoiceId": "id-id-basics-warung-001-t3-opt-2"
+                  "phraseId": "id-id-basics-satu-botol"
                 },
                 {
                   "id": "id-id-basics-warung-001-t4",
@@ -284,26 +208,7 @@
                     "en": "Thank you.",
                     "id": "Terima kasih."
                   },
-                  "phraseId": "id-id-basics-terima-kasih",
-                  "choices": [
-                    {
-                      "id": "id-id-basics-warung-001-t5-opt-0",
-                      "label": "Terima kasih."
-                    },
-                    {
-                      "id": "id-id-basics-warung-001-t5-opt-1",
-                      "label": "Yang dingin, satu botol."
-                    },
-                    {
-                      "id": "id-id-basics-warung-001-t5-opt-2",
-                      "label": "Permisi, ada air mineral?"
-                    },
-                    {
-                      "id": "id-id-basics-warung-001-t5-opt-3",
-                      "label": "Terima kasih. Saya turis."
-                    }
-                  ],
-                  "correctChoiceId": "id-id-basics-warung-001-t5-opt-0"
+                  "phraseId": "id-id-basics-terima-kasih"
                 }
               ]
             }
