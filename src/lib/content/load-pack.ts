@@ -33,7 +33,7 @@ export function lessonHasContent(lesson: LessonContent): boolean {
   }
   return lesson.vignettes.some((v) =>
     (v.conversations?.some((c) => c.turns.length > 0) ?? false) ||
-    (v.miniLessons?.some((m) => m.examples.length > 0) ?? false) ||
+    (v.miniLessons?.some((m) => m.words.length > 0) ?? false) ||
     (v.phraseLists?.some((p) => p.phrases.length > 0) ?? false) ||
     (v.phrases?.length ?? 0) > 0,
   );

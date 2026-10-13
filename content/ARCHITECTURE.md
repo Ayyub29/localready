@@ -8,7 +8,7 @@ LocalReady separates **three reusable pools** from **lessons** that humans assem
 |-----------|------------------------|--------------------|
 | **Conversation** | `content/conversations/{corridorId}/*.json` | Scene setup → dialogue turns |
 | **Phrase list** | `content/phrase-lists/{corridorId}/*.json` | Ordered study/review of lines (not the full corpus) |
-| **Mini lesson** | `content/mini-lessons/{corridorId}/*.json` | Short teachable bite: title, body, a few **examples** (words/phrases) |
+| **Mini lesson** | `content/mini-lessons/{corridorId}/*.json` | `description` + **words[]** (target, meaning, optional phraseId) |
 
 **Phrase pool** (corpus, not a lesson unit) stays separate:
 
@@ -136,11 +136,10 @@ Avoid treating OpenSubtitles or large web scrape as default—license and noise 
   "corridorId": "id-id",
   "topic": "numbers",
   "relatedSituations": ["basics", "money"],
-  "title": { "en": "Paying with rupiah", "id": "..." },
-  "body": { "en": "...", "id": "..." },
-  "examples": [
-    { "target": "satu", "meaning": { "en": "one", "id": "satu" }, "phraseId": null },
-    { "target": "lima ribu", "meaning": { "en": "five thousand", "id": "..." }, "phraseId": "id-id-basics-lima-ribu" }
+  "description": { "en": "...", "id": "..." },
+  "words": [
+    { "id": "w-satu", "target": "satu", "meaning": { "en": "one", "id": "satu" }, "phraseId": "..." },
+    { "id": "w-lima-ribu", "target": "lima ribu", "meaning": { "en": "five thousand", "id": "..." }, "phraseId": "id-id-basics-lima-ribu" }
   ],
   "source": "manual"
 }

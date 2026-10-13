@@ -1,4 +1,4 @@
-import type { StoredLessonManifest, StoredSequenceItem } from "@/lib/content/stored-lesson-manifest-types";
+import type { StoredLessonManifest } from "@/lib/content/stored-lesson-manifest-types";
 import type { StoredMiniLesson } from "@/lib/content/stored-mini-lesson-types";
 import { storedToVignetteConversation } from "@/lib/content/stored-conversation-types";
 import type {
@@ -27,15 +27,14 @@ function compileMiniLesson(
   return {
     id: stored.id,
     topic: stored.topic,
-    title: stored.title,
-    body: stored.body,
-    examples: stored.examples.map((ex) => ({
-      id: ex.id,
-      target: ex.target,
-      romanization: ex.romanization,
-      meaning: ex.meaning,
-      phraseId: ex.phraseId,
-      usageNote: ex.usageNote,
+    description: stored.description,
+    words: stored.words.map((w) => ({
+      id: w.id,
+      target: w.target,
+      romanization: w.romanization,
+      meaning: w.meaning,
+      phraseId: w.phraseId,
+      usageNote: w.usageNote,
     })),
     anchorConversationId: anchor?.conversationRef,
     insertAfterTurnId: anchor?.afterTurnId,

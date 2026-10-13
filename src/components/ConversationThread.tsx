@@ -1,9 +1,14 @@
-import { pickLocalized } from "@/lib/locale";
+import {
+  conversationGloss,
+  conversationUtterance,
+} from "@/lib/content/conversation-utterance";
 import type { ConversationTurn } from "@/lib/lesson-content-types";
-import type { Locale } from "@/lib/types";
+import { pickLocalized } from "@/lib/locale";
+import type { CorridorId, Locale } from "@/lib/types";
 
 type ConversationThreadProps = {
   locale: Locale;
+  corridorId: CorridorId;
   turns: ConversationTurn[];
   /** Show turns from 0 through `visibleThrough` (inclusive). */
   visibleThrough: number;
@@ -11,6 +16,7 @@ type ConversationThreadProps = {
 
 export function ConversationThread({
   locale,
+  corridorId,
   turns,
   visibleThrough,
 }: ConversationThreadProps) {
@@ -32,6 +38,9 @@ export function ConversationThread({
             </p>
           );
         }
+
+        const utterance = conversationUtterance(turn, corridorId);
+        const gloss = conversationGloss(turn, corridorId, locale);
 
         const isTraveler = turn.role === "traveler";
         return (
@@ -55,11 +64,7 @@ export function ConversationThread({
                   {pickLocalized(turn.label, locale)}
                 </p>
               )}
-              {turn.target && (
-                <p className={`text-lg font-semibold leading-snug ${isTraveler ? "" : ""}`}>
-                  {turn.target}
-                </p>
-              )}
+              <p className="text-lg font-semibold leading-snug">{utterance}</p>
               {turn.romanization && (
                 <p
                   className={`text-sm ${isTraveler ? "text-teal-100" : "text-teal-800"}`}
@@ -67,11 +72,13 @@ export function ConversationThread({
                   {turn.romanization}
                 </p>
               )}
-              <p
-                className={`mt-1 text-sm ${isTraveler ? "text-teal-50" : "text-slate-600"}`}
-              >
-                {pickLocalized(turn.line, locale)}
-              </p>
+              {gloss && (
+                <p
+                  className={`mt-1 text-sm ${isTraveler ? "text-teal-50/90" : "text-slate-600"}`}
+                >
+                  {gloss}
+                </p>
+              )}
             </div>
           </div>
         );

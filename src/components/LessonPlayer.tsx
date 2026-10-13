@@ -23,8 +23,7 @@ function stepLabel(
     culture: { en: "Culture", id: "Budaya" },
     conversationDescription: { en: "Scene", id: "Adegan" },
     conversationTurn: { en: "Conversation", id: "Percakapan" },
-    miniLessonIntro: { en: "Mini lesson", id: "Pelajaran singkat" },
-    miniLessonExample: { en: "Word", id: "Kata" },
+    miniLesson: { en: "Mini lesson", id: "Pelajaran singkat" },
     phraseListPhrase: { en: "Phrase review", id: "Ulang frasa" },
     scenario: { en: "Scenario", id: "Situasi" },
     phrase: { en: "Phrase", id: "Frasa" },
@@ -129,6 +128,7 @@ export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
           <section className="rounded-xl border border-border bg-card p-4">
             <ConversationThread
               locale={locale}
+              corridorId={lesson.corridorId}
               turns={activeConversation.turns}
               visibleThrough={step.turnIndex}
             />
@@ -143,45 +143,34 @@ export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
           </section>
         )}
 
-        {step.type === "miniLessonIntro" &&
-          vignette.miniLessons?.[step.miniLessonIndex] && (
-            <section className="rounded-xl border border-violet-200 bg-violet-50/80 p-5 space-y-3">
-              <h2 className="text-lg font-semibold text-violet-950">
-                {pickLocalized(vignette.miniLessons[step.miniLessonIndex].title, locale)}
-              </h2>
-              <p className="text-sm leading-relaxed text-violet-950/90">
-                {pickLocalized(vignette.miniLessons[step.miniLessonIndex].body, locale)}
-              </p>
-            </section>
-          )}
-
-        {step.type === "miniLessonExample" &&
-          vignette.miniLessons?.[step.miniLessonIndex]?.examples[step.exampleIndex] && (
-            <section className="rounded-xl border border-border bg-card px-5 py-6 text-center">
-              <p className="text-3xl font-semibold leading-snug tracking-tight">
-                {
-                  vignette.miniLessons[step.miniLessonIndex].examples[step.exampleIndex]
-                    .target
-                }
-              </p>
-              {vignette.miniLessons[step.miniLessonIndex].examples[step.exampleIndex]
-                .romanization && (
-                <p className="mt-2 text-lg text-teal-800">
-                  {
-                    vignette.miniLessons[step.miniLessonIndex].examples[step.exampleIndex]
-                      .romanization
-                  }
-                </p>
-              )}
-              <p className="mt-4 text-base text-slate-700">
-                {pickLocalized(
-                  vignette.miniLessons[step.miniLessonIndex].examples[step.exampleIndex]
-                    .meaning,
-                  locale,
-                )}
-              </p>
-            </section>
-          )}
+        {step.type === "miniLesson" && vignette.miniLessons?.[step.miniLessonIndex] && (
+          <section className="rounded-xl border border-violet-200 bg-violet-50/80 p-5 space-y-4">
+            <p className="text-sm leading-relaxed text-violet-950/90">
+              {pickLocalized(vignette.miniLessons[step.miniLessonIndex].description, locale)}
+            </p>
+            <ul className="space-y-2">
+              {vignette.miniLessons[step.miniLessonIndex].words.map((word) => (
+                <li
+                  key={word.id}
+                  className="rounded-lg border border-violet-100 bg-white/80 px-4 py-3"
+                >
+                  <p className="text-xl font-semibold text-violet-950">{word.target}</p>
+                  {word.romanization && (
+                    <p className="text-sm text-teal-800">{word.romanization}</p>
+                  )}
+                  <p className="mt-1 text-sm text-slate-700">
+                    {pickLocalized(word.meaning, locale)}
+                  </p>
+                  {word.usageNote && (
+                    <p className="mt-1 text-xs text-slate-500">
+                      {pickLocalized(word.usageNote, locale)}
+                    </p>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {step.type === "phraseListPhrase" &&
           vignette.phraseLists?.[step.phraseListIndex]?.phrases[step.phraseIndex] && (

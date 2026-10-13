@@ -21,6 +21,7 @@ export type StoredConversation = {
   sourceUrl?: string;
   title?: LocalizedString;
   description: LocalizedString;
+  /** Each turn: `target` = spoken line in corridor language (both roles). `line.en` = gloss. */
   turns: ConversationTurn[];
   createdAt?: string;
   updatedAt?: string;

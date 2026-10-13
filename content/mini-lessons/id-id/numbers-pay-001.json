@@ -4,41 +4,37 @@
   "corridorId": "id-id",
   "topic": "numbers",
   "relatedSituations": ["basics", "money"],
-  "title": {
-    "en": "Numbers for paying",
-    "id": "Angka untuk bayar"
-  },
-  "body": {
+  "description": {
     "en": "Shop prices are often short: a number plus ribu (thousand). You are about to hear the price for your water.",
     "id": "Harga di warung sering pendek: angka plus ribu (ribuan). Kamu akan dengar harga airmu."
   },
-  "examples": [
+  "words": [
     {
-      "id": "ex-satu",
+      "id": "w-satu",
       "target": "satu",
       "meaning": { "en": "one", "id": "satu" },
       "phraseId": "id-id-basics-satu"
     },
     {
-      "id": "ex-dua",
+      "id": "w-dua",
       "target": "dua",
       "meaning": { "en": "two", "id": "dua" },
       "phraseId": "id-id-basics-dua"
     },
     {
-      "id": "ex-tiga",
+      "id": "w-tiga",
       "target": "tiga",
       "meaning": { "en": "three", "id": "tiga" },
       "phraseId": "id-id-basics-tiga"
     },
     {
-      "id": "ex-lima",
+      "id": "w-lima",
       "target": "lima",
       "meaning": { "en": "five", "id": "lima" },
       "phraseId": "id-id-basics-lima"
     },
     {
-      "id": "ex-lima-ribu",
+      "id": "w-lima-ribu",
       "target": "lima ribu",
       "meaning": { "en": "five thousand", "id": "lima ribu" },
       "usageNote": {

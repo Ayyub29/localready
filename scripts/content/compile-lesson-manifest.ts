@@ -55,7 +55,7 @@ async function main() {
   const stepCount = lesson.vignettes.reduce((n, v) => {
     const conv = v.conversations.reduce((c, x) => c + 1 + x.turns.length, 0);
     const ml =
-      (v.miniLessons?.reduce((m, x) => m + 1 + x.examples.length, 0) ?? 0);
+      (v.miniLessons?.length ?? 0);
     const pl = v.phraseLists?.reduce((p, x) => p + x.phrases.length, 0) ?? 0;
     return n + conv + ml + pl + (v.culture?.length ?? 0);
   }, 0);

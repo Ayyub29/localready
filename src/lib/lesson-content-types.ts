@@ -76,7 +76,7 @@ export type VignetteConversation = {
   turns: ConversationTurn[];
 };
 
-export type MiniLessonExample = {
+export type MiniLessonWord = {
   id: string;
   target: string;
   romanization?: string;
@@ -85,13 +85,12 @@ export type MiniLessonExample = {
   usageNote?: LocalizedString;
 };
 
-/** Short teachable bite compiled from content/mini-lessons/. */
+/** Short teachable bite: description + words (content/mini-lessons/). */
 export type MiniLesson = {
   id: string;
   topic?: string;
-  title: LocalizedString;
-  body: LocalizedString;
-  examples: MiniLessonExample[];
+  description: LocalizedString;
+  words: MiniLessonWord[];
   /** Play after this turn inside `anchorConversationId`. */
   anchorConversationId?: string;
   insertAfterTurnId?: string;

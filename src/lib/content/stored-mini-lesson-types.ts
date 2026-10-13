@@ -2,7 +2,7 @@ import type { LocalizedString, CorridorId, SituationKey } from "@/lib/types";
 
 export type MiniLessonSource = "manual" | "generated" | "wikivoyage";
 
-export type StoredMiniLessonExample = {
+export type MiniLessonWord = {
   id: string;
   target: string;
   romanization?: string;
@@ -11,16 +11,15 @@ export type StoredMiniLessonExample = {
   usageNote?: LocalizedString;
 };
 
-/** Authoring unit: short teachable bite (content/mini-lessons/). */
+/** Authoring unit: description + words (content/mini-lessons/). */
 export type StoredMiniLesson = {
   schemaVersion: 1;
   id: string;
   corridorId: CorridorId;
   topic?: string;
   relatedSituations?: SituationKey[];
-  title: LocalizedString;
-  body: LocalizedString;
-  examples: StoredMiniLessonExample[];
+  description: LocalizedString;
+  words: MiniLessonWord[];
   source: MiniLessonSource;
   notes?: string;
   createdAt?: string;

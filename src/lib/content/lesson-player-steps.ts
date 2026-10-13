@@ -13,13 +13,7 @@ export type PlayerStep =
       conversationIndex: number;
       turnIndex: number;
     }
-  | { type: "miniLessonIntro"; vignetteIndex: number; miniLessonIndex: number }
-  | {
-      type: "miniLessonExample";
-      vignetteIndex: number;
-      miniLessonIndex: number;
-      exampleIndex: number;
-    }
+  | { type: "miniLesson"; vignetteIndex: number; miniLessonIndex: number }
   | {
       type: "phraseListPhrase";
       vignetteIndex: number;
@@ -33,6 +27,14 @@ function vignetteHasLegacyPhrases(vignette: LessonVignette): boolean {
   const convTurns =
     vignette.conversations?.reduce((n, c) => n + c.turns.length, 0) ?? 0;
   return convTurns === 0 && (vignette.phrases?.length ?? 0) > 0;
+}
+
+function pushMiniLessonStep(
+  steps: PlayerStep[],
+  vignetteIndex: number,
+  miniLessonIndex: number,
+) {
+  steps.push({ type: "miniLesson", vignetteIndex, miniLessonIndex });
 }
 
 function pushAnchoredMiniLessons(
@@ -49,15 +51,7 @@ function pushAnchoredMiniLessons(
     ) {
       return;
     }
-    steps.push({ type: "miniLessonIntro", vignetteIndex, miniLessonIndex });
-    ml.examples.forEach((_, exampleIndex) => {
-      steps.push({
-        type: "miniLessonExample",
-        vignetteIndex,
-        miniLessonIndex,
-        exampleIndex,
-      });
-    });
+    pushMiniLessonStep(steps, vignetteIndex, miniLessonIndex);
   });
 }
 
@@ -103,16 +97,7 @@ function pushStandaloneMiniLesson(
   if (miniLessonIndex < 0) return;
   const ml = vignette.miniLessons![miniLessonIndex];
   if (ml.anchorConversationId) return;
-
-  steps.push({ type: "miniLessonIntro", vignetteIndex, miniLessonIndex });
-  ml.examples.forEach((_, exampleIndex) => {
-    steps.push({
-      type: "miniLessonExample",
-      vignetteIndex,
-      miniLessonIndex,
-      exampleIndex,
-    });
-  });
+  pushMiniLessonStep(steps, vignetteIndex, miniLessonIndex);
 }
 
 function pushPhraseListSteps(
@@ -174,7 +159,7 @@ function buildVignetteStepsLegacy(
     steps.push({ type: "culture", vignetteIndex, cardIndex });
   });
 
-  vignette.conversations?.forEach((conversation, conversationIndex) => {
+  vignette.conversations?.forEach((_, conversationIndex) => {
     pushConversationSteps(steps, vignette, vignetteIndex, conversationIndex);
   });
 
