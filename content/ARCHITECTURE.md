@@ -9,6 +9,8 @@ LocalReady separates **three reusable pools** from **lessons** that humans assem
 | **Conversation** | `content/conversations/{corridorId}/*.json` | Scene setup → dialogue turns |
 | **Phrase list** | `content/phrase-lists/{corridorId}/*.json` | Ordered study/review of lines (not the full corpus) |
 | **Mini lesson** | `content/mini-lessons/{corridorId}/*.json` | `description` + **words[]** (target, meaning, optional phraseId) |
+| **Conversational quiz** | `content/fill-blank/{corridorId}/*.json` | Situation / reply prompts → pick a **full line** in the **corridor language** (MCQ) |
+| **Flashcard deck** | `content/flashcard-decks/{corridorId}/*.json` | Meaning on front → reveal **target** phrase |
 
 **Phrase pool** (corpus, not a lesson unit) stays separate:
 
@@ -61,10 +63,109 @@ Each **vignette** is an ordered **playlist** of pool items—not a new copy of t
       "anchor": { "conversationRef": "id-id-basics-warung-001", "afterTurnId": "id-id-basics-warung-001-t3" }
     },
     { "kind": "conversation", "ref": "id-id-basics-warung-001" },
-    { "kind": "phraseList", "ref": "id-id-basics-arrival-drill-001" }
+    { "kind": "phraseList", "ref": "id-id-basics-arrival-drill-001" },
+    { "kind": "fillBlank", "ref": "id-id-basics-fill-arrival-001" },
+    { "kind": "flashcards", "ref": "id-id-basics-flash-arrival-001" }
   ]
 }
 ```
+
+## Quiz structure (all corridors)
+
+Quizzes are **not** Indonesian-only. Everything under `content/.../{corridorId}/` is scoped to one **target language** (`ja-jp`, `ko-kr`, `th-th`, `vi-vn`, `id-id`). Only **sample content** exists for `id-id` today; the same JSON shapes work for Japan, Korea, etc.
+
+### Two languages in the data model
+
+| Layer | Fields | Language |
+|--------|--------|----------|
+| **Learner UI** | `title`, `prompt`, `front`, `hint`, `cueSpeaker` | `LocalizedString` → **`en`** and **`id`** (app locales for Indonesian travelers) |
+| **What you’re learning** | MCQ option labels, `cueTarget`, flashcard `target`, `romanization` | **Corridor target language** (Japanese, Korean, Thai, Vietnamese, or Indonesian for `id-id`) |
+
+Compile resolves `phraseId` → `target` / `romanization` / `meaning` from that corridor’s **phrase pool** and **conversations**, so MCQ buttons show e.g. すみません for `ja-jp`, not Bahasa.
+
+### 1) Conversational quiz (`fill-blank` pool)
+
+**File:** `content/fill-blank/{corridorId}/{quizId}.json`  
+**Types:** `src/lib/content/stored-fill-blank-types.ts`  
+**Compile:** `compileFillBlankQuestion()` in `src/lib/content/compile-mcq.ts`
+
+```json
+{
+  "schemaVersion": 1,
+  "id": "ja-jp-basics-fill-train-001",
+  "corridorId": "ja-jp",
+  "title": { "en": "What would you say?", "id": "Apa yang akan kamu katakan?" },
+  "questions": [
+    {
+      "id": "q1",
+      "kind": "situation",
+      "prompt": {
+        "en": "You need a ticket to Shinjuku. What do you ask?",
+        "id": "Kamu butuh tiket ke Shinjuku. Apa yang kamu tanyakan?"
+      },
+      "correctPhraseId": "ja-jp-basics-shinjuku-dou",
+      "distractorPhraseIds": ["ja-jp-basics-...", "..."]
+    },
+    {
+      "id": "q2",
+      "kind": "reply",
+      "cueSpeaker": { "en": "Staff", "id": "Petugas" },
+      "cueTarget": "どちらまでですか。",
+      "prompt": { "en": "They ask where you’re going.", "id": "..." },
+      "correctPhraseId": "ja-jp-basics-shinjuku-e",
+      "distractorPhraseIds": ["..."]
+    }
+  ],
+  "source": "manual"
+}
+```
+
+| `kind` | Learner sees | MCQ options |
+|--------|----------------|-------------|
+| **`situation`** | Short **scene** in en/id | Full **traveler lines** in target language |
+| **`reply`** | **Local** bubble (`cueTarget` in target language) + gloss | Full **responses** in target language |
+
+- **`correctPhraseId`** / **`distractorPhraseIds`** → must exist for that **`corridorId`** (pool or conversation turns).
+- Player: one step per question; **Next** after correct choice (`FillBlankStep` + `McqChoiceStep`).
+
+### 2) Flashcard deck
+
+**File:** `content/flashcard-decks/{corridorId}/{deckId}.json`  
+**Types:** `src/lib/content/stored-flashcard-deck-types.ts`
+
+```json
+{
+  "id": "ko-kr-basics-flash-001",
+  "corridorId": "ko-kr",
+  "title": { "en": "Flashcards — greetings", "id": "..." },
+  "cards": [
+    {
+      "id": "c1",
+      "front": { "en": "Thank you.", "id": "Terima kasih." },
+      "phraseId": "ko-kr-basics-kamsahamnida"
+    }
+  ]
+}
+```
+
+Compile fills `target` / `romanization` from the phrase; learner taps to reveal the Korean (or Thai, etc.) line.
+
+### Wiring into a lesson
+
+In `content/lessons/{corridorId}/{lessonId}.json`, vignette `sequence`:
+
+```json
+{ "kind": "fillBlank", "ref": "<quiz-id>" },
+{ "kind": "flashcards", "ref": "<deck-id>" }
+```
+
+Then:
+
+```bash
+npm run content:compile:pack -- ja-jp
+```
+
+Runtime pack stores `fillBlankQuizzes[]` and `flashcardDecks[]` on each vignette plus `playback` order (`CONVERSATION.md`).
 
 **Player order (per vignette):**
 
@@ -72,7 +173,9 @@ Each **vignette** is an ordered **playlist** of pool items—not a new copy of t
 2. Walk `sequence` in order:
    - **conversation** → description → turns (with **mini lesson** steps inserted when `anchor` matches).
    - **mini lesson** (no anchor) → intro step → one step per example.
-   - **phrase list** → one step per phrase (flashcard-style or list UI—product choice).
+   - **phrase list** → one step per phrase (review cards).
+   - **fillBlank** → one step per conversational question (MCQ).
+   - **flashcards** → one step per card (tap to reveal target phrase).
 
 **Lesson 0 (`script`)** can stay a special lesson that uses `scriptBlocks[]` instead of conversations, or become a vignette full of mini lessons—decide when compiling `situation: "script"`.
 
