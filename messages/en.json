@@ -3,6 +3,7 @@
     "home": "Home",
     "destinations": "Destinations",
     "cheatsheet": "Cheatsheet",
+    "quiz": "Quiz",
     "profile": "Profile"
   },
   "cheatsheet": {
@@ -11,6 +12,17 @@
     "pickSituation": "Tap a situation to see useful phrases.",
     "changeDestination": "Change destination",
     "empty": "No phrases yet for this destination. Try another corridor or add content."
+  },
+  "quiz": {
+    "title": "Practice quiz",
+    "pickDestination": "Choose a destination to practice with quizzes.",
+    "pickSituation": "Tap a situation to see quizzes for that context.",
+    "pickQuiz": "Pick a quiz to start.",
+    "changeDestination": "Change destination",
+    "empty": "No quizzes yet for this destination. Lessons and admin content will show up here.",
+    "emptySituation": "No quizzes for this situation yet.",
+    "backToList": "Back to quizzes",
+    "inProgress": "Answer each item, then tap Next."
   },
   "login": {
     "title": "Sign in to continue",

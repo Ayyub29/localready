@@ -3,6 +3,7 @@
     "home": "Beranda",
     "destinations": "Destinasi",
     "cheatsheet": "Cheatsheet",
+    "quiz": "Kuis",
     "profile": "Profil"
   },
   "cheatsheet": {
@@ -11,6 +12,17 @@
     "pickSituation": "Ketuk situasi untuk melihat frasa berguna.",
     "changeDestination": "Ganti destinasi",
     "empty": "Belum ada frasa untuk destinasi ini."
+  },
+  "quiz": {
+    "title": "Kuis latihan",
+    "pickDestination": "Pilih destinasi untuk latihan dengan kuis.",
+    "pickSituation": "Ketuk situasi untuk melihat kuis di konteks itu.",
+    "pickQuiz": "Pilih kuis untuk mulai.",
+    "changeDestination": "Ganti destinasi",
+    "empty": "Belum ada kuis untuk destinasi ini. Konten pelajaran dan admin akan muncul di sini.",
+    "emptySituation": "Belum ada kuis untuk situasi ini.",
+    "backToList": "Kembali ke daftar kuis",
+    "inProgress": "Jawab tiap item, lalu ketuk Lanjut."
   },
   "login": {
     "title": "Masuk untuk melanjutkan",
