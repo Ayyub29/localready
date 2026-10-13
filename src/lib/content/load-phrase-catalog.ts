@@ -23,6 +23,16 @@ function catalogPath(corridorId: CorridorId): string {
   );
 }
 
+function cheatsheetCatalogPath(corridorId: CorridorId): string {
+  return path.join(
+    process.cwd(),
+    "content",
+    "derived",
+    corridorId,
+    "phrase-catalog-cheatsheet.json",
+  );
+}
+
 function mergeEntries(entries: PhraseCatalogEntry[]): PhraseCatalogEntry[] {
   const byKey = new Map<string, PhraseCatalogEntry>();
   for (const entry of entries) {
@@ -55,17 +65,30 @@ async function catalogFromPack(corridorId: CorridorId): Promise<PhraseCatalogEnt
   return mergeEntries(raw);
 }
 
-export async function loadPhraseCatalog(
-  corridorId: CorridorId,
-): Promise<PhraseCatalog> {
+async function readCatalogFile(filePath: string, corridorId: CorridorId): Promise<PhraseCatalog | null> {
   try {
-    const raw = await readFile(catalogPath(corridorId), "utf8");
+    const raw = await readFile(filePath, "utf8");
     const doc = JSON.parse(raw) as PhraseCatalog;
     if (doc.corridorId === corridorId && Array.isArray(doc.phrases)) {
       return doc;
     }
   } catch {
-    // fall through
+    // missing or invalid
+  }
+  return null;
+}
+
+export async function loadPhraseCatalog(
+  corridorId: CorridorId,
+): Promise<PhraseCatalog> {
+  const cheatsheet = await readCatalogFile(cheatsheetCatalogPath(corridorId), corridorId);
+  if (cheatsheet && cheatsheet.phrases.length > 0) {
+    return cheatsheet;
+  }
+
+  const full = await readCatalogFile(catalogPath(corridorId), corridorId);
+  if (full) {
+    return full;
   }
 
   const phrases = await catalogFromPack(corridorId);

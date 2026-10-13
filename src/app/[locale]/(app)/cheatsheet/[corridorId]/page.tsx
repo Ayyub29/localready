@@ -8,7 +8,6 @@ import {
   phrasesForSituation,
   situationsWithPhrases,
 } from "@/lib/content/load-phrase-catalog";
-import { setLastCorridor } from "@/lib/last-corridor";
 import { pickLocalized } from "@/lib/locale";
 import type { Locale } from "@/lib/types";
 
@@ -24,7 +23,7 @@ export default async function CheatsheetCorridorPage({
   const loc = locale as Locale;
 
   if (!isCorridorId(corridorId)) notFound();
-  await setLastCorridor(corridorId);
+
   const destination = getDestination(corridorId);
   if (!destination) notFound();
 

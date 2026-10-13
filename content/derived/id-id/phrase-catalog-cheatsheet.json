@@ -1,0 +1,670 @@
+{
+  "corridorId": "id-id",
+  "source": "cheatsheet-manifest",
+  "updatedAt": "2026-10-13T11:19:51.539Z",
+  "phrases": [
+    {
+      "id": "id-id-pool-a8e56eb2",
+      "target": "...besar? ()",
+      "romanization": "buh-SAR?",
+      "meaning": {
+        "en": "...bigger?",
+        "id": "...bigger?"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Lodging",
+      "situations": [
+        "hotel"
+      ]
+    },
+    {
+      "id": "id-id-pool-b04f1cc1",
+      "target": "...kamar mandi? ()",
+      "romanization": "KAH-mar MAHN-dee",
+      "meaning": {
+        "en": "...a bathroom?",
+        "id": "...a bathroom?"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Lodging",
+      "situations": [
+        "hotel"
+      ]
+    },
+    {
+      "id": "id-id-pool-10a0cdb1",
+      "target": "...stasiun kereta api? ()",
+      "romanization": "STAHS-yoon kuh-REH-tah AH-pee?",
+      "meaning": {
+        "en": "...the train station?",
+        "id": "...the train station?"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Directions",
+      "situations": [
+        "train"
+      ]
+    },
+    {
+      "id": "id-id-pool-063fe01f",
+      "target": "...terminal bus? ()",
+      "romanization": "TUHR-mihn-ahl beuss",
+      "meaning": {
+        "en": "...the bus station?",
+        "id": "...the bus station?"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Directions",
+      "situations": [
+        "train"
+      ]
+    },
+    {
+      "id": "id-id-basics-mau-dingin",
+      "target": "Ada. Mau yang dingin?",
+      "meaning": {
+        "en": "Yes. Do you want it cold?",
+        "id": "Ada. Mau yang dingin?"
+      },
+      "situations": [
+        "basics"
+      ]
+    },
+    {
+      "id": "id-id-pool-036b9856",
+      "target": "Apakah ada kamar yang lebih tenang? ()",
+      "romanization": "AH-pah-kah AH-dah KA-mar yahng LUH-bee TUH-nahng",
+      "meaning": {
+        "en": "Do you have anything quieter?",
+        "id": "Do you have anything quieter?"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Lodging",
+      "situations": [
+        "hotel"
+      ]
+    },
+    {
+      "id": "id-id-pool-a16a6316",
+      "target": "Apakah Anda punya kamar kosong? ()",
+      "romanization": "AH-pah-kah AHN-dah POON-nyaa KAH-mar KOH-song?",
+      "meaning": {
+        "en": "Do you have any rooms available?",
+        "id": "Do you have any rooms available?"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Lodging",
+      "situations": [
+        "hotel"
+      ]
+    },
+    {
+      "id": "id-id-pool-11aa2f0c",
+      "target": "Apakah kamarnya ada... ()",
+      "romanization": "AH-pah-kah KAH-mar-nyah AH-dah",
+      "meaning": {
+        "en": "Does the room come with...",
+        "id": "Does the room come with..."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Lodging",
+      "situations": [
+        "hotel"
+      ]
+    },
+    {
+      "id": "id-id-pool-d32c8f4e",
+      "target": "Bagaimana saya pergi ke _____ ? ()",
+      "romanization": "Bah-GIGH-mah-nah SAH-yah puhr-GEE kuh ____",
+      "meaning": {
+        "en": "How do I get to _____ ?",
+        "id": "How do I get to _____ ?"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Directions",
+      "situations": [
+        "directions"
+      ]
+    },
+    {
+      "id": "id-id-pool-e0e0e805",
+      "target": "Baik, terima kasih. (bah-EE', TREE-mah KAH-see)",
+      "meaning": {
+        "en": "Fine, thank you.",
+        "id": "Fine, thank you."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics",
+      "situations": [
+        "culture"
+      ]
+    },
+    {
+      "id": "id-id-pool-b8032fb1",
+      "target": "Bolehkah saya lihat kamarnya dulu? ()",
+      "romanization": "BOH-leh-kah SAH-yah LEE-ah(t) KAH-mar-nyah DOO-loo?",
+      "meaning": {
+        "en": "May I see the room first?",
+        "id": "May I see the room first?"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Lodging",
+      "situations": [
+        "hotel"
+      ]
+    },
+    {
+      "id": "id-id-pool-973c9e48",
+      "target": "Bolehkah saya lihat menunya? ()",
+      "romanization": "BOH-leh-kah SAH-yah LEE-ah(t) MEH-noo-nyah",
+      "meaning": {
+        "en": "Can I look at the menu, please?",
+        "id": "Can I look at the menu, please?"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Eating",
+      "situations": [
+        "restaurant"
+      ]
+    },
+    {
+      "id": "id-id-pool-3c80e97d",
+      "target": "dekat _____ ()",
+      "romanization": "DEH-kaht",
+      "meaning": {
+        "en": "near the",
+        "id": "near the"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Directions",
+      "situations": [
+        "directions"
+      ]
+    },
+    {
+      "id": "id-id-pool-e7c67043",
+      "target": "Di mana kereta/bus ke _____? ()",
+      "romanization": "dee MAH-nah kuh-REH-tah/beuss kuh _____?",
+      "meaning": {
+        "en": "Where is the train/bus to _____?",
+        "id": "Where is the train/bus to _____?"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Bus_and_train",
+      "situations": [
+        "train"
+      ]
+    },
+    {
+      "id": "id-id-basics-di-sebelah-kiri",
+      "target": "Di sebelah kiri, dekat kafe.",
+      "meaning": {
+        "en": "On the left, near the café.",
+        "id": "Di sebelah kiri, dekat kafe."
+      },
+      "situations": [
+        "basics"
+      ]
+    },
+    {
+      "id": "id-id-basics-dua",
+      "target": "dua",
+      "meaning": {
+        "en": "two",
+        "id": "dua"
+      },
+      "situations": [
+        "script",
+        "money"
+      ]
+    },
+    {
+      "id": "id-id-pool-b86b4b98",
+      "target": "dua puluh ()",
+      "romanization": "DOO-ah POO-loo",
+      "meaning": {
+        "en": "20",
+        "id": "20"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Cardinal_numbers",
+      "situations": [
+        "money"
+      ]
+    },
+    {
+      "id": "id-id-basics-empat",
+      "target": "empat",
+      "meaning": {
+        "en": "four",
+        "id": "empat"
+      },
+      "situations": [
+        "money"
+      ]
+    },
+    {
+      "id": "id-id-emergency-it-s-an-emergency-3",
+      "target": "Ini darurat.",
+      "romanization": "EE-nee dah-ROO-rah(t)",
+      "meaning": {
+        "en": "It's an emergency.",
+        "id": "It's an emergency."
+      },
+      "situations": [
+        "emergency"
+      ]
+    },
+    {
+      "id": "id-id-pool-61c7f9b3",
+      "target": "jalan ()",
+      "romanization": "JAH-lahn",
+      "meaning": {
+        "en": "street",
+        "id": "street"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Directions",
+      "situations": [
+        "directions"
+      ]
+    },
+    {
+      "id": "id-id-pool-973cfb62",
+      "target": "Jam berapa kereta/bus ke _____ berangkat? ()",
+      "romanization": "jahm buh-RAH-pah kuh-REH-tah/beuss kuh _____ buh-RAHNG-kah(t)?",
+      "meaning": {
+        "en": "What time does the train/bus for _____ leave?",
+        "id": "What time does the train/bus for _____ leave?"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Bus_and_train",
+      "situations": [
+        "train"
+      ]
+    },
+    {
+      "id": "id-id-pool-b5910034",
+      "target": "kanan ()",
+      "romanization": "KAH-nahn",
+      "meaning": {
+        "en": "right",
+        "id": "right"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Directions",
+      "situations": [
+        "directions"
+      ]
+    },
+    {
+      "id": "id-id-pool-00aafbbb",
+      "target": "Kereta ()",
+      "romanization": "kuh-REH-tah",
+      "meaning": {
+        "en": "Train",
+        "id": "Train"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Bus_and_train",
+      "situations": [
+        "train"
+      ]
+    },
+    {
+      "id": "id-id-pool-40ab7272",
+      "target": "Kereta/bus ini ke mana? ()",
+      "romanization": "kuh-REH-tah/beuss IH-nee kuh MAH-nah?",
+      "meaning": {
+        "en": "Where does this train/bus go?",
+        "id": "Where does this train/bus go?"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Bus_and_train",
+      "situations": [
+        "train"
+      ]
+    },
+    {
+      "id": "id-id-pool-5abc1bb6",
+      "target": "kiri ()",
+      "romanization": "KEEH-ree",
+      "meaning": {
+        "en": "left",
+        "id": "left"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Directions",
+      "situations": [
+        "directions"
+      ]
+    },
+    {
+      "id": "id-id-basics-lima",
+      "target": "lima",
+      "meaning": {
+        "en": "five",
+        "id": "lima"
+      },
+      "situations": [
+        "money"
+      ]
+    },
+    {
+      "id": "id-id-basics-lima-ribu",
+      "target": "Lima ribu rupiah.",
+      "meaning": {
+        "en": "Five thousand rupiah.",
+        "id": "Lima ribu rupiah."
+      },
+      "situations": [
+        "basics",
+        "money"
+      ]
+    },
+    {
+      "id": "id-id-pool-8566bdfc",
+      "target": "Maaf. ()",
+      "romanization": "mah-AHF",
+      "meaning": {
+        "en": "Excuse me. (begging pardon)",
+        "id": "Excuse me. (begging pardon)"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics",
+      "situations": [
+        "script",
+        "culture"
+      ]
+    },
+    {
+      "id": "id-id-pool-c829fff2",
+      "target": "Maafkan saya. ()",
+      "romanization": "mah-AHF-kahn SAH-yah",
+      "meaning": {
+        "en": "I'm sorry.",
+        "id": "I'm sorry."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics",
+      "situations": [
+        "culture"
+      ]
+    },
+    {
+      "id": "id-id-pool-64e6dc49",
+      "target": "Minta bon. ()",
+      "romanization": "MIN-tah bon",
+      "meaning": {
+        "en": "The check/bill, please.",
+        "id": "The check/bill, please."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Eating",
+      "situations": [
+        "restaurant"
+      ]
+    },
+    {
+      "id": "id-id-pool-ae00704d",
+      "target": "nomor _____ ()",
+      "romanization": "NO-mor",
+      "meaning": {
+        "en": "number _____ (train, bus, etc.)",
+        "id": "number _____ (train, bus, etc.)"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Cardinal_numbers",
+      "situations": [
+        "train"
+      ]
+    },
+    {
+      "id": "id-id-pool-8e76f400",
+      "target": "Permisi ()",
+      "romanization": "puhr-MIH-see",
+      "meaning": {
+        "en": "Excuse me. (getting attention)",
+        "id": "Excuse me. (getting attention)"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics",
+      "situations": [
+        "script"
+      ]
+    },
+    {
+      "id": "id-id-basics-ada-air-mineral",
+      "target": "Permisi, ada air mineral?",
+      "meaning": {
+        "en": "Excuse me, do you have bottled water?",
+        "id": "Permisi, ada air mineral?"
+      },
+      "situations": [
+        "basics",
+        "restaurant"
+      ]
+    },
+    {
+      "id": "id-id-basics-toilet-di-mana",
+      "target": "Permisi, toilet di mana?",
+      "meaning": {
+        "en": "Excuse me, where is the toilet?",
+        "id": "Permisi, toilet di mana?"
+      },
+      "situations": [
+        "basics"
+      ]
+    },
+    {
+      "id": "id-id-emergency-police-1",
+      "target": "Polisi!",
+      "romanization": "po-LEE-see",
+      "meaning": {
+        "en": "Police!",
+        "id": "Police!"
+      },
+      "situations": [
+        "emergency"
+      ]
+    },
+    {
+      "id": "id-id-basics-satu",
+      "target": "satu",
+      "meaning": {
+        "en": "one",
+        "id": "satu"
+      },
+      "situations": [
+        "script",
+        "money"
+      ]
+    },
+    {
+      "id": "id-id-emergency-i-ll-call-the-police-0",
+      "target": "Saya akan panggil polisi.",
+      "romanization": "SAH-yah AH-kahn PAHNG-gihl po-LEE-see",
+      "meaning": {
+        "en": "I'll call the police.",
+        "id": "I'll call the police."
+      },
+      "situations": [
+        "emergency"
+      ]
+    },
+    {
+      "id": "id-id-pool-fba2a6ab",
+      "target": "Saya mau pesan _____. ()",
+      "romanization": "SAH-yah MAH-oo puh-SAHN",
+      "meaning": {
+        "en": "I want _____.",
+        "id": "I want _____."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Eating",
+      "situations": [
+        "restaurant"
+      ]
+    },
+    {
+      "id": "id-id-emergency-i-need-your-help-2",
+      "target": "Saya minta tolong.",
+      "romanization": "SAH-yah MEEN-tah TO-long",
+      "meaning": {
+        "en": "I need your help.",
+        "id": "I need your help."
+      },
+      "situations": [
+        "emergency"
+      ]
+    },
+    {
+      "id": "id-id-pool-599c9d21",
+      "target": "Saya sakit. ()",
+      "romanization": "SAH-yah SAH-ki(t)",
+      "meaning": {
+        "en": "I'm sick.",
+        "id": "I'm sick."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Problems",
+      "situations": [
+        "emergency"
+      ]
+    },
+    {
+      "id": "id-id-emergency-i-m-lost-4",
+      "target": "Saya tersesat.",
+      "romanization": "SAH-yah tuhr-SUH-sah(t)",
+      "meaning": {
+        "en": "I'm lost.",
+        "id": "I'm lost."
+      },
+      "situations": [
+        "directions",
+        "emergency"
+      ]
+    },
+    {
+      "id": "id-id-pool-25783fda",
+      "target": "Saya tidak makan babi. (SAH-yah TEE-dah' MAH-kahn BAH-bee)",
+      "meaning": {
+        "en": "I don't eat pork.",
+        "id": "I don't eat pork."
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Eating",
+      "situations": [
+        "restaurant"
+      ]
+    },
+    {
+      "id": "id-id-basics-selamat-datang",
+      "target": "Selamat datang di Jakarta!",
+      "meaning": {
+        "en": "Welcome to Jakarta!",
+        "id": "Selamat datang di Jakarta!"
+      },
+      "situations": [
+        "basics"
+      ]
+    },
+    {
+      "id": "id-id-pool-856db60e",
+      "target": "sepuluh ()",
+      "romanization": "suh-POO-looh",
+      "meaning": {
+        "en": "10",
+        "id": "10"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Cardinal_numbers",
+      "situations": [
+        "money"
+      ]
+    },
+    {
+      "id": "id-id-pool-13c892c7",
+      "target": "seratus ()",
+      "romanization": "suh-RAH-tuss",
+      "meaning": {
+        "en": "100",
+        "id": "100"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Cardinal_numbers",
+      "situations": [
+        "money"
+      ]
+    },
+    {
+      "id": "id-id-basics-silakan-masuk",
+      "target": "Silakan masuk.",
+      "meaning": {
+        "en": "Please get in (the car).",
+        "id": "Silakan masuk (mobil)."
+      },
+      "situations": [
+        "basics"
+      ]
+    },
+    {
+      "id": "id-id-pool-589a0f47",
+      "target": "Silakan. ()",
+      "romanization": "SIH-lah-kahn",
+      "meaning": {
+        "en": "Please. (inviting someone to do something)",
+        "id": "Please. (inviting someone to do something)"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics",
+      "situations": [
+        "script",
+        "culture"
+      ]
+    },
+    {
+      "id": "id-id-basics-terima-kasih",
+      "target": "Terima kasih.",
+      "meaning": {
+        "en": "Thank you.",
+        "id": "Terima kasih."
+      },
+      "situations": [
+        "script",
+        "basics",
+        "restaurant"
+      ]
+    },
+    {
+      "id": "id-id-basics-saya-turis",
+      "target": "Terima kasih. Saya turis.",
+      "meaning": {
+        "en": "Thank you. I'm a tourist.",
+        "id": "Terima kasih. Saya turis."
+      },
+      "situations": [
+        "basics"
+      ]
+    },
+    {
+      "id": "id-id-basics-tiga",
+      "target": "tiga",
+      "meaning": {
+        "en": "three",
+        "id": "tiga"
+      },
+      "situations": [
+        "script",
+        "money"
+      ]
+    },
+    {
+      "id": "id-id-pool-f564d806",
+      "target": "Tolong ()",
+      "romanization": "TO-long",
+      "meaning": {
+        "en": "Please. (asking for help with an action or service)",
+        "id": "Please. (asking for help with an action or service)"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics",
+      "situations": [
+        "script"
+      ]
+    },
+    {
+      "id": "id-id-pool-89555982",
+      "target": "Tolong bicara lebih pelan. ()",
+      "romanization": "TO-long bee-CHA-rah LUH-bee PUH-lahn",
+      "meaning": {
+        "en": "Speak more slowly, please",
+        "id": "Speak more slowly, please"
+      },
+      "wvSource": "https://en.wikivoyage.org/wiki/Indonesian_phrasebook#Basics",
+      "situations": [
+        "culture"
+      ]
+    },
+    {
+      "id": "id-id-basics-satu-botol",
+      "target": "Yang dingin, satu botol.",
+      "meaning": {
+        "en": "Cold, one bottle please.",
+        "id": "Yang dingin, satu botol."
+      },
+      "situations": [
+        "basics",
+        "restaurant"
+      ]
+    }
+  ]
+}

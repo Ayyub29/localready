@@ -15,6 +15,7 @@
     "content:seed:ai": "tsx scripts/content/ai-seed-phrases.ts",
     "content:build:starter": "tsx scripts/content/build-starter-packs.ts",
     "content:extract:phrases": "tsx scripts/content/extract-phrases-from-conversations.ts",
+    "content:build:cheatsheet": "tsx scripts/content/build-cheatsheet-catalog.ts",
     "content:compile:lesson": "tsx scripts/content/compile-lesson-manifest.ts",
     "content:compile:lesson:legacy": "tsx scripts/content/compile-stored-lesson.ts",
     "content:compile:pack": "tsx scripts/content/compile-pack.ts",

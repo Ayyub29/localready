@@ -56,7 +56,15 @@ npm run content:extract:phrases -- ja-jp
 - Merges with **approved** (or all pending) rows from `content/open/{corridorId}/phrases-pool.json`
 - Writes `content/derived/{corridorId}/phrase-catalog.json` (deduped by target + meaning)
 
-Use the catalog for cheatsheet, SRS, and QA (“is this line in the pool?”).
+Use the catalog for SRS and QA (“is this line in the pool?”).
+
+**Cheatsheet (curated subset):** edit `content/cheatsheets/{corridorId}.json` (phrase ids per situation), then:
+
+```bash
+npm run content:build:cheatsheet -- id-id
+```
+
+Writes `content/derived/{corridorId}/phrase-catalog-cheatsheet.json`, which the app loads for the cheatsheet UI.
 
 Wikivoyage seed (step 0 of pool):
 
