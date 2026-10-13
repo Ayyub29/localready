@@ -11,8 +11,8 @@
     {
       "id": "fb-terima-kasih",
       "instruction": {
-        "en": "Type the missing word in Indonesian.",
-        "id": "Ketik kata yang hilang dalam bahasa Indonesia."
+        "en": "Choose the missing word in Indonesian.",
+        "id": "Pilih kata yang hilang dalam bahasa Indonesia."
       },
       "before": "Terima ",
       "after": ".",

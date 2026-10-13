@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { isFillBlankCorrect } from "@/lib/content/fill-blank-check";
+import { McqChoiceStep } from "@/components/McqChoiceStep";
 import type { FillBlankQuestion } from "@/lib/lesson-content-types";
 import { pickLocalized } from "@/lib/locale";
 import type { Locale } from "@/lib/types";
@@ -13,15 +12,27 @@ type FillBlankStepProps = {
 };
 
 export function FillBlankStep({ locale, question, onSolved }: FillBlankStepProps) {
-  const [value, setValue] = useState("");
-  const [checked, setChecked] = useState(false);
-  const correct = checked && isFillBlankCorrect(value, question.answers);
+  const choices = question.choices ?? [];
+  const correctId = question.correctChoiceId ?? "";
 
-  function handleCheck() {
-    setChecked(true);
-    if (isFillBlankCorrect(value, question.answers)) {
-      onSolved();
-    }
+  const sentencePreview = (
+    <p className="text-xl font-semibold text-sky-950">
+      {question.before}
+      <span className="mx-1 inline-block min-w-[3rem] border-b-2 border-sky-400 border-dashed px-1 text-center text-sky-800">
+        ?
+      </span>
+      {question.after ?? ""}
+    </p>
+  );
+
+  if (!choices.length || !correctId) {
+    return (
+      <section className="rounded-xl border border-sky-200 bg-sky-50/80 p-5">
+        <p className="text-sm text-rose-700">
+          {locale === "id" ? "Soal belum dikompilasi." : "Question not compiled."}
+        </p>
+      </section>
+    );
   }
 
   return (
@@ -31,49 +42,19 @@ export function FillBlankStep({ locale, question, onSolved }: FillBlankStepProps
           {pickLocalized(question.instruction, locale)}
         </p>
       )}
-      <div className="flex flex-wrap items-baseline gap-1 text-xl font-semibold text-sky-950">
-        <span>{question.before}</span>
-        <input
-          type="text"
-          value={value}
-          onChange={(e) => {
-            setValue(e.target.value);
-            setChecked(false);
-          }}
-          disabled={correct}
-          className="min-w-[5rem] max-w-full rounded-md border border-sky-300 bg-white px-2 py-1 text-xl font-semibold text-sky-950 outline-none focus:ring-2 focus:ring-sky-400"
-          autoCapitalize="off"
-          autoCorrect="off"
-          spellCheck={false}
-          aria-label={locale === "id" ? "Isi kata yang hilang" : "Missing word"}
-        />
-        {question.after ? <span>{question.after}</span> : null}
-      </div>
-      {question.hint && !correct && (
-        <p className="text-xs text-slate-600">
-          {pickLocalized(question.hint, locale)}
-        </p>
+      {sentencePreview}
+      {question.hint && (
+        <p className="text-xs text-slate-600">{pickLocalized(question.hint, locale)}</p>
       )}
-      {!correct && (
-        <button
-          type="button"
-          onClick={handleCheck}
-          disabled={!value.trim()}
-          className="rounded-lg bg-sky-700 px-4 py-2 text-sm font-medium text-white disabled:opacity-40"
-        >
-          {locale === "id" ? "Periksa" : "Check"}
-        </button>
-      )}
-      {checked && !correct && (
-        <p className="text-sm font-medium text-rose-700">
-          {locale === "id" ? "Belum tepat — coba lagi." : "Not quite — try again."}
-        </p>
-      )}
-      {correct && (
-        <p className="text-sm font-medium text-teal-800">
-          {locale === "id" ? "Benar!" : "Correct!"}
-        </p>
-      )}
+      <McqChoiceStep
+        locale={locale}
+        options={choices}
+        correctOptionId={correctId}
+        onSolved={onSolved}
+        prompt={
+          locale === "id" ? "Pilih kata yang tepat:" : "Choose the missing word:"
+        }
+      />
     </section>
   );
 }

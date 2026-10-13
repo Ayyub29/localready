@@ -11,6 +11,8 @@ export type StoredFillBlankQuestion = {
   after?: string;
   /** Accepted answers (case-insensitive trim match). */
   answers: string[];
+  /** Optional wrong options; compile fills more from other questions if omitted. */
+  distractors?: string[];
   hint?: LocalizedString;
   phraseId?: string;
 };

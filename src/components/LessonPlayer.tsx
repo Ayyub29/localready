@@ -5,8 +5,14 @@ import { useEffect, useMemo, useState } from "react";
 import { ConversationThread } from "@/components/ConversationThread";
 import { FillBlankStep } from "@/components/FillBlankStep";
 import { FlashcardStep } from "@/components/FlashcardStep";
+import { McqChoiceStep } from "@/components/McqChoiceStep";
 import { getSituationTitle } from "@/data/catalog";
+import { isTravelerMcqTurn } from "@/lib/content/compile-mcq";
 import { buildLessonSteps } from "@/lib/content/lesson-player-steps";
+import {
+  playerStepKey,
+  stepNeedsGate,
+} from "@/lib/content/lesson-player-step-key";
 import { pickLocalized } from "@/lib/locale";
 import type { LessonContent } from "@/lib/lesson-content-types";
 import type { Locale } from "@/lib/types";
@@ -35,21 +41,18 @@ function stepLabel(
   return labels[step.type][locale];
 }
 
-function stepNeedsGate(step: ReturnType<typeof buildLessonSteps>[number]): boolean {
-  return step.type === "fillBlank" || step.type === "flashcard";
-}
-
 export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
   const steps = useMemo(() => buildLessonSteps(lesson), [lesson]);
   const [stepIndex, setStepIndex] = useState(0);
   const [canAdvance, setCanAdvance] = useState(true);
 
   const step = steps[stepIndex];
+  const stepKey = step ? playerStepKey(step, lesson) : "none";
 
   useEffect(() => {
     if (!step) return;
-    setCanAdvance(!stepNeedsGate(step));
-  }, [stepIndex, step]);
+    setCanAdvance(!stepNeedsGate(step, lesson));
+  }, [stepKey, step, lesson]);
 
   if (steps.length === 0 || !step) {
     return (
@@ -69,6 +72,23 @@ export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
   const activeConversation =
     step.type === "conversationDescription" || step.type === "conversationTurn"
       ? vignette.conversations[step.conversationIndex]
+      : undefined;
+
+  const activeTurn =
+    step.type === "conversationTurn" && activeConversation
+      ? activeConversation.turns[step.turnIndex]
+      : undefined;
+
+  const fillBlankQuestion =
+    step.type === "fillBlank"
+      ? vignette.fillBlankQuizzes?.[step.fillBlankQuizIndex]?.questions[
+          step.questionIndex
+        ]
+      : undefined;
+
+  const flashcard =
+    step.type === "flashcard"
+      ? vignette.flashcardDecks?.[step.flashcardDeckIndex]?.cards[step.cardIndex]
       : undefined;
 
   function goNext() {
@@ -139,14 +159,32 @@ export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
           </section>
         )}
 
-        {step.type === "conversationTurn" && activeConversation && (
-          <section className="rounded-xl border border-border bg-card p-4">
+        {step.type === "conversationTurn" && activeConversation && activeTurn && (
+          <section className="rounded-xl border border-border bg-card p-4 space-y-4">
             <ConversationThread
               locale={locale}
               corridorId={lesson.corridorId}
               turns={activeConversation.turns}
-              visibleThrough={step.turnIndex}
+              visibleThrough={
+                isTravelerMcqTurn(activeTurn) ? step.turnIndex - 1 : step.turnIndex
+              }
             />
+            {isTravelerMcqTurn(activeTurn) && activeTurn.choices && activeTurn.correctChoiceId && (
+              <div className="border-t border-border pt-4">
+                <McqChoiceStep
+                  key={activeTurn.id}
+                  locale={locale}
+                  options={activeTurn.choices}
+                  correctOptionId={activeTurn.correctChoiceId}
+                  onSolved={() => setCanAdvance(true)}
+                  prompt={
+                    locale === "id"
+                      ? "Apa yang kamu katakan?"
+                      : "What do you say?"
+                  }
+                />
+              </div>
+            )}
           </section>
         )}
 
@@ -221,51 +259,39 @@ export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
             </section>
           )}
 
-        {step.type === "fillBlank" &&
-          vignette.fillBlankQuizzes?.[step.fillBlankQuizIndex]?.questions[
-            step.questionIndex
-          ] && (
-            <div className="space-y-2">
-              <p className="text-xs font-medium uppercase tracking-wide text-slate-500">
-                {pickLocalized(
-                  vignette.fillBlankQuizzes[step.fillBlankQuizIndex].title,
-                  locale,
-                )}
-              </p>
-              <FillBlankStep
-                locale={locale}
-                question={
-                  vignette.fillBlankQuizzes[step.fillBlankQuizIndex].questions[
-                    step.questionIndex
-                  ]
-                }
-                onSolved={() => setCanAdvance(true)}
-              />
-            </div>
-          )}
+        {step.type === "fillBlank" && fillBlankQuestion && (
+          <div className="space-y-2" key={stepKey}>
+            <p className="text-xs font-medium uppercase tracking-wide text-slate-500">
+              {pickLocalized(
+                vignette.fillBlankQuizzes![step.fillBlankQuizIndex].title,
+                locale,
+              )}
+            </p>
+            <FillBlankStep
+              key={fillBlankQuestion.id}
+              locale={locale}
+              question={fillBlankQuestion}
+              onSolved={() => setCanAdvance(true)}
+            />
+          </div>
+        )}
 
-        {step.type === "flashcard" &&
-          vignette.flashcardDecks?.[step.flashcardDeckIndex]?.cards[
-            step.cardIndex
-          ] && (
-            <div className="space-y-2">
-              <p className="text-xs font-medium uppercase tracking-wide text-slate-500">
-                {pickLocalized(
-                  vignette.flashcardDecks[step.flashcardDeckIndex].title,
-                  locale,
-                )}
-              </p>
-              <FlashcardStep
-                locale={locale}
-                card={
-                  vignette.flashcardDecks[step.flashcardDeckIndex].cards[
-                    step.cardIndex
-                  ]
-                }
-                onRevealed={() => setCanAdvance(true)}
-              />
-            </div>
-          )}
+        {step.type === "flashcard" && flashcard && (
+          <div className="space-y-2" key={stepKey}>
+            <p className="text-xs font-medium uppercase tracking-wide text-slate-500">
+              {pickLocalized(
+                vignette.flashcardDecks![step.flashcardDeckIndex].title,
+                locale,
+              )}
+            </p>
+            <FlashcardStep
+              key={flashcard.id}
+              locale={locale}
+              card={flashcard}
+              onRevealed={() => setCanAdvance(true)}
+            />
+          </div>
+        )}
 
         {step.type === "phrase" && vignette.phrases?.[step.phraseIndex] && (
           <section className="rounded-xl border border-border bg-card px-5 py-6 text-center">

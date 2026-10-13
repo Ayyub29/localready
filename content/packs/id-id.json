@@ -82,7 +82,26 @@
                     "en": "Thank you. I'm a tourist.",
                     "id": "Terima kasih. Saya turis."
                   },
-                  "phraseId": "id-id-basics-saya-turis"
+                  "phraseId": "id-id-basics-saya-turis",
+                  "choices": [
+                    {
+                      "id": "id-id-basics-driver-001-t2-opt-0",
+                      "label": "Permisi, toilet di mana?"
+                    },
+                    {
+                      "id": "id-id-basics-driver-001-t2-opt-1",
+                      "label": "Permisi, ada air mineral?"
+                    },
+                    {
+                      "id": "id-id-basics-driver-001-t2-opt-2",
+                      "label": "Yang dingin, satu botol."
+                    },
+                    {
+                      "id": "id-id-basics-driver-001-t2-opt-3",
+                      "label": "Terima kasih. Saya turis."
+                    }
+                  ],
+                  "correctChoiceId": "id-id-basics-driver-001-t2-opt-3"
                 },
                 {
                   "id": "id-id-basics-driver-001-t3",
@@ -110,7 +129,26 @@
                     "en": "Excuse me, where is the toilet?",
                     "id": "Permisi, toilet di mana?"
                   },
-                  "phraseId": "id-id-basics-toilet-di-mana"
+                  "phraseId": "id-id-basics-toilet-di-mana",
+                  "choices": [
+                    {
+                      "id": "id-id-basics-driver-001-t4-opt-0",
+                      "label": "Terima kasih. Saya turis."
+                    },
+                    {
+                      "id": "id-id-basics-driver-001-t4-opt-1",
+                      "label": "Permisi, toilet di mana?"
+                    },
+                    {
+                      "id": "id-id-basics-driver-001-t4-opt-2",
+                      "label": "Yang dingin, satu botol."
+                    },
+                    {
+                      "id": "id-id-basics-driver-001-t4-opt-3",
+                      "label": "Permisi, ada air mineral?"
+                    }
+                  ],
+                  "correctChoiceId": "id-id-basics-driver-001-t4-opt-1"
                 },
                 {
                   "id": "id-id-basics-driver-001-t5",
@@ -152,7 +190,26 @@
                     "en": "Excuse me, do you have bottled water?",
                     "id": "Permisi, ada air mineral?"
                   },
-                  "phraseId": "id-id-basics-ada-air-mineral"
+                  "phraseId": "id-id-basics-ada-air-mineral",
+                  "choices": [
+                    {
+                      "id": "id-id-basics-warung-001-t1-opt-0",
+                      "label": "Permisi, ada air mineral?"
+                    },
+                    {
+                      "id": "id-id-basics-warung-001-t1-opt-1",
+                      "label": "Yang dingin, satu botol."
+                    },
+                    {
+                      "id": "id-id-basics-warung-001-t1-opt-2",
+                      "label": "Terima kasih."
+                    },
+                    {
+                      "id": "id-id-basics-warung-001-t1-opt-3",
+                      "label": "Terima kasih. Saya turis."
+                    }
+                  ],
+                  "correctChoiceId": "id-id-basics-warung-001-t1-opt-0"
                 },
                 {
                   "id": "id-id-basics-warung-001-t2",
@@ -180,7 +237,26 @@
                     "en": "Cold, one bottle please.",
                     "id": "Yang dingin, satu botol."
                   },
-                  "phraseId": "id-id-basics-satu-botol"
+                  "phraseId": "id-id-basics-satu-botol",
+                  "choices": [
+                    {
+                      "id": "id-id-basics-warung-001-t3-opt-0",
+                      "label": "Terima kasih."
+                    },
+                    {
+                      "id": "id-id-basics-warung-001-t3-opt-1",
+                      "label": "Terima kasih. Saya turis."
+                    },
+                    {
+                      "id": "id-id-basics-warung-001-t3-opt-2",
+                      "label": "Yang dingin, satu botol."
+                    },
+                    {
+                      "id": "id-id-basics-warung-001-t3-opt-3",
+                      "label": "Permisi, ada air mineral?"
+                    }
+                  ],
+                  "correctChoiceId": "id-id-basics-warung-001-t3-opt-2"
                 },
                 {
                   "id": "id-id-basics-warung-001-t4",
@@ -208,7 +284,26 @@
                     "en": "Thank you.",
                     "id": "Terima kasih."
                   },
-                  "phraseId": "id-id-basics-terima-kasih"
+                  "phraseId": "id-id-basics-terima-kasih",
+                  "choices": [
+                    {
+                      "id": "id-id-basics-warung-001-t5-opt-0",
+                      "label": "Terima kasih."
+                    },
+                    {
+                      "id": "id-id-basics-warung-001-t5-opt-1",
+                      "label": "Yang dingin, satu botol."
+                    },
+                    {
+                      "id": "id-id-basics-warung-001-t5-opt-2",
+                      "label": "Permisi, ada air mineral?"
+                    },
+                    {
+                      "id": "id-id-basics-warung-001-t5-opt-3",
+                      "label": "Terima kasih. Saya turis."
+                    }
+                  ],
+                  "correctChoiceId": "id-id-basics-warung-001-t5-opt-0"
                 }
               ]
             }
@@ -338,15 +433,34 @@
                 {
                   "id": "fb-terima-kasih",
                   "instruction": {
-                    "en": "Type the missing word in Indonesian.",
-                    "id": "Ketik kata yang hilang dalam bahasa Indonesia."
+                    "en": "Choose the missing word in Indonesian.",
+                    "id": "Pilih kata yang hilang dalam bahasa Indonesia."
                   },
                   "before": "Terima ",
                   "after": ".",
                   "answers": [
                     "kasih"
                   ],
-                  "phraseId": "id-id-basics-terima-kasih"
+                  "phraseId": "id-id-basics-terima-kasih",
+                  "choices": [
+                    {
+                      "id": "fb-terima-kasih-opt-0",
+                      "label": "kasih"
+                    },
+                    {
+                      "id": "fb-terima-kasih-opt-1",
+                      "label": "lima"
+                    },
+                    {
+                      "id": "fb-terima-kasih-opt-2",
+                      "label": "Lima"
+                    },
+                    {
+                      "id": "fb-terima-kasih-opt-3",
+                      "label": "mineral"
+                    }
+                  ],
+                  "correctChoiceId": "fb-terima-kasih-opt-0"
                 },
                 {
                   "id": "fb-air-mineral",
@@ -355,7 +469,26 @@
                   "answers": [
                     "mineral"
                   ],
-                  "phraseId": "id-id-basics-ada-air-mineral"
+                  "phraseId": "id-id-basics-ada-air-mineral",
+                  "choices": [
+                    {
+                      "id": "fb-air-mineral-opt-0",
+                      "label": "lima"
+                    },
+                    {
+                      "id": "fb-air-mineral-opt-1",
+                      "label": "Lima"
+                    },
+                    {
+                      "id": "fb-air-mineral-opt-2",
+                      "label": "mineral"
+                    },
+                    {
+                      "id": "fb-air-mineral-opt-3",
+                      "label": "kasih"
+                    }
+                  ],
+                  "correctChoiceId": "fb-air-mineral-opt-2"
                 },
                 {
                   "id": "fb-lima-ribu",
@@ -369,7 +502,22 @@
                     "en": "The price you heard at the warung.",
                     "id": "Harga yang kamu dengar di warung."
                   },
-                  "phraseId": "id-id-basics-lima-ribu"
+                  "phraseId": "id-id-basics-lima-ribu",
+                  "choices": [
+                    {
+                      "id": "fb-lima-ribu-opt-0",
+                      "label": "kasih"
+                    },
+                    {
+                      "id": "fb-lima-ribu-opt-1",
+                      "label": "lima"
+                    },
+                    {
+                      "id": "fb-lima-ribu-opt-2",
+                      "label": "mineral"
+                    }
+                  ],
+                  "correctChoiceId": "fb-lima-ribu-opt-1"
                 }
               ]
             }

@@ -41,6 +41,8 @@ export type FillBlankQuestion = {
   answers: string[];
   hint?: LocalizedString;
   phraseId?: string;
+  choices?: McqOption[];
+  correctChoiceId?: string;
 };
 
 export type VignetteFillBlankQuiz = {
@@ -66,6 +68,11 @@ export type VignetteFlashcardDeck = {
 
 export type ConversationRole = "narrator" | "local" | "traveler";
 
+export type McqOption = {
+  id: string;
+  label: string;
+};
+
 export type ConversationTurn = {
   id: string;
   role: ConversationRole;
@@ -74,6 +81,9 @@ export type ConversationTurn = {
   romanization?: string;
   line: LocalizedString;
   phraseId?: string;
+  /** Traveler lines: pick the right reply (compiled at pack build). */
+  choices?: McqOption[];
+  correctChoiceId?: string;
 };
 
 /**
