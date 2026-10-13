@@ -71,15 +71,27 @@ Shared UX: corridor switcher, save → write JSON under `content/`, show “run 
 
 Document which mode the environment uses in `ADMIN_DEPLOY_MODE=local|git-pr` (future env).
 
-## Implementation phases
+## UI (shipped)
 
-1. **Shell** — `/admin` + allowlist guard + hub (current repo).
-2. **Phrases** — pool table, approve/reject, inject form (session-backed API routes).
-3. **Conversations & mini lessons** — CRUD JSON files.
-4. **Quizzes & phrase lists** — same pattern.
-5. **Lesson manifest** — sequence builder + anchor UI.
-6. **Cheatsheet** — situation columns, drag reorder, build cheatsheet catalog.
-7. **Auth unify** — `assertAdminSession()` for `/api/admin/*` wrapping existing pool logic.
+| Route | Capability |
+|-------|------------|
+| `/admin` | Corridor picker |
+| `/admin/[corridorId]` | Section overview |
+| `/admin/[corridorId]/phrases` | Inject + approve/reject pool |
+| `/admin/[corridorId]/conversations` | List + form editor (turns) |
+| `/admin/[corridorId]/mini-lessons` | List + JSON editor |
+| `/admin/[corridorId]/quizzes` | Fill-blank, phrase lists, flashcards (JSON editors) |
+| `/admin/[corridorId]/lessons` | Manifest editor (vignette sequence from pool refs) |
+| `/admin/[corridorId]/cheatsheet` | Per-situation phrase picks + build catalog |
+
+Server actions live in `src/lib/admin/server-actions.ts` (session-gated). Local dev: `ADMIN_DEV_BYPASS=true` or `ADMIN_ALLOWLIST=your@gmail.com`.
+
+## Implementation phases (remaining)
+
+1. Rich form editors for mini lessons, fill-blank, phrase lists (beyond JSON).
+2. Compile pack / extract phrases buttons from admin.
+3. Session-backed `/api/admin/*` instead of bearer-only inject API for scripts.
+4. Git PR export when `content/` is read-only in hosted deploys.
 
 ## Related docs
 

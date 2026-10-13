@@ -12,7 +12,14 @@ export function parseAdminAllowlist(): Set<string> {
   );
 }
 
+export function adminDevBypassEnabled(): boolean {
+  return (
+    process.env.NODE_ENV === "development" && process.env.ADMIN_DEV_BYPASS === "true"
+  );
+}
+
 export function isAdminEmail(email: string | null | undefined): boolean {
+  if (adminDevBypassEnabled()) return true;
   if (!email?.trim()) return false;
   const allow = parseAdminAllowlist();
   if (allow.size === 0) return false;
