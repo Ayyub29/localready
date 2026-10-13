@@ -20,6 +20,18 @@ export type PlayerStep =
       phraseListIndex: number;
       phraseIndex: number;
     }
+  | {
+      type: "fillBlank";
+      vignetteIndex: number;
+      fillBlankQuizIndex: number;
+      questionIndex: number;
+    }
+  | {
+      type: "flashcard";
+      vignetteIndex: number;
+      flashcardDeckIndex: number;
+      cardIndex: number;
+    }
   | { type: "scenario"; vignetteIndex: number }
   | { type: "phrase"; vignetteIndex: number; phraseIndex: number };
 
@@ -100,6 +112,46 @@ function pushStandaloneMiniLesson(
   pushMiniLessonStep(steps, vignetteIndex, miniLessonIndex);
 }
 
+function pushFillBlankSteps(
+  steps: PlayerStep[],
+  vignette: LessonVignette,
+  vignetteIndex: number,
+  fillBlankQuizId: string,
+) {
+  const quizIndex =
+    vignette.fillBlankQuizzes?.findIndex((q) => q.id === fillBlankQuizId) ?? -1;
+  if (quizIndex < 0) return;
+  const quiz = vignette.fillBlankQuizzes![quizIndex];
+  quiz.questions.forEach((_, questionIndex) => {
+    steps.push({
+      type: "fillBlank",
+      vignetteIndex,
+      fillBlankQuizIndex: quizIndex,
+      questionIndex,
+    });
+  });
+}
+
+function pushFlashcardSteps(
+  steps: PlayerStep[],
+  vignette: LessonVignette,
+  vignetteIndex: number,
+  flashcardDeckId: string,
+) {
+  const deckIndex =
+    vignette.flashcardDecks?.findIndex((d) => d.id === flashcardDeckId) ?? -1;
+  if (deckIndex < 0) return;
+  const deck = vignette.flashcardDecks![deckIndex];
+  deck.cards.forEach((_, cardIndex) => {
+    steps.push({
+      type: "flashcard",
+      vignetteIndex,
+      flashcardDeckIndex: deckIndex,
+      cardIndex,
+    });
+  });
+}
+
 function pushPhraseListSteps(
   steps: PlayerStep[],
   vignette: LessonVignette,
@@ -143,6 +195,10 @@ function buildVignetteStepsWithPlayback(
       pushStandaloneMiniLesson(steps, vignette, vignetteIndex, item.miniLessonId);
     } else if (item.kind === "phraseList") {
       pushPhraseListSteps(steps, vignette, vignetteIndex, item.phraseListId);
+    } else if (item.kind === "fillBlank") {
+      pushFillBlankSteps(steps, vignette, vignetteIndex, item.fillBlankQuizId);
+    } else if (item.kind === "flashcards") {
+      pushFlashcardSteps(steps, vignette, vignetteIndex, item.flashcardDeckId);
     }
   }
 

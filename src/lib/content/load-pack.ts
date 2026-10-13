@@ -35,6 +35,8 @@ export function lessonHasContent(lesson: LessonContent): boolean {
     (v.conversations?.some((c) => c.turns.length > 0) ?? false) ||
     (v.miniLessons?.some((m) => m.words.length > 0) ?? false) ||
     (v.phraseLists?.some((p) => p.phrases.length > 0) ?? false) ||
+    (v.fillBlankQuizzes?.some((q) => q.questions.length > 0) ?? false) ||
+    (v.flashcardDecks?.some((d) => d.cards.length > 0) ?? false) ||
     (v.phrases?.length ?? 0) > 0,
   );
 }

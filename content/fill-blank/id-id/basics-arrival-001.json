@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "id-id-basics-fill-arrival-001",
+  "corridorId": "id-id",
+  "title": {
+    "en": "Complete the phrase",
+    "id": "Lengkapi frasanya"
+  },
+  "source": "manual",
+  "questions": [
+    {
+      "id": "fb-terima-kasih",
+      "instruction": {
+        "en": "Type the missing word in Indonesian.",
+        "id": "Ketik kata yang hilang dalam bahasa Indonesia."
+      },
+      "before": "Terima ",
+      "after": ".",
+      "answers": ["kasih"],
+      "phraseId": "id-id-basics-terima-kasih"
+    },
+    {
+      "id": "fb-air-mineral",
+      "before": "Permisi, ada air ",
+      "after": "?",
+      "answers": ["mineral"],
+      "phraseId": "id-id-basics-ada-air-mineral"
+    },
+    {
+      "id": "fb-lima-ribu",
+      "before": "",
+      "after": " ribu rupiah.",
+      "answers": ["lima", "Lima"],
+      "hint": {
+        "en": "The price you heard at the warung.",
+        "id": "Harga yang kamu dengar di warung."
+      },
+      "phraseId": "id-id-basics-lima-ribu"
+    }
+  ]
+}

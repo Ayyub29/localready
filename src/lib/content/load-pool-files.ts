@@ -3,6 +3,8 @@ import path from "node:path";
 import type { StoredConversation } from "@/lib/content/stored-conversation-types";
 import type { StoredLessonManifest } from "@/lib/content/stored-lesson-manifest-types";
 import type { StoredMiniLesson } from "@/lib/content/stored-mini-lesson-types";
+import type { StoredFillBlankQuiz } from "@/lib/content/stored-fill-blank-types";
+import type { StoredFlashcardDeck } from "@/lib/content/stored-flashcard-deck-types";
 import type { StoredPhraseList } from "@/lib/content/stored-phrase-list-types";
 import type { CorridorId } from "@/lib/types";
 
@@ -44,6 +46,20 @@ export async function loadStoredPhraseListsMap(
 ): Promise<Map<string, StoredPhraseList>> {
   const dir = path.join(process.cwd(), "content", "phrase-lists", corridorId);
   return readJsonDir<StoredPhraseList>(dir);
+}
+
+export async function loadStoredFillBlankQuizzesMap(
+  corridorId: CorridorId,
+): Promise<Map<string, StoredFillBlankQuiz>> {
+  const dir = path.join(process.cwd(), "content", "fill-blank", corridorId);
+  return readJsonDir<StoredFillBlankQuiz>(dir);
+}
+
+export async function loadStoredFlashcardDecksMap(
+  corridorId: CorridorId,
+): Promise<Map<string, StoredFlashcardDeck>> {
+  const dir = path.join(process.cwd(), "content", "flashcard-decks", corridorId);
+  return readJsonDir<StoredFlashcardDeck>(dir);
 }
 
 export async function loadStoredLessonManifest(

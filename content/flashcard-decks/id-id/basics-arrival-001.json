@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "id-id-basics-flash-arrival-001",
+  "corridorId": "id-id",
+  "title": {
+    "en": "Flashcards — arrival day",
+    "id": "Kartu kata — hari kedatangan"
+  },
+  "source": "manual",
+  "cards": [
+    {
+      "id": "fc-selamat",
+      "front": { "en": "Welcome to Jakarta!", "id": "Selamat datang di Jakarta!" },
+      "phraseId": "id-id-basics-selamat-datang"
+    },
+    {
+      "id": "fc-toilet",
+      "front": { "en": "Excuse me, where is the toilet?", "id": "Permisi, toilet di mana?" },
+      "phraseId": "id-id-basics-toilet-di-mana"
+    },
+    {
+      "id": "fc-water",
+      "front": {
+        "en": "Excuse me, do you have bottled water?",
+        "id": "Permisi, ada air mineral?"
+      },
+      "phraseId": "id-id-basics-ada-air-mineral"
+    },
+    {
+      "id": "fc-price",
+      "front": { "en": "Five thousand rupiah.", "id": "Lima ribu rupiah." },
+      "phraseId": "id-id-basics-lima-ribu"
+    },
+    {
+      "id": "fc-thanks",
+      "front": { "en": "Thank you.", "id": "Terima kasih." },
+      "phraseId": "id-id-basics-terima-kasih"
+    }
+  ]
+}

@@ -77,18 +77,6 @@ export const jaJpBasicsAirportLesson: LessonContent = {
           },
         },
       ],
-      quiz: [
-        {
-          id: `${corridorId}-lug-q1`,
-          type: "pick-phrase",
-          prompt: {
-            id: "Pilih frasa untuk bilang bagasi tidak ketemu.",
-            en: "Pick the phrase for missing luggage.",
-          },
-          phraseIds: [`${corridorId}-lug-1`, `${corridorId}-lug-2`],
-          correctPhraseId: `${corridorId}-lug-1`,
-        },
-      ],
     },
     {
       id: `${corridorId}-basics-v-taxi`,
@@ -121,27 +109,6 @@ export const jaJpBasicsAirportLesson: LessonContent = {
           },
         },
       ],
-      quiz: [
-        {
-          id: `${corridorId}-taxi-q1`,
-          type: "mcq",
-          prompt: {
-            id: "Mau tanya lokasi taksi — frasa mana?",
-            en: "You want the taxi stand — which phrase?",
-          },
-          options: [
-            {
-              id: "タクシー乗り場はどこですか",
-              en: "タクシー乗り場はどこですか",
-            },
-            {
-              id: "この住所までお願いします",
-              en: "この住所までお願いします",
-            },
-          ],
-          correctIndex: 0,
-        },
-      ],
     },
     {
       id: `${corridorId}-basics-v-city`,
@@ -172,18 +139,6 @@ export const jaJpBasicsAirportLesson: LessonContent = {
             id: "Yang paling murah yang mana?",
             en: "Which is the cheapest option?",
           },
-        },
-      ],
-      quiz: [
-        {
-          id: `${corridorId}-city-q1`,
-          type: "pick-phrase",
-          prompt: {
-            id: "Pilih frasa untuk tanya arah ke Shinjuku.",
-            en: "Pick the phrase to ask how to get to Shinjuku.",
-          },
-          phraseIds: [`${corridorId}-city-1`, `${corridorId}-city-2`],
-          correctPhraseId: `${corridorId}-city-1`,
         },
       ],
     },

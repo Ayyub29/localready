@@ -24,7 +24,7 @@ CorridorContentPack
   emergencyPhrases[]      # derived slice for cheatsheet (from emergency lesson)
 ```
 
-**Not in runtime packs:** `quiz`, per-vignette `phrases[]` (phrases are implied by `turns` + `phraseId`; cheatsheet uses `emergencyPhrases` or future derive script).
+**Legacy (avoid):** per-vignette `phrases[]` without playback. **Quizzes:** `fillBlankQuizzes[]`, `flashcardDecks[]` via lesson manifest refs.
 
 ## Player order (per vignette)
 

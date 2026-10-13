@@ -37,7 +37,9 @@
           }
         },
         { "kind": "conversation", "ref": "id-id-basics-warung-001" },
-        { "kind": "phraseList", "ref": "id-id-basics-arrival-drill-001" }
+        { "kind": "phraseList", "ref": "id-id-basics-arrival-drill-001" },
+        { "kind": "fillBlank", "ref": "id-id-basics-fill-arrival-001" },
+        { "kind": "flashcards", "ref": "id-id-basics-flash-arrival-001" }
       ]
     }
   ]

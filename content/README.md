@@ -70,7 +70,7 @@ Set `"approve": false` to insert as `pending`.
 
 ## Lesson manifests (human assembly)
 
-Pools live under `content/conversations/`, `content/mini-lessons/`, `content/phrase-lists/`.  
+Pools live under `content/conversations/`, `content/mini-lessons/`, `content/phrase-lists/`, `content/fill-blank/`, `content/flashcard-decks/`.  
 Lessons reference them from `content/lessons/{corridorId}/{lessonId}.json`.
 
 ```bash

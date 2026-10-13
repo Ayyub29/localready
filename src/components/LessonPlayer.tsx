@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ConversationThread } from "@/components/ConversationThread";
+import { FillBlankStep } from "@/components/FillBlankStep";
+import { FlashcardStep } from "@/components/FlashcardStep";
 import { getSituationTitle } from "@/data/catalog";
 import { buildLessonSteps } from "@/lib/content/lesson-player-steps";
 import { pickLocalized } from "@/lib/locale";
@@ -25,17 +27,31 @@ function stepLabel(
     conversationTurn: { en: "Conversation", id: "Percakapan" },
     miniLesson: { en: "Mini lesson", id: "Pelajaran singkat" },
     phraseListPhrase: { en: "Phrase review", id: "Ulang frasa" },
+    fillBlank: { en: "Fill in the blank", id: "Isi kata yang hilang" },
+    flashcard: { en: "Flashcard", id: "Kartu kata" },
     scenario: { en: "Scenario", id: "Situasi" },
     phrase: { en: "Phrase", id: "Frasa" },
   };
   return labels[step.type][locale];
 }
 
+function stepNeedsGate(step: ReturnType<typeof buildLessonSteps>[number]): boolean {
+  return step.type === "fillBlank" || step.type === "flashcard";
+}
+
 export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
   const steps = useMemo(() => buildLessonSteps(lesson), [lesson]);
   const [stepIndex, setStepIndex] = useState(0);
+  const [canAdvance, setCanAdvance] = useState(true);
 
-  if (steps.length === 0) {
+  const step = steps[stepIndex];
+
+  useEffect(() => {
+    if (!step) return;
+    setCanAdvance(!stepNeedsGate(step));
+  }, [stepIndex, step]);
+
+  if (steps.length === 0 || !step) {
     return (
       <p className="text-sm text-slate-600">
         {locale === "id" ? "Konten belum tersedia." : "Content not available yet."}
@@ -43,7 +59,6 @@ export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
     );
   }
 
-  const step = steps[stepIndex];
   const vignette = lesson.vignettes[step.vignetteIndex];
   const atStart = stepIndex === 0;
   const atEnd = stepIndex === steps.length - 1;
@@ -206,6 +221,52 @@ export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
             </section>
           )}
 
+        {step.type === "fillBlank" &&
+          vignette.fillBlankQuizzes?.[step.fillBlankQuizIndex]?.questions[
+            step.questionIndex
+          ] && (
+            <div className="space-y-2">
+              <p className="text-xs font-medium uppercase tracking-wide text-slate-500">
+                {pickLocalized(
+                  vignette.fillBlankQuizzes[step.fillBlankQuizIndex].title,
+                  locale,
+                )}
+              </p>
+              <FillBlankStep
+                locale={locale}
+                question={
+                  vignette.fillBlankQuizzes[step.fillBlankQuizIndex].questions[
+                    step.questionIndex
+                  ]
+                }
+                onSolved={() => setCanAdvance(true)}
+              />
+            </div>
+          )}
+
+        {step.type === "flashcard" &&
+          vignette.flashcardDecks?.[step.flashcardDeckIndex]?.cards[
+            step.cardIndex
+          ] && (
+            <div className="space-y-2">
+              <p className="text-xs font-medium uppercase tracking-wide text-slate-500">
+                {pickLocalized(
+                  vignette.flashcardDecks[step.flashcardDeckIndex].title,
+                  locale,
+                )}
+              </p>
+              <FlashcardStep
+                locale={locale}
+                card={
+                  vignette.flashcardDecks[step.flashcardDeckIndex].cards[
+                    step.cardIndex
+                  ]
+                }
+                onRevealed={() => setCanAdvance(true)}
+              />
+            </div>
+          )}
+
         {step.type === "phrase" && vignette.phrases?.[step.phraseIndex] && (
           <section className="rounded-xl border border-border bg-card px-5 py-6 text-center">
             <p className="text-3xl font-semibold leading-snug tracking-tight">
@@ -247,7 +308,7 @@ export function LessonPlayer({ locale, lesson, homeHref }: LessonPlayerProps) {
         </button>
         <button
           type="button"
-          disabled={atEnd}
+          disabled={atEnd || !canAdvance}
           onClick={goNext}
           className="flex-1 rounded-xl bg-teal-700 px-4 py-3 text-sm font-medium text-white disabled:opacity-40"
         >

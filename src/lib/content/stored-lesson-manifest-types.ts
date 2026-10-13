@@ -8,7 +8,9 @@ export type StoredSequenceItem =
       ref: string;
       anchor?: { conversationRef: string; afterTurnId: string };
     }
-  | { kind: "phraseList"; ref: string };
+  | { kind: "phraseList"; ref: string }
+  | { kind: "fillBlank"; ref: string }
+  | { kind: "flashcards"; ref: string };
 
 export type StoredVignetteManifest = {
   id: string;

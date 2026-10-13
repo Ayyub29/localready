@@ -327,6 +327,129 @@
               ]
             }
           ],
+          "fillBlankQuizzes": [
+            {
+              "id": "id-id-basics-fill-arrival-001",
+              "title": {
+                "en": "Complete the phrase",
+                "id": "Lengkapi frasanya"
+              },
+              "questions": [
+                {
+                  "id": "fb-terima-kasih",
+                  "instruction": {
+                    "en": "Type the missing word in Indonesian.",
+                    "id": "Ketik kata yang hilang dalam bahasa Indonesia."
+                  },
+                  "before": "Terima ",
+                  "after": ".",
+                  "answers": [
+                    "kasih"
+                  ],
+                  "phraseId": "id-id-basics-terima-kasih"
+                },
+                {
+                  "id": "fb-air-mineral",
+                  "before": "Permisi, ada air ",
+                  "after": "?",
+                  "answers": [
+                    "mineral"
+                  ],
+                  "phraseId": "id-id-basics-ada-air-mineral"
+                },
+                {
+                  "id": "fb-lima-ribu",
+                  "before": "",
+                  "after": " ribu rupiah.",
+                  "answers": [
+                    "lima",
+                    "Lima"
+                  ],
+                  "hint": {
+                    "en": "The price you heard at the warung.",
+                    "id": "Harga yang kamu dengar di warung."
+                  },
+                  "phraseId": "id-id-basics-lima-ribu"
+                }
+              ]
+            }
+          ],
+          "flashcardDecks": [
+            {
+              "id": "id-id-basics-flash-arrival-001",
+              "title": {
+                "en": "Flashcards — arrival day",
+                "id": "Kartu kata — hari kedatangan"
+              },
+              "cards": [
+                {
+                  "id": "fc-selamat",
+                  "front": {
+                    "en": "Welcome to Jakarta!",
+                    "id": "Selamat datang di Jakarta!"
+                  },
+                  "target": "Selamat datang di Jakarta!",
+                  "meaning": {
+                    "en": "Welcome to Jakarta!",
+                    "id": "Selamat datang di Jakarta!"
+                  },
+                  "phraseId": "id-id-basics-selamat-datang"
+                },
+                {
+                  "id": "fc-toilet",
+                  "front": {
+                    "en": "Excuse me, where is the toilet?",
+                    "id": "Permisi, toilet di mana?"
+                  },
+                  "target": "Permisi, toilet di mana?",
+                  "meaning": {
+                    "en": "Excuse me, where is the toilet?",
+                    "id": "Permisi, toilet di mana?"
+                  },
+                  "phraseId": "id-id-basics-toilet-di-mana"
+                },
+                {
+                  "id": "fc-water",
+                  "front": {
+                    "en": "Excuse me, do you have bottled water?",
+                    "id": "Permisi, ada air mineral?"
+                  },
+                  "target": "Permisi, ada air mineral?",
+                  "meaning": {
+                    "en": "Excuse me, do you have bottled water?",
+                    "id": "Permisi, ada air mineral?"
+                  },
+                  "phraseId": "id-id-basics-ada-air-mineral"
+                },
+                {
+                  "id": "fc-price",
+                  "front": {
+                    "en": "Five thousand rupiah.",
+                    "id": "Lima ribu rupiah."
+                  },
+                  "target": "Lima ribu rupiah.",
+                  "meaning": {
+                    "en": "Five thousand rupiah.",
+                    "id": "Lima ribu rupiah."
+                  },
+                  "phraseId": "id-id-basics-lima-ribu"
+                },
+                {
+                  "id": "fc-thanks",
+                  "front": {
+                    "en": "Thank you.",
+                    "id": "Terima kasih."
+                  },
+                  "target": "Terima kasih.",
+                  "meaning": {
+                    "en": "Thank you.",
+                    "id": "Terima kasih."
+                  },
+                  "phraseId": "id-id-basics-terima-kasih"
+                }
+              ]
+            }
+          ],
           "playback": [
             {
               "kind": "conversation",
@@ -339,6 +462,14 @@
             {
               "kind": "phraseList",
               "phraseListId": "id-id-basics-arrival-drill-001"
+            },
+            {
+              "kind": "fillBlank",
+              "fillBlankQuizId": "id-id-basics-fill-arrival-001"
+            },
+            {
+              "kind": "flashcards",
+              "flashcardDeckId": "id-id-basics-flash-arrival-001"
             }
           ]
         }

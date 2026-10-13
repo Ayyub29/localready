@@ -2,14 +2,20 @@ import type { StoredLessonManifest } from "@/lib/content/stored-lesson-manifest-
 import type { StoredMiniLesson } from "@/lib/content/stored-mini-lesson-types";
 import { storedToVignetteConversation } from "@/lib/content/stored-conversation-types";
 import type {
+  Flashcard,
   LessonContent,
   LessonVignette,
   MiniLesson,
+  VignetteFillBlankQuiz,
+  VignetteFlashcardDeck,
   VignettePlaybackItem,
   VignettePhraseList,
 } from "@/lib/lesson-content-types";
+import type { StoredFlashcard } from "@/lib/content/stored-flashcard-deck-types";
 import {
   loadStoredConversationsMap,
+  loadStoredFillBlankQuizzesMap,
+  loadStoredFlashcardDecksMap,
   loadStoredMiniLessonsMap,
   loadStoredPhraseListsMap,
 } from "@/lib/content/load-pool-files";
@@ -50,13 +56,41 @@ export async function compileLessonManifest(
   const conversations = await loadStoredConversationsMap(corridorId);
   const miniLessons = await loadStoredMiniLessonsMap(corridorId);
   const phraseLists = await loadStoredPhraseListsMap(corridorId);
+  const fillBlankQuizzes = await loadStoredFillBlankQuizzesMap(corridorId);
+  const flashcardDecks = await loadStoredFlashcardDecksMap(corridorId);
   const resolvePhrase = await buildPhraseResolver(corridorId, conversations);
+
+  function resolveFlashcard(card: StoredFlashcard): Flashcard | null {
+    if (card.phraseId) {
+      const p = resolvePhrase(card.phraseId);
+      if (!p) return null;
+      return {
+        id: card.id,
+        front: card.front,
+        target: p.target,
+        romanization: p.romanization,
+        meaning: p.meaning,
+        phraseId: card.phraseId,
+      };
+    }
+    if (!card.target?.trim()) return null;
+    return {
+      id: card.id,
+      front: card.front,
+      target: card.target,
+      romanization: card.romanization,
+      meaning: card.meaning ?? card.front,
+      phraseId: card.phraseId,
+    };
+  }
 
   const vignettes: LessonVignette[] = manifest.vignettes.map((vm) => {
     const vignetteConversations: ReturnType<typeof storedToVignetteConversation>[] =
       [];
     const vignetteMiniLessons: MiniLesson[] = [];
     const vignettePhraseLists: VignettePhraseList[] = [];
+    const vignetteFillBlank: VignetteFillBlankQuiz[] = [];
+    const vignetteFlashcards: VignetteFlashcardDeck[] = [];
     const playback: VignettePlaybackItem[] = [];
 
     const conversationIds = new Set<string>();
@@ -123,6 +157,53 @@ export async function compileLessonManifest(
           phrases,
         });
         playback.push({ kind: "phraseList", phraseListId: pl.id });
+        continue;
+      }
+
+      if (item.kind === "fillBlank") {
+        const quiz = fillBlankQuizzes.get(item.ref);
+        if (!quiz) {
+          warnings.push(`Missing fill-blank quiz: ${item.ref}`);
+          continue;
+        }
+        vignetteFillBlank.push({
+          id: quiz.id,
+          title: quiz.title,
+          questions: quiz.questions.map((q) => ({
+            id: q.id,
+            instruction: q.instruction,
+            before: q.before,
+            after: q.after,
+            answers: q.answers,
+            hint: q.hint,
+            phraseId: q.phraseId,
+          })),
+        });
+        playback.push({ kind: "fillBlank", fillBlankQuizId: quiz.id });
+        continue;
+      }
+
+      if (item.kind === "flashcards") {
+        const deck = flashcardDecks.get(item.ref);
+        if (!deck) {
+          warnings.push(`Missing flashcard deck: ${item.ref}`);
+          continue;
+        }
+        const cards: Flashcard[] = [];
+        for (const card of deck.cards) {
+          const resolved = resolveFlashcard(card);
+          if (!resolved) {
+            warnings.push(`Unresolved flashcard ${card.id} in deck ${item.ref}`);
+            continue;
+          }
+          cards.push(resolved);
+        }
+        vignetteFlashcards.push({
+          id: deck.id,
+          title: deck.title,
+          cards,
+        });
+        playback.push({ kind: "flashcards", flashcardDeckId: deck.id });
       }
     }
 
@@ -133,6 +214,8 @@ export async function compileLessonManifest(
       conversations: vignetteConversations,
       miniLessons: vignetteMiniLessons.length ? vignetteMiniLessons : undefined,
       phraseLists: vignettePhraseLists.length ? vignettePhraseLists : undefined,
+      fillBlankQuizzes: vignetteFillBlank.length ? vignetteFillBlank : undefined,
+      flashcardDecks: vignetteFlashcards.length ? vignetteFlashcards : undefined,
       playback: playback.length ? playback : undefined,
     };
   });

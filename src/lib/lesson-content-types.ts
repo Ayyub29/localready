@@ -33,22 +33,36 @@ export type CultureCard = {
   avoid?: LocalizedString[];
 };
 
-/** @deprecated Quizzes are not stored in runtime packs; may return for exercises later. */
-export type QuizQuestion =
-  | {
-      id: string;
-      type: "mcq";
-      prompt: LocalizedString;
-      options: LocalizedString[];
-      correctIndex: number;
-    }
-  | {
-      id: string;
-      type: "pick-phrase";
-      prompt: LocalizedString;
-      phraseIds: string[];
-      correctPhraseId: string;
-    };
+export type FillBlankQuestion = {
+  id: string;
+  instruction?: LocalizedString;
+  before: string;
+  after?: string;
+  answers: string[];
+  hint?: LocalizedString;
+  phraseId?: string;
+};
+
+export type VignetteFillBlankQuiz = {
+  id: string;
+  title: LocalizedString;
+  questions: FillBlankQuestion[];
+};
+
+export type Flashcard = {
+  id: string;
+  front: LocalizedString;
+  target: string;
+  romanization?: string;
+  meaning: LocalizedString;
+  phraseId?: string;
+};
+
+export type VignetteFlashcardDeck = {
+  id: string;
+  title: LocalizedString;
+  cards: Flashcard[];
+};
 
 export type ConversationRole = "narrator" | "local" | "traveler";
 
@@ -107,7 +121,9 @@ export type VignettePhraseList = {
 export type VignettePlaybackItem =
   | { kind: "conversation"; conversationId: string }
   | { kind: "miniLesson"; miniLessonId: string }
-  | { kind: "phraseList"; phraseListId: string };
+  | { kind: "phraseList"; phraseListId: string }
+  | { kind: "fillBlank"; fillBlankQuizId: string }
+  | { kind: "flashcards"; flashcardDeckId: string };
 
 /** Lesson 0 — writing system + essential words (non-Latin corridors). */
 export type ScriptBlock =
@@ -143,12 +159,13 @@ export type LessonVignette = {
   conversations: VignetteConversation[];
   miniLessons?: MiniLesson[];
   phraseLists?: VignettePhraseList[];
+  fillBlankQuizzes?: VignetteFillBlankQuiz[];
+  flashcardDecks?: VignetteFlashcardDeck[];
   /** Top-level unit order between conversations and phrase lists. */
   playback?: VignettePlaybackItem[];
   /** Legacy packs only — prefer `conversations`. */
   scenario?: LocalizedString;
   phrases?: Phrase[];
-  quiz?: QuizQuestion[];
 };
 
 export type LessonContent = {
