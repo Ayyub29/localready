@@ -35,9 +35,39 @@ Set these as **encrypted** variables (not in git):
 
 ### Google OAuth
 
-In Google Cloud Console, add an authorized redirect URI:
+1. [Google Cloud Console](https://console.cloud.google.com/apis/credentials) → **Create credentials** → **OAuth client ID** → type **Web application** (not Android/iOS/Desktop).
+2. **Authorized redirect URIs** (must match exactly, no trailing slash):
 
-`https://<your-workers-host>/api/auth/callback/google`
+   - Production: `https://<your-workers-host>/api/auth/callback/google`
+   - Local: `http://localhost:43123/api/auth/callback/google`
+
+3. Copy **Client ID** and **Client secret** from that same OAuth client into the worker (or `.env.local`):
+
+   | Worker / `.env.local` name | Value |
+   |----------------------------|--------|
+   | `AUTH_GOOGLE_ID` | Client ID (`….apps.googleusercontent.com`) |
+   | `AUTH_GOOGLE_SECRET` | Client secret from the same row |
+
+   Aliases also work: `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET`, or `AUTH_GOOGLE_CLIENT_ID` / `AUTH_GOOGLE_CLIENT_SECRET`.
+
+4. Set **`AUTH_URL`** to the **exact** origin users open in the browser (scheme + host, no path), e.g. `https://localready.your-subdomain.workers.dev` — not `localhost` in production.
+
+5. After changing secrets in Cloudflare, **redeploy** (or save + wait for the worker to pick up new variables).
+
+#### `Error 401: invalid_client` (`GeneralOAuthFlow`)
+
+Google shows this when the **client ID or secret** sent to Google is wrong, empty, or from a deleted/regenerated credential.
+
+| Check | Fix |
+|-------|-----|
+| Empty Google vars in `.env.local` or Workers | Set `AUTH_GOOGLE_ID` and `AUTH_GOOGLE_SECRET`; redeploy on CF |
+| Wrong names in dashboard | Use table above (not only `GOOGLE_*` without matching secret) |
+| Regenerated secret in Google | Paste the **new** secret into Workers / `.env.local` |
+| Android/iOS client type | Create a **Web application** OAuth client for this app |
+| ID and secret from different clients | Re-copy both from one OAuth 2.0 client |
+| Extra spaces/newlines when pasting | Trim values in Cloudflare encrypted variables |
+
+`redirect_uri_mismatch` is a **different** error — fix redirect URIs in Google Console, not client secret.
 
 ## Git-connected deploys (recommended)
 
