@@ -1,7 +1,8 @@
-import { stat } from "node:fs/promises";
-import { readFile } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { cache } from "react";
+import { getBundledCorridorPack } from "@/lib/content/bundled-content";
+import { isBundledContentMode } from "@/lib/content/content-fs";
 import { enrichPackGlosses } from "@/lib/content/enrich-pack-glosses";
 import type { CorridorContentPack, LessonContent } from "@/lib/lesson-content-types";
 import type { CorridorId, SituationKey } from "@/lib/types";
@@ -17,8 +18,19 @@ type PackCacheEntry = {
 
 /** Process-local cache keyed by pack file mtime (dev + warm server). */
 const packByMtime = new Map<CorridorId, PackCacheEntry>();
+const packBundled = new Map<CorridorId, CorridorContentPack>();
 
 async function readPackFromDisk(corridorId: CorridorId): Promise<CorridorContentPack | null> {
+  if (await isBundledContentMode()) {
+    const hit = packBundled.get(corridorId);
+    if (hit) return hit;
+    const raw = getBundledCorridorPack(corridorId);
+    if (!raw) return null;
+    const pack = await enrichPackGlosses(raw);
+    packBundled.set(corridorId, pack);
+    return pack;
+  }
+
   const filePath = packPath(corridorId);
   try {
     const fileStat = await stat(filePath);
@@ -72,7 +84,9 @@ export function lessonHasContent(lesson: LessonContent): boolean {
 export function invalidateCorridorPackCache(corridorId?: CorridorId): void {
   if (corridorId) {
     packByMtime.delete(corridorId);
+    packBundled.delete(corridorId);
     return;
   }
   packByMtime.clear();
+  packBundled.clear();
 }
