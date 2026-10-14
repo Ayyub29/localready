@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "id": "id-id-basics-warung-001",
+  "corridorId": "id-id",
+  "situation": "basics",
+  "source": "manual",
+  "title": {
+    "en": "Buy water at a warung",
+    "id": "Beli air di warung"
+  },
+  "description": {
+    "en": "You stop at a small roadside warung to buy water before checking in to your hotel.",
+    "id": "Kamu berhenti di warung kecil untuk beli air sebelum check-in hotel."
+  },
+  "turns": [
+    {
+      "id": "id-id-basics-warung-001-t1",
+      "role": "traveler",
+      "label": { "en": "You", "id": "Kamu" },
+      "target": "Permisi, ada air mineral?",
+      "line": {
+        "en": "Excuse me, do you have bottled water?",
+        "id": "Permisi, ada air mineral?"
+      },
+      "phraseId": "id-id-basics-ada-air-mineral"
+    },
+    {
+      "id": "id-id-basics-warung-001-t2",
+      "role": "local",
+      "label": { "en": "Shopkeeper", "id": "Penjual" },
+      "target": "Ada. Mau yang dingin?",
+      "line": {
+        "en": "Yes. Do you want it cold?",
+        "id": "Ada. Mau yang dingin?"
+      },
+      "phraseId": "id-id-basics-mau-dingin"
+    },
+    {
+      "id": "id-id-basics-warung-001-t3",
+      "role": "traveler",
+      "label": { "en": "You", "id": "Kamu" },
+      "target": "Yang dingin, satu botol.",
+      "line": {
+        "en": "Cold, one bottle please.",
+        "id": "Yang dingin, satu botol."
+      },
+      "phraseId": "id-id-basics-satu-botol"
+    },
+    {
+      "id": "id-id-basics-warung-001-t4",
+      "role": "local",
+      "label": { "en": "Shopkeeper", "id": "Penjual" },
+      "target": "Lima ribu rupiah.",
+      "line": {
+        "en": "Five thousand rupiah.",
+        "id": "Lima ribu rupiah."
+      },
+      "phraseId": "id-id-basics-lima-ribu"
+    },
+    {
+      "id": "id-id-basics-warung-001-t5",
+      "role": "traveler",
+      "label": { "en": "You", "id": "Kamu" },
+      "target": "Terima kasih.",
+      "line": {
+        "en": "Thank you.",
+        "id": "Terima kasih."
+      },
+      "phraseId": "id-id-basics-terima-kasih"
+    }
+  ],
+  "createdAt": "2026-10-12T00:00:00.000Z",
+  "notes": "Sample lesson — warung"
+}

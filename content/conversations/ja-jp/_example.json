@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "example-hotel-greet",
+  "corridorId": "ja-jp",
+  "situation": "hotel",
+  "source": "manual",
+  "title": {
+    "en": "Check-in greeting",
+    "id": "Sapaan saat check-in"
+  },
+  "description": {
+    "en": "You arrive at the hotel after a long flight. The clerk greets you at the counter.",
+    "id": "Kamu sampai di hotel setelah penerbangan panjang. Petugas menyapamu di meja."
+  },
+  "turns": [],
+  "notes": "Template only — copy and fill turns; underscore prefix is not loaded by extract script if we skip _ files — actually extract loads all json. Rename or delete before ship."
+}

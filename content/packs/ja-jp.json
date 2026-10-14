@@ -1,0 +1,500 @@
+{
+  "corridorId": "ja-jp",
+  "lessons": [
+    {
+      "id": "ja-jp-script",
+      "corridorId": "ja-jp",
+      "situation": "script",
+      "order": 0,
+      "title": {
+        "en": "Letters & first words",
+        "id": "Huruf & kata penting"
+      },
+      "free": true,
+      "vignettes": [],
+      "scriptBlocks": []
+    },
+    {
+      "id": "ja-jp-basics",
+      "corridorId": "ja-jp",
+      "situation": "basics",
+      "order": 1,
+      "title": {
+        "en": "First hour & greetings",
+        "id": "Jam pertama & sapaan"
+      },
+      "free": true,
+      "vignettes": [
+        {
+          "id": "ja-jp-basics-first-hour",
+          "title": {
+            "en": "Hotel & shop",
+            "id": "Hotel & toko"
+          },
+          "culture": [
+            {
+              "id": "ja-jp-basics-culture-polite",
+              "title": {
+                "en": "Politeness first",
+                "id": "Sopan dulu"
+              },
+              "body": {
+                "en": "Short polite phrases matter more than perfect grammar when traveling.",
+                "id": "Frasa sopan yang singkat lebih penting daripada grammar sempurna saat jalan-jalan."
+              }
+            }
+          ],
+          "conversations": [
+            {
+              "id": "ja-jp-basics-conv-greetings",
+              "situation": "basics",
+              "title": {
+                "en": "Say hello at the desk",
+                "id": "Sapaan di meja resepsionis"
+              },
+              "description": {
+                "en": "You walk up to the hotel front desk. The staff member looks up and smiles.",
+                "id": "Kamu mendekati resepsionis hotel. Staf melihatmu dan tersenyum."
+              },
+              "turns": [
+                {
+                  "id": "ja-jp-basics-conv-greetings-t1",
+                  "role": "local",
+                  "label": {
+                    "en": "Staff",
+                    "id": "Staf"
+                  },
+                  "target": "こんにちは。",
+                  "romanization": "Konnichiwa.",
+                  "line": {
+                    "en": "Good afternoon.",
+                    "id": "Selamat siang."
+                  },
+                  "phraseId": "ja-jp-basics-good-afternoon-0"
+                },
+                {
+                  "id": "ja-jp-basics-conv-greetings-t2",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "こんにちは。",
+                  "romanization": "Konnichiwa.",
+                  "line": {
+                    "en": "Good afternoon.",
+                    "id": "Selamat siang."
+                  },
+                  "phraseId": "ja-jp-basics-good-afternoon-0"
+                },
+                {
+                  "id": "ja-jp-basics-conv-greetings-t3",
+                  "role": "local",
+                  "label": {
+                    "en": "Staff",
+                    "id": "Staf"
+                  },
+                  "target": "お元気ですか？",
+                  "romanization": "O-genki desu ka?",
+                  "line": {
+                    "en": "How are you?",
+                    "id": "Apa kabar?"
+                  },
+                  "phraseId": "ja-jp-basics-how-are-you-1"
+                },
+                {
+                  "id": "ja-jp-basics-conv-greetings-t4",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "お名前は？",
+                  "romanization": "O-namae wa?",
+                  "line": {
+                    "en": "What's your name? (lit. \"Your name is...\")",
+                    "id": "Siapa nama Anda? (secara harfiah: \"Nama Anda...\")"
+                  },
+                  "phraseId": "ja-jp-basics-what-s-your-name-lit-your-name-is-2"
+                },
+                {
+                  "id": "ja-jp-basics-conv-greetings-t5",
+                  "role": "local",
+                  "label": {
+                    "en": "Staff",
+                    "id": "Staf"
+                  },
+                  "target": "... です。",
+                  "romanization": "... desu.",
+                  "line": {
+                    "en": "My name is ... .",
+                    "id": "Nama saya ... ."
+                  },
+                  "phraseId": "ja-jp-basics-my-name-is-3"
+                },
+                {
+                  "id": "ja-jp-basics-conv-greetings-t6",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "始めまして。どうぞ宜しくお願いします。",
+                  "romanization": "Hajimemashite. Dōzo yoroshiku onegaishimasu.",
+                  "line": {
+                    "en": "Nice to meet you. (formal)",
+                    "id": "Senang bertemu dengan Anda. (formal)"
+                  },
+                  "phraseId": "ja-jp-basics-nice-to-meet-you-formal-4"
+                }
+              ]
+            },
+            {
+              "id": "ja-jp-basics-conv-polite",
+              "situation": "basics",
+              "title": {
+                "en": "Get attention in a shop",
+                "id": "Minta perhatian di toko"
+              },
+              "description": {
+                "en": "The shop is crowded. You gently get the clerk's attention.",
+                "id": "Toko sedang ramai. Kamu dengan sopan menarik perhatian pegawai."
+              },
+              "turns": [
+                {
+                  "id": "ja-jp-basics-conv-polite-t1",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "こんにちは。",
+                  "romanization": "Konnichiwa.",
+                  "line": {
+                    "en": "Good afternoon.",
+                    "id": "Selamat siang."
+                  },
+                  "phraseId": "ja-jp-basics-good-afternoon-10"
+                },
+                {
+                  "id": "ja-jp-basics-conv-polite-t2",
+                  "role": "local",
+                  "label": {
+                    "en": "Staff",
+                    "id": "Staf"
+                  },
+                  "line": {
+                    "en": "Yes? How can I help?",
+                    "id": "Ya? Ada yang bisa dibantu?"
+                  }
+                },
+                {
+                  "id": "ja-jp-basics-conv-polite-t3",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "はい、元気です。",
+                  "romanization": "Hai, genki desu.",
+                  "line": {
+                    "en": "Fine, thank you.",
+                    "id": "Baik, terima kasih."
+                  },
+                  "phraseId": "ja-jp-basics-fine-thank-you-11"
+                },
+                {
+                  "id": "ja-jp-basics-conv-polite-t4",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "お願いします。",
+                  "romanization": "Onegai shimasu.",
+                  "line": {
+                    "en": "Please. (request)",
+                    "id": "Tolong. (permintaan)"
+                  },
+                  "phraseId": "ja-jp-basics-please-request-12"
+                },
+                {
+                  "id": "ja-jp-basics-conv-polite-t5",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "どうぞ。",
+                  "romanization": "Dōzo.",
+                  "line": {
+                    "en": "Please. (offer)",
+                    "id": "Silakan. (menawarkan)"
+                  },
+                  "phraseId": "ja-jp-basics-please-offer-13"
+                },
+                {
+                  "id": "ja-jp-basics-conv-polite-t6",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "どうもありがとうございました。",
+                  "romanization": "Dōmo arigatō gozaimashita.",
+                  "line": {
+                    "en": "Thank you very much. (formal)",
+                    "id": "Terima kasih banyak. (formal)"
+                  },
+                  "phraseId": "ja-jp-basics-thank-you-very-much-formal-14"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-jp-train",
+      "corridorId": "ja-jp",
+      "situation": "train",
+      "order": 2,
+      "title": {
+        "en": "Transit & tickets",
+        "id": "Transportasi & tiket"
+      },
+      "free": false,
+      "vignettes": []
+    },
+    {
+      "id": "ja-jp-money",
+      "corridorId": "ja-jp",
+      "situation": "money",
+      "order": 3,
+      "title": {
+        "en": "Paying & convenience stores",
+        "id": "Bayar & minimarket"
+      },
+      "free": false,
+      "vignettes": []
+    },
+    {
+      "id": "ja-jp-restaurant",
+      "corridorId": "ja-jp",
+      "situation": "restaurant",
+      "order": 4,
+      "title": {
+        "en": "Ordering & the bill",
+        "id": "Pesan makan & bon"
+      },
+      "free": false,
+      "vignettes": []
+    },
+    {
+      "id": "ja-jp-hotel",
+      "corridorId": "ja-jp",
+      "situation": "hotel",
+      "order": 5,
+      "title": {
+        "en": "Check-in & your room",
+        "id": "Check-in & kamar"
+      },
+      "free": false,
+      "vignettes": []
+    },
+    {
+      "id": "ja-jp-directions",
+      "corridorId": "ja-jp",
+      "situation": "directions",
+      "order": 6,
+      "title": {
+        "en": "Lost & maps",
+        "id": "Tersesat & peta"
+      },
+      "free": false,
+      "vignettes": []
+    },
+    {
+      "id": "ja-jp-culture",
+      "corridorId": "ja-jp",
+      "situation": "culture",
+      "order": 7,
+      "title": {
+        "en": "Etiquette & temples",
+        "id": "Etiket & tempat suci"
+      },
+      "free": false,
+      "vignettes": []
+    },
+    {
+      "id": "ja-jp-emergency",
+      "corridorId": "ja-jp",
+      "situation": "emergency",
+      "order": 8,
+      "title": {
+        "en": "Help, health & allergies",
+        "id": "Bantuan, kesehatan & alergi"
+      },
+      "free": true,
+      "vignettes": [
+        {
+          "id": "ja-jp-emergency-street",
+          "title": {
+            "en": "Urgent help",
+            "id": "Bantuan darurat"
+          },
+          "conversations": [
+            {
+              "id": "ja-jp-emergency-conv-help",
+              "situation": "emergency",
+              "title": {
+                "en": "Ask for help",
+                "id": "Minta bantuan"
+              },
+              "description": {
+                "en": "Something went wrong and you need help from someone nearby.",
+                "id": "Ada masalah dan kamu butuh bantuan orang di sekitar."
+              },
+              "turns": [
+                {
+                  "id": "ja-jp-emergency-conv-help-t1",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "警察をよぶよ！",
+                  "romanization": "Keisatsu o yobu yo!",
+                  "line": {
+                    "en": "I'll call the police.",
+                    "id": "Saya akan menelepon polisi."
+                  },
+                  "phraseId": "ja-jp-emergency-i-ll-call-the-police-0"
+                },
+                {
+                  "id": "ja-jp-emergency-conv-help-t2",
+                  "role": "local",
+                  "label": {
+                    "en": "Someone nearby",
+                    "id": "Orang di sekitar"
+                  },
+                  "line": {
+                    "en": "Are you okay? What's wrong?",
+                    "id": "Kamu oke? Ada apa?"
+                  }
+                },
+                {
+                  "id": "ja-jp-emergency-conv-help-t3",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "警察！",
+                  "romanization": "Keisatsu!",
+                  "line": {
+                    "en": "Police!",
+                    "id": "Polisi!"
+                  },
+                  "phraseId": "ja-jp-emergency-police-1"
+                },
+                {
+                  "id": "ja-jp-emergency-conv-help-t4",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "手伝ってください。",
+                  "romanization": "Tetsudatte kudasai.",
+                  "line": {
+                    "en": "I need your help.",
+                    "id": "Saya butuh bantuan Anda."
+                  },
+                  "phraseId": "ja-jp-emergency-i-need-your-help-2"
+                },
+                {
+                  "id": "ja-jp-emergency-conv-help-t5",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "緊急です。",
+                  "romanization": "Kinkyū desu.",
+                  "line": {
+                    "en": "It's an emergency.",
+                    "id": "Ini darurat."
+                  },
+                  "phraseId": "ja-jp-emergency-it-s-an-emergency-3"
+                },
+                {
+                  "id": "ja-jp-emergency-conv-help-t6",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "道に迷っています。",
+                  "romanization": "Michi ni mayotte imasu.",
+                  "line": {
+                    "en": "I'm lost.",
+                    "id": "Saya tersesat."
+                  },
+                  "phraseId": "ja-jp-emergency-i-m-lost-4"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "emergencyPhrases": [
+    {
+      "id": "ja-jp-emergency-i-ll-call-the-police-0",
+      "target": "警察をよぶよ！",
+      "romanization": "Keisatsu o yobu yo!",
+      "meaning": {
+        "en": "I'll call the police.",
+        "id": "Saya akan menelepon polisi."
+      }
+    },
+    {
+      "id": "ja-jp-emergency-police-1",
+      "target": "警察！",
+      "romanization": "Keisatsu!",
+      "meaning": {
+        "en": "Police!",
+        "id": "Polisi!"
+      }
+    },
+    {
+      "id": "ja-jp-emergency-i-need-your-help-2",
+      "target": "手伝ってください。",
+      "romanization": "Tetsudatte kudasai.",
+      "meaning": {
+        "en": "I need your help.",
+        "id": "Saya butuh bantuan Anda."
+      }
+    },
+    {
+      "id": "ja-jp-emergency-it-s-an-emergency-3",
+      "target": "緊急です。",
+      "romanization": "Kinkyū desu.",
+      "meaning": {
+        "en": "It's an emergency.",
+        "id": "Ini darurat."
+      }
+    },
+    {
+      "id": "ja-jp-emergency-i-m-lost-4",
+      "target": "道に迷っています。",
+      "romanization": "Michi ni mayotte imasu.",
+      "meaning": {
+        "en": "I'm lost.",
+        "id": "Saya tersesat."
+      }
+    }
+  ]
+}

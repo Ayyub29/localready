@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "situations": [
+    {
+      "key": "script",
+      "order": 0,
+      "enabled": true,
+      "title": {
+        "en": "Letters & first words",
+        "id": "Huruf & kata penting"
+      }
+    },
+    {
+      "key": "basics",
+      "order": 1,
+      "enabled": true,
+      "title": {
+        "en": "First hour & greetings",
+        "id": "Jam pertama & sapaan"
+      }
+    },
+    {
+      "key": "train",
+      "order": 2,
+      "enabled": true,
+      "title": {
+        "en": "Transit & tickets",
+        "id": "Transportasi & tiket"
+      }
+    },
+    {
+      "key": "money",
+      "order": 3,
+      "enabled": true,
+      "title": {
+        "en": "Paying & convenience stores",
+        "id": "Bayar & minimarket"
+      }
+    },
+    {
+      "key": "restaurant",
+      "order": 4,
+      "enabled": true,
+      "title": {
+        "en": "Ordering & the bill",
+        "id": "Pesan makan & bon"
+      }
+    },
+    {
+      "key": "hotel",
+      "order": 5,
+      "enabled": true,
+      "title": {
+        "en": "Check-in & your room",
+        "id": "Check-in & kamar"
+      }
+    },
+    {
+      "key": "directions",
+      "order": 6,
+      "enabled": true,
+      "title": {
+        "en": "Lost & maps",
+        "id": "Tersesat & peta"
+      }
+    },
+    {
+      "key": "culture",
+      "order": 7,
+      "enabled": true,
+      "title": {
+        "en": "Etiquette & temples",
+        "id": "Etiket & tempat suci"
+      }
+    },
+    {
+      "key": "emergency",
+      "order": 8,
+      "enabled": true,
+      "title": {
+        "en": "Help, health & allergies",
+        "id": "Bantuan, kesehatan & alergi"
+      }
+    }
+  ]
+}

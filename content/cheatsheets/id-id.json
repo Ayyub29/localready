@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "corridorId": "id-id",
+  "notes": "Curated cheatsheet picks per situation. Run npm run content:build:cheatsheet -- id-id after edits.",
+  "situations": {
+    "script": [
+      "id-id-pool-8e76f400",
+      "id-id-pool-f564d806",
+      "id-id-basics-terima-kasih",
+      "id-id-pool-589a0f47",
+      "id-id-pool-8566bdfc",
+      "id-id-basics-satu",
+      "id-id-basics-dua",
+      "id-id-basics-tiga"
+    ],
+    "basics": [
+      "id-id-basics-selamat-datang",
+      "id-id-basics-saya-turis",
+      "id-id-basics-silakan-masuk",
+      "id-id-basics-toilet-di-mana",
+      "id-id-basics-di-sebelah-kiri",
+      "id-id-basics-ada-air-mineral",
+      "id-id-basics-mau-dingin",
+      "id-id-basics-satu-botol",
+      "id-id-basics-lima-ribu",
+      "id-id-basics-terima-kasih"
+    ],
+    "train": [
+      "id-id-pool-00aafbbb",
+      "id-id-pool-40ab7272",
+      "id-id-pool-e7c67043",
+      "id-id-pool-973cfb62",
+      "id-id-pool-10a0cdb1",
+      "id-id-pool-063fe01f",
+      "id-id-pool-ae00704d"
+    ],
+    "money": [
+      "id-id-basics-satu",
+      "id-id-basics-dua",
+      "id-id-basics-tiga",
+      "id-id-basics-empat",
+      "id-id-basics-lima",
+      "id-id-basics-lima-ribu",
+      "id-id-pool-856db60e",
+      "id-id-pool-b86b4b98",
+      "id-id-pool-13c892c7"
+    ],
+    "restaurant": [
+      "id-id-basics-ada-air-mineral",
+      "id-id-basics-satu-botol",
+      "id-id-pool-973c9e48",
+      "id-id-pool-fba2a6ab",
+      "id-id-pool-64e6dc49",
+      "id-id-pool-25783fda",
+      "id-id-basics-terima-kasih"
+    ],
+    "hotel": [
+      "id-id-pool-a16a6316",
+      "id-id-pool-b8032fb1",
+      "id-id-pool-11aa2f0c",
+      "id-id-pool-b04f1cc1",
+      "id-id-pool-036b9856",
+      "id-id-pool-a8e56eb2"
+    ],
+    "directions": [
+      "id-id-pool-d32c8f4e",
+      "id-id-pool-5abc1bb6",
+      "id-id-pool-b5910034",
+      "id-id-pool-61c7f9b3",
+      "id-id-pool-3c80e97d",
+      "id-id-emergency-i-m-lost-4"
+    ],
+    "culture": [
+      "id-id-pool-589a0f47",
+      "id-id-pool-8566bdfc",
+      "id-id-pool-c829fff2",
+      "id-id-pool-89555982",
+      "id-id-pool-e0e0e805"
+    ],
+    "emergency": [
+      "id-id-emergency-i-need-your-help-2",
+      "id-id-emergency-it-s-an-emergency-3",
+      "id-id-emergency-police-1",
+      "id-id-emergency-i-ll-call-the-police-0",
+      "id-id-emergency-i-m-lost-4",
+      "id-id-pool-599c9d21"
+    ]
+  }
+}

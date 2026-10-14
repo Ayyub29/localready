@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "id": "id-id-basics-driver-001",
+  "corridorId": "id-id",
+  "situation": "basics",
+  "source": "manual",
+  "title": {
+    "en": "Meet your driver",
+    "id": "Bertemu supir"
+  },
+  "description": {
+    "en": "You step outside arrivals at Jakarta airport. Your driver holds a sign with your name.",
+    "id": "Kamu keluar dari area kedatangan bandara Jakarta. Supirmu memegang papan nama kamu."
+  },
+  "turns": [
+    {
+      "id": "id-id-basics-driver-001-t1",
+      "role": "local",
+      "label": { "en": "Driver", "id": "Supir" },
+      "target": "Selamat datang di Jakarta!",
+      "line": {
+        "en": "Welcome to Jakarta!",
+        "id": "Selamat datang di Jakarta!"
+      },
+      "phraseId": "id-id-basics-selamat-datang"
+    },
+    {
+      "id": "id-id-basics-driver-001-t2",
+      "role": "traveler",
+      "label": { "en": "You", "id": "Kamu" },
+      "target": "Terima kasih. Saya turis.",
+      "line": {
+        "en": "Thank you. I'm a tourist.",
+        "id": "Terima kasih. Saya turis."
+      },
+      "phraseId": "id-id-basics-saya-turis"
+    },
+    {
+      "id": "id-id-basics-driver-001-t3",
+      "role": "local",
+      "label": { "en": "Driver", "id": "Supir" },
+      "target": "Silakan masuk.",
+      "line": {
+        "en": "Please get in (the car).",
+        "id": "Silakan masuk (mobil)."
+      },
+      "phraseId": "id-id-basics-silakan-masuk"
+    },
+    {
+      "id": "id-id-basics-driver-001-t4",
+      "role": "traveler",
+      "label": { "en": "You", "id": "Kamu" },
+      "target": "Permisi, toilet di mana?",
+      "line": {
+        "en": "Excuse me, where is the toilet?",
+        "id": "Permisi, toilet di mana?"
+      },
+      "phraseId": "id-id-basics-toilet-di-mana"
+    },
+    {
+      "id": "id-id-basics-driver-001-t5",
+      "role": "local",
+      "label": { "en": "Driver", "id": "Supir" },
+      "target": "Di sebelah kiri, dekat kafe.",
+      "line": {
+        "en": "On the left, near the café.",
+        "id": "Di sebelah kiri, dekat kafe."
+      },
+      "phraseId": "id-id-basics-di-sebelah-kiri"
+    }
+  ],
+  "createdAt": "2026-10-12T00:00:00.000Z",
+  "notes": "Sample lesson — airport pickup"
+}

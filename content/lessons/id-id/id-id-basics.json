@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "id-id-basics",
+  "corridorId": "id-id",
+  "situation": "basics",
+  "order": 1,
+  "title": {
+    "en": "First hour & greetings",
+    "id": "Jam pertama & sapaan"
+  },
+  "free": true,
+  "vignettes": [
+    {
+      "id": "id-id-basics-arrival-day",
+      "title": {
+        "en": "Arrival day",
+        "id": "Hari kedatangan"
+      },
+      "culture": [
+        {
+          "id": "id-id-basics-culture-smile",
+          "title": { "en": "Smile first", "id": "Senyum dulu" },
+          "body": {
+            "en": "A friendly tone and a smile go a long way in shops and with drivers.",
+            "id": "Nada ramah dan senyum sangat membantu di warung dan dengan supir."
+          }
+        }
+      ],
+      "sequence": [
+        { "kind": "conversation", "ref": "id-id-basics-driver-001" },
+        {
+          "kind": "miniLesson",
+          "ref": "id-id-numbers-pay-001",
+          "anchor": {
+            "conversationRef": "id-id-basics-warung-001",
+            "afterTurnId": "id-id-basics-warung-001-t3"
+          }
+        },
+        { "kind": "conversation", "ref": "id-id-basics-warung-001" },
+        { "kind": "phraseList", "ref": "id-id-basics-arrival-drill-001" },
+        { "kind": "fillBlank", "ref": "id-id-basics-fill-arrival-001" },
+        { "kind": "flashcards", "ref": "id-id-basics-flash-arrival-001" }
+      ]
+    }
+  ]
+}

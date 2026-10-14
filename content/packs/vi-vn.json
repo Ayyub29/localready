@@ -1,0 +1,500 @@
+{
+  "corridorId": "vi-vn",
+  "lessons": [
+    {
+      "id": "vi-vn-script",
+      "corridorId": "vi-vn",
+      "situation": "script",
+      "order": 0,
+      "title": {
+        "en": "Letters & first words",
+        "id": "Huruf & kata penting"
+      },
+      "free": true,
+      "vignettes": [],
+      "scriptBlocks": []
+    },
+    {
+      "id": "vi-vn-basics",
+      "corridorId": "vi-vn",
+      "situation": "basics",
+      "order": 1,
+      "title": {
+        "en": "First hour & greetings",
+        "id": "Jam pertama & sapaan"
+      },
+      "free": true,
+      "vignettes": [
+        {
+          "id": "vi-vn-basics-first-hour",
+          "title": {
+            "en": "Hotel & shop",
+            "id": "Hotel & toko"
+          },
+          "culture": [
+            {
+              "id": "vi-vn-basics-culture-polite",
+              "title": {
+                "en": "Politeness first",
+                "id": "Sopan dulu"
+              },
+              "body": {
+                "en": "Short polite phrases matter more than perfect grammar when traveling.",
+                "id": "Frasa sopan yang singkat lebih penting daripada grammar sempurna saat jalan-jalan."
+              }
+            }
+          ],
+          "conversations": [
+            {
+              "id": "vi-vn-basics-conv-greetings",
+              "situation": "basics",
+              "title": {
+                "en": "Say hello at the desk",
+                "id": "Sapaan di meja resepsionis"
+              },
+              "description": {
+                "en": "You walk up to the hotel front desk. The staff member looks up and smiles.",
+                "id": "Kamu mendekati resepsionis hotel. Staf melihatmu dan tersenyum."
+              },
+              "turns": [
+                {
+                  "id": "vi-vn-basics-conv-greetings-t1",
+                  "role": "local",
+                  "label": {
+                    "en": "Staff",
+                    "id": "Staf"
+                  },
+                  "target": "Chào.",
+                  "romanization": "jow",
+                  "line": {
+                    "en": "Hello. (informal)",
+                    "id": ""
+                  },
+                  "phraseId": "vi-vn-basics-hello-informal-0"
+                },
+                {
+                  "id": "vi-vn-basics-conv-greetings-t2",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Chào.",
+                  "romanization": "jow",
+                  "line": {
+                    "en": "Hello. (informal)",
+                    "id": ""
+                  },
+                  "phraseId": "vi-vn-basics-hello-informal-0"
+                },
+                {
+                  "id": "vi-vn-basics-conv-greetings-t3",
+                  "role": "local",
+                  "label": {
+                    "en": "Staff",
+                    "id": "Staf"
+                  },
+                  "target": "Xin chào.",
+                  "romanization": "seen jow",
+                  "line": {
+                    "en": "Hello. (formal)",
+                    "id": ""
+                  },
+                  "phraseId": "vi-vn-basics-hello-formal-1"
+                },
+                {
+                  "id": "vi-vn-basics-conv-greetings-t4",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "A-lô.",
+                  "romanization": "AH-loh",
+                  "line": {
+                    "en": "Hello. (on the phone)",
+                    "id": ""
+                  },
+                  "phraseId": "vi-vn-basics-hello-on-the-phone-2"
+                },
+                {
+                  "id": "vi-vn-basics-conv-greetings-t5",
+                  "role": "local",
+                  "label": {
+                    "en": "Staff",
+                    "id": "Staf"
+                  },
+                  "target": "Bạn khỏe không?",
+                  "romanization": "Ban kweah kohng?",
+                  "line": {
+                    "en": "How are you? (Are you healthy?)",
+                    "id": ""
+                  },
+                  "phraseId": "vi-vn-basics-how-are-you-are-you-healthy-3"
+                },
+                {
+                  "id": "vi-vn-basics-conv-greetings-t6",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Tôi tên là ______ .",
+                  "romanization": "Thoye theyn la _____ .",
+                  "line": {
+                    "en": "My name is ______ .",
+                    "id": ""
+                  },
+                  "phraseId": "vi-vn-basics-my-name-is-4"
+                }
+              ]
+            },
+            {
+              "id": "vi-vn-basics-conv-polite",
+              "situation": "basics",
+              "title": {
+                "en": "Get attention in a shop",
+                "id": "Minta perhatian di toko"
+              },
+              "description": {
+                "en": "The shop is crowded. You gently get the clerk's attention.",
+                "id": "Toko sedang ramai. Kamu dengan sopan menarik perhatian pegawai."
+              },
+              "turns": [
+                {
+                  "id": "vi-vn-basics-conv-polite-t1",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Tôi khoẻ, cảm ơn. ( )",
+                  "romanization": "thoy",
+                  "line": {
+                    "en": "Fine, thank you. (I am healthy, thank you.)",
+                    "id": ""
+                  },
+                  "phraseId": "vi-vn-basics-fine-thank-you-i-am-healthy-thank-you-10"
+                },
+                {
+                  "id": "vi-vn-basics-conv-polite-t2",
+                  "role": "local",
+                  "label": {
+                    "en": "Staff",
+                    "id": "Staf"
+                  },
+                  "line": {
+                    "en": "Yes? How can I help?",
+                    "id": "Ya? Ada yang bisa dibantu?"
+                  }
+                },
+                {
+                  "id": "vi-vn-basics-conv-polite-t3",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Làm ơn.",
+                  "romanization": "lam uhhn",
+                  "line": {
+                    "en": "Please.",
+                    "id": ""
+                  },
+                  "phraseId": "vi-vn-basics-please-11"
+                },
+                {
+                  "id": "vi-vn-basics-conv-polite-t4",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Cảm ơn.",
+                  "romanization": "gam uhhn",
+                  "line": {
+                    "en": "Thank you.",
+                    "id": ""
+                  },
+                  "phraseId": "vi-vn-basics-thank-you-12"
+                },
+                {
+                  "id": "vi-vn-basics-conv-polite-t5",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Vâng (affirmative). ; Dạ (affirmative, respectful) (ya'aduhn)",
+                  "romanization": "vuhng",
+                  "line": {
+                    "en": "Yes.",
+                    "id": ""
+                  },
+                  "phraseId": "vi-vn-basics-yes-13"
+                },
+                {
+                  "id": "vi-vn-basics-conv-polite-t6",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Không.",
+                  "romanization": "kohng",
+                  "line": {
+                    "en": "No.",
+                    "id": ""
+                  },
+                  "phraseId": "vi-vn-basics-no-14"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vi-vn-train",
+      "corridorId": "vi-vn",
+      "situation": "train",
+      "order": 2,
+      "title": {
+        "en": "Transit & tickets",
+        "id": "Transportasi & tiket"
+      },
+      "free": false,
+      "vignettes": []
+    },
+    {
+      "id": "vi-vn-money",
+      "corridorId": "vi-vn",
+      "situation": "money",
+      "order": 3,
+      "title": {
+        "en": "Paying & convenience stores",
+        "id": "Bayar & minimarket"
+      },
+      "free": false,
+      "vignettes": []
+    },
+    {
+      "id": "vi-vn-restaurant",
+      "corridorId": "vi-vn",
+      "situation": "restaurant",
+      "order": 4,
+      "title": {
+        "en": "Ordering & the bill",
+        "id": "Pesan makan & bon"
+      },
+      "free": false,
+      "vignettes": []
+    },
+    {
+      "id": "vi-vn-hotel",
+      "corridorId": "vi-vn",
+      "situation": "hotel",
+      "order": 5,
+      "title": {
+        "en": "Check-in & your room",
+        "id": "Check-in & kamar"
+      },
+      "free": false,
+      "vignettes": []
+    },
+    {
+      "id": "vi-vn-directions",
+      "corridorId": "vi-vn",
+      "situation": "directions",
+      "order": 6,
+      "title": {
+        "en": "Lost & maps",
+        "id": "Tersesat & peta"
+      },
+      "free": false,
+      "vignettes": []
+    },
+    {
+      "id": "vi-vn-culture",
+      "corridorId": "vi-vn",
+      "situation": "culture",
+      "order": 7,
+      "title": {
+        "en": "Etiquette & temples",
+        "id": "Etiket & tempat suci"
+      },
+      "free": false,
+      "vignettes": []
+    },
+    {
+      "id": "vi-vn-emergency",
+      "corridorId": "vi-vn",
+      "situation": "emergency",
+      "order": 8,
+      "title": {
+        "en": "Help, health & allergies",
+        "id": "Bantuan, kesehatan & alergi"
+      },
+      "free": true,
+      "vignettes": [
+        {
+          "id": "vi-vn-emergency-street",
+          "title": {
+            "en": "Urgent help",
+            "id": "Bantuan darurat"
+          },
+          "conversations": [
+            {
+              "id": "vi-vn-emergency-conv-help",
+              "situation": "emergency",
+              "title": {
+                "en": "Ask for help",
+                "id": "Minta bantuan"
+              },
+              "description": {
+                "en": "Something went wrong and you need help from someone nearby.",
+                "id": "Ada masalah dan kamu butuh bantuan orang di sekitar."
+              },
+              "turns": [
+                {
+                  "id": "vi-vn-emergency-conv-help-t1",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Tôi sẽ gọi cảnh sát./Tôi sẽ gọi công an.",
+                  "romanization": "Thoy seEh GAWoy Kanh Sat/ Thoy seEH GAWoy Kong aanh",
+                  "line": {
+                    "en": "I'll call the police.",
+                    "id": "Saya akan menelepon polisi."
+                  },
+                  "phraseId": "vi-vn-emergency-i-ll-call-the-police-0"
+                },
+                {
+                  "id": "vi-vn-emergency-conv-help-t2",
+                  "role": "local",
+                  "label": {
+                    "en": "Someone nearby",
+                    "id": "Orang di sekitar"
+                  },
+                  "line": {
+                    "en": "Are you okay? What's wrong?",
+                    "id": "Kamu oke? Ada apa?"
+                  }
+                },
+                {
+                  "id": "vi-vn-emergency-conv-help-t3",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Công an!/Cảnh sát!",
+                  "romanization": "Kong aanh!/Kanh Sat",
+                  "line": {
+                    "en": "Police!",
+                    "id": "Polisi!"
+                  },
+                  "phraseId": "vi-vn-emergency-police-1"
+                },
+                {
+                  "id": "vi-vn-emergency-conv-help-t4",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Tôi cần (second person pronoun) giúp. ( )",
+                  "romanization": "Thoy Khan yip",
+                  "line": {
+                    "en": "I need your help.",
+                    "id": "Saya butuh bantuan Anda."
+                  },
+                  "phraseId": "vi-vn-emergency-i-need-your-help-2"
+                },
+                {
+                  "id": "vi-vn-emergency-conv-help-t5",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Việc này khẩn cấp.",
+                  "romanization": "VAHech nuhay Khan gup",
+                  "line": {
+                    "en": "It's an emergency.",
+                    "id": "Ini darurat."
+                  },
+                  "phraseId": "vi-vn-emergency-it-s-an-emergency-3"
+                },
+                {
+                  "id": "vi-vn-emergency-conv-help-t6",
+                  "role": "traveler",
+                  "label": {
+                    "en": "You",
+                    "id": "Kamu"
+                  },
+                  "target": "Tôi bị lạc.",
+                  "romanization": "Thoi bee lack",
+                  "line": {
+                    "en": "I'm lost.",
+                    "id": "Saya tersesat."
+                  },
+                  "phraseId": "vi-vn-emergency-i-m-lost-4"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "emergencyPhrases": [
+    {
+      "id": "vi-vn-emergency-i-ll-call-the-police-0",
+      "target": "Tôi sẽ gọi cảnh sát./Tôi sẽ gọi công an.",
+      "romanization": "Thoy seEh GAWoy Kanh Sat/ Thoy seEH GAWoy Kong aanh",
+      "meaning": {
+        "en": "I'll call the police.",
+        "id": "Saya akan menelepon polisi."
+      }
+    },
+    {
+      "id": "vi-vn-emergency-police-1",
+      "target": "Công an!/Cảnh sát!",
+      "romanization": "Kong aanh!/Kanh Sat",
+      "meaning": {
+        "en": "Police!",
+        "id": "Polisi!"
+      }
+    },
+    {
+      "id": "vi-vn-emergency-i-need-your-help-2",
+      "target": "Tôi cần (second person pronoun) giúp. ( )",
+      "romanization": "Thoy Khan yip",
+      "meaning": {
+        "en": "I need your help.",
+        "id": "Saya butuh bantuan Anda."
+      }
+    },
+    {
+      "id": "vi-vn-emergency-it-s-an-emergency-3",
+      "target": "Việc này khẩn cấp.",
+      "romanization": "VAHech nuhay Khan gup",
+      "meaning": {
+        "en": "It's an emergency.",
+        "id": "Ini darurat."
+      }
+    },
+    {
+      "id": "vi-vn-emergency-i-m-lost-4",
+      "target": "Tôi bị lạc.",
+      "romanization": "Thoi bee lack",
+      "meaning": {
+        "en": "I'm lost.",
+        "id": "Saya tersesat."
+      }
+    }
+  ]
+}

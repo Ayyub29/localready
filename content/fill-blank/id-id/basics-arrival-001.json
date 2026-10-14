@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "id": "id-id-basics-fill-arrival-001",
+  "corridorId": "id-id",
+  "title": {
+    "en": "What would you say?",
+    "id": "Apa yang akan kamu katakan?"
+  },
+  "source": "manual",
+  "questions": [
+    {
+      "id": "fb-warung-cold-drink",
+      "kind": "situation",
+      "prompt": {
+        "en": "You want to buy a cold bottled drink at a warung. What should you say?",
+        "id": "Kamu mau beli air mineral dingin di warung. Apa yang sebaiknya kamu katakan?"
+      },
+      "correctPhraseId": "id-id-basics-ada-air-mineral",
+      "distractorPhraseIds": [
+        "id-id-basics-toilet-di-mana",
+        "id-id-basics-selamat-datang",
+        "id-id-basics-lima-ribu"
+      ]
+    },
+    {
+      "id": "fb-warung-dingin",
+      "kind": "reply",
+      "prompt": {
+        "en": "You are at a warung buying bottled water.",
+        "id": "Kamu di warung membeli air mineral botol."
+      },
+      "cueSpeaker": { "en": "Shopkeeper", "id": "Penjual" },
+      "cueTarget": "Ada. Mau yang dingin?",
+      "cuePhraseId": "id-id-basics-mau-dingin",
+      "correctPhraseId": "id-id-basics-satu-botol",
+      "distractorPhraseIds": [
+        "id-id-basics-mau-dingin",
+        "id-id-basics-terima-kasih",
+        "id-id-basics-saya-turis"
+      ]
+    },
+    {
+      "id": "fb-warung-thanks",
+      "kind": "situation",
+      "prompt": {
+        "en": "You paid for your water at the warung. How do you thank them?",
+        "id": "Kamu sudah bayar air di warung. Bagaimana cara berterima kasih?"
+      },
+      "correctPhraseId": "id-id-basics-terima-kasih",
+      "distractorPhraseIds": [
+        "id-id-basics-lima-ribu",
+        "id-id-basics-ada-air-mineral",
+        "id-id-basics-toilet-di-mana"
+      ]
+    },
+    {
+      "id": "fb-driver-turis",
+      "kind": "reply",
+      "prompt": {
+        "en": "You just met your airport driver outside arrivals.",
+        "id": "Kamu baru bertemu supir bandara di luar area kedatangan."
+      },
+      "cueSpeaker": { "en": "Driver", "id": "Supir" },
+      "cueTarget": "Selamat datang di Jakarta!",
+      "cuePhraseId": "id-id-basics-selamat-datang",
+      "correctPhraseId": "id-id-basics-saya-turis",
+      "distractorPhraseIds": [
+        "id-id-basics-selamat-datang",
+        "id-id-basics-silakan-masuk",
+        "id-id-basics-di-sebelah-kiri"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "id-id-basics-arrival-drill-001",
+  "corridorId": "id-id",
+  "title": {
+    "en": "Lines from arrival day",
+    "id": "Frasa hari kedatangan"
+  },
+  "phraseIds": [
+    "id-id-basics-selamat-datang",
+    "id-id-basics-toilet-di-mana",
+    "id-id-basics-ada-air-mineral",
+    "id-id-basics-lima-ribu",
+    "id-id-basics-terima-kasih"
+  ],
+  "source": "manual",
+  "createdAt": "2026-10-12T18:00:00.000Z"
+}
