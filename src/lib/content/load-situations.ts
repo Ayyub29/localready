@@ -2,6 +2,8 @@ import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { cache } from "react";
 import type { LessonListItem } from "@/data/catalog";
+import { getBundledDefaultSituations } from "@/lib/content/bundled-content";
+import { isBundledContentMode } from "@/lib/content/content-fs";
 import { pickLocalized } from "@/lib/locale";
 import type {
   CorridorSituationsManifestFile,
@@ -112,6 +114,19 @@ async function readDefaultManifest(): Promise<SituationDefinition[]> {
 async function loadSituationsUncached(
   corridorId: CorridorId,
 ): Promise<SituationDefinition[]> {
+  if (await isBundledContentMode()) {
+    const hit = cacheByCorridor.get(corridorId);
+    if (hit) return hit.situations;
+    const bundled = getBundledDefaultSituations();
+    const base = bundled.length > 0 ? bundled : BUILTIN_DEFAULTS;
+    cacheByCorridor.set(corridorId, {
+      mtimeDefault: 0,
+      mtimeCorridor: 0,
+      situations: base,
+    });
+    return base;
+  }
+
   const defaultStat = await stat(DEFAULT_PATH).catch(() => null);
   const corridorStat = await stat(corridorPath(corridorId)).catch(() => null);
   const mtimeDefault = defaultStat?.mtimeMs ?? 0;

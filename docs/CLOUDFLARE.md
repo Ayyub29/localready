@@ -57,6 +57,10 @@ npm run preview:cf
 
 Day-to-day UI work can still use `npm run dev` (port 43123).
 
+## Content on Workers (no `fs`)
+
+Workers cannot read `content/` from disk at runtime. Deployments set `LOCALREADY_BUNDLED_CONTENT=1` in `wrangler.jsonc` so corridor packs and situation defaults are **bundled at build time**. Local dev still reads `content/` from disk for admin edits.
+
 ## Admin on Cloudflare
 
 The admin UI **reads** bundled `content/` from the deployment. **Saving** admin forms writes to the local filesystem, which **does not persist** on Cloudflare Workers. Use admin with writes on **local dev** (`npm run dev` + `ADMIN_DEV_BYPASS=true` or allowlist). On Workers you can still test navigation and forms; use production admin only after you add durable storage (R2 / Git export) if you need hosted authoring.
