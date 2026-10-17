@@ -39,3 +39,4 @@ content/open/**/wv-raw/*.wikitext
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.wrangler/
