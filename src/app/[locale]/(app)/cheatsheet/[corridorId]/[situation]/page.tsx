@@ -1,7 +1,8 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { CheatsheetPhraseList } from "@/components/CheatsheetPhraseList";
+import { BackLink } from "@/components/BackLink";
+import { PageHeader } from "@/components/PageHeader";
 import { isCorridorId } from "@/data/catalog";
 import {
   loadPhraseCatalog,
@@ -41,20 +42,15 @@ export default async function CheatsheetSituationPage({
   const title = situationTitle(situationDefs, situation as SituationKey, loc);
 
   return (
-    <div className="mx-auto max-w-lg space-y-6 px-4 py-6">
-      <header className="space-y-1">
-        <Link
-          href={`/${loc}/cheatsheet/${corridorId}`}
-          className="text-sm font-medium text-teal-800 hover:underline"
-        >
-          ← {loc === "id" ? "Situasi" : "Situations"}
-        </Link>
-        <h1 className="text-2xl font-bold">{title}</h1>
-        <p className="text-sm text-slate-600">
-          {phrases.length} {loc === "id" ? "frasa" : "phrases"}
-        </p>
-      </header>
-
+    <div className="space-y-6">
+      <BackLink href={`/cheatsheet/${corridorId}`}>
+        {loc === "id" ? "Situasi" : "Situations"}
+      </BackLink>
+      <PageHeader
+        eyebrow={loc === "id" ? "Cheatsheet" : "Cheatsheet"}
+        title={title}
+        subtitle={`${phrases.length} ${loc === "id" ? "frasa siap pakai" : "phrases at a glance"}`}
+      />
       <CheatsheetPhraseList locale={loc} phrases={phrases} />
     </div>
   );

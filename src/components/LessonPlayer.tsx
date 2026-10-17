@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { Button } from "@/components/Button";
+import { ProgressBar } from "@/components/ProgressBar";
 import { ConversationThread } from "@/components/ConversationThread";
 import { FillBlankStep } from "@/components/FillBlankStep";
 import { FlashcardStep } from "@/components/FlashcardStep";
@@ -139,8 +141,8 @@ export function LessonPlayer({
           completed={completed}
         />
       )}
-      <div className="space-y-2">
-        <div className="flex items-center justify-between text-xs text-slate-500">
+      <div className="lr-card space-y-3 p-4">
+        <div className="flex items-center justify-between text-xs font-medium text-slate-500">
           <span>
             {locale === "id" ? "Langkah" : "Step"} {stepIndex + 1}/{steps.length}
           </span>
@@ -148,18 +150,15 @@ export function LessonPlayer({
             {locale === "id" ? "Adegan" : "Vignette"} {vignetteNumber}/{vignetteCount}
           </span>
         </div>
-        <div className="h-1.5 overflow-hidden rounded-full bg-slate-100">
-          <div
-            className="h-full rounded-full bg-teal-600 transition-all duration-300"
-            style={{ width: `${((stepIndex + 1) / steps.length) * 100}%` }}
-          />
-        </div>
-        <p className="text-sm font-medium text-slate-800">
+        <ProgressBar
+          percent={Math.round(((stepIndex + 1) / steps.length) * 100)}
+        />
+        <p className="text-base font-semibold text-slate-900">
           {pickLocalized(vignette.title, locale)}
         </p>
         {activeConversation && (
           <p className="text-xs text-slate-600">
-            <span className="rounded bg-slate-100 px-1.5 py-0.5 font-medium text-slate-700">
+            <span className="lr-step-chip">
               {pickLocalized(
                 situationTitles[activeConversation.situation] ?? {
                   en: activeConversation.situation,
@@ -173,14 +172,12 @@ export function LessonPlayer({
             ) : null}
           </p>
         )}
-        <p className="text-xs uppercase tracking-wide text-teal-800">
-          {stepLabel(locale, step)}
-        </p>
+        <p className="lr-eyebrow !text-[0.625rem]">{stepLabel(locale, step)}</p>
       </div>
 
       <div className="flex-1">
         {step.type === "culture" && vignette.culture?.[step.cardIndex] && (
-          <section className="rounded-xl border border-amber-200 bg-amber-50/80 p-5 space-y-3">
+          <section className="lr-card border-amber-200/80 bg-amber-50/90 p-5 space-y-3">
             <h2 className="text-lg font-semibold text-amber-950">
               {pickLocalized(vignette.culture[step.cardIndex].title, locale)}
             </h2>
@@ -191,7 +188,7 @@ export function LessonPlayer({
         )}
 
         {step.type === "conversationDescription" && activeConversation && (
-          <section className="rounded-xl border border-border bg-card p-5">
+          <section className="lr-card p-5">
             <p className="text-base leading-relaxed text-slate-800">
               {pickLocalized(activeConversation.description, locale)}
             </p>
@@ -204,7 +201,7 @@ export function LessonPlayer({
         )}
 
         {step.type === "conversationTurn" && activeConversation && (
-          <section className="rounded-xl border border-border bg-card p-4">
+          <section className="lr-card p-4">
             <ConversationThread
               locale={locale}
               corridorId={lesson.corridorId}
@@ -215,7 +212,7 @@ export function LessonPlayer({
         )}
 
         {step.type === "scenario" && vignette.scenario && (
-          <section className="rounded-xl border border-border bg-card p-5">
+          <section className="lr-card p-5">
             <p className="text-base leading-relaxed">
               {pickLocalized(vignette.scenario, locale)}
             </p>
@@ -223,7 +220,7 @@ export function LessonPlayer({
         )}
 
         {step.type === "miniLesson" && vignette.miniLessons?.[step.miniLessonIndex] && (
-          <section className="rounded-xl border border-violet-200 bg-violet-50/80 p-5 space-y-4">
+          <section className="lr-card border-violet-200/80 bg-violet-50/90 p-5 space-y-4">
             <p className="text-sm leading-relaxed text-violet-950/90">
               {pickLocalized(vignette.miniLessons[step.miniLessonIndex].description, locale)}
             </p>
@@ -253,7 +250,7 @@ export function LessonPlayer({
 
         {step.type === "phraseListPhrase" &&
           vignette.phraseLists?.[step.phraseListIndex]?.phrases[step.phraseIndex] && (
-            <section className="rounded-xl border border-border bg-card px-5 py-6 text-center space-y-2">
+            <section className="lr-card px-5 py-6 text-center space-y-2">
               <p className="text-xs font-medium uppercase tracking-wide text-slate-500">
                 {pickLocalized(
                   vignette.phraseLists[step.phraseListIndex].title,
@@ -320,7 +317,7 @@ export function LessonPlayer({
         )}
 
         {step.type === "phrase" && vignette.phrases?.[step.phraseIndex] && (
-          <section className="rounded-xl border border-border bg-card px-5 py-6 text-center">
+          <section className="lr-card px-5 py-6 text-center">
             <p className="text-3xl font-semibold leading-snug tracking-tight">
               {vignette.phrases[step.phraseIndex].target}
             </p>
@@ -345,7 +342,7 @@ export function LessonPlayer({
       )}
 
       {atEnd && !previewLimited && (
-        <div className="rounded-xl border border-teal-200 bg-teal-50 px-4 py-3 text-center text-sm text-teal-900">
+        <div className="lr-card border-teal-200/80 bg-teal-50/80 px-4 py-4 text-center text-sm text-teal-900">
           {locale === "id"
             ? "Kamu sudah menyelesaikan pelajaran ini."
             : "You finished this lesson."}
@@ -357,23 +354,24 @@ export function LessonPlayer({
         </div>
       )}
 
-      <div className="sticky bottom-0 flex gap-3 border-t border-border bg-background pt-4 pb-1">
-        <button
+      <div className="sticky bottom-0 lr-player-footer flex gap-3">
+        <Button
           type="button"
+          variant="secondary"
           disabled={atStart}
           onClick={goPrev}
-          className="flex-1 rounded-xl border border-border px-4 py-3 text-sm font-medium disabled:opacity-40"
+          className="flex-1 !py-3"
         >
           {locale === "id" ? "Sebelumnya" : "Previous"}
-        </button>
-        <button
+        </Button>
+        <Button
           type="button"
           disabled={atEnd || !canAdvance}
           onClick={goNext}
-          className="flex-1 rounded-xl bg-teal-700 px-4 py-3 text-sm font-medium text-white disabled:opacity-40"
+          className="flex-1 !py-3"
         >
           {locale === "id" ? "Lanjut" : "Next"}
-        </button>
+        </Button>
       </div>
     </div>
   );

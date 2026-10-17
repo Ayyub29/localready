@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Link } from "@/i18n/navigation";
 import { PaywallCheckout } from "@/components/PaywallCheckout";
+import { IconCheck } from "@/components/icons/NavIcons";
 import { formatIdr, PASS_DURATION_DAYS, SKUS } from "@/lib/pricing";
 import { pickLocalized } from "@/lib/locale";
 import type { CorridorId, Locale } from "@/lib/types";
@@ -63,10 +64,10 @@ function SkuCard({
 }) {
   return (
     <article
-      className={`rounded-2xl border p-5 space-y-4 ${
+      className={`lr-card space-y-4 p-5 ${
         highlighted
-          ? "border-teal-400 bg-teal-50/80 shadow-sm ring-1 ring-teal-200"
-          : "border-border bg-card"
+          ? "border-teal-300/80 bg-gradient-to-br from-teal-50 to-white ring-2 ring-teal-200/60"
+          : ""
       }`}
     >
       <div className="flex items-start justify-between gap-2">
@@ -87,7 +88,7 @@ function SkuCard({
       <ul className="space-y-2 text-sm text-slate-700">
         {bullets.map((line) => (
           <li key={line} className="flex gap-2">
-            <span className="text-teal-700" aria-hidden>✓</span>
+            <IconCheck className="mt-0.5 shrink-0 text-teal-600" />
             <span>{line}</span>
           </li>
         ))}
@@ -138,10 +139,8 @@ export function PaywallView({
 
   return (
     <div className="space-y-6 pb-4">
-      <section className="rounded-2xl bg-teal-900 px-5 py-6 text-white">
-        <p className="text-xs font-semibold uppercase tracking-widest text-teal-200/90">
-          LocalReady
-        </p>
+      <section className="lr-hero-panel px-5 py-7">
+        <p className="lr-eyebrow !text-teal-100/90">LocalReady</p>
         <h1 className="mt-2 text-2xl font-bold leading-tight">{messages.title}</h1>
         <p className="mt-2 text-sm text-teal-100/95">{messages.subtitle}</p>
         {destinationName && (

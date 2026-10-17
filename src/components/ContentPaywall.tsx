@@ -21,15 +21,15 @@ export function ContentPaywall({
 
   if (variant === "signIn") {
     return (
-      <section className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-5 text-center space-y-3">
-        <p className="text-sm font-medium text-amber-950">
+      <section className="lr-card border-amber-200/80 bg-gradient-to-br from-amber-50 to-orange-50/50 px-5 py-6 text-center space-y-4">
+        <p className="text-sm font-medium leading-relaxed text-amber-950">
           {isId
             ? "Masuk untuk menyimpan progress dan membuka lebih banyak konten."
             : "Sign in to save progress and unlock more content."}
         </p>
         <Link
           href="/profile"
-          className="inline-block rounded-xl bg-teal-700 px-5 py-2.5 text-sm font-semibold text-white"
+          className="inline-flex min-h-11 items-center justify-center rounded-xl bg-gradient-to-b from-teal-600 to-teal-700 px-6 py-2.5 text-sm font-semibold text-white shadow-md shadow-teal-700/20"
         >
           {isId ? "Masuk" : "Sign in"}
         </Link>
@@ -38,19 +38,19 @@ export function ContentPaywall({
   }
 
   return (
-    <section className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-5 text-center space-y-3">
-      <p className="text-sm font-medium text-amber-950">
+    <section className="lr-card border-amber-200/80 bg-gradient-to-br from-amber-50 to-orange-50/50 px-5 py-6 text-center space-y-3">
+      <p className="text-sm font-medium leading-relaxed text-amber-950">
         {isId
           ? "Ini cuplikan gratis. Beli trip kit untuk pelajaran, kuis, dan progress lengkap."
           : "This is a free preview. Purchase the trip kit for full lessons, quizzes, and progress."}
       </p>
       <Link
         href={paywallHref(corridorId)}
-        className="inline-block rounded-xl bg-teal-700 px-5 py-2.5 text-sm font-semibold text-white"
+        className="inline-flex min-h-11 items-center justify-center rounded-xl bg-gradient-to-b from-teal-600 to-teal-700 px-6 py-2.5 text-sm font-semibold text-white shadow-md shadow-teal-700/20"
       >
         {isId ? "Lihat paket trip" : "View trip plans"}
       </Link>
-      <p className="text-xs text-amber-900/80">
+      <p className="text-xs leading-relaxed text-amber-900/75">
         {isId
           ? "Pembayaran QRIS menyusul — harga dan manfaat sudah bisa kamu lihat di halaman paket."
           : "QRIS checkout is coming soon — see plans and pricing on the paywall page."}

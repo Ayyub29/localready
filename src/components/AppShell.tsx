@@ -8,7 +8,8 @@ type AppShellProps = {
 export function AppShell({ children }: AppShellProps) {
   return (
     <>
-      <div className="pb-24">{children}</div>
+      <div className="lr-app-bg" aria-hidden />
+      <div className="lr-shell pb-24">{children}</div>
       <BottomNav />
     </>
   );

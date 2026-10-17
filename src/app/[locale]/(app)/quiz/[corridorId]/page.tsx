@@ -1,7 +1,9 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
+import { BackLink } from "@/components/BackLink";
+import { PageHeader } from "@/components/PageHeader";
+import { SituationCardLink } from "@/components/SituationCardLink";
 import { getDestination, isCorridorId } from "@/data/catalog";
 import {
   enabledSituationsWithQuizzes,
@@ -15,8 +17,9 @@ import {
 import { canAccessQuizzes, getContentAccess } from "@/lib/access/content-access";
 import { getCorridorProgress } from "@/lib/progress";
 import { quizProgressKey } from "@/lib/progress/utils";
+import { CORRIDOR_FLAG, CORRIDOR_GRADIENT } from "@/lib/corridor-visuals";
 import { pickLocalized } from "@/lib/locale";
-import type { Locale } from "@/lib/types";
+import type { CorridorId, Locale } from "@/lib/types";
 
 type QuizCorridorPageProps = {
   params: Promise<{ locale: string; corridorId: string }>;
@@ -29,6 +32,7 @@ export default async function QuizCorridorPage({ params }: QuizCorridorPageProps
 
   if (!isCorridorId(corridorId)) notFound();
 
+  const c = corridorId as CorridorId;
   const destination = getDestination(corridorId);
   if (!destination) notFound();
 
@@ -64,47 +68,51 @@ export default async function QuizCorridorPage({ params }: QuizCorridorPageProps
 
   return (
     <div className="space-y-6">
-      <header className="space-y-1">
-        <Link
-          href={`/${loc}/quiz`}
-          className="text-sm font-medium text-teal-800 hover:underline"
-        >
-          ← {t("changeDestination")}
-        </Link>
-        <h1 className="text-2xl font-bold">{t("title")}</h1>
-        <p className="text-sm text-slate-600">
-          {pickLocalized(destination.name, loc)} · {pickLocalized(destination.targetLanguage, loc)}
-        </p>
-        <p className="text-sm text-slate-600">{t("pickSituation")}</p>
-      </header>
+      <BackLink href="/quiz">{t("changeDestination")}</BackLink>
+
+      <section
+        className={`lr-card overflow-hidden bg-gradient-to-br p-5 ${CORRIDOR_GRADIENT[c]}`}
+      >
+        <div className="flex items-start gap-4">
+          <span
+            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/90 text-2xl shadow-sm"
+            aria-hidden
+          >
+            {CORRIDOR_FLAG[c]}
+          </span>
+          <PageHeader
+            eyebrow={t("title")}
+            title={pickLocalized(destination.name, loc)}
+            subtitle={`${pickLocalized(destination.targetLanguage, loc)} · ${t("pickSituation")}`}
+          />
+        </div>
+      </section>
 
       {situations.length === 0 ? (
-        <p className="rounded-xl border border-dashed border-border px-4 py-8 text-center text-sm text-slate-600">
+        <p className="lr-card border-dashed px-4 py-10 text-center text-sm text-slate-600">
           {t("empty")}
         </p>
       ) : (
-        <ul className="space-y-2">
+        <ul className="space-y-2.5">
           {situations.map((situation) => {
             const count = quizzesForSituation(catalog, situation).length;
             const scoreSummary = situationScoreSummary(situation);
             return (
               <li key={situation}>
-                <Link
-                  href={`/${loc}/quiz/${corridorId}/${situation}`}
-                  className="flex items-center justify-between gap-2 rounded-xl border border-border bg-card px-4 py-3 hover:border-teal-300"
-                >
-                  <span className="font-medium text-slate-900">
-                    {situationTitle(situationDefs, situation, loc)}
-                  </span>
-                  <div className="text-right text-sm">
-                    {scoreSummary && (
-                      <p className="font-semibold text-teal-800">{scoreSummary}</p>
-                    )}
-                    <p className="text-slate-500">
-                      {count} {loc === "id" ? "kuis" : "quizzes"}
-                    </p>
-                  </div>
-                </Link>
+                <SituationCardLink
+                  href={`/quiz/${corridorId}/${situation}`}
+                  title={situationTitle(situationDefs, situation, loc)}
+                  trailing={
+                    <>
+                      {scoreSummary && (
+                        <p className="font-semibold text-teal-800">{scoreSummary}</p>
+                      )}
+                      <p>
+                        {count} {loc === "id" ? "kuis" : "quizzes"}
+                      </p>
+                    </>
+                  }
+                />
               </li>
             );
           })}
