@@ -1,5 +1,6 @@
+import type { ReactNode } from "react";
 import { Link } from "@/i18n/navigation";
-import { Button } from "@/components/Button";
+import { PaywallCheckout } from "@/components/PaywallCheckout";
 import { formatIdr, PASS_DURATION_DAYS, SKUS } from "@/lib/pricing";
 import { pickLocalized } from "@/lib/locale";
 import type { CorridorId, Locale } from "@/lib/types";
@@ -10,7 +11,7 @@ type PaywallViewProps = {
   corridor: CorridorId | null;
   destination: Destination | null;
   isSignedIn: boolean;
-  hasFullAccess: boolean;
+  hasUnlockedAccess: boolean;
   messages: {
     title: string;
     subtitle: string;
@@ -24,13 +25,20 @@ type PaywallViewProps = {
     includesQuizzes: string;
     includesAllCorridors: string;
     recommended: string;
-    checkoutSoon: string;
+    checkoutCta: string;
     checkoutHint: string;
+    checkoutProcessing: string;
+    checkoutError: string;
+    qrisTitle: string;
+    devSimulate: string;
+    devSimulateHint: string;
+    refreshAfterPay: string;
     signInFirst: string;
     signInCta: string;
     alreadyUnlocked: string;
     backHome: string;
     freeReminder: string;
+    tripPassNeedsCorridor: string;
   };
 };
 
@@ -42,8 +50,7 @@ function SkuCard({
   durationLabel,
   bullets,
   recommendedLabel,
-  checkoutLabel,
-  checkoutDisabled,
+  checkout,
 }: {
   highlighted: boolean;
   title: string;
@@ -52,8 +59,7 @@ function SkuCard({
   durationLabel: string;
   bullets: string[];
   recommendedLabel: string;
-  checkoutLabel: string;
-  checkoutDisabled: boolean;
+  checkout: ReactNode;
 }) {
   return (
     <article
@@ -86,14 +92,7 @@ function SkuCard({
           </li>
         ))}
       </ul>
-      <Button
-        type="button"
-        className="w-full"
-        disabled={checkoutDisabled}
-        aria-disabled={checkoutDisabled}
-      >
-        {checkoutLabel}
-      </Button>
+      {checkout}
     </article>
   );
 }
@@ -103,7 +102,7 @@ export function PaywallView({
   corridor,
   destination,
   isSignedIn,
-  hasFullAccess,
+  hasUnlockedAccess,
   messages,
 }: PaywallViewProps) {
   const tripPrice = formatIdr(SKUS.trip_pass.priceIdr, locale);
@@ -128,6 +127,15 @@ export function PaywallView({
     messages.includesQuizzes,
   ];
 
+  const checkoutMessages = {
+    checkoutProcessing: messages.checkoutProcessing,
+    checkoutError: messages.checkoutError,
+    qrisTitle: messages.qrisTitle,
+    devSimulate: messages.devSimulate,
+    devSimulateHint: messages.devSimulateHint,
+    refreshAfterPay: messages.refreshAfterPay,
+  };
+
   return (
     <div className="space-y-6 pb-4">
       <section className="rounded-2xl bg-teal-900 px-5 py-6 text-white">
@@ -143,7 +151,7 @@ export function PaywallView({
         )}
       </section>
 
-      {hasFullAccess ? (
+      {hasUnlockedAccess ? (
         <section className="rounded-2xl border border-teal-200 bg-teal-50 px-4 py-5 text-center text-sm text-teal-950">
           {messages.alreadyUnlocked}
           <div className="mt-3">
@@ -181,8 +189,22 @@ export function PaywallView({
               durationLabel={durationLabel}
               bullets={tripBullets}
               recommendedLabel={messages.recommended}
-              checkoutLabel={messages.checkoutSoon}
-              checkoutDisabled={true}
+              checkout={
+                corridor ? (
+                  <PaywallCheckout
+                    locale={locale}
+                    sku="trip_pass"
+                    corridorId={corridor}
+                    label={messages.checkoutCta}
+                    disabled={!isSignedIn}
+                    messages={checkoutMessages}
+                  />
+                ) : (
+                  <p className="text-center text-xs text-slate-600">
+                    {messages.tripPassNeedsCorridor}
+                  </p>
+                )
+              }
             />
             <SkuCard
               highlighted={corridor === null}
@@ -192,8 +214,16 @@ export function PaywallView({
               durationLabel={durationLabel}
               bullets={subBullets}
               recommendedLabel={messages.recommended}
-              checkoutLabel={messages.checkoutSoon}
-              checkoutDisabled={true}
+              checkout={
+                <PaywallCheckout
+                  locale={locale}
+                  sku="subscription"
+                  corridorId={null}
+                  label={messages.checkoutCta}
+                  disabled={!isSignedIn}
+                  messages={checkoutMessages}
+                />
+              }
             />
           </div>
 
@@ -201,7 +231,7 @@ export function PaywallView({
         </>
       )}
 
-      {!hasFullAccess && (
+      {!hasUnlockedAccess && (
         <p className="text-center">
           <Link href="/" className="text-sm font-medium text-teal-800 underline">
             {messages.backHome}

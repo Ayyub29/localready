@@ -35,7 +35,9 @@
     "subtitle": "Pick a corridor to see lesson kits."
   },
   "lessons": {
-    "comingSoon": "Lesson player coming next — list only for now."
+    "comingSoon": "Lesson player coming next — list only for now.",
+    "locked": "Trip kit",
+    "freeBasicsHint": "Lesson 1 (Basics) is free. Unlock the trip kit for all other lessons."
   },
   "paywall": {
     "title": "Unlock your trip kit",
@@ -50,8 +52,15 @@
     "includesQuizzes": "Practice quizzes",
     "includesAllCorridors": "Japan, Korea, Thailand, Vietnam, Indonesia packs",
     "recommended": "Best fit",
-    "checkoutSoon": "Pay with QRIS — coming soon",
-    "checkoutHint": "Checkout connects to Midtrans or Xendit in a later milestone. Prices are placeholders you can change in code.",
+    "checkoutCta": "Pay with QRIS",
+    "checkoutProcessing": "Starting checkout…",
+    "checkoutError": "Could not start checkout. Try again.",
+    "qrisTitle": "Scan this QRIS string in your banking app",
+    "devSimulate": "Simulate successful payment (dev)",
+    "devSimulateHint": "Local only: PAYMENT_DEV_SIMULATE=true grants access without Midtrans.",
+    "refreshAfterPay": "After payment, refresh this page to unlock lessons.",
+    "checkoutHint": "Live QRIS uses Midtrans when MIDTRANS_SERVER_KEY is set. Prices are configurable in src/lib/pricing.ts.",
+    "tripPassNeedsCorridor": "Choose a destination on Profile first, then return here for a corridor trip pass.",
     "signInFirst": "Sign in so we can attach your purchase to your account.",
     "signInCta": "Sign in with Google",
     "alreadyUnlocked": "You already have full access on this account.",

@@ -22,8 +22,8 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
   const t = await getTranslations("profile");
 
   const session = await auth();
-  const access = await getContentAccess();
   const lastCorridor = await getLastCorridor();
+  const access = await getContentAccess(lastCorridor ?? undefined);
   const destination = lastCorridor ? getDestination(lastCorridor) : null;
   const paywallHref = lastCorridor
     ? `/paywall?corridor=${lastCorridor}`
@@ -103,7 +103,7 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
 
       {tripSection}
 
-      {!access.hasFullAccess && (
+      {!(lastCorridor ? access.hasCorridorAccess : access.hasFullAccess) && (
         <section className="rounded-2xl border border-teal-200 bg-teal-50/60 p-4 space-y-2">
           <h2 className="text-sm font-semibold text-teal-950">{t("upgradeTitle")}</h2>
           <p className="text-sm text-slate-700">{t("upgradeHint")}</p>

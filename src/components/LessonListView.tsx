@@ -1,10 +1,11 @@
-import Link from "next/link";
 import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { getDestination } from "@/data/catalog";
 import { getLessonsForCorridor } from "@/lib/content/load-situations";
 import { buildLessonSteps } from "@/lib/content/lesson-player-steps";
 import { lessonHasContent, loadCorridorPack } from "@/lib/content/load-pack";
 import { getContentAccess } from "@/lib/access/content-access";
+import { getLessonAccessMode } from "@/lib/lessons/access";
 import { getCorridorProgress } from "@/lib/progress";
 import { lessonProgressLabel, progressPercent } from "@/lib/progress/utils";
 import { pickLocalized } from "@/lib/locale";
@@ -27,7 +28,7 @@ export async function LessonListView({
 
   const t = await getTranslations("lessons");
   const lessons = await getLessonsForCorridor(corridorId);
-  const access = await getContentAccess();
+  const access = await getContentAccess(corridorId);
   const [pack, progress] = await Promise.all([
     loadCorridorPack(corridorId),
     access.canSaveProgress ? getCorridorProgress(corridorId) : Promise.resolve(null),
@@ -53,30 +54,51 @@ export async function LessonListView({
           const statusLabel = access.canSaveProgress
             ? lessonProgressLabel(lessonState, locale)
             : null;
+          const locked =
+            getLessonAccessMode(
+              lesson.situation,
+              access.isSignedIn,
+              access.hasCorridorAccess,
+            ) === "locked";
+          const href = locked
+            ? `/paywall?corridor=${corridorId}`
+            : `/lessons/${corridorId}/${lesson.situation}`;
           return (
             <li key={lesson.id}>
               <Link
-                href={`/${locale}/lessons/${corridorId}/${lesson.situation}`}
+                href={href}
                 className={`flex gap-3 rounded-xl border px-4 py-3 transition-colors ${
-                  ready
-                    ? "border-border bg-card hover:border-teal-300"
-                    : "border-dashed border-border bg-card/60"
+                  locked
+                    ? "border-amber-200 bg-amber-50/50 hover:border-amber-300"
+                    : ready
+                      ? "border-border bg-card hover:border-teal-300"
+                      : "border-dashed border-border bg-card/60"
                 }`}
               >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-teal-50 text-sm font-bold text-teal-800">
-                  {lesson.order}
+                <span
+                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm font-bold ${
+                    locked
+                      ? "bg-amber-100 text-amber-900"
+                      : "bg-teal-50 text-teal-800"
+                  }`}
+                >
+                  {locked ? "🔒" : lesson.order}
                 </span>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-start justify-between gap-2">
                     <p className="text-xs uppercase text-slate-500">
                       {lesson.situation}
-                      {ready ? (
+                      {locked ? (
+                        <span className="ml-2 normal-case font-medium text-amber-800">
+                          · {t("locked")}
+                        </span>
+                      ) : ready ? (
                         <span className="ml-2 normal-case text-teal-700">
                           · {locale === "id" ? "Siap" : "Ready"}
                         </span>
                       ) : null}
                     </p>
-                    {statusLabel && (
+                    {statusLabel && !locked && (
                       <span className="shrink-0 text-xs font-semibold text-teal-800">
                         {statusLabel}
                       </span>
@@ -85,7 +107,7 @@ export async function LessonListView({
                   <p className="font-medium">
                     {pickLocalized(lesson.title, locale)}
                   </p>
-                  {access.canSaveProgress && ready && totalSteps > 0 && (
+                  {access.canSaveProgress && ready && !locked && totalSteps > 0 && (
                     <ProgressBar percent={percent} className="mt-2" />
                   )}
                 </div>
@@ -94,7 +116,7 @@ export async function LessonListView({
           );
         })}
       </ol>
-      <p className="text-center text-xs text-slate-500">{t("comingSoon")}</p>
+      <p className="text-center text-xs text-slate-500">{t("freeBasicsHint")}</p>
     </div>
   );
 }

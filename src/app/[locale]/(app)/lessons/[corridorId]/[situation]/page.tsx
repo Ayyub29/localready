@@ -3,7 +3,9 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { LessonPlayer } from "@/components/LessonPlayer";
 import { getDestination, isCorridorId } from "@/data/catalog";
-import { filterLessonSteps, getContentAccess } from "@/lib/access/content-access";
+import { getContentAccess } from "@/lib/access/content-access";
+import { ContentPaywall } from "@/components/ContentPaywall";
+import { getLessonAccessMode } from "@/lib/lessons/access";
 import { buildLessonSteps } from "@/lib/content/lesson-player-steps";
 import { lessonHasContent, loadLesson } from "@/lib/content/load-pack";
 import { getItemProgress } from "@/lib/progress";
@@ -44,14 +46,17 @@ export default async function LessonPage({ params }: LessonPageProps) {
 
   const hasContent = lessonHasContent(lesson);
   const backLabel = loc === "id" ? "Kembali" : "Back";
-  const access = await getContentAccess();
+  const access = await getContentAccess(c);
+  const lessonLocked =
+    getLessonAccessMode(
+      situationKey,
+      access.isSignedIn,
+      access.hasCorridorAccess,
+    ) === "locked";
   const saved = access.canSaveProgress
     ? await getItemProgress(corridorId, "lesson", situationKey)
     : null;
-  const stepCount = filterLessonSteps(
-    buildLessonSteps(lesson),
-    access.maxVignetteIndex,
-  ).length;
+  const stepCount = buildLessonSteps(lesson).length;
   const initialStepIndex =
     saved?.completed && stepCount > 0
       ? stepCount - 1
@@ -73,7 +78,13 @@ export default async function LessonPage({ params }: LessonPageProps) {
           {pickLocalized(destination.name, loc)} · {lesson.situation}
         </p>
       </header>
-      {hasContent ? (
+      {lessonLocked ? (
+        <ContentPaywall
+          locale={loc}
+          corridorId={c}
+          variant={access.isSignedIn ? "subscribe" : "signIn"}
+        />
+      ) : hasContent ? (
         <LessonPlayer
           locale={loc}
           corridorId={corridorId}
@@ -84,7 +95,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
           initialStepIndex={initialStepIndex}
           initiallyCompleted={saved?.completed ?? false}
           canSaveProgress={access.canSaveProgress}
-          maxVignetteIndex={access.maxVignetteIndex}
+          maxVignetteIndex={null}
           isSignedIn={access.isSignedIn}
         />
       ) : (

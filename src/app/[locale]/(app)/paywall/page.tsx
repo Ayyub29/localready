@@ -19,10 +19,6 @@ export default async function PaywallPage({ params, searchParams }: PaywallPageP
   setRequestLocale(locale);
   const loc = locale as Locale;
 
-  const t = await getTranslations({ locale: loc, namespace: "paywall" });
-  const session = await auth();
-  const access = await getContentAccess();
-
   let corridor: CorridorId | null = null;
   if (corridorParam && isCorridorId(corridorParam)) {
     corridor = corridorParam;
@@ -31,7 +27,14 @@ export default async function PaywallPage({ params, searchParams }: PaywallPageP
     if (last) corridor = last;
   }
 
+  const t = await getTranslations({ locale: loc, namespace: "paywall" });
+  const session = await auth();
+  const access = await getContentAccess(corridor ?? undefined);
+
   const destination = corridor ? getDestination(corridor) : null;
+  const hasUnlockedAccess = corridor
+    ? access.hasCorridorAccess
+    : access.hasFullAccess;
 
   const messages = {
     title: t("title"),
@@ -46,13 +49,20 @@ export default async function PaywallPage({ params, searchParams }: PaywallPageP
     includesQuizzes: t("includesQuizzes"),
     includesAllCorridors: t("includesAllCorridors"),
     recommended: t("recommended"),
-    checkoutSoon: t("checkoutSoon"),
+    checkoutCta: t("checkoutCta"),
     checkoutHint: t("checkoutHint"),
+    checkoutProcessing: t("checkoutProcessing"),
+    checkoutError: t("checkoutError"),
+    qrisTitle: t("qrisTitle"),
+    devSimulate: t("devSimulate"),
+    devSimulateHint: t("devSimulateHint"),
+    refreshAfterPay: t("refreshAfterPay"),
     signInFirst: t("signInFirst"),
     signInCta: t("signInCta"),
     alreadyUnlocked: t("alreadyUnlocked"),
     backHome: t("backHome"),
     freeReminder: t("freeReminder"),
+    tripPassNeedsCorridor: t("tripPassNeedsCorridor"),
   };
 
   return (
@@ -61,7 +71,7 @@ export default async function PaywallPage({ params, searchParams }: PaywallPageP
       corridor={corridor}
       destination={destination ?? null}
       isSignedIn={Boolean(session?.user)}
-      hasFullAccess={access.hasFullAccess}
+      hasUnlockedAccess={hasUnlockedAccess}
       messages={messages}
     />
   );

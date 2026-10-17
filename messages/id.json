@@ -35,7 +35,9 @@
     "subtitle": "Pilih koridor untuk melihat daftar pelajaran."
   },
   "lessons": {
-    "comingSoon": "Pemutar pelajaran menyusul — daftar saja untuk sekarang."
+    "comingSoon": "Pemutar pelajaran menyusul — daftar saja untuk sekarang.",
+    "locked": "Trip kit",
+    "freeBasicsHint": "Pelajaran 1 (Dasar) gratis. Buka trip kit untuk pelajaran lainnya."
   },
   "paywall": {
     "title": "Buka trip kit kamu",
@@ -50,8 +52,15 @@
     "includesQuizzes": "Kuis latihan",
     "includesAllCorridors": "Paket Jepang, Korea, Thailand, Vietnam, Indonesia",
     "recommended": "Paling pas",
-    "checkoutSoon": "Bayar dengan QRIS — menyusul",
-    "checkoutHint": "Checkout akan terhubung ke Midtrans atau Xendit di milestone berikutnya. Harga bisa diubah di kode.",
+    "checkoutCta": "Bayar dengan QRIS",
+    "checkoutProcessing": "Memulai checkout…",
+    "checkoutError": "Checkout gagal. Coba lagi.",
+    "qrisTitle": "Scan string QRIS ini di aplikasi bank kamu",
+    "devSimulate": "Simulasikan pembayaran berhasil (dev)",
+    "devSimulateHint": "Lokal saja: PAYMENT_DEV_SIMULATE=true tanpa Midtrans.",
+    "refreshAfterPay": "Setelah bayar, muat ulang halaman ini untuk membuka pelajaran.",
+    "checkoutHint": "QRIS live memakai Midtrans jika MIDTRANS_SERVER_KEY di-set. Harga di src/lib/pricing.ts.",
+    "tripPassNeedsCorridor": "Pilih destinasi di Profil dulu, lalu kembali ke sini untuk trip pass koridor.",
     "signInFirst": "Masuk dulu supaya pembelian terhubung ke akunmu.",
     "signInCta": "Masuk dengan Google",
     "alreadyUnlocked": "Akun ini sudah punya akses penuh.",

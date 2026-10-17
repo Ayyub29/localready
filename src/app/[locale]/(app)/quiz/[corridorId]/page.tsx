@@ -32,7 +32,7 @@ export default async function QuizCorridorPage({ params }: QuizCorridorPageProps
   const destination = getDestination(corridorId);
   if (!destination) notFound();
 
-  const access = await getContentAccess();
+  const access = await getContentAccess(corridorId);
   const quizzesUnlocked = canAccessQuizzes(access);
   const [catalog, progress, situationDefs] = await Promise.all([
     loadQuizCatalog(corridorId),
