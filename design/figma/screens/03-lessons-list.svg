@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844"><defs><filter id="sh" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.07"/></filter></defs><g id="03-lessons-list" transform="translate(0,0)"><clipPath id="c4297189775602181313"><rect width="390" height="844" rx="28"/></clipPath><g clip-path="url(#c4297189775602181313)"><rect width="390" height="844" fill="#f4f7fb"/>
+<text x="24" y="30" font-family="Plus Jakarta Sans, Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a" text-anchor="start">9:41</text>
+<rect x="330" y="20" width="22" height="11" rx="3" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+<rect x="332" y="22" width="14" height="7" rx="1.5" fill="#0f172a"/>
+<rect x="24" y="50" width="342" height="64" rx="18" fill="#fff" stroke="#e2e8f0" stroke-width="1" filter="url(#sh)"/>
+<circle cx="56" cy="82" r="20" fill="#fecdd3"/>
+<text x="56" y="87" font-family="Plus Jakarta Sans, Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">JP</text>
+<text x="88" y="78" font-family="Plus Jakarta Sans, Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="800" fill="#0f172a" text-anchor="start">Japan</text>
+<text x="88" y="97" font-family="Plus Jakarta Sans, Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#64748b" text-anchor="start">Japanese</text>
+<text x="350" y="78" font-family="Plus Jakarta Sans, Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="800" fill="#0d9488" text-anchor="end">2 / 8</text>
+<text x="350" y="97" font-family="Plus Jakarta Sans, Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#64748b" text-anchor="end">lessons done</text>
+<rect x="24" y="128" width="342" height="64" rx="18" fill="#0d9488"/>
+<rect x="24" y="128" width="342" height="64" rx="18" fill="none"/>
+<text x="44" y="156" font-family="Plus Jakarta Sans, Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="800" fill="#99f6e4" text-anchor="start" letter-spacing="1">TRIP PROGRESS</text>
+<text x="44" y="178" font-family="Plus Jakarta Sans, Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="800" fill="#fff" text-anchor="start">25% ready for your trip</text>
+<rect x="240" y="156" width="106" height="8" rx="4" fill="#0f766e"/>
+<rect x="240" y="156" width="27" height="8" rx="4" fill="#fff"/>
+<circle cx="195" cy="274" r="32" fill="#b45309"/>
+<circle cx="195" cy="268" r="32" fill="#f59e0b"/>
+<path d="M185 268 L192 276 L206 260" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="195" y="322" font-family="Plus Jakarta Sans, Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">Basics</text>
+<circle cx="255" cy="404" r="32" fill="#b45309"/>
+<circle cx="255" cy="398" r="32" fill="#f59e0b"/>
+<path d="M245 398 L252 406 L266 390" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="255" y="452" font-family="Plus Jakarta Sans, Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">Train</text>
+<rect x="249" y="458" width="72" height="28" rx="12" fill="#fff" stroke="#99f6e4" stroke-width="2"/>
+<text x="285" y="477" font-family="Plus Jakarta Sans, Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="800" fill="#0f766e" text-anchor="middle" letter-spacing="0.5">CONTINUE</text>
+<circle cx="285" cy="528" r="40" fill="none" stroke="#e2e8f0" stroke-width="5"/>
+<path d="M285 488 A40 40 0 1 1 257 556" stroke="#0d9488" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="285" cy="534" r="32" fill="#0f766e"/>
+<circle cx="285" cy="528" r="32" fill="#14b8a6"/>
+<text x="285" y="536" font-family="Plus Jakarta Sans, Inter, Helvetica, Arial, sans-serif" font-size="24" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+<text x="285" y="582" font-family="Plus Jakarta Sans, Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">Money</text>
+<circle cx="235" cy="664" r="32" fill="#cbd5e1"/>
+<circle cx="235" cy="658" r="32" fill="#e2e8f0"/>
+<rect x="226" y="656" width="18" height="14" rx="3" fill="#94a3b8"/>
+<path d="M230 656 V651 a5 5 0 0 1 10 0 V656" stroke="#94a3b8" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="235" y="712" font-family="Plus Jakarta Sans, Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="#64748b" text-anchor="middle">Restaurant</text>
+<rect x="0" y="764" width="390" height="80" rx="0" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="23" y="774" width="52" height="32" rx="14" fill="#f0fdfa"/>
+<path d="M39 793 L49 782 L59 793 V802 H39 Z" stroke="#0d9488" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="49" y="826" font-family="Plus Jakarta Sans, Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#0d9488" text-anchor="middle">Learn</text>
+<path d="M137 781 H155 V803 L146 798 L137 803 Z" stroke="#94a3b8" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M142 787 H150" stroke="#94a3b8" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="146" y="826" font-family="Plus Jakarta Sans, Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#94a3b8" text-anchor="middle">Phrases</text>
+<circle cx="243" cy="792" r="11" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<path d="M238 792 L242 796 L249 788" stroke="#94a3b8" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="243" y="826" font-family="Plus Jakarta Sans, Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#94a3b8" text-anchor="middle">Review</text>
+<circle cx="340" cy="786" r="5" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<path d="M330 804 C330 794 350 794 350 804" stroke="#94a3b8" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="340" y="826" font-family="Plus Jakarta Sans, Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#94a3b8" text-anchor="middle">Profile</text></g><rect width="390" height="844" rx="28" fill="none" stroke="#cbd5e1" stroke-width="2"/></g></svg>
