@@ -44,14 +44,12 @@ export function BottomNav() {
         }`}
       >
         <span
-          className={`flex h-10 w-10 items-center justify-center rounded-2xl transition-all ${
-            on
-              ? "bg-teal-600 text-white shadow-md shadow-teal-600/25"
-              : "bg-transparent text-current"
+          className={`flex h-8 w-12 items-center justify-center rounded-xl transition-all ${
+            on ? "bg-teal-50 text-teal-600" : "text-current"
           }`}
           aria-hidden
         >
-          <Icon className="h-5 w-5" />
+          <Icon className="h-6 w-6" />
         </span>
         {t(key)}
       </Link>

@@ -1,18 +1,16 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { PageHeader } from "@/components/PageHeader";
-import { IconLock } from "@/components/icons/NavIcons";
+import { IconCheck, IconLock } from "@/components/icons/NavIcons";
 import { getDestination } from "@/data/catalog";
 import { getLessonsForCorridor } from "@/lib/content/load-situations";
 import { buildLessonSteps } from "@/lib/content/lesson-player-steps";
 import { lessonHasContent, loadCorridorPack } from "@/lib/content/load-pack";
 import { getContentAccess } from "@/lib/access/content-access";
 import { getLessonAccessMode } from "@/lib/lessons/access";
-import { CORRIDOR_FLAG, CORRIDOR_GRADIENT } from "@/lib/corridor-visuals";
+import { CORRIDOR_FLAG, SITUATION_EMOJI } from "@/lib/corridor-visuals";
 import { getCorridorProgress } from "@/lib/progress";
-import { lessonProgressLabel, progressPercent } from "@/lib/progress/utils";
+import { progressPercent } from "@/lib/progress/utils";
 import { pickLocalized } from "@/lib/locale";
-import { ProgressBar } from "@/components/ProgressBar";
 import type { CorridorId, Locale } from "@/lib/types";
 
 type LessonListViewProps = {
@@ -62,154 +60,139 @@ export async function LessonListView({
   const continueRow = inProgress ?? recommended;
   const hasStarted = Boolean(inProgress);
 
-  return (
-    <div className="space-y-6">
-      <section
-        className={`lr-card overflow-hidden bg-gradient-to-br p-5 ${CORRIDOR_GRADIENT[corridorId]}`}
+  const OFFSETS = [0, 64, 96, 64, 0, -64, -96, -64];
+  const progressRing = (percent: number) => {
+    const r = 38;
+    const c = 2 * Math.PI * r;
+    return (
+      <svg
+        className="pointer-events-none absolute -inset-2 h-[5.5rem] w-[5.5rem] -rotate-90"
+        viewBox="0 0 88 88"
+        aria-hidden
       >
-        <div className="flex items-start gap-4">
-          <span
-            className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/90 text-3xl shadow-sm"
-            aria-hidden
-          >
+        <circle cx="44" cy="44" r={r} fill="none" stroke="#e2e8f0" strokeWidth="5" />
+        <circle
+          cx="44"
+          cy="44"
+          r={r}
+          fill="none"
+          stroke="#0d9488"
+          strokeWidth="5"
+          strokeLinecap="round"
+          strokeDasharray={c}
+          strokeDashoffset={c * (1 - percent / 100)}
+        />
+      </svg>
+    );
+  };
+
+  return (
+    <div className="space-y-5">
+      <section className="flex items-center justify-between gap-3 rounded-2xl bg-white/80 px-4 py-3 shadow-sm ring-1 ring-slate-200/70">
+        <div className="flex items-center gap-3">
+          <span className="text-3xl" aria-hidden>
             {CORRIDOR_FLAG[corridorId]}
           </span>
-          <div className="min-w-0 flex-1 pt-0.5">
-            <PageHeader
-              eyebrow={locale === "id" ? "Trip kamu" : "Your trip"}
-              title={destName}
-              subtitle={langName}
-            />
+          <div>
+            <p className="font-extrabold leading-tight text-slate-900">{destName}</p>
+            <p className="text-xs font-semibold text-slate-500">{langName}</p>
           </div>
         </div>
         {open.length > 0 && (
-          <div className="-mt-2 space-y-1.5">
-            <div className="flex justify-between text-xs font-semibold text-slate-600">
-              <span>{locale === "id" ? "Persiapan" : "Trip readiness"}</span>
-              <span>
-                {doneCount}/{open.length}{" "}
-                {locale === "id" ? "pelajaran" : "lessons"}
-              </span>
-            </div>
-            <ProgressBar percent={Math.round((doneCount / open.length) * 100)} />
+          <div className="text-right">
+            <p className="text-lg font-extrabold leading-tight text-teal-700">
+              {doneCount}/{open.length}
+            </p>
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+              {locale === "id" ? "selesai" : "done"}
+            </p>
           </div>
         )}
       </section>
 
-      {continueRow && (
-        <Link
-          href={`/lessons/${corridorId}/${continueRow.lesson.situation}`}
-          className="lr-hero-panel lr-card-interactive flex items-center gap-4 p-5"
-        >
-          <div className="min-w-0 flex-1">
-            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-teal-100">
-              {hasStarted
-                ? locale === "id" ? "Lanjutkan" : "Continue"
-                : locale === "id" ? "Mulai sekarang" : "Start here"}
-            </p>
-            <p className="mt-1 truncate text-lg font-bold">
-              {pickLocalized(continueRow.lesson.title, locale)}
-            </p>
-            {hasStarted && (
-              <p className="mt-0.5 text-sm text-teal-50/90">
-                {progressPercent(continueRow.state)}%
-                {locale === "id" ? " selesai" : " complete"}
-              </p>
-            )}
-          </div>
-          <span
-            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-lg font-bold text-teal-800"
-            aria-hidden
-          >
-            →
-          </span>
-        </Link>
-      )}
-
       <Link
-        href={`/cheatsheet/${corridorId}/emergency`}
-        className="lr-card lr-card-interactive flex items-center gap-3 !border-rose-200/80 !bg-rose-50/60 px-4 py-3"
+        href={`/cheatsheet/${corridorId}`}
+        className="lr-card lr-card-interactive flex items-center gap-3 px-4 py-3"
       >
         <span
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-rose-100 text-base"
+          className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-50 text-lg"
           aria-hidden
         >
-          🆘
+          📒
         </span>
         <div className="min-w-0 flex-1">
-          <p className="text-sm font-bold text-rose-950">
-            {locale === "id" ? "Frasa darurat" : "Emergency phrases"}
+          <p className="text-sm font-bold text-slate-900">
+            {locale === "id" ? "Cheatsheet frasa" : "Phrase cheatsheet"}
           </p>
-          <p className="text-xs text-rose-900/80">
-            {locale === "id" ? "Selalu gratis, tanpa login" : "Always free, no sign-in"}
+          <p className="text-xs text-slate-500">
+            {locale === "id"
+              ? "Frasa darurat selalu gratis"
+              : "Emergency phrases are always free"}
           </p>
         </div>
-        <span className="text-rose-900" aria-hidden>→</span>
+        <span className="font-bold text-teal-700" aria-hidden>→</span>
       </Link>
 
-      <ol className="space-y-2.5">
-        {rows.map(({ lesson, ready, totalSteps, state: lessonState, locked }) => {
+      <div className="lr-unit-banner flex items-center justify-between px-5 py-4">
+        <div>
+          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-teal-100">
+            {locale === "id" ? "Unit 1" : "Unit 1"}
+          </p>
+          <p className="text-lg font-extrabold">
+            {locale === "id" ? "Siap jalan" : "Get trip-ready"}
+          </p>
+        </div>
+        <span className="text-2xl" aria-hidden>🧳</span>
+      </div>
+
+      <ol className="relative flex flex-col items-center gap-9 pb-4 pt-10">
+        {rows.map(({ lesson, ready, state: lessonState, locked }, index) => {
           const percent = progressPercent(lessonState);
-          const statusLabel = access.canSaveProgress
-            ? lessonProgressLabel(lessonState, locale)
-            : null;
-          const isRecommended = recommended?.lesson.id === lesson.id;
+          const done = Boolean(lessonState?.completed);
+          const isCurrent = continueRow?.lesson.id === lesson.id;
           const href = locked
             ? `/paywall?corridor=${corridorId}`
             : `/lessons/${corridorId}/${lesson.situation}`;
+          const tone = locked
+            ? "lr-node-locked"
+            : done
+              ? "lr-node-done"
+              : ready
+                ? "lr-node-open"
+                : "lr-node-locked";
           return (
-            <li key={lesson.id}>
-              <Link
-                href={href}
-                className={`lr-card lr-card-interactive flex gap-3 px-4 py-3.5 ${
-                  locked
-                    ? "!border-amber-200/80 !bg-amber-50/40"
-                    : ready
-                      ? "border-l-4 border-l-teal-500"
-                      : ""
-                }`}
-              >
-                <span
-                  className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-sm font-bold ${
-                    locked
-                      ? "bg-amber-100 text-amber-900"
-                      : "bg-teal-600 text-white shadow-sm shadow-teal-600/20"
-                  }`}
-                >
-                  {locked ? <IconLock className="h-4 w-4" /> : lesson.order}
+            <li
+              key={lesson.id}
+              className="relative flex flex-col items-center"
+              style={{ transform: `translateX(${OFFSETS[index % OFFSETS.length]}px)` }}
+            >
+              {isCurrent && !locked && (
+                <span className="lr-start-bubble">
+                  {hasStarted
+                    ? locale === "id" ? "LANJUT" : "CONTINUE"
+                    : locale === "id" ? "MULAI" : "START"}
                 </span>
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-start justify-between gap-2">
-                    <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">
-                      {lesson.situation}
-                      {locked ? (
-                        <span className="ml-2 normal-case text-amber-800">
-                          · {t("locked")}
-                        </span>
-                      ) : isRecommended ? (
-                        <span className="ml-2 rounded-full bg-teal-600 px-1.5 py-0.5 text-[10px] font-bold normal-case text-white">
-                          {locale === "id" ? "Disarankan" : "Up next"}
-                        </span>
-                      ) : ready ? (
-                        <span className="ml-2 normal-case font-medium text-teal-700">
-                          · {locale === "id" ? "Siap" : "Ready"}
-                        </span>
-                      ) : null}
-                    </p>
-                    {statusLabel && !locked && (
-                      <span className="shrink-0 rounded-full bg-teal-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-teal-800">
-                        {statusLabel}
-                      </span>
-                    )}
-                  </div>
-                  <p className="mt-0.5 font-semibold text-slate-900">
-                    {pickLocalized(lesson.title, locale)}
-                  </p>
-                  {access.canSaveProgress && ready && !locked && totalSteps > 0 && (
-                    <ProgressBar percent={percent} className="mt-2.5" />
+              )}
+              <Link href={href} className="relative" aria-label={pickLocalized(lesson.title, locale)}>
+                {!locked && ready && !done && percent > 0 && progressRing(percent)}
+                <span className={`lr-node ${tone}`}>
+                  {locked ? (
+                    <IconLock className="h-7 w-7" />
+                  ) : done ? (
+                    <IconCheck className="h-8 w-8" />
+                  ) : (
+                    <span aria-hidden>{SITUATION_EMOJI[lesson.situation] ?? lesson.order}</span>
                   )}
-                </div>
+                </span>
               </Link>
+              <p className="mt-3 max-w-[9rem] text-center text-sm font-bold leading-tight text-slate-800">
+                {pickLocalized(lesson.title, locale)}
+              </p>
+              {locked && (
+                <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-wide text-amber-700">
+                  {t("locked")}
+                </p>
+              )}
             </li>
           );
         })}

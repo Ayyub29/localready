@@ -15,3 +15,15 @@ export const CORRIDOR_GRADIENT: Record<CorridorId, string> = {
   "vi-vn": "from-red-500/15 via-white to-teal-500/15",
   "id-id": "from-emerald-500/15 via-white to-teal-500/15",
 };
+
+export const SITUATION_EMOJI: Record<string, string> = {
+  script: "あ",
+  basics: "👋",
+  train: "🚆",
+  money: "💳",
+  restaurant: "🍜",
+  hotel: "🏨",
+  directions: "🧭",
+  culture: "⛩️",
+  emergency: "🆘",
+};

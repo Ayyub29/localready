@@ -136,3 +136,80 @@ body {
   background: rgb(240 253 250);
   color: var(--accent-deep);
 }
+
+/* LingoDeer-style learning path */
+.lr-node {
+  position: relative;
+  display: flex;
+  height: 4.5rem;
+  width: 4.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-size: 1.75rem;
+  color: white;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.lr-node:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 transparent !important;
+}
+
+.lr-node-open {
+  background: linear-gradient(180deg, #2dd4bf, #14b8a6);
+  box-shadow: 0 6px 0 #0f766e;
+}
+
+.lr-node-done {
+  background: linear-gradient(180deg, #fcd34d, #f59e0b);
+  box-shadow: 0 6px 0 #b45309;
+}
+
+.lr-node-locked {
+  background: #e2e8f0;
+  color: #94a3b8;
+  box-shadow: 0 6px 0 #cbd5e1;
+}
+
+.lr-start-bubble {
+  position: absolute;
+  top: -2.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  border-radius: 0.75rem;
+  border: 2px solid #99f6e4;
+  background: white;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #0f766e;
+  animation: lr-bob 1.4s ease-in-out infinite;
+}
+
+.lr-start-bubble::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-right: 2px solid #99f6e4;
+  border-bottom: 2px solid #99f6e4;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+@keyframes lr-bob {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -5px); }
+}
+
+.lr-unit-banner {
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, #0d9488, #14b8a6);
+  color: white;
+  box-shadow: 0 5px 0 #0f766e;
+}
