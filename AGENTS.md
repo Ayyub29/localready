@@ -18,3 +18,7 @@ ADMIN_DEV_BYPASS=true npm run dev   # http://localhost:43123
 ## Deploy (Cloudflare)
 
 See `docs/CLOUDFLARE.md` — `npm ci && npm run deploy:cf`, worker secrets on the dashboard.
+
+## UI / design research (ScreensDesign MCP)
+
+Repo ships `.cursor/mcp.json` for `https://api.screensdesign.com/v1/mcp`. **You** must connect and OAuth in Cursor (Pro account). Agents cannot authenticate on your behalf. See `docs/SCREENDESIGN_MCP.md`.
