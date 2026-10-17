@@ -40,6 +40,28 @@ export async function LessonListView({
   const destName = pickLocalized(destination.name, locale);
   const langName = pickLocalized(destination.targetLanguage, locale);
 
+  const rows = lessons.map((lesson) => {
+    const contentLesson = pack?.lessons.find((l) => l.situation === lesson.situation);
+    const ready = contentLesson ? lessonHasContent(contentLesson) : false;
+    const totalSteps = contentLesson ? buildLessonSteps(contentLesson).length : 0;
+    const state = progress?.lessons[lesson.situation];
+    const locked =
+      getLessonAccessMode(
+        lesson.situation,
+        access.isSignedIn,
+        access.hasCorridorAccess,
+      ) === "locked";
+    return { lesson, ready, totalSteps, state, locked };
+  });
+  const open = rows.filter((r) => r.ready && !r.locked);
+  const doneCount = open.filter((r) => r.state?.completed).length;
+  const recommended = open.find((r) => !r.state?.completed) ?? null;
+  const inProgress = open
+    .filter((r) => r.state && !r.state.completed && r.state.totalSteps > 0)
+    .sort((a, b) => (b.state!.updatedAt > a.state!.updatedAt ? 1 : -1))[0];
+  const continueRow = inProgress ?? recommended;
+  const hasStarted = Boolean(inProgress);
+
   return (
     <div className="space-y-6">
       <section
@@ -52,7 +74,7 @@ export async function LessonListView({
           >
             {CORRIDOR_FLAG[corridorId]}
           </span>
-          <div className="min-w-0 pt-0.5">
+          <div className="min-w-0 flex-1 pt-0.5">
             <PageHeader
               eyebrow={locale === "id" ? "Trip kamu" : "Your trip"}
               title={destName}
@@ -60,24 +82,78 @@ export async function LessonListView({
             />
           </div>
         </div>
+        {open.length > 0 && (
+          <div className="-mt-2 space-y-1.5">
+            <div className="flex justify-between text-xs font-semibold text-slate-600">
+              <span>{locale === "id" ? "Persiapan" : "Trip readiness"}</span>
+              <span>
+                {doneCount}/{open.length}{" "}
+                {locale === "id" ? "pelajaran" : "lessons"}
+              </span>
+            </div>
+            <ProgressBar percent={Math.round((doneCount / open.length) * 100)} />
+          </div>
+        )}
       </section>
 
+      {continueRow && (
+        <Link
+          href={`/lessons/${corridorId}/${continueRow.lesson.situation}`}
+          className="lr-hero-panel lr-card-interactive flex items-center gap-4 p-5"
+        >
+          <div className="min-w-0 flex-1">
+            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-teal-100">
+              {hasStarted
+                ? locale === "id" ? "Lanjutkan" : "Continue"
+                : locale === "id" ? "Mulai sekarang" : "Start here"}
+            </p>
+            <p className="mt-1 truncate text-lg font-bold">
+              {pickLocalized(continueRow.lesson.title, locale)}
+            </p>
+            {hasStarted && (
+              <p className="mt-0.5 text-sm text-teal-50/90">
+                {progressPercent(continueRow.state)}%
+                {locale === "id" ? " selesai" : " complete"}
+              </p>
+            )}
+          </div>
+          <span
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-lg font-bold text-teal-800"
+            aria-hidden
+          >
+            →
+          </span>
+        </Link>
+      )}
+
+      <Link
+        href={`/cheatsheet/${corridorId}/emergency`}
+        className="lr-card lr-card-interactive flex items-center gap-3 !border-rose-200/80 !bg-rose-50/60 px-4 py-3"
+      >
+        <span
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-rose-100 text-base"
+          aria-hidden
+        >
+          🆘
+        </span>
+        <div className="min-w-0 flex-1">
+          <p className="text-sm font-bold text-rose-950">
+            {locale === "id" ? "Frasa darurat" : "Emergency phrases"}
+          </p>
+          <p className="text-xs text-rose-900/80">
+            {locale === "id" ? "Selalu gratis, tanpa login" : "Always free, no sign-in"}
+          </p>
+        </div>
+        <span className="text-rose-900" aria-hidden>→</span>
+      </Link>
+
       <ol className="space-y-2.5">
-        {lessons.map((lesson) => {
-          const contentLesson = pack?.lessons.find((l) => l.situation === lesson.situation);
-          const ready = contentLesson ? lessonHasContent(contentLesson) : false;
-          const totalSteps = contentLesson ? buildLessonSteps(contentLesson).length : 0;
-          const lessonState = progress?.lessons[lesson.situation];
+        {rows.map(({ lesson, ready, totalSteps, state: lessonState, locked }) => {
           const percent = progressPercent(lessonState);
           const statusLabel = access.canSaveProgress
             ? lessonProgressLabel(lessonState, locale)
             : null;
-          const locked =
-            getLessonAccessMode(
-              lesson.situation,
-              access.isSignedIn,
-              access.hasCorridorAccess,
-            ) === "locked";
+          const isRecommended = recommended?.lesson.id === lesson.id;
           const href = locked
             ? `/paywall?corridor=${corridorId}`
             : `/lessons/${corridorId}/${lesson.situation}`;
@@ -109,6 +185,10 @@ export async function LessonListView({
                       {locked ? (
                         <span className="ml-2 normal-case text-amber-800">
                           · {t("locked")}
+                        </span>
+                      ) : isRecommended ? (
+                        <span className="ml-2 rounded-full bg-teal-600 px-1.5 py-0.5 text-[10px] font-bold normal-case text-white">
+                          {locale === "id" ? "Disarankan" : "Up next"}
                         </span>
                       ) : ready ? (
                         <span className="ml-2 normal-case font-medium text-teal-700">
