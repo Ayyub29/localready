@@ -7,10 +7,10 @@ LocalReady does not ship UI mockups in git. For competitor flows and real app sc
 1. This repo includes `.cursor/mcp.json` with the hosted server URL.
 2. In Cursor: **Settings → MCP** (or **Customize → MCP**). Ensure **screensdesign** appears; if it shows **Needs authentication**, click **Connect** and complete browser OAuth with your ScreensDesign Pro account.
 3. Start a **new** chat (or refresh MCP) so tools load.
-4. Optional companion skill (research prompts / citations):
+4. Companion skill **`screensdesign-data`** is vendored under `.agents/skills/screensdesign-data/` (install or update):
 
    ```bash
-   npx skills@latest add screensdesign-com/screensdesign-agent-skill --skill screensdesign-data -a cursor -y
+   npx -y skills add screensdesign-com/screensdesign-agent-skill
    ```
 
 Server URL (Streamable HTTP):
