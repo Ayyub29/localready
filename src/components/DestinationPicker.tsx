@@ -2,8 +2,9 @@ import { getTranslations } from "next-intl/server";
 import { destinations } from "@/data/catalog";
 import { pickLocalized } from "@/lib/locale";
 import { selectDestination } from "@/app/[locale]/actions";
-import type { Locale } from "@/lib/types";
-import { Button } from "./Button";
+import type { CorridorId, Locale } from "@/lib/types";
+import { CORRIDOR_FLAG, CORRIDOR_GRADIENT } from "@/lib/corridor-visuals";
+import { PageHeader } from "./PageHeader";
 
 type DestinationPickerProps = {
   locale: Locale;
@@ -20,25 +21,37 @@ export async function DestinationPicker({
   return (
     <div className={embedded ? "space-y-3" : "space-y-6"}>
       {!embedded && (
-        <header>
-          <h1 className="text-2xl font-bold">{t("title")}</h1>
-          <p className="mt-1 text-sm text-slate-600">{t("subtitle")}</p>
-        </header>
+        <PageHeader title={t("title")} subtitle={t("subtitle")} />
       )}
-      <ul className="space-y-3">
+      <ul className="space-y-2.5">
         {destinations.map((dest) => (
           <li key={dest.id}>
             <form action={selectDestination.bind(null, locale, dest.id)}>
-              <Button type="submit" variant="secondary" className="w-full !justify-start !px-4 !py-4 !h-auto">
-                <span className="text-left">
-                  <span className="block font-semibold">
+              <button
+                type="submit"
+                className={`lr-card lr-card-interactive flex w-full items-center gap-3 bg-gradient-to-br px-4 py-3.5 text-left ${CORRIDOR_GRADIENT[dest.id as CorridorId]}`}
+              >
+                <span
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/90 text-2xl shadow-sm"
+                  aria-hidden
+                >
+                  {CORRIDOR_FLAG[dest.id as CorridorId]}
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block font-semibold text-slate-900">
                     {pickLocalized(dest.name, locale)}
                   </span>
-                  <span className="block text-sm font-normal text-slate-600">
+                  <span className="block text-sm text-slate-600">
                     {pickLocalized(dest.targetLanguage, locale)}
                   </span>
                 </span>
-              </Button>
+                <span
+                  className="shrink-0 text-xs font-bold uppercase tracking-wide text-teal-800"
+                  aria-hidden
+                >
+                  →
+                </span>
+              </button>
             </form>
           </li>
         ))}

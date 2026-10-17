@@ -24,11 +24,11 @@ export default async function HomePage({ params }: HomeProps) {
       {lastCorridor ? (
         <LessonListView locale={loc} corridorId={lastCorridor} />
       ) : (
-        <div className="space-y-4 rounded-2xl border border-dashed border-border px-4 py-10 text-center">
+        <div className="lr-card space-y-4 border-dashed px-4 py-10 text-center">
           <p className="text-sm text-slate-600">{t("noDestination")}</p>
           <Link
             href="/profile"
-            className="inline-block text-sm font-semibold text-teal-800 underline"
+            className="inline-flex rounded-xl bg-gradient-to-b from-teal-600 to-teal-700 px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-teal-700/20"
           >
             {t("setTripInProfile")}
           </Link>

@@ -54,6 +54,34 @@ export const sessions = pgTable("session", {
   expires: timestamp("expires", { mode: "date" }).notNull(),
 });
 
+export const entitlements = pgTable("entitlement", {
+  id: text("id").primaryKey(),
+  userId: text("userId")
+    .notNull()
+    .references(() => users.id, { onDelete: "cascade" }),
+  type: text("type").notNull(),
+  corridorId: text("corridorId"),
+  validUntil: timestamp("validUntil", { mode: "date" }).notNull(),
+  providerRef: text("providerRef"),
+  createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
+});
+
+export const payments = pgTable("payment", {
+  id: text("id").primaryKey(),
+  userId: text("userId")
+    .notNull()
+    .references(() => users.id, { onDelete: "cascade" }),
+  sku: text("sku").notNull(),
+  corridorId: text("corridorId"),
+  amountIdr: integer("amountIdr").notNull(),
+  status: text("status").notNull(),
+  provider: text("provider"),
+  providerRef: text("providerRef"),
+  qrisString: text("qrisString"),
+  createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
+  updatedAt: timestamp("updatedAt", { mode: "date" }).defaultNow(),
+});
+
 export const learningProgress = pgTable(
   "learning_progress",
   {

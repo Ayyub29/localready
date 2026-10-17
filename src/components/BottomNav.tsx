@@ -2,6 +2,12 @@
 
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
+import {
+  NavIconCheatsheet,
+  NavIconHome,
+  NavIconProfile,
+  NavIconQuiz,
+} from "@/components/icons/NavIcons";
 
 type Tab = "home" | "cheatsheet" | "quiz" | "profile";
 
@@ -12,6 +18,13 @@ function tabFromPath(pathname: string): Tab {
   return "home";
 }
 
+const TAB_ICONS: Record<Tab, typeof NavIconHome> = {
+  home: NavIconHome,
+  cheatsheet: NavIconCheatsheet,
+  quiz: NavIconQuiz,
+  profile: NavIconProfile,
+};
+
 export function BottomNav() {
   const t = useTranslations("nav");
   const pathname = usePathname();
@@ -20,23 +33,23 @@ export function BottomNav() {
   const item = (
     key: Tab,
     href: "/" | "/cheatsheet" | "/quiz" | "/profile",
-    icon: string,
   ) => {
     const on = active === key;
+    const Icon = TAB_ICONS[key];
     return (
       <Link
         href={href}
-        className={`flex flex-1 flex-col items-center gap-0.5 py-2 text-[11px] font-medium ${
-          on ? "text-accent" : "text-slate-500"
+        className={`flex flex-1 flex-col items-center gap-1 py-2 text-[11px] font-semibold transition-colors ${
+          on ? "text-teal-700" : "text-slate-500"
         }`}
       >
         <span
-          className={`flex h-9 w-9 items-center justify-center rounded-2xl text-lg ${
-            on ? "bg-teal-50" : ""
+          className={`flex h-8 w-12 items-center justify-center rounded-xl transition-all ${
+            on ? "bg-teal-50 text-teal-600" : "text-current"
           }`}
           aria-hidden
         >
-          {icon}
+          <Icon className="h-6 w-6" />
         </span>
         {t(key)}
       </Link>
@@ -45,15 +58,15 @@ export function BottomNav() {
 
   return (
     <nav
-      className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-card/95 backdrop-blur-md"
+      className="lr-nav-fab fixed inset-x-0 bottom-0 z-30 border-t border-white/60 bg-white/90 backdrop-blur-xl"
       style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
       aria-label="Main"
     >
-      <div className="mx-auto flex max-w-lg px-2 pt-1">
-        {item("home", "/", "🏠")}
-        {item("cheatsheet", "/cheatsheet", "📋")}
-        {item("quiz", "/quiz", "✅")}
-        {item("profile", "/profile", "👤")}
+      <div className="mx-auto flex max-w-lg px-3 pt-1.5">
+        {item("home", "/")}
+        {item("cheatsheet", "/cheatsheet")}
+        {item("quiz", "/quiz")}
+        {item("profile", "/profile")}
       </div>
     </nav>
   );

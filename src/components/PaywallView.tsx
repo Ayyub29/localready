@@ -1,0 +1,242 @@
+import type { ReactNode } from "react";
+import { Link } from "@/i18n/navigation";
+import { PaywallCheckout } from "@/components/PaywallCheckout";
+import { IconCheck } from "@/components/icons/NavIcons";
+import { formatIdr, PASS_DURATION_DAYS, SKUS } from "@/lib/pricing";
+import { pickLocalized } from "@/lib/locale";
+import type { CorridorId, Locale } from "@/lib/types";
+import type { Destination } from "@/data/catalog";
+
+type PaywallViewProps = {
+  locale: Locale;
+  corridor: CorridorId | null;
+  destination: Destination | null;
+  isSignedIn: boolean;
+  hasUnlockedAccess: boolean;
+  messages: {
+    title: string;
+    subtitle: string;
+    tripPassTitle: string;
+    tripPassDesc: string;
+    subscriptionTitle: string;
+    subscriptionDesc: string;
+    duration: string;
+    includesLessons: string;
+    includesCheatsheet: string;
+    includesQuizzes: string;
+    includesAllCorridors: string;
+    recommended: string;
+    checkoutCta: string;
+    checkoutHint: string;
+    checkoutProcessing: string;
+    checkoutError: string;
+    qrisTitle: string;
+    devSimulate: string;
+    devSimulateHint: string;
+    refreshAfterPay: string;
+    signInFirst: string;
+    signInCta: string;
+    alreadyUnlocked: string;
+    backHome: string;
+    freeReminder: string;
+    tripPassNeedsCorridor: string;
+  };
+};
+
+function SkuCard({
+  highlighted,
+  title,
+  description,
+  priceLabel,
+  durationLabel,
+  bullets,
+  recommendedLabel,
+  checkout,
+}: {
+  highlighted: boolean;
+  title: string;
+  description: string;
+  priceLabel: string;
+  durationLabel: string;
+  bullets: string[];
+  recommendedLabel: string;
+  checkout: ReactNode;
+}) {
+  return (
+    <article
+      className={`lr-card space-y-4 p-5 ${
+        highlighted
+          ? "border-teal-300/80 bg-gradient-to-br from-teal-50 to-white ring-2 ring-teal-200/60"
+          : ""
+      }`}
+    >
+      <div className="flex items-start justify-between gap-2">
+        <div>
+          <h2 className="text-lg font-bold text-slate-900">{title}</h2>
+          <p className="mt-1 text-sm text-slate-600">{description}</p>
+        </div>
+        {highlighted && (
+          <span className="shrink-0 rounded-full bg-teal-700 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-white">
+            {recommendedLabel}
+          </span>
+        )}
+      </div>
+      <div>
+        <p className="text-2xl font-bold text-teal-900">{priceLabel}</p>
+        <p className="text-xs text-slate-500">{durationLabel}</p>
+      </div>
+      <ul className="space-y-2 text-sm text-slate-700">
+        {bullets.map((line) => (
+          <li key={line} className="flex gap-2">
+            <IconCheck className="mt-0.5 shrink-0 text-teal-600" />
+            <span>{line}</span>
+          </li>
+        ))}
+      </ul>
+      {checkout}
+    </article>
+  );
+}
+
+export function PaywallView({
+  locale,
+  corridor,
+  destination,
+  isSignedIn,
+  hasUnlockedAccess,
+  messages,
+}: PaywallViewProps) {
+  const tripPrice = formatIdr(SKUS.trip_pass.priceIdr, locale);
+  const subPrice = formatIdr(SKUS.subscription.priceIdr, locale);
+  const durationLabel = messages.duration.replace(
+    "{days}",
+    String(PASS_DURATION_DAYS),
+  );
+
+  const destinationName =
+    destination ? pickLocalized(destination.name, locale) : null;
+
+  const tripBullets = [
+    messages.includesLessons,
+    messages.includesCheatsheet,
+    messages.includesQuizzes,
+  ];
+  const subBullets = [
+    messages.includesAllCorridors,
+    messages.includesLessons,
+    messages.includesCheatsheet,
+    messages.includesQuizzes,
+  ];
+
+  const checkoutMessages = {
+    checkoutProcessing: messages.checkoutProcessing,
+    checkoutError: messages.checkoutError,
+    qrisTitle: messages.qrisTitle,
+    devSimulate: messages.devSimulate,
+    devSimulateHint: messages.devSimulateHint,
+    refreshAfterPay: messages.refreshAfterPay,
+  };
+
+  return (
+    <div className="space-y-6 pb-4">
+      <section className="lr-hero-panel px-5 py-7">
+        <p className="lr-eyebrow !text-teal-100/90">LocalReady</p>
+        <h1 className="mt-2 text-2xl font-bold leading-tight">{messages.title}</h1>
+        <p className="mt-2 text-sm text-teal-100/95">{messages.subtitle}</p>
+        {destinationName && (
+          <p className="mt-3 inline-block rounded-lg bg-white/10 px-3 py-1.5 text-sm font-medium">
+            {destinationName}
+          </p>
+        )}
+      </section>
+
+      {hasUnlockedAccess ? (
+        <section className="rounded-2xl border border-teal-200 bg-teal-50 px-4 py-5 text-center text-sm text-teal-950">
+          {messages.alreadyUnlocked}
+          <div className="mt-3">
+            <Link href="/" className="font-semibold text-teal-800 underline">
+              {messages.backHome}
+            </Link>
+          </div>
+        </section>
+      ) : (
+        <>
+          {!isSignedIn && (
+            <section className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-4 text-center space-y-3">
+              <p className="text-sm text-amber-950">{messages.signInFirst}</p>
+              <Link
+                href="/profile"
+                className="inline-block rounded-xl bg-teal-700 px-5 py-2.5 text-sm font-semibold text-white"
+              >
+                {messages.signInCta}
+              </Link>
+            </section>
+          )}
+
+          <p className="text-center text-xs text-slate-500">{messages.freeReminder}</p>
+
+          <div className="space-y-4">
+            <SkuCard
+              highlighted={corridor !== null}
+              title={
+                destinationName
+                  ? messages.tripPassTitle.replace("{destination}", destinationName)
+                  : messages.tripPassTitle.replace("{destination}", "…")
+              }
+              description={messages.tripPassDesc}
+              priceLabel={tripPrice}
+              durationLabel={durationLabel}
+              bullets={tripBullets}
+              recommendedLabel={messages.recommended}
+              checkout={
+                corridor ? (
+                  <PaywallCheckout
+                    locale={locale}
+                    sku="trip_pass"
+                    corridorId={corridor}
+                    label={messages.checkoutCta}
+                    disabled={!isSignedIn}
+                    messages={checkoutMessages}
+                  />
+                ) : (
+                  <p className="text-center text-xs text-slate-600">
+                    {messages.tripPassNeedsCorridor}
+                  </p>
+                )
+              }
+            />
+            <SkuCard
+              highlighted={corridor === null}
+              title={messages.subscriptionTitle}
+              description={messages.subscriptionDesc}
+              priceLabel={subPrice}
+              durationLabel={durationLabel}
+              bullets={subBullets}
+              recommendedLabel={messages.recommended}
+              checkout={
+                <PaywallCheckout
+                  locale={locale}
+                  sku="subscription"
+                  corridorId={null}
+                  label={messages.checkoutCta}
+                  disabled={!isSignedIn}
+                  messages={checkoutMessages}
+                />
+              }
+            />
+          </div>
+
+          <p className="text-center text-xs text-slate-500">{messages.checkoutHint}</p>
+        </>
+      )}
+
+      {!hasUnlockedAccess && (
+        <p className="text-center">
+          <Link href="/" className="text-sm font-medium text-teal-800 underline">
+            {messages.backHome}
+          </Link>
+        </p>
+      )}
+    </div>
+  );
+}

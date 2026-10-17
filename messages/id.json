@@ -1,6 +1,6 @@
 {
   "nav": {
-    "home": "Beranda",
+    "home": "Belajar",
     "destinations": "Destinasi",
     "cheatsheet": "Cheatsheet",
     "quiz": "Kuis",
@@ -35,7 +35,37 @@
     "subtitle": "Pilih koridor untuk melihat daftar pelajaran."
   },
   "lessons": {
-    "comingSoon": "Pemutar pelajaran menyusul — daftar saja untuk sekarang."
+    "comingSoon": "Pemutar pelajaran menyusul — daftar saja untuk sekarang.",
+    "locked": "Trip kit",
+    "freeBasicsHint": "Pelajaran 1 (Dasar) gratis. Buka trip kit untuk pelajaran lainnya."
+  },
+  "paywall": {
+    "title": "Buka trip kit kamu",
+    "subtitle": "Pelajaran lengkap, cheatsheet, dan kuis untuk destinasi kamu. Pelajaran 1 tetap gratis.",
+    "tripPassTitle": "Trip pass — {destination}",
+    "tripPassDesc": "Satu koridor, tujuh hari — cocok untuk satu perjalanan.",
+    "subscriptionTitle": "Pass semua destinasi",
+    "subscriptionDesc": "Semua koridor yang sudah rilis, tujuh hari.",
+    "duration": "Berlaku {days} hari",
+    "includesLessons": "8 pelajaran situasi",
+    "includesCheatsheet": "Cheatsheet frasa lengkap + offline (nanti)",
+    "includesQuizzes": "Kuis latihan",
+    "includesAllCorridors": "Paket Jepang, Korea, Thailand, Vietnam, Indonesia",
+    "recommended": "Paling pas",
+    "checkoutCta": "Bayar dengan QRIS",
+    "checkoutProcessing": "Memulai checkout…",
+    "checkoutError": "Checkout gagal. Coba lagi.",
+    "qrisTitle": "Scan string QRIS ini di aplikasi bank kamu",
+    "devSimulate": "Simulasikan pembayaran berhasil (dev)",
+    "devSimulateHint": "Lokal saja: PAYMENT_DEV_SIMULATE=true tanpa Midtrans.",
+    "refreshAfterPay": "Setelah bayar, muat ulang halaman ini untuk membuka pelajaran.",
+    "checkoutHint": "QRIS live memakai Midtrans jika MIDTRANS_SERVER_KEY di-set. Harga di src/lib/pricing.ts.",
+    "tripPassNeedsCorridor": "Pilih destinasi di Profil dulu, lalu kembali ke sini untuk trip pass koridor.",
+    "signInFirst": "Masuk dulu supaya pembelian terhubung ke akunmu.",
+    "signInCta": "Masuk dengan Google",
+    "alreadyUnlocked": "Akun ini sudah punya akses penuh.",
+    "backHome": "Kembali ke beranda",
+    "freeReminder": "Frasa darurat di cheatsheet tetap gratis."
   },
   "profile": {
     "title": "Profil",
@@ -52,6 +82,9 @@
     "progressTitle": "Progress kamu",
     "progressSubtitle": "Pelajaran dan kuis untuk trip saat ini.",
     "stub": "Pembelian, lisensi, dan bahasa UI menyusul di milestone berikutnya.",
+    "upgradeTitle": "Akses trip kit",
+    "upgradeHint": "Buka semua pelajaran dan kuis untuk destinasi kamu.",
+    "viewPlans": "Lihat paket & harga",
     "signOut": "Keluar"
   },
   "admin": {

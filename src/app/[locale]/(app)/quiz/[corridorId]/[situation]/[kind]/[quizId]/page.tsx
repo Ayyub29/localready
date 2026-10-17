@@ -60,7 +60,7 @@ export default async function QuizPlayPage({ params }: QuizPlayPageProps) {
   const playable = await loadQuizForPlay(corridorId, kind, quizId);
   if (!playable) notFound();
 
-  const access = await getContentAccess();
+  const access = await getContentAccess(corridorId);
   const progressId = quizProgressKey(kind, quizId);
   const saved =
     access.canSaveProgress && canAccessQuizzes(access)
@@ -94,6 +94,7 @@ export default async function QuizPlayPage({ params }: QuizPlayPageProps) {
       {!canAccessQuizzes(access) ? (
         <ContentPaywall
           locale={loc}
+          corridorId={corridorId}
           variant={access.isSignedIn ? "subscribe" : "signIn"}
         />
       ) : (

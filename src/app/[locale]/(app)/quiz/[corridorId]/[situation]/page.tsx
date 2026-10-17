@@ -62,7 +62,7 @@ export default async function QuizSituationPage({ params }: QuizSituationPagePro
   const destination = getDestination(corridorId);
   if (!destination) notFound();
 
-  const access = await getContentAccess();
+  const access = await getContentAccess(corridorId);
   const quizzesUnlocked = canAccessQuizzes(access);
   const [catalog, progress, situationDefs] = await Promise.all([
     loadQuizCatalog(corridorId),
@@ -94,6 +94,7 @@ export default async function QuizSituationPage({ params }: QuizSituationPagePro
       {!quizzesUnlocked && (
         <ContentPaywall
           locale={loc}
+          corridorId={corridorId}
           variant={access.isSignedIn ? "subscribe" : "signIn"}
         />
       )}

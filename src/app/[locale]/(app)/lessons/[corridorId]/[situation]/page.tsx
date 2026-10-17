@@ -1,9 +1,12 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BackLink } from "@/components/BackLink";
+import { PageHeader } from "@/components/PageHeader";
 import { setRequestLocale } from "next-intl/server";
 import { LessonPlayer } from "@/components/LessonPlayer";
 import { getDestination, isCorridorId } from "@/data/catalog";
-import { filterLessonSteps, getContentAccess } from "@/lib/access/content-access";
+import { getContentAccess } from "@/lib/access/content-access";
+import { ContentPaywall } from "@/components/ContentPaywall";
+import { getLessonAccessMode } from "@/lib/lessons/access";
 import { buildLessonSteps } from "@/lib/content/lesson-player-steps";
 import { lessonHasContent, loadLesson } from "@/lib/content/load-pack";
 import { getItemProgress } from "@/lib/progress";
@@ -43,15 +46,18 @@ export default async function LessonPage({ params }: LessonPageProps) {
   }
 
   const hasContent = lessonHasContent(lesson);
-  const backLabel = loc === "id" ? "Kembali" : "Back";
-  const access = await getContentAccess();
+  const backLabel = loc === "id" ? "Pelajaran" : "Lessons";
+  const access = await getContentAccess(c);
+  const lessonLocked =
+    getLessonAccessMode(
+      situationKey,
+      access.isSignedIn,
+      access.hasCorridorAccess,
+    ) === "locked";
   const saved = access.canSaveProgress
     ? await getItemProgress(corridorId, "lesson", situationKey)
     : null;
-  const stepCount = filterLessonSteps(
-    buildLessonSteps(lesson),
-    access.maxVignetteIndex,
-  ).length;
+  const stepCount = buildLessonSteps(lesson).length;
   const initialStepIndex =
     saved?.completed && stepCount > 0
       ? stepCount - 1
@@ -59,21 +65,19 @@ export default async function LessonPage({ params }: LessonPageProps) {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center gap-3">
-        <Link
-          href={`/${loc}`}
-          className="text-sm font-medium text-teal-800 hover:underline"
-        >
-          ← {backLabel}
-        </Link>
-      </div>
-      <header>
-        <h1 className="text-2xl font-bold">{pickLocalized(lesson.title, loc)}</h1>
-        <p className="text-sm text-slate-600">
-          {pickLocalized(destination.name, loc)} · {lesson.situation}
-        </p>
-      </header>
-      {hasContent ? (
+      <BackLink href="/">{backLabel}</BackLink>
+      <PageHeader
+        eyebrow={lesson.situation}
+        title={pickLocalized(lesson.title, loc)}
+        subtitle={pickLocalized(destination.name, loc)}
+      />
+      {lessonLocked ? (
+        <ContentPaywall
+          locale={loc}
+          corridorId={c}
+          variant={access.isSignedIn ? "subscribe" : "signIn"}
+        />
+      ) : hasContent ? (
         <LessonPlayer
           locale={loc}
           corridorId={corridorId}
@@ -84,11 +88,11 @@ export default async function LessonPage({ params }: LessonPageProps) {
           initialStepIndex={initialStepIndex}
           initiallyCompleted={saved?.completed ?? false}
           canSaveProgress={access.canSaveProgress}
-          maxVignetteIndex={access.maxVignetteIndex}
+          maxVignetteIndex={null}
           isSignedIn={access.isSignedIn}
         />
       ) : (
-        <p className="rounded-xl border border-dashed border-border px-4 py-8 text-center text-sm text-slate-600">
+        <p className="lr-card border-dashed px-4 py-8 text-center text-sm text-slate-600">
           {loc === "id"
             ? "Pelajaran ini belum diisi — fokus dulu ke Dasar & Darurat."
             : "This lesson is not filled yet — start with Basics & Emergency."}

@@ -1,25 +1,27 @@
 import { auth } from "@/auth";
 import { db } from "@/db";
 import { users } from "@/db/schema";
-import { eq } from "drizzle-orm";
+import {
+  listActiveEntitlements,
+  userHasCorridorAccess,
+  hasActiveSubscription,
+} from "@/lib/entitlements";
 import type { PlayerStep } from "@/lib/content/lesson-player-steps";
-
-/**
- * Inclusive vignette index guests and preview accounts may play (0 = first vignette only).
- * “First few vignettes” preview before sign-in / purchase.
- */
-export const PREVIEW_MAX_VIGNETTE_INDEX = 1;
+import type { CorridorId } from "@/lib/types";
+import { eq } from "drizzle-orm";
 
 export type ContentAccess = {
   isSignedIn: boolean;
+  /** Subscription or admin `fullAccess` — all corridors. */
   hasFullAccess: boolean;
-  /** False for guests — progress is account-only. */
+  /** Paid or admin access for the requested corridor (or any if no corridor passed). */
+  hasCorridorAccess: boolean;
   canSaveProgress: boolean;
-  /** `null` = all vignettes; otherwise cap at this index (inclusive). */
+  /** `null` = all vignettes for the current lesson context. */
   maxVignetteIndex: number | null;
 };
 
-export async function userHasFullAccess(userId: string): Promise<boolean> {
+export async function userHasAdminFullAccess(userId: string): Promise<boolean> {
   if (process.env.DEV_FULL_ACCESS === "true") return true;
   try {
     const rows = await db
@@ -33,7 +35,16 @@ export async function userHasFullAccess(userId: string): Promise<boolean> {
   }
 }
 
-export async function getContentAccess(): Promise<ContentAccess> {
+/** @deprecated Use userHasAdminFullAccess or corridor checks. */
+export async function userHasFullAccess(userId: string): Promise<boolean> {
+  if (await userHasAdminFullAccess(userId)) return true;
+  const entitlements = await listActiveEntitlements(userId);
+  return hasActiveSubscription(entitlements);
+}
+
+export async function getContentAccess(
+  corridorId?: CorridorId,
+): Promise<ContentAccess> {
   const session = await auth();
   const userId = session?.user?.id;
 
@@ -41,26 +52,26 @@ export async function getContentAccess(): Promise<ContentAccess> {
     return {
       isSignedIn: false,
       hasFullAccess: false,
+      hasCorridorAccess: false,
       canSaveProgress: false,
-      maxVignetteIndex: PREVIEW_MAX_VIGNETTE_INDEX,
-    };
-  }
-
-  const hasFullAccess = await userHasFullAccess(userId);
-  if (hasFullAccess) {
-    return {
-      isSignedIn: true,
-      hasFullAccess: true,
-      canSaveProgress: true,
       maxVignetteIndex: null,
     };
   }
 
+  const admin = await userHasAdminFullAccess(userId);
+  const active = await listActiveEntitlements(userId);
+  const subscription = admin || hasActiveSubscription(active);
+  const corridorAccess =
+    admin ||
+    subscription ||
+    (corridorId ? userHasCorridorAccess(active, corridorId) : false);
+
   return {
     isSignedIn: true,
-    hasFullAccess: false,
+    hasFullAccess: subscription,
+    hasCorridorAccess: corridorId ? corridorAccess : subscription,
     canSaveProgress: true,
-    maxVignetteIndex: PREVIEW_MAX_VIGNETTE_INDEX,
+    maxVignetteIndex: null,
   };
 }
 
@@ -79,7 +90,6 @@ export function lessonPreviewIsLimited(
   return visibleSteps.length < allSteps.length;
 }
 
-/** Quizzes require a signed-in account with full (paid) access. */
 export function canAccessQuizzes(access: ContentAccess): boolean {
-  return access.isSignedIn && access.hasFullAccess;
+  return access.isSignedIn && access.hasCorridorAccess;
 }
