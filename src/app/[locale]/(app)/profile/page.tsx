@@ -6,7 +6,9 @@ import { DestinationPicker } from "@/components/DestinationPicker";
 import { getDestination } from "@/data/catalog";
 import { pickLocalized } from "@/lib/locale";
 import { getLastCorridor } from "@/lib/last-corridor";
+import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/Button";
+import { getContentAccess } from "@/lib/access/content-access";
 import type { Locale } from "@/lib/types";
 
 type ProfilePageProps = {
@@ -20,8 +22,12 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
   const t = await getTranslations("profile");
 
   const session = await auth();
+  const access = await getContentAccess();
   const lastCorridor = await getLastCorridor();
   const destination = lastCorridor ? getDestination(lastCorridor) : null;
+  const paywallHref = lastCorridor
+    ? `/paywall?corridor=${lastCorridor}`
+    : "/paywall";
 
   const tripSection = (
     <section className="rounded-2xl border border-border bg-card p-4 space-y-4">
@@ -96,6 +102,19 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
       </section>
 
       {tripSection}
+
+      {!access.hasFullAccess && (
+        <section className="rounded-2xl border border-teal-200 bg-teal-50/60 p-4 space-y-2">
+          <h2 className="text-sm font-semibold text-teal-950">{t("upgradeTitle")}</h2>
+          <p className="text-sm text-slate-700">{t("upgradeHint")}</p>
+          <Link
+            href={paywallHref}
+            className="inline-block text-sm font-semibold text-teal-800 underline"
+          >
+            {t("viewPlans")}
+          </Link>
+        </section>
+      )}
 
       <form action={logout.bind(null, locale)}>
         <Button type="submit" variant="secondary" className="w-full">

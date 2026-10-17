@@ -37,6 +37,27 @@
   "lessons": {
     "comingSoon": "Lesson player coming next — list only for now."
   },
+  "paywall": {
+    "title": "Unlock your trip kit",
+    "subtitle": "Full lessons, cheatsheet, and quizzes for your destination. Lesson 1 stays free.",
+    "tripPassTitle": "Trip pass — {destination}",
+    "tripPassDesc": "One corridor, seven days — ideal for a single trip.",
+    "subscriptionTitle": "All destinations pass",
+    "subscriptionDesc": "Every released corridor for seven days.",
+    "duration": "Valid for {days} days",
+    "includesLessons": "All 8 situation lessons",
+    "includesCheatsheet": "Full phrase cheatsheet + offline (when available)",
+    "includesQuizzes": "Practice quizzes",
+    "includesAllCorridors": "Japan, Korea, Thailand, Vietnam, Indonesia packs",
+    "recommended": "Best fit",
+    "checkoutSoon": "Pay with QRIS — coming soon",
+    "checkoutHint": "Checkout connects to Midtrans or Xendit in a later milestone. Prices are placeholders you can change in code.",
+    "signInFirst": "Sign in so we can attach your purchase to your account.",
+    "signInCta": "Sign in with Google",
+    "alreadyUnlocked": "You already have full access on this account.",
+    "backHome": "Back to home",
+    "freeReminder": "Emergency cheatsheet phrases stay free."
+  },
   "profile": {
     "title": "Profile",
     "guestSubtitle": "Browse lessons as a guest, or sign in to save your trip to your account.",
@@ -52,6 +73,9 @@
     "progressTitle": "Your progress",
     "progressSubtitle": "Lessons and quizzes for your current trip.",
     "stub": "Purchases, licenses, and UI language settings ship in a later milestone.",
+    "upgradeTitle": "Trip kit access",
+    "upgradeHint": "Unlock all lessons and quizzes for your destination.",
+    "viewPlans": "View plans & pricing",
     "signOut": "Sign out"
   },
   "admin": {

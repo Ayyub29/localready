@@ -94,6 +94,7 @@ export default async function QuizSituationPage({ params }: QuizSituationPagePro
       {!quizzesUnlocked && (
         <ContentPaywall
           locale={loc}
+          corridorId={corridorId}
           variant={access.isSignedIn ? "subscribe" : "signIn"}
         />
       )}

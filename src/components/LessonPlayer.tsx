@@ -339,6 +339,7 @@ export function LessonPlayer({
       {atEnd && previewLimited && (
         <ContentPaywall
           locale={locale}
+          corridorId={corridorId}
           variant={isSignedIn ? "subscribe" : "signIn"}
         />
       )}

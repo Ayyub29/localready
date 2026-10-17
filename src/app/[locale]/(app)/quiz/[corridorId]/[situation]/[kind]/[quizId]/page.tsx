@@ -94,6 +94,7 @@ export default async function QuizPlayPage({ params }: QuizPlayPageProps) {
       {!canAccessQuizzes(access) ? (
         <ContentPaywall
           locale={loc}
+          corridorId={corridorId}
           variant={access.isSignedIn ? "subscribe" : "signIn"}
         />
       ) : (
