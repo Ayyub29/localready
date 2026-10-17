@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "screensdesign": {
+      "url": "https://api.screensdesign.com/v1/mcp"
+    }
+  }
+}
